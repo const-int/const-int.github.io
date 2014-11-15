@@ -1,15 +1,16 @@
 #-------------------------------
 # General Site Settings
 
-title: Artists Theme
-description: Thinker // Designer // YouTuber
-email: devtipsfordesigners@gmail.com
+title: Constantin Naumov
+description: Front-End Web Developer
+email: const.int.naumov@gmail.com
+copyright: Constantin&nbsp;&nbsp;Naumov&nbsp&nbsp;©&nbsp&nbsp;2014
 
 # NOTE: The Logo and Background image are defined in the all.sass document.
 
 menu:
 - {name: About Me, url: '#about-me'}
-- {name: Work, url: '#work'}
+- {name: Projects, url: '#work'}
 - {name: Clients, url: '#clients'}
 - {name: Contact, url: '#contact'}
 
@@ -85,23 +86,20 @@ clients:
   title: 'VP of Helmut, Lorem Sorem LLC.',
   quote: '<p><strong>Back in old country</strong> only nerds who is playing on computers. Now all bros is wanting to make codes and junk. I lost foot in war. You dont see girls asking me about homework.</p>',
   logo: 'logo4.png'}
-  
-  
+
+
 #-------------------------------
 # Contact Section
-  
-social:
-- {icon: 'twitter', link: 'http://twitter.com/devtipsshow'}
-- {icon: 'dribbble', link: 'https://dribbble.com/travisneilson'}
-- {icon: 'behance', link: 'https://www.behance.net/travisneilson'}
-- {icon: 'youtube', link: 'https://www.youtube.com/DevTipsForDesigners'}
-- {icon: 'linkedin', link: 'http://www.linkedin.com/in/travisneilson/'}
 
-  
+social:
+- {icon: 'github', link: 'https://github.com/const-int'}
+- {icon: 'twitter', link: 'https://twitter.com/Const_Naumov'}
+- {icon: 'linkedin', link: 'http://ru.linkedin.com/pub/konstantin-naumov/a1/847/b33/'}
+
+
 # social network icons available: 'twitter' / 'facebook' / 'github' / 'pinterest' 'google-plus' / 'linkedin' / 'youtube' / 'instagram' / 'dribbble' / 'behance' / 'soundcloud' / 'vine'
-  
-  
-  
-  
-  
-  
+
+
+
+
+

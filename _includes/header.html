@@ -1,12 +1,20 @@
 <header id="header">
-    
+
   <nav>
     {% for item in site.data.settings.menu %}
       <a href="{{ item.url }}">{{ item.name }}</a>
     {% endfor %}
   </nav>
-  
+
   <h1><span>{{ site.data.settings.title }}</span></h1>
   <p class="kicker">{{ site.data.settings.description }}</p>
-  
+
+  <div class="social-links">
+    {% for link in site.data.settings.social %}
+    <a href="{{ link.link }}" class="icon-{{ link.icon }}">
+      <span>{{ link.icon }}</span>
+    </a>
+    {% endfor %}
+  </div>
+
 </header>

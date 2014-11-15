@@ -4,36 +4,37 @@
 .social-links
   max-width: 700px
   margin: 0px auto 50px
+  padding-top: 15px
   +display(flex)
-  +justify-content(space-around)
+  +justify-content(center)
+  +align-items(center)
   +flex-wrap(wrap)
-  
+
   a
     display: block
-    //background: $accent
-    border: 2px solid $accent
-    +size(50px)
-    line-height: 50px
-    color: $accent
-    border-radius: 50%
-    font-size: 28px
-    margin: 20px
+    background: white
+    color: #333
+    border-radius: 6px
+    font-size: 14px
+    margin: 7px
+    padding: 12px 16px
     position: relative
-    
-    
-    &:after
-      content: ''
-      display: block
-      +position(absolute, 0px 0px 0px 0px)
-      border: 2px solid $accent
-      border-radius: 50%
-      margin: -2px
-      opacity: 1
-      +transition()
-      
-    &:hover:after
-      +transform(scale(1.5))
-      opacity: 0
+    text-transform: uppercase
+    font-weight: 300
+
+    &:hover
+      background: #e6e6e6
+      color: black
+
+    span
+      display: inline-block
+      vertical-align: middle
+      letter-spacing: 2px
+
+    &:before
+      padding-left: 2px
+      font-size: 20px
+      vertical-align: middle
 
 .bar
   width: 250px
