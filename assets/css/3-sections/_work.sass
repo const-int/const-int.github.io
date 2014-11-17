@@ -38,9 +38,9 @@
 .thumb-container
   max-width: 960px
   margin: 0px auto
-  
+
   +clearfix
-  
+
   .thumb-unit
     display: block
     width: 25%
@@ -55,17 +55,17 @@
     +perspective(300)
     @if $animation != "bounceOut"
       overflow: hidden
-      
+
     @media screen and (max-width: 760px)
       width: 50%
       padding-top: 26%
-    
+
     .thumb-overlay
       +position(absolute)
       +align-items(center)
       +justify-content(space-around)
       +display(flex)
-      background: fade-out($accent, 0.1)
+      background: fade-out($bgcolor, 0.5)
       text-align: center
       @extend %animationstart_#{$animation}
 
@@ -78,24 +78,24 @@
           size: 24px
         text-transform: uppercase
         line-height: 1.2
-      
+
     &:hover
       z-index: 2
-      
+
       .thumb-overlay
         @extend %#{$animation}
-    
-    
+
+
 
 .work-container
   max-width: 600px
   margin: 0px auto
   padding: 0 15px
   +box-sizing(border-box)
-  
+
   position: relative
   display: none
-  
+
   h4, noscript h4
     color: $accent
     font-weight: 300
@@ -103,35 +103,34 @@
     font-size: 28px
     line-height: 1.2
     margin: 0 0 20px
-  
+
   img
     max-width: 100%
     margin-bottom: 20px
-  
+
   .work-return
     +size(40px)
     cursor: pointer
     opacity: 0.5
     +position(absolute, -4px null null -60px)
-    
+
     path
-      fill: rgba(0,0,0,0.4)
-      
+      fill: rgba(255,255,255,0.8)
+
     &:hover
       opacity: 1
- 
- 
- 
+
+
+
 @media (max-width: 740px)
   .work-container
-    
+
     .work-return
       left: 0px
-    
+
     h4
       margin-left: 60px
-    
-    
-    
-    
-    
+
+
+
+

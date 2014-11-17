@@ -5,7 +5,7 @@ $(function() {
 	clientStuff();
 
 	$("header h1").fitText(1.5, { minFontSize: '30px', maxFontSize: '47px' });
-	$(".biglink").fitText(2);
+	$(".biglink").fitText(1.5, { minFontSize: '20px', maxFontSize: '33px' });
 
 });
 
@@ -59,6 +59,21 @@ function  workLoad() {
   });
 
 }
+
+
+// Skills animate
+  $(".meter > span").each(function() {
+    $(this).data("origWidth", $(this).width()).width(0);
+  });
+  $(window).on('scroll load', function () {
+    if ($(this).scrollTop() > 500) {
+      $(".meter > span").each(function() {
+        $(this).animate({
+          width: $(this).data("origWidth")
+        }, 1200);
+      })
+    }
+  });
 
 
 

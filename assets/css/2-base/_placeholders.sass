@@ -1,6 +1,21 @@
+@mixin ui-reset
+  button, input[type="submit"], select
+    background: none
+    border: none
+    outline: none
+    &:active
+      outline: none
+  input:focus
+    outline: none
+  select:-moz-focusring
+    color: transparent
+    text-shadow: 0 0 0 #000
+
++ui-reset
+
 %small-bold
   font:
-    size: 14px
+    size: 28px
     weight: 700
   text-transform: uppercase
 
