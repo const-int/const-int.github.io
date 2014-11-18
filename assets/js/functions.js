@@ -67,10 +67,25 @@ function  workLoad() {
   });
   $(window).on('scroll load', function () {
     if ($(this).scrollTop() > 500) {
+
+
       $(".meter > span").each(function() {
-        $(this).animate({
-          width: $(this).data("origWidth")
-        }, 1200);
+        var element = $(this);
+        var opsty = $(this).data("origWidth");
+
+        var indexOfBar = $(this).parents('.skill-unit').index();
+
+        setTimeout(function () {
+          animateBars();
+        }, 300 * indexOfBar);
+
+        function animateBars() {
+          $(element).animate({
+            width: opsty,
+            opacity: opsty / 240
+          }, 1200);
+        }
+
       })
     }
   });
