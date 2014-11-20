@@ -30,7 +30,7 @@ seo:
 # NOTE: The avatar is defined in the all.sass document.
 
 blurb: >
-  ***Constantin is all about the web on front of ends.*** He used to deliver user experience as technology masterpiece. He know the value of making emotional UI stuff well designed for backend coders.
+  **Constantin is all about the web on front of ends.** He used to deliver user experience as technology masterpiece. He know the value of making emotional UI stuff well designed for backend coders.
 
 skills:
 - {name: Layouting, value: '9'}
