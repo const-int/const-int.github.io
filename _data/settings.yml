@@ -11,7 +11,7 @@ copyright: Constantin Naumov © 2014
 menu:
 - {name: About Me, url: '#about-me'}
 - {name: Projects, url: '#work'}
-- {name: Interests, url: '#interests'}
+- {name: Skills, url: '#interests'}
 - {name: Contact, url: '#contact'}
 
 #-------------------------------
@@ -64,7 +64,7 @@ projects:
 
 clients:
 - {avatar: 'html.png',
-  quote: "<p>He makes layouts powered by modern frontend toolboxes and template engines. Well formed pages are to be produced on every iteration of employer's development lifecycle.</p>",
+  quote: "<p><strong>Making layouts</strong> powered by modern frontend toolboxes and template engines. Well formed pages are to be produced on every iteration of employer's development lifecycle.</p>",
   logo: 'logo2.png'}
 - {avatar: 'css.png',
   quote: '<p><strong>Working with Travis was the highlight of my career.</strong> Other moments of note were collecting the largest number of paperclips in the office, and winning a trophy for saying "uh huh, and then what?" 30 times in a row to my girlfriend without her noticing.</p>',

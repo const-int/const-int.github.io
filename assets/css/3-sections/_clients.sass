@@ -1,5 +1,6 @@
 .section-clients
   position: relative
+  padding-bottom: 60px
 
   h3
     margin-top: 0
@@ -45,7 +46,7 @@
       font-size: 18px
       line-height: 36px
       font-weight: 300
-      margin-top: 20px
+      margin-top: 45px
       position: relative
 
 
@@ -53,18 +54,27 @@
 
 // Logos
 .clients-logos
-  position: relative
-  max-width: 600px
-  margin: 0px auto
-  padding-bottom: 100px
-  +display(flex)
-  +align-items(flex-end)
-  +justify-content(space-around)
+  position: absolute
+  bottom: 6px
+  width: 450px
+  right: 50%
+  padding: 0
+  margin-right: -376px
+  z-index: 100
+  text-align: justify
+
+  &:after
+    display: inline-block
+    content: ""
+    width: 100%
+
 
 
   .client-logo
+    display: inline-block
+    width: 55px
     cursor: pointer
-    margin: 0 10px 20px
+    margin: 0
     padding-bottom: 20px
     border-bottom: 4px solid transparent
     opacity: 0.4
@@ -139,12 +149,25 @@
       border-color: $bgcolor
       background: $bgcolor
 
+// Mobile
+$ratio: 320 / 568
+$height: 400px
 
+.client-face
+  width: 240px
+  height: 486px
+  background:
+    image: url(../img/clients/phone.png)
+    repeat: no-repeat
+    size: contain
 
 
 @media (max-width: 750px)
   .clients-logos
     +flex-wrap(wrap)
+
+  .client-face
+    display: none
 
   .clients-belt
     overflow-x: hidden

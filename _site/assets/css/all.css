@@ -1113,7 +1113,8 @@ footer {
   .work-container h4 {
     margin-left: 60px; } }
 .section-clients {
-  position: relative; }
+  position: relative;
+  padding-bottom: 60px; }
   .section-clients h3 {
     margin-top: 0;
     padding-top: 100px; }
@@ -1157,42 +1158,27 @@ footer {
       font-size: 18px;
       line-height: 36px;
       font-weight: 300;
-      margin-top: 20px;
+      margin-top: 45px;
       position: relative; }
 
 .clients-logos {
-  position: relative;
-  max-width: 600px;
-  margin: 0px auto;
-  padding-bottom: 100px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-  -moz-box-align: end;
-  box-align: end;
-  -webkit-align-items: flex-end;
-  -moz-align-items: flex-end;
-  -ms-align-items: flex-end;
-  -o-align-items: flex-end;
-  align-items: flex-end;
-  -ms-flex-align: end;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  box-pack: center;
-  -webkit-justify-content: space-around;
-  -moz-justify-content: space-around;
-  -ms-justify-content: space-around;
-  -o-justify-content: space-around;
-  justify-content: space-around;
-  -ms-flex-pack: center; }
+  position: absolute;
+  bottom: 6px;
+  width: 450px;
+  right: 50%;
+  padding: 0;
+  margin-right: -376px;
+  z-index: 100;
+  text-align: justify; }
+  .clients-logos:after {
+    display: inline-block;
+    content: "";
+    width: 100%; }
   .clients-logos .client-logo {
+    display: inline-block;
+    width: 55px;
     cursor: pointer;
-    margin: 0 10px 20px;
+    margin: 0;
     padding-bottom: 20px;
     border-bottom: 4px solid transparent;
     opacity: 0.4;
@@ -1274,6 +1260,13 @@ footer {
       border-color: #000;
       background: #000; }
 
+.client-face {
+  width: 240px;
+  height: 486px;
+  background-image: url(../img/clients/phone.png);
+  background-repeat: no-repeat;
+  background-size: contain; }
+
 @media (max-width: 750px) {
   .clients-logos {
     -webkit-box-lines: multiple;
@@ -1283,6 +1276,9 @@ footer {
     -moz-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
+
+  .client-face {
+    display: none; }
 
   .clients-belt {
     overflow-x: hidden; }
