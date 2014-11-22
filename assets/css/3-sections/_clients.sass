@@ -1,9 +1,14 @@
 .section-clients
   position: relative
 
+  h3
+    margin-top: 0
+    padding-top: 100px
+
 .clients-belt
   width: 100%
   position: relative
+  min-height: 250px
 
   .client-unit
     max-width: 750px
@@ -12,10 +17,12 @@
     position: relative
     z-index: 1
     display: none
+    opacity: 0
 
     &.active-client
       +display(flex)
-      // @extend %#{$animation}
+      height: auto
+      opacity: 1
 
     .client-face
       min-width: 300px
@@ -48,7 +55,8 @@
 .clients-logos
   position: relative
   max-width: 600px
-  margin: 0px auto 100px
+  margin: 0px auto
+  padding-bottom: 100px
   +display(flex)
   +align-items(flex-end)
   +justify-content(space-around)
@@ -84,25 +92,33 @@
 // Controls
 .client-controls
   +position(absolute, 0px 0px 0px 0px)
+  overflow: hidden
 
   > div
-    +size(40px)
+    width: 50px
     margin-top: -20px
     cursor: pointer
+    padding-top: 360px
+    padding-bottom: 1000px
+    background: #f8f8f8
+    +transition
 
     path
       fill: #aaa
       +transition
 
     &:hover
+      background: #e2e2e2
       path
         fill: #333
 
   .client-control-next
-    +position(absolute, 50% 10px null null)
+    width: 40px
+    +position(absolute, -10px 0px null null)
+    padding-left: 10px
 
   .client-control-prev
-    +position(absolute, 50% null null 10px)
+    +position(absolute, -10px null null 0px)
 
 // clients-mobile-nav
 .clients-mobile-nav

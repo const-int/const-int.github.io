@@ -661,7 +661,7 @@ header {
     header nav a {
       display: inline-block;
       margin-left: 20px;
-      font-size: 18px;
+      font-size: 16px;
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
@@ -1114,17 +1114,22 @@ footer {
     margin-left: 60px; } }
 .section-clients {
   position: relative; }
+  .section-clients h3 {
+    margin-top: 0;
+    padding-top: 100px; }
 
 .clients-belt {
   width: 100%;
-  position: relative; }
+  position: relative;
+  min-height: 250px; }
   .clients-belt .client-unit {
     max-width: 750px;
     min-height: 250px;
     margin: 50px auto;
     position: relative;
     z-index: 1;
-    display: none; }
+    display: none;
+    opacity: 0; }
     .clients-belt .client-unit.active-client {
       display: -webkit-box;
       display: -moz-box;
@@ -1132,7 +1137,9 @@ footer {
       display: -webkit-flex;
       display: -moz-flex;
       display: -ms-flexbox;
-      display: flex; }
+      display: flex;
+      height: auto;
+      opacity: 1; }
     .clients-belt .client-unit .client-face {
       min-width: 300px;
       text-align: center;
@@ -1156,7 +1163,8 @@ footer {
 .clients-logos {
   position: relative;
   max-width: 600px;
-  margin: 0px auto 100px;
+  margin: 0px auto;
+  padding-bottom: 100px;
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -1217,27 +1225,37 @@ footer {
   top: 0px;
   right: 0px;
   bottom: 0px;
-  left: 0px; }
+  left: 0px;
+  overflow: hidden; }
   .client-controls > div {
-    height: 40px;
-    width: 40px;
+    width: 50px;
     margin-top: -20px;
-    cursor: pointer; }
+    cursor: pointer;
+    padding-top: 360px;
+    padding-bottom: 1000px;
+    background: #f8f8f8;
+    -webkit-transition: all 0.15s ease-out 0s;
+    -moz-transition: all 0.15s ease-out 0s;
+    transition: all 0.15s ease-out 0s; }
     .client-controls > div path {
       fill: #aaa;
       -webkit-transition: all 0.15s ease-out 0s;
       -moz-transition: all 0.15s ease-out 0s;
       transition: all 0.15s ease-out 0s; }
-    .client-controls > div:hover path {
-      fill: #333; }
+    .client-controls > div:hover {
+      background: #e2e2e2; }
+      .client-controls > div:hover path {
+        fill: #333; }
   .client-controls .client-control-next {
+    width: 40px;
     position: absolute;
-    top: 50%;
-    right: 10px; }
+    top: -10px;
+    right: 0px;
+    padding-left: 10px; }
   .client-controls .client-control-prev {
     position: absolute;
-    top: 50%;
-    left: 10px; }
+    top: -10px;
+    left: 0px; }
 
 .clients-mobile-nav {
   text-align: center;
@@ -1295,6 +1313,8 @@ footer {
   background: url(../img/mail-bg2.jpg);
   background-size: cover;
   background-position: center; }
+  .section-contact h3 {
+    margin-top: 0; }
 
 .social-links {
   max-width: 700px;

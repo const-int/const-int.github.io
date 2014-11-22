@@ -30,7 +30,7 @@ seo:
 # NOTE: The avatar is defined in the all.sass document.
 
 blurb: >
-  **Constantin is all about the web on front of ends.** <br/>       
+  **Constantin is all about the web on front of ends.** <br/>
   He used to deliver user experience as technology masterpiece. He know the value of making emotional UI stuff well designed for backend coders.
 
 skills:
@@ -64,7 +64,7 @@ projects:
 
 clients:
 - {avatar: 'html.png',
-  quote: '<p><strong>While we all felt that Travis was a great</strong> asset to our team — and really worked hard to understand our products from the point of view of the customer — we also all agree he should shower more often.</p>',
+  quote: "<p>He makes layouts powered by modern frontend toolboxes and template engines. Well formed pages are to be produced on every iteration of employer's development lifecycle.</p>",
   logo: 'logo2.png'}
 - {avatar: 'css.png',
   quote: '<p><strong>Working with Travis was the highlight of my career.</strong> Other moments of note were collecting the largest number of paperclips in the office, and winning a trophy for saying "uh huh, and then what?" 30 times in a row to my girlfriend without her noticing.</p>',
