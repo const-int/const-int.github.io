@@ -18,8 +18,8 @@
 
   a
     display: block
-    background: white
-    color: #333
+    background: white !important
+    color: #333 !important
     border-radius: 6px
     font-size: 14px
     margin: 7px
@@ -27,11 +27,16 @@
     position: relative
     text-transform: uppercase
     font-weight: 300
+    transition: none !important
 
 
     &:hover
-      background: #e6e6e6
-      color: black
+      background: #e1e1e1 !important
+      color: black !important
+
+    .waves-ripple
+      background: #fff
+      z-index: -1
 
     span
       display: inline-block

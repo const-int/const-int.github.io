@@ -9,22 +9,23 @@
     {% endfor %}
   </div>
 
-  <div class="clients-belt">
-
 
   <div class="clients-logos">
     {% for client in site.data.settings.clients %}
-    <img class="client-logo" src="assets/img/clients/{{ client.logo }}" align="{{ client.logo }}">
+    <div class="client-logo waves-effect waves-button">{{ client.logo }}</div>
     {% endfor %}
   </div>
+
+
+  <div class="clients-belt">
 
     {% for client in site.data.settings.clients %}
     <div class="client-unit">
 
       <div class="client-face">
-        <!--  <img src="assets/img/clients/{{ client.avatar }}" alt="client-face"> -->
-
-
+        <div class="wrap">
+          {{ client.content }}
+        </div>
       </div>
 
       <div class="client-content">
@@ -37,10 +38,6 @@
 
   </div>
 
-  <div class="client-controls">
-    <div class="client-control-next">{% include icons/icon-next.html %}</div>
-    <div class="client-control-prev">{% include icons/icon-prev.html %}</div>
-  </div>
 
 
 

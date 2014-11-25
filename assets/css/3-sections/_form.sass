@@ -15,7 +15,7 @@ form
     appearance: none
     font-size: 16px
 
-    &:focus
+    &:not([name=name]):focus
       outline: none
       border-color: $accent-light
 
@@ -28,16 +28,19 @@ form
   button
     text-transform: uppercase !important
     display: inline-block
-    background: $bgcolor
-    color: white
+    background: $bgcolor !important
+    color: white !important
     letter-spacing: 2px
     padding: 12px 16px
-    border-radius: 6px
+    border-radius: 6px !important
     border: 0
     font:
       weight: 400 !important
       size: 14px
 
+    .waves-ripple
+      background: $bgcolor !important
+      z-index: -1
     span
       display: inline-block
       vertical-align: middle
@@ -48,8 +51,8 @@ form
       vertical-align: middle
 
     &:hover
-      background: #444
-      border-color: #444
+      background: #444 !important
+      border-color: #444 !important
 
   .contact-info-group
 

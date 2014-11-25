@@ -37,7 +37,7 @@ skills:
 - {name: Layouting, value: '9'}
 - {name: Responsive Layouting, value: '8'}
 - {name: Animations, value: '7'}
-- {name: Front-End Programming, value: '8'}
+- {name: Front-End Programming, value: '9'}
 - {name: UX Design, value: '5'}
 - {name: Typography, value: '7'}
 - {name: Learning, value: '10'}
@@ -63,24 +63,24 @@ projects:
 # Clients Section
 
 clients:
-- {avatar: 'html.png',
-  quote: "<p><strong>Making layouts</strong> powered by modern frontend toolboxes and template engines. Well formed pages are to be produced on every iteration of employer's development lifecycle.</p>",
-  logo: 'logo2.png'}
-- {avatar: 'css.png',
+- {content: '<div class="phone-screen html"> <div class="phone-header"> <div class="phone-menu"></div></div><div class="phone-post" id="first-post"> <div class="post-thumb"></div><div class="line post-title-1"></div><div class="line post-title-2"></div><div class="line post-line-1"></div><div class="line post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div></div>',
+  quote: "<p><strong>Making layouts</strong> powered by modern frontend toolboxes and template engines.  Human readability and semantics of resulting code are essential goals. <br> Well formed pages are to be produced on every iteration of employer's development lifecycle.</p>",
+  logo: 'HTML'}
+- {content: '<div class="phone-screen css"> <div class="phone-header"> <div class="phone-menu"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="line post-title-1"></div><div class="line post-title-2"></div><div class="line post-line-1"></div><div class="line post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="line post-title-1"></div><div class="line post-title-2"></div><div class="line post-line-1"></div><div class="line post-line-2"></div></div> <div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div></div>',
   quote: '<p><strong>Working with Travis was the highlight of my career.</strong> Other moments of note were collecting the largest number of paperclips in the office, and winning a trophy for saying "uh huh, and then what?" 30 times in a row to my girlfriend without her noticing.</p>',
-  logo: 'logo3.png'}
-- {avatar: 'js.png',
+  logo: 'CSS'}
+- {content: 'js.png',
   quote: '<p><strong>Back in old country</strong> only nerds who is playing on computers. Now all bros is wanting to make codes and junk. I lost foot in war. You dont see girls asking me about homework.</p>',
-  logo: 'logo4.png'}
-- {avatar: 'php.png',
-  quote: '<p><strong>Back in old country</strong> only nerds who is playing on computers. Now all bros is wanting to make codes and junk. I lost foot in war. You dont see girls asking me about homework.</p>',
-  logo: 'logo6.png'}
-- {avatar: 'vector.png',
+  logo: 'JS'}
+- {content: 'vector.png',
   quote: '<p><strong>Yea, I guess hes good at computers or something,</strong> but let me ask you this: If a cat always lands on its feet, and buttered bread always lands butter side down, what would happen if you tied buttered bread on top of a cat?</p>',
-  logo: 'logo1.png'}
-- {avatar: 'wp.png',
+  logo: 'SVG'}
+- {content: 'wp.png',
   quote: '<p><strong>Back in old country</strong> only nerds who is playing on computers. Now all bros is wanting to make codes and junk. I lost foot in war. You dont see girls asking me about homework.</p>',
-  logo: 'logo5.png'}
+  logo: 'CMS'}
+- {content: 'php.png',
+  quote: '<p><strong>Back in old country</strong> only nerds who is playing on computers. Now all bros is wanting to make codes and junk. I lost foot in war. You dont see girls asking me about homework.</p>',
+  logo: 'PHP'}
 
 
 #-------------------------------

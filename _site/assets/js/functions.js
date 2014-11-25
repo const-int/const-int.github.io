@@ -88,6 +88,9 @@ function  workLoad() {
 
       })
     }
+    if ($(this).scrollTop() > 3200) {
+      $('form input[name=name]').focus();
+    }
   });
 
 
@@ -101,6 +104,10 @@ function clientStuff() {
 
 
   $('.client-logo, .clients-mobile-nav span').click(function() {
+
+    $(this).siblings('.client-logo').each(function(index, el) {
+      $(this).find('.waves-ripple').remove();
+    });
     var $this = $(this),
         $siblings = $this.parent().children(),
         position = $siblings.index($this);
@@ -110,36 +117,6 @@ function clientStuff() {
     $this.addClass('active-client');
   });
 
-
-  $('.client-control-next, .client-control-prev').click(function() {
-
-    var $this = $(this),
-        curActiveClient = $('.clients-belt').find('.active-client'),
-        position = $('.clients-belt').children().index(curActiveClient),
-        clientNum = $('.client-unit').length;
-
-      if($this.hasClass('client-control-next')) {
-
-        if(position < clientNum -1){
-          $('.active-client').removeClass('active-client').next().addClass('active-client');
-        } else {
-          $('.client-unit').removeClass('active-client').first().addClass('active-client');
-          $('.client-logo').removeClass('active-client').first().addClass('active-client');
-        }
-
-      } else {
-
-        if (position === 0) {
-          $('.client-unit').removeClass('active-client').last().addClass('active-client');
-          $('.client-logo').removeClass('active-client').last().addClass('active-client');
-        } else {
-          $('.active-client').removeClass('active-client').prev().addClass('active-client');
-        }
-
-      }
-
-
-  });
 
 }
 
@@ -179,5 +156,34 @@ function clientStuff() {
 
 
 
+// Call Waves Buttons
+Waves.displayEffect();
 
 
+
+// HTML SECTON animation
+$(document).ready(function() {
+
+  $('.html .phone-post').addClass('active');
+
+  setTimeout(function() {
+    $('.html .phone-post').removeClass('active');
+  }, 1500);
+
+  setInterval(function() {
+    $('.html .phone-post').addClass('active');
+
+    setTimeout(function() {
+      $('.html .phone-post').removeClass('active');
+    }, 1500);
+  }, 2000);
+
+});
+
+// CSS SECTON animation
+$(document).ready(function() {
+
+  // $('.css .phone-post').addClass('active');
+
+
+});
