@@ -9,5 +9,4 @@ include: ['_includes/work']
 
 sass:
   sass_dir: assets/css
-  style: :nested
-  sourcemap: true
+  style: :compressed

@@ -1,6 +1,4 @@
-<section class="section-clients">
-
-  <h3 id="interests">Skills</h3>
+<section class="section-clients full-screen-block">
 
 
   <div class="clients-mobile-nav">
@@ -10,14 +8,18 @@
   </div>
 
 
-  <div class="clients-logos">
-    {% for client in site.data.settings.clients %}
-    <div class="client-logo waves-effect waves-button">{{ client.logo }}</div>
-    {% endfor %}
-  </div>
+
 
 
   <div class="clients-belt">
+
+    <div class="clients-logos">
+      {% for client in site.data.settings.clients %}
+        <div class="client-logo waves-effect waves-button">
+          <span>{{ client.logo }} </span>
+        </div>
+      {% endfor %}
+    </div>
 
     {% for client in site.data.settings.clients %}
     <div class="client-unit">
@@ -29,7 +31,9 @@
       </div>
 
       <div class="client-content">
-        <div class="client-quote-mark">{% include icons/icon-quote-mark.html %}</div>
+        <div class="client-quote-mark">
+          {% include icons/icon-quote-mark.html %}
+        </div>
         {{ client.quote }}
       </div>
 
@@ -37,13 +41,5 @@
     {% endfor %}
 
   </div>
-
-
-
-
-
-
-
-
 
 </section>

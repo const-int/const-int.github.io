@@ -1,42 +1,33 @@
 header
-  @extend %background-image
   background:
-    position: 30px 20px, 50% 50%
-    image: url(../img/#{$logo-path}), url(../img/#{$hero-path})
-  padding-bottom: 100px
+    repeat: no-repeat
+    size: cover
+    position:  center
+    image:  url(../img/#{$hero-path})
+  height: 900px
 
-  nav
-    float: right
-    padding: 30px 30px 0 0
-
-    a
-      display: inline-block
-      margin-left: 20px
-      font-size: 16px
-      +user-select(none)
-
-      color: #c1bebb
-      @extend %small-bold
-
-      &:hover
-        color: white
+  .splash-center
+    position: relative
+    max-width: 500px
 
   h1
     text-align: center
     font:
-      size: 47px
+      size: 46px
       weight: 700
     color: white
     letter-spacing: 0.01em
-    margin-bottom: 20px
+    margin: 0 auto 20px
     clear: both
-    padding-top: 120px
     text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 3px
 
 
     span
       display: inline-block
       font-weight: 700
+
+  .social-links
+    margin-bottom: 0
 
   .kicker
     @extend %small-bold
@@ -48,25 +39,22 @@ header
     padding: 5px 0 30px
     max-width: 395px
     margin: 0 auto
-    border-bottom: 4px solid white
+    border-bottom: 2px solid white
 
 
 
 @media (max-width: 720px)
   header
     padding-bottom: 15px
-    background:
-      position: 50% 20px, 50% 50%
-      size: 268px auto, cover
 
     nav
       float: none
       text-align: center
-      padding-top: 85px
+      padding-top: 15px
 
       a
         display: block
-        margin-bottom: 5px
+        margin: 5px
 
     h1
       padding: 10px 0 0 0
@@ -77,4 +65,8 @@ header
       margin-bottom: 0
       display: block
       text-align: center
+
+      a
+        width: 96% !important
+
 

@@ -1,28 +1,34 @@
-<section class="alt-section section-work">
-  
-  <h3 id="work">Work</h3>
-  {% for project in site.data.settings.projects %}
-    <input type="radio" name="trigger" class="trigger" id="{{ project.folder }}" />
-  {% endfor %}
+<section class="alt-section section-work full-screen-block">
+
 
   <input type="radio" name="trigger" id="return" class="return" />
 
   <div class="work-belt">
-    
+
+
+
     <div class="thumb-wrap">
+
       <div class="thumb-container">
-      {% for project in site.data.settings.projects %}
-      <label for="{{ project.folder }}">  
-        <div class="thumb-unit" data-folder="{{ project.folder }}" style="background-image: url(assets/img/work/{{project.folder}}/thumb.jpg);"> 
-          <div class="thumb-overlay">
-            <strong>{{ project.name }}</strong>
+        <!-- <h3 id="work">Projects I involved in</h3> -->
+        {% for project in site.data.settings.projects %}
+          <input type="radio" name="trigger" class="trigger" id="{{ project.folder }}" />
+        {% endfor %}
+        {% for project in site.data.settings.projects %}
+        <label for="{{ project.folder }}">
+          <div class="thumb-unit" data-folder="{{ project.folder }}" >
+            <div class="thumb"style="background-image: url(assets/img/work/{{project.folder}}/thumb.jpg);">
+              <div class="title">
+                <a href="http://{{ project.name }}" target="_blank">{{ project.name }}</a>
+                <span class="icon-search-plus"></span>
+              </div>
+            </div>
           </div>
-        </div>
-      </label>
-      {% endfor %}
+        </label>
+        {% endfor %}
+      </div>
     </div>
-    </div>
-    
+
     <div class="work-wrap">
       <div class="work-container">
       <label for="return">
@@ -44,6 +50,6 @@
 
     </div>
     </div>
-    
   </div>
+
 </section>

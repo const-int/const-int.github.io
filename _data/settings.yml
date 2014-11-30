@@ -9,10 +9,10 @@ copyright: Constantin Naumov © 2014
 # NOTE: The Logo and Background image are defined in the all.sass document.
 
 menu:
-- {name: About Me, url: '#about-me'}
-- {name: Projects, url: '#work'}
-- {name: Skills, url: '#interests'}
-- {name: Contact, url: '#contact'}
+- {name: About Me, url: 'about-me'}
+- {name: Portfolio, url: 'work'}
+- {name: Skills, url: 'interests'}
+- {name: Contact, url: 'contact'}
 
 #-------------------------------
 # SEO Section
@@ -34,12 +34,10 @@ blurb: >
   He used to deliver user experience as technology masterpiece. He know the value of making emotional UI stuff well designed for backend coders.
 
 skills:
-- {name: Layouting, value: '9'}
+- {name: JavaScript Programming, value: '7'}
 - {name: Responsive Layouting, value: '8'}
-- {name: Animations, value: '7'}
-- {name: Front-End Programming, value: '9'}
+- {name: CSS3 Animations, value: '9'}
 - {name: UX Design, value: '5'}
-- {name: Typography, value: '7'}
 - {name: Learning, value: '10'}
 - {name: Communication, value: '6'}
 
@@ -47,14 +45,14 @@ skills:
 # Work Section
 
 projects:
-- {name: TYPO International Design Talks, folder: 'proj-1', file: 'work/proj-1.html'}
-- {name: City-IN website concept, folder: 'proj-2', file: 'work/proj-2.html'}
+- {name: ennoaeao.py , folder: 'proj-1', file: 'work/proj-1.html'}
+- {name: City-IN website , folder: 'proj-2', file: 'work/proj-2.html'}
 - {name: Crispy Icons, folder: 'proj-3', file: 'work/proj-3.html'}
-- {name: Flat Mobile UI/UX Concept, folder: 'proj-4', file: 'work/proj-4.html'}
+- {name: Flat Mobile , folder: 'proj-4', file: 'work/proj-4.html'}
 - {name: Fresh It Up, folder: 'proj-5', file: 'work/proj-5.html'}
 - {name: Timeline Page, folder: 'proj-6', file: 'work/proj-6.html'}
 - {name: Weather Dashboard, folder: 'proj-7', file: 'work/proj-7.html'}
-- {name: Stripes & Co, folder: 'proj-8', file: 'work/proj-8.html'}
+- {name: Stripes , folder: 'proj-8', file: 'work/proj-8.html'}
 
 
 
@@ -63,13 +61,13 @@ projects:
 # Clients Section
 
 clients:
-- {content: '<div class="phone-screen html"> <div class="phone-header"> <div class="phone-menu"></div></div><div class="phone-post" id="first-post"> <div class="post-thumb"></div><div class="line post-title-1"></div><div class="line post-title-2"></div><div class="line post-line-1"></div><div class="line post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div></div>',
+- {content: '<div class="phone-screen html-section"> <div class="phone-header"><div class="icon-search"></div> <div class="phone-menu"></div></div><div class="phone-post" id="first-post"> <div class="post-thumb"></div><div class="line post-title-1"></div><div class="line post-title-2"></div><div class="line post-line-1"></div><div class="line post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div></div>',
   quote: "<p><strong>Making layouts</strong> powered by modern frontend toolboxes and template engines.  Human readability and semantics of resulting code are essential goals. <br> Well formed pages are to be produced on every iteration of employer's development lifecycle.</p>",
   logo: 'HTML'}
-- {content: '<div class="phone-screen css"> <div class="phone-header"> <div class="phone-menu"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="line post-title-1"></div><div class="line post-title-2"></div><div class="line post-line-1"></div><div class="line post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="line post-title-1"></div><div class="line post-title-2"></div><div class="line post-line-1"></div><div class="line post-line-2"></div></div> <div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div></div>',
+- {content: '<div class="phone-screen css-section"> <div class="phone-header"> <div class="icon-search"></div> <div class="phone-menu"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="line post-title-1"></div><div class="line post-title-2"></div><div class="line post-line-1"></div><div class="line post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="line post-title-1"></div><div class="line post-title-2"></div><div class="line post-line-1"></div><div class="line post-line-2"></div></div> <div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div></div>',
   quote: '<p><strong>Working with Travis was the highlight of my career.</strong> Other moments of note were collecting the largest number of paperclips in the office, and winning a trophy for saying "uh huh, and then what?" 30 times in a row to my girlfriend without her noticing.</p>',
   logo: 'CSS'}
-- {content: 'js.png',
+- {content: '<div class="phone-screen js-section"> <div class="phone-header"> <div class="icon-search"></div> <div class="phone-menu"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="line post-title-1"></div><div class="line post-title-2"></div><div class="line post-line-1"></div><div class="line post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="line post-title-1"></div><div class="line post-title-2"></div><div class="line post-line-1"></div><div class="line post-line-2"></div></div> <div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div></div>',
   quote: '<p><strong>Back in old country</strong> only nerds who is playing on computers. Now all bros is wanting to make codes and junk. I lost foot in war. You dont see girls asking me about homework.</p>',
   logo: 'JS'}
 - {content: 'vector.png',
@@ -87,8 +85,8 @@ clients:
 # Contact Section
 
 social:
-- {icon: 'github', link: 'https://github.com/const-int'}
 - {icon: 'twitter', link: 'https://twitter.com/Const_Naumov'}
+- {icon: 'github', link: 'https://github.com/const-int'}
 - {icon: 'linkedin', link: 'http://ru.linkedin.com/pub/konstantin-naumov/a1/847/b33/'}
 
 

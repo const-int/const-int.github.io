@@ -32,8 +32,6 @@ h1, h2, h3, h4, h5, h6
   font-size: 10px
   line-height: 1.2
 
-
-
 p
   margin: 0 0 20px 0
 
@@ -49,6 +47,9 @@ hr
   clear: both
   margin: 10px 0 30px
   height: 0
+
+section
+  position: relative
 
 
 
@@ -69,9 +70,11 @@ a:hover, a:focus
 
 ::selection
   background: $selectionColor
+  color: $accent
 
 ::-moz-selection
   background: $selectionColor
+  color: $accent
 
 img::selection
   background: transparent
@@ -83,10 +86,32 @@ body
   -webkit-tap-highlight-color: $selectionColor
 
 
+/* Preloader
+  ------------------------------------  */
+#preloader
+  +position(fixed, 0 0 0 0)
+  background-color: #fff
+  z-index: 99
+
+
+#status
+  +size(70px 24px)
+  +position(absolute, 50% null null 50%)
+  margin: -12px 0 0 -35px /* is width and height divided by two */
+
+
+
+
+
 
 /* Basic Styles
   ------------------------------------	*/
+body, html
+  height: 100%
+
 body
+  height: 100%
+  overflow: hidden
   background:
     color: $documentBackgroundColor
     image: url(../img/bg_main_decor.png)
@@ -95,12 +120,32 @@ body
   line-height: 1.6
   font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif
   color: $textColor
+@mixin center-trans($asix: "both")
+  position: absolute
+  @if $asix == "hor"
+    left: 50%
+    -ms-transform: translate(-50px,0)
+    -webkit-transform: translate(-50px,0)
+    transform: translate(-50px,0)
+  @if $asix == "vert"
+    top: 50%
+    -ms-transform: translate(0,-50px)
+    -webkit-transform: translate(0,-50px)
+    transform: translate(0,-50px)
+  @if $asix == "both"
+    top: 50%
+    left: 50%
+    -ms-transform: translate(-50%, -50%)
+    -webkit-transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%)
+.splash-center
+  +center-trans
 
 svg
   +size(100%)
 
 h3
-  @extend %small-bold
+  // @extend %small-bold
   color: $accent-light
   text-align: center
   padding: 70px 0 30px
@@ -111,7 +156,6 @@ h3
 
 .alt-section
   background: $bgcolor url(../img/#{$alternate-path})
-  padding-bottom: 100px
 
   h3
     color: rgba(147, 147, 147, 1)

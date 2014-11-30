@@ -1,17 +1,13 @@
 # Layout settings
 
-animation: "bounceOut"
-
 # Images
-
 logo: "logo2.png"
 hero: "hero-bg.jpg"
-avatar: "constavatar2.png"
+avatar: "constavatar.png"
 alternate: "alternate-bg.png"
 mailbg: "mail-bg2.jpg"
 
 # Colors
-
 accent: "#fff"
 accent-light: "#666"
 bgcolor: "#000"

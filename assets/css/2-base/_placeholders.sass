@@ -1,5 +1,7 @@
+$post-thumb-colors: #ff8080, #ffae80, #c680ff, #d5ff80, #80ffb7, #ff80ca, #80d0ff, #8097ff, #ffdd80, #80fffd, #d5ff80, #ff8080
+
 @mixin ui-reset
-  button, input[type="submit"], select
+  button, input[type="submit"], select,textarea
     background: none
     border: none
     outline: none
@@ -11,7 +13,24 @@
     color: transparent
     text-shadow: 0 0 0 #000
 
+@mixin center-abs($width:false, $height:false)
+  position: absolute
+  @if $width != false
+    width: $width
+    left: 50%
+    margin-left: -$width/2
+  @if $height != false
+    height: $height
+    top: 50%
+    margin-top: -$height/2
+
+
+
 +ui-reset
+
+%center-container
+  max-width: 960px
+  margin: 0px auto
 
 %small-bold
   font:
@@ -19,9 +38,3 @@
     weight: 700
   text-transform: uppercase
 
-%background-image
-  background:
-    repeat: no-repeat, no-repeat
-    size: 338px 51px, cover
-    position: 30px 50px, 50% 50%
-    blend-mode: normal, normal

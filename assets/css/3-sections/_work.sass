@@ -1,6 +1,11 @@
 .section-work
   overflow-x: hidden
+  position: relative
 
+  h3
+    margin: 0
+    padding: 9px
+    margin-bottom: 50px
 /* Hackey-type CSS as a jQuery Alternative for when the browser does not have jQuery enabled. */
 .noscript
   display: none
@@ -24,6 +29,7 @@
 
 .work-belt
   width: 200%
+  height: 100%
   position: relative
   left: 0%
   +transition(all, 800ms)
@@ -32,64 +38,106 @@
     +transform(translate3d(-50%, 0, 0))
 
 .thumb-wrap, .work-wrap
+  position: relative
   width: 50%
   float: left
+  min-height: 100%
 
 .thumb-container
-  max-width: 960px
-  margin: 0px auto
+  @extend %center-container
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 980px
+  +transform(translate(-50%, -50%))
+
+  &:before
+    +position(absolute, -90px null null 0)
+    width: 980px
+    color: #ccc
+    text-align: center
+    content: "PORTFOLIO"
+    text-transform: uppercase
+    font:
+      size: 32px
+      weight: 700
+
+
+
 
   +clearfix
 
   .thumb-unit
     display: block
-    width: 25%
+    +size(25% 160px)
     float: left
     position: relative
-    padding-top: 16%
-    cursor: pointer
+    overflow: hidden
     background:
-      position: center center
+      position: center top
       repeat: no-repeat
-      size: cover
-    +perspective(300)
-    @if $animation != "bounceOut"
-      overflow: hidden
+
+    .thumb
+      +transition(.3s ease)
+      position: relative
+      +size(100%)
+      background:
+        size: cover
+
+
+      .title
+        +position(absolute, -60px 0px null 0px)
+        +transition(.5s ease)
+        +size(100% 60px)
+        background: #ddd
+        text-align: left
+        line-height: 60px
+        color: white
+        font-size: 18px
+
+        span
+          float: right
+          line-height: 60px
+          font-size: 32px
+          margin-right: 20px
+          cursor: pointer
+          color: #777
+          opacity: 0
+          +transition(opacity .5s ease, color .3s)
+          +user-select(none)
+
+          &:hover
+            color: #333
+
+        a
+          position: relative
+          +user-select(none)
+          top: -1px
+          text-decoration: none
+          border-bottom: 2px solid #888
+          margin-left: 20px
+          color: #333
+          opacity: 0
+          +transition(border-color .3s, opacity .5s ease)
+
+          &:hover
+            border-bottom: 2px solid #000
+
 
     @media screen and (max-width: 760px)
       width: 50%
-      padding-top: 26%
-
-    .thumb-overlay
-      +position(absolute)
-      +align-items(center)
-      +justify-content(space-around)
-      +display(flex)
-      background: fade-out($bgcolor, 0.5)
-      text-align: center
-      @extend %animationstart_#{$animation}
-
-      strong
-        display: block
-        padding: 0px 20px
-        color: white
-        font:
-          weight: 300
-          size: 24px
-        text-transform: uppercase
-        line-height: 1.2
 
     &:hover
-      z-index: 2
+      .thumb
+        +transform(translateY(60px))
 
-      .thumb-overlay
-        @extend %#{$animation}
-
-
+      .title
+        a, span
+          opacity: 1
 
 .work-container
   max-width: 600px
-  margin: 0px auto
+  margin: 100px auto 0
   padding: 0 15px
   +box-sizing(border-box)
 
@@ -123,6 +171,8 @@
 
 
 @media (max-width: 740px)
+  .thumb-container
+    width: 100%
   .work-container
 
     .work-return

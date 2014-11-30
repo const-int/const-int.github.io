@@ -1,5 +1,11 @@
+.about-section
+  position: relative
+
+.splash-container
+  +center-trans
+
 .face-lockup
-  max-width: 780px
+  width: 780px
   +display(flex)
   margin: 0 auto
   +align-items(center)
@@ -71,18 +77,23 @@
 
 
 .skill-lockup
-  max-width: 540px
-  margin: 100px auto
+  max-width: 780px
+  margin: 50px auto 0
   color: #999
   +clearfix
+  +display(flex)
+  +flex-wrap(wrap)
+  +align-items(center)
+  +justify-content(space-between)
+
+  &:after
+    display: none
 
 
   .skill-unit
-    width: 250px
-    float: left
+    width: 240px
+    display: inline-block
 
-    &:nth-child(even)
-      float: right
 
   .skill-icons
     font-size: 0
@@ -104,27 +115,11 @@
   +animation(move  2s linear infinite)
 
 
-
-
-
-
 @media screen and (max-width: 541px)
   .skill-lockup
     width: 220px
 
     .skill-unit
       width: 220px
-
-
-
-
-
-
-
-
-
-
-
-
 
 

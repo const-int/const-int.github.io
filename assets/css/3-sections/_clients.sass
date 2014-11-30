@@ -1,20 +1,18 @@
 .section-clients
   position: relative
-  padding-bottom: 60px
 
   h3
     margin-top: 0
     padding-top: 100px
 
 .clients-belt
-  width: 100%
-  position: relative
+  width: 750px
+  +center-trans
   min-height: 250px
 
   .client-unit
     max-width: 750px
     min-height: 250px
-    margin: 50px auto
     position: relative
     z-index: 1
     display: none
@@ -55,7 +53,7 @@
 // Logos
 .clients-logos
   position: absolute
-  bottom: 121px
+  bottom: 13px
   width: 450px
   right: 50%
   padding: 0
@@ -105,6 +103,9 @@
         color: #424242
       z-index: -1
 
+    span
+      display: inline-block
+      +size(100%)
 
 
 .client-quote-mark
@@ -184,6 +185,11 @@ $height: 400px
     +position(absolute, 47px null null 15px)
     +size(209px 372px)
     overflow: hidden
+    border-radius: 3px !important
+
+  .phone-screen
+    & *, & *:before, & *:after
+      +box-sizing(border-box)
 
 @media (max-width: 750px)
   .clients-logos

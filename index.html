@@ -19,22 +19,38 @@
 </head>
 <body>
 
-{% include header.html %}
+  <!-- Preloader -->
+  <div id="preloader">
+      <div id="status">
+        <div class="loader">
+          <div class="bounce1"></div>
+          <div class="bounce2"></div>
+          <div class="bounce3"></div>
+        </div>
+      </div>
+  </div>
 
-{% include about.html %}
+  <!-- Navigation -->
+  <nav>
+    {% for item in site.data.settings.menu %}
+      <span>{{ item.name }}</span>
+    {% endfor %}
+  </nav>
 
-{% include work.html %}
+  {% include header.html %}
 
-{% include clients.html %}
+  {% include about.html %}
 
-{% include contact.html %}
+  {% include work.html %}
 
-{% include form.html %}
+  {% include clients.html %}
 
-{% include footer.html %}
+  {% include contact.html %}
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="assets/js/preloader.js"></script>
 <script src="assets/js/waves.js"></script>
+<script src="assets/js/fittext.js"></script>
 <script src="assets/js/functions.js"></script>
 <!-- REMEMBER TO ADD ANALYTICS! -->
 </body>

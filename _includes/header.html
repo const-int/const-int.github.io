@@ -1,20 +1,16 @@
-<header id="header">
+<header id="header" class="full-screen-block">
 
-  <nav>
-    {% for item in site.data.settings.menu %}
-      <a href="{{ item.url }}">{{ item.name }}</a>
-    {% endfor %}
-  </nav>
+    <div class="splash-center">
+      <h1><span>{{ site.data.settings.title }}</span></h1>
+      <p class="kicker">{{ site.data.settings.description }}</p>
 
-  <h1><span>{{ site.data.settings.title }}</span></h1>
-  <p class="kicker">{{ site.data.settings.description }}</p>
-
-  <div class="social-links">
-    {% for link in site.data.settings.social %}
-    <a href="{{ link.link }}" class="waves-effect waves-button icon-{{ link.icon }}" target="_blank">
-      <span>{{ link.icon }}</span>
-    </a>
-    {% endfor %}
-  </div>
+      <div class="social-links">
+        {% for link in site.data.settings.social %}
+        <a href="{{ link.link }}" class="waves-effect waves-button icon-{{ link.icon }}" target="_blank">
+          <span>{{ link.icon }}</span>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
 
 </header>

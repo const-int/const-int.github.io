@@ -1,36 +1,40 @@
+// Initiate functions
 $(function() {
-	smoothScroll(300);
-	workBelt();
-	workLoad();
-	clientStuff();
-
-	$("header h1").fitText(1.5, { minFontSize: '30px', maxFontSize: '47px' });
-	$(".biglink").fitText(1.5, { minFontSize: '20px', maxFontSize: '33px' });
-
+  workBelt();
+  workLoad();
+  clientStuff();
+  Waves.displayEffect();
+  scills_width();
+  $("header h1").fitText(1, { minFontSize: '30px', maxFontSize: '46px' });
 });
 
-// smoothScroll function is applied from the document ready function
-function smoothScroll (duration) {
-	$('a[href^="#"]').on('click', function(event) {
 
-	    var target = $( $(this).attr('href') );
+// Window height
+$(document).ready(function() {
+  nav_index = 0;
 
-	    if( target.length ) {
-	        event.preventDefault();
-	        $('html, body').animate({
-	            scrollTop: target.offset().top
-	        }, duration);
-	    }
-	});
+  $(window).on('load', function () {
+    section_heigh()
+    $('html, body').animate({scrollTop: 0}, 100);
+  });
+
+  $(window).on('load resize', function () {
+    section_heigh()
+    $(window).scrollTop(nav_index * window_height);
+  });
+});
+
+function section_heigh() {
+  window_height = $(window).height();
+  $(".full-screen-block").height(window_height);
 }
-
 
 function workBelt() {
 
   $(".trigger").remove();
   $(".return").remove();
 
-  $('.thumb-unit').click(function() {
+  $('.thumb-unit span').click(function() {
     $('.work-belt').addClass("slided");
     $('.work-container').show();
   });
@@ -61,37 +65,31 @@ function  workLoad() {
 }
 
 
-// Skills animate
+// Skills animate functions
+function scills_width() {
   $(".meter > span").each(function() {
     $(this).data("origWidth", $(this).width()).width(0);
   });
-  $(window).on('scroll load', function () {
-    if ($(this).scrollTop() > 500) {
+}
 
+function scills_animate () {
+  $(".meter > span").each(function() {
+    var element = $(this);
+    var opsty = $(this).data("origWidth");
+    var indexOfBar = $(this).parents('.skill-unit').index();
 
-      $(".meter > span").each(function() {
-        var element = $(this);
-        var opsty = $(this).data("origWidth");
+    setTimeout(function () {
+      animateBars();
+    }, 300 * indexOfBar);
 
-        var indexOfBar = $(this).parents('.skill-unit').index();
-
-        setTimeout(function () {
-          animateBars();
-        }, 300 * indexOfBar);
-
-        function animateBars() {
-          $(element).animate({
-            width: opsty,
-            opacity: opsty / 240
-          }, 1200);
-        }
-
-      })
+    function animateBars() {
+      $(element).animate({
+        width: opsty,
+        opacity: opsty / 240
+      }, 1200);
     }
-    if ($(this).scrollTop() > 3200) {
-      $('form input[name=name]').focus();
-    }
-  });
+  })
+}
 
 
 
@@ -103,12 +101,12 @@ function clientStuff() {
   $('.clients-mobile-nav span').first().addClass('active-client');
 
 
-  $('.client-logo, .clients-mobile-nav span').click(function() {
+  $('.client-logo > span, .clients-mobile-nav span').on('click', function() {
 
-    $(this).siblings('.client-logo').each(function(index, el) {
+    $(this).parent().siblings('.client-logo').each(function(index, el) {
       $(this).find('.waves-ripple').remove();
     });
-    var $this = $(this),
+    var $this = $(this).parent(),
         $siblings = $this.parent().children(),
         position = $siblings.index($this);
 
@@ -116,74 +114,56 @@ function clientStuff() {
     $siblings.removeClass('active-client');
     $this.addClass('active-client');
   });
-
-
 }
 
 
-(function( $ ){
+$('nav > *').click(function(event) {
+  var page = $(this);
+  nav_index = page.index() + 1;
+  // Border
+  page.addClass('active').siblings().removeClass('active');
+  // Animate scroll
+  $('html, body').animate({
+      scrollTop: nav_index * window_height
+  }, 200);
 
-  $.fn.fitText = function( kompressor, options ) {
+  if (page.is(':last-child')) {
+    $('#client-name').focus();
+  }
+  if (nav_index == 1) {
+    page.parent().addClass('dark');
+    scills_animate();
+  } else if (nav_index == 3) {
+    page.parent().addClass('dark');
+  } else {
+    page.parent().removeClass('dark');
+  }
 
-    // Setup options
-    var compressor = kompressor || 1,
-        settings = $.extend({
-          'minFontSize' : Number.NEGATIVE_INFINITY,
-          'maxFontSize' : Number.POSITIVE_INFINITY
-        }, options);
+});
 
-    return this.each(function(){
+// Fill inputs on keydown
+$('input, textarea').keydown(function(event) {
+  $(this).addClass('not-empty')
+});
 
-      // Store the object
-      var $this = $(this);
-
-      // Resizer() resizes items based on the object width divided by the compressor * 10
-      var resizer = function () {
-        $this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
-      };
-
-      // Call once to set.
-      resizer();
-
-      // Call on resize. Opera debounces their resize by default.
-      $(window).on('resize.fittext orientationchange.fittext', resizer);
-
-    });
-
-  };
-
-})( jQuery );
-
-
-
-// Call Waves Buttons
-Waves.displayEffect();
 
 
 
 // HTML SECTON animation
 $(document).ready(function() {
 
-  $('.html .phone-post').addClass('active');
+  $('.html-section .phone-post').addClass('active');
 
   setTimeout(function() {
-    $('.html .phone-post').removeClass('active');
-  }, 1500);
+    $('.html-section .phone-post').removeClass('active');
+  }, 2500);
 
   setInterval(function() {
-    $('.html .phone-post').addClass('active');
+    $('.html-section .phone-post').addClass('active');
 
     setTimeout(function() {
-      $('.html .phone-post').removeClass('active');
-    }, 1500);
-  }, 2000);
-
-});
-
-// CSS SECTON animation
-$(document).ready(function() {
-
-  // $('.css .phone-post').addClass('active');
-
+      $('.html-section .phone-post').removeClass('active');
+    }, 2500);
+  }, 5000);
 
 });
