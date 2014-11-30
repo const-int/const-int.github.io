@@ -55,10 +55,9 @@ function  workLoad() {
     var $this = $(this),
         newTitle = $this.find('strong').text(),
         newfolder = $this.data('folder'),
-        spinner = '<div class="loader"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>',
         newHTML = 'work/'+ newfolder;
 
-    $('.project-load').html(spinner).load(newHTML);
+    $('.project-load').load(newHTML);
     $('.project-title').text(newTitle);
   });
 
