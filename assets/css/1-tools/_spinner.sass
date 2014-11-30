@@ -2,12 +2,18 @@
   width: 70px
   text-align: center
 
+  &.work
+    +position(absolute, 5px null null 5px)
+    & > div
+      background-color: #ccc
+
   & > div
     display: inline-block
     +size(18px)
     background-color: #333
     border-radius: 100%
     +animation(bouncedelay 1.4s infinite ease-in-out both)
+
 
   & .bounce1
     +animation-delay(-0.32s)
