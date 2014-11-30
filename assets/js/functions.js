@@ -52,12 +52,15 @@ function  workLoad() {
   $.ajaxSetup({ cache: true });
 
   $('.thumb-unit').click(function() {
+    $("#pyf").fadeIn();
     var $this = $(this),
         newTitle = $this.find('strong').text(),
         newfolder = $this.data('folder'),
         newHTML = 'work/'+ newfolder;
 
-    $('.project-load').load(newHTML);
+    $('.project-load').load(newHTML,function() {
+      $("#pyf").fadeOut();
+    });
     $('.project-title').text(newTitle);
   });
 
