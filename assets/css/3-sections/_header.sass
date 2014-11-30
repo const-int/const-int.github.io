@@ -1,10 +1,13 @@
 header
+  height: 900px
+  visibility: hidden
   background:
     repeat: no-repeat
     size: cover
     position:  center
     image:  url(../img/#{$hero-path})
-  height: 900px
+  +animation(scaleUp .5s .6s ease both)
+
 
   .splash-center
     position: relative

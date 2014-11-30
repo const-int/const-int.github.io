@@ -1,6 +1,25 @@
-/*	Typography presets
-  ------------------------------------	*/
+/*  Sections
+  ------------------------------------  */
+#sections
+  position: relative
+  +size(100%)
+  +perspective(1200px)
 
+.full-screen-block
+  +position(fixed, 0 0 0 0)
+  +size(100%)
+  visibility: hidden
+  +backface-visibility(hidden)
+  +transform(translate3d(0, 0, 0))
+  +transform-style(preserve-3d)
+
+  &.sections-current
+    visibility: visible
+    z-index: 999
+
+
+/*  Typography presets
+  ------------------------------------  */
 .gigantic, .huge, .large, .bigger, .big,
 h1, h2, h3, h4, h5, h6
   color: $headlineColor
@@ -99,11 +118,6 @@ body
   +position(absolute, 50% null null 50%)
   margin: -12px 0 0 -35px /* is width and height divided by two */
 
-
-
-
-
-
 /* Basic Styles
   ------------------------------------	*/
 body, html
@@ -112,9 +126,7 @@ body, html
 body
   height: 100%
   overflow: hidden
-  background:
-    color: $documentBackgroundColor
-    image: url(../img/bg_main_decor.png)
+  background-color: #fff
 
   font-size: 14px
   line-height: 1.6
