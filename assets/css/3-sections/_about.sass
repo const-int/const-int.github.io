@@ -1,4 +1,4 @@
-.about-section
+.section-about
   position: relative
   background-image: url(../img/bg_main_decor.png)
 
@@ -58,6 +58,7 @@
 
 .skill-label
   font-size: 16px
+  padding-left: 8px
 
 .blurb
   max-width: 620px
@@ -108,12 +109,6 @@
   $percent: 10%
   .skill-#{$i}
     width: $percent*$i
-
-    &:after
-      @extend %animplaceholder
-
-%animplaceholder
-  +animation(move  2s linear infinite)
 
 
 @media screen and (max-width: 541px)

@@ -1,0 +1,43 @@
+nav
+  +position(fixed, 30px 30px null null)
+  z-index: 10
+  cursor: default
+  +user-select(none)
+  +transition(.5s .4s)
+
+  &.shifted
+    right: 50px
+
+  &.dark span
+    color: #555
+
+    &:not(.active):not(.faded):hover
+      color: #000
+
+  span
+    +transition
+    display: inline-block
+    margin-left: 20px
+    +user-select(none)
+    color: #c1bebb
+    cursor: pointer
+    position: relative
+    border-bottom: 2px solid transparent
+    top: 0
+    +user-select(none)
+
+    &.shown
+      opacity: 1
+      +transition(opacity 1200ms)
+
+    &.faded
+      opacity: .3
+      cursor: default
+
+
+    &.active
+      border-bottom: 2px solid
+      cursor: default
+
+    &:not(.active):not(.faded):hover
+      color: white

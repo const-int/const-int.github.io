@@ -1,1 +1,1 @@
-# Konstantin Naumov Portfolio Website
+# Constantin Naumov Portfolio Website

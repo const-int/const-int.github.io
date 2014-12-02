@@ -1,10 +1,12 @@
 .section-work
   overflow-x: hidden
+  background: $bgcolor url(../img/#{$alternate-path})
 
   h3
     margin: 0
     padding: 9px
     margin-bottom: 50px
+
 /* Hackey-type CSS as a jQuery Alternative for when the browser does not have jQuery enabled. */
 .noscript
   display: none
@@ -55,7 +57,7 @@
     width: 980px
     color: #ccc
     text-align: center
-    content: "PORTFOLIO"
+    content: "PROJECTS"
     text-transform: uppercase
     font:
       size: 32px
@@ -79,16 +81,17 @@
     .thumb
       +transition(.3s ease)
       position: relative
-      +size(100%)
+      +size(100% 220px)
+      +transform(translateY(0))
       background:
         size: cover
 
 
       .title
-        +position(absolute, -60px 0px null 0px)
+        +position(absolute, null null 0px  0px)
         +transition(.5s ease)
         +size(100% 60px)
-        background: #ddd
+        background: rgba(0,0,0,.6)
         text-align: left
         line-height: 60px
         color: white
@@ -100,27 +103,27 @@
           font-size: 32px
           margin-right: 20px
           cursor: pointer
-          color: #777
+          color: #bbb
           opacity: 0
           +transition(opacity .5s ease, color .3s)
           +user-select(none)
 
           &:hover
-            color: #333
+            color: #fff
 
         a
           position: relative
           +user-select(none)
           top: -1px
           text-decoration: none
-          border-bottom: 2px solid #888
+          border-bottom: 2px solid rgba(255,255,255,.6)
           margin-left: 20px
-          color: #333
+          color: #ccc
           opacity: 0
           +transition(border-color .3s, opacity .5s ease)
 
           &:hover
-            border-bottom: 2px solid #000
+            color: #fff
 
 
     @media screen and (max-width: 760px)
@@ -128,7 +131,7 @@
 
     &:hover
       .thumb
-        +transform(translateY(60px))
+        +transform(translateY(-60px))
 
       .title
         a, span
@@ -162,8 +165,24 @@
   .work-return
     +size(40px)
     cursor: pointer
-    opacity: 0.5
-    +position(absolute, -4px null null -60px)
+    opacity: 0.6
+    +position(absolute, 0 null null -70px)
+    +transform(rotateY(180deg))
+
+    &:before
+      content: "\f064"
+      speak: none
+      line-height: 1
+      font:
+        style: normal
+        weight: normal
+        variant: normal
+        transform: none
+        family: 'icomoon'
+        size: 40px
+
+      -webkit-font-smoothing: antialiased
+      -moz-osx-font-smoothing: grayscale
 
     path
       fill: rgba(255,255,255,0.8)

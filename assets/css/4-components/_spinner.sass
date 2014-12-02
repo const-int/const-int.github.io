@@ -1,0 +1,29 @@
+.loader
+  width: 70px
+  text-align: center
+
+  &.work
+    +position(absolute, 55px null null 5px)
+    & > div
+      background-color: #ccc
+
+  & > div
+    display: inline-block
+    +size(18px)
+    background-color: #333
+    border-radius: 100%
+    +animation(bouncedelay 1.4s infinite ease-in-out both)
+
+
+  & .bounce1
+    +animation-delay(-0.32s)
+
+  & .bounce2
+    +animation-delay(-0.16s)
+
++keyframes(bouncedelay)
+  0%, 80%, 100%
+    +transform(scale(0.0))
+  40%
+    +transform(scale(1.0))
+

@@ -1,0 +1,195 @@
+.section-expirience
+  background-image: url(../img/bg_main_decor.png)
+
+  h3
+    margin-top: 0
+    padding-top: 100px
+
+.exp-belt
+  width: 750px
+  +center-trans
+  min-height: 250px
+
+  .exp-unit
+    max-width: 750px
+    min-height: 250px
+    position: relative
+    z-index: 1
+    display: none
+    opacity: 0
+
+    &.active-exp-tab
+      +display(flex)
+      height: auto
+      opacity: 1
+
+    .exp-animation
+      min-width: 300px
+      text-align: center
+      margin: 0
+
+      .client-name
+        display: block
+        text-transform: uppercase
+        font-weight: 400
+        letter-spacing: 1px
+
+      .client-title
+        font-style: normal
+        font-size: 12px
+        color: #999
+
+    .exp-content
+      font-size: 18px
+      font-weight: 300
+      margin-top: 51px
+      position: relative
+
+      .caption
+        text-indent: 27px
+
+      .icon-gear
+        +position(absolute, -22px null null 0)
+        +size(70px)
+        font-size: 70px
+        color: #aaa
+        z-index: -1
+        opacity: 0.3
+
+        path
+          fill: #aaa
+
+      p
+        line-height: 32px
+        margin-top: 28px
+        text-indent: 27px
+
+      a
+        color: #666
+        border-bottom: 2px solid #999
+        +transition
+
+        &:hover
+          border-bottom: 2px solid #333
+
+
+// Logos
+.exp-nav
+  z-index: 100
+  +position(absolute, null 50% 50% null)
+  width: 450px
+  padding: 0
+  margin: 0 -376px -230px 0
+  z-index: 100
+  text-align: justify
+  cursor: default
+  +user-select(none)
+
+  &:after
+    display: inline-block
+    content: ""
+    width: 100%
+
+  .exp-tab
+    display: inline-block
+    padding: 0
+    height: 60px !important
+    width: 60px !important
+    background:
+      color: transparent
+    font:
+      size: 16px
+      weight: 700
+    border-radius: 50%
+    color: #ccc
+    text-align: center
+    line-height: 59px
+    position: relative
+    +user-select(none)
+
+
+    &:not(.active-exp-tab):hover
+      color: #666
+      background: #ddd
+
+    &.active-exp-tab
+      color: #fff
+      background:
+        color: #424242
+      transition: background-color .1s .4s, color .1s .1s
+
+    .waves-ripple
+      background:
+        color: #424242
+      z-index: -1
+
+    span
+      display: inline-block
+      +size(100%)
+
+
+
+// Mobile
+$ratio: 320 / 568
+$height: 400px
+
+.exp-animation
+  position: relative
+  +size(240px 486px)
+  background:
+    image: url(../img/clients/phone.png)
+    repeat: no-repeat
+    size: contain
+
+  .wrap
+    +position(absolute, 47px null null 15px)
+    +size(209px 372px)
+    overflow: hidden
+    border-radius: 3px !important
+
+  .phone-screen
+    & *, & *:before, & *:after
+      +box-sizing(border-box)
+
+@media (max-width: 750px)
+  .exp-nav
+    +flex-wrap(wrap)
+
+  .exp-animation
+    display: none
+
+  .exp-belt
+    overflow-x: hidden
+
+    .exp-unit.active-exp-tab
+      display: block
+      position: relative
+      margin-left: 0px
+      left: auto
+
+      .exp-animation
+        margin-bottom: 30px
+
+      .exp-content
+        padding: 0px 30px
+        max-width: 400px
+        margin: 0px auto
+
+      .icon-gear
+        left: 6px
+
+  .client-controls
+    display: none
+
+  .exp-nav
+    display: none
+
+  .exp-mobile-nav
+    display: block
+
+
+
+
+
+
+

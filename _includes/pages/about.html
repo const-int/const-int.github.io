@@ -1,0 +1,42 @@
+<section class="section-about full-screen-block" id="about-me">
+
+  <div class="splash-container">
+    <div class="face-lockup">
+
+      <div class="face-img"></div>
+
+      <div class="icon-pencil">{% include icons/icon-tag.html %}</div>
+      <div class="icon-browser">{% include icons/icon-browser.html %}</div>
+      <div class="icon-video">{% include icons/icon-responsive.html %}</div>
+      <div class="icon-mouse">{% include icons/icon-tools.html %}</div>
+
+    </div>
+
+
+    <div class="blurb">
+      {{ site.data.settings.blurb | markdownify }}
+    </div>
+
+    {% if site.data.settings.skills %}
+
+    <div class="skill-lockup">
+
+      {% for skill in site.data.settings.skills %}
+
+        <div class="skill-unit">
+          <div class="skill-label">{{ skill.name }}</div>
+          <div class="skill-icons ">
+            <div class="meter">
+              <span class="skill-{{ skill.value }}"></span>
+            </div>
+          </div>
+        </div>
+
+      {% endfor %}
+
+    </div>
+
+    {% endif %}
+  </div>
+
+</section>

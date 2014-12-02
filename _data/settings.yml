@@ -9,10 +9,10 @@ copyright: Constantin Naumov © 2014
 # NOTE: The Logo and Background image are defined in the all.sass document.
 
 menu:
-- {name: About Me, url: 'about-me'}
-- {name: Portfolio, url: 'work'}
-- {name: Skills, url: 'interests'}
-- {name: Contact, url: 'contact'}
+- {name: About Me }
+- {name: Portfolio }
+- {name: Experience }
+- {name: Contact }
 
 #-------------------------------
 # SEO Section
@@ -45,14 +45,14 @@ skills:
 # Work Section
 
 projects:
-- {name: ennoaeao.py , folder: 'proj-1', file: 'work/proj-1.html'}
-- {name: City-IN website , folder: 'proj-2', file: 'work/proj-2.html'}
-- {name: Crispy Icons, folder: 'proj-3', file: 'work/proj-3.html'}
-- {name: Flat Mobile , folder: 'proj-4', file: 'work/proj-4.html'}
-- {name: Fresh It Up, folder: 'proj-5', file: 'work/proj-5.html'}
-- {name: Timeline Page, folder: 'proj-6', file: 'work/proj-6.html'}
-- {name: Weather Dashboard, folder: 'proj-7', file: 'work/proj-7.html'}
-- {name: Stripes , folder: 'proj-8', file: 'work/proj-8.html'}
+- {url: google.ru, name: ennoaeao.py , folder: 'proj-1', file: 'work/proj-1.html'}
+- {url: google.ru, name: City-IN website , folder: 'proj-2', file: 'work/proj-2.html'}
+- {url: google.ru, name: Crispy Icons, folder: 'proj-3', file: 'work/proj-3.html'}
+- {url: google.ru, name: Flat Mobile , folder: 'proj-4', file: 'work/proj-4.html'}
+- {url: google.ru, name: Fresh It Up, folder: 'proj-5', file: 'work/proj-5.html'}
+- {url: google.ru, name: Timeline Page, folder: 'proj-6', file: 'work/proj-6.html'}
+- {url: google.ru, name: Weather Dashboard, folder: 'proj-7', file: 'work/proj-7.html'}
+- {url: google.ru, name: Stripes , folder: 'proj-8', file: 'work/proj-8.html'}
 
 
 
@@ -62,22 +62,28 @@ projects:
 
 clients:
 - {content: '<div class="phone-screen html-section"> <div class="phone-header"><div class="icon-search"></div> <div class="phone-menu"></div></div><div class="phone-post" id="first-post"> <div class="post-thumb"></div><div class="line post-title-1"></div><div class="line post-title-2"></div><div class="line post-line-1"></div><div class="line post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div></div>',
-  quote: "<p><strong>Making layouts</strong> powered by modern frontend toolboxes and template engines.  Human readability and semantics of resulting code are essential goals. <br> Well formed pages are to be produced on every iteration of employer's development lifecycle.</p>",
+  title: 'Making troubleproof layouts',
+  quote: "Human readability and semantics of resulting code are powered by <a href='http://gruntjs.com/' target='_blank'>frontend toolboxes</a> and <a href='http://jekyllrb.com' target='_blank'>template engines</a>. <br /> Well formed pages are to be produced on every iteration of employer's development lifecycle.",
   logo: 'HTML'}
 - {content: '<div class="phone-screen css-section"> <div class="phone-header"> <div class="icon-search"></div> <div class="phone-menu"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="line post-title-1"></div><div class="line post-title-2"></div><div class="line post-line-1"></div><div class="line post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="line post-title-1"></div><div class="line post-title-2"></div><div class="line post-line-1"></div><div class="line post-line-2"></div></div> <div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div></div>',
-  quote: '<p><strong>Working with Travis was the highlight of my career.</strong> Other moments of note were collecting the largest number of paperclips in the office, and winning a trophy for saying "uh huh, and then what?" 30 times in a row to my girlfriend without her noticing.</p>',
+  title: 'Making troubleproof layouts',
+  quote: "Human readability and semantics of resulting code are powered by modern frontend toolboxes and template engines. Well formed pages are to be produced on every iteration of employer's development lifecycle.",
   logo: 'CSS'}
 - {content: '<div class="phone-screen js-section"> <div class="phone-header"> <div class="icon-search"></div> <div class="phone-menu"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="line post-title-1"></div><div class="line post-title-2"></div><div class="line post-line-1"></div><div class="line post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="line post-title-1"></div><div class="line post-title-2"></div><div class="line post-line-1"></div><div class="line post-line-2"></div></div> <div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div><div class="phone-post"> <div class="post-thumb"></div><div class="post-title-1"></div><div class="post-title-2"></div><div class="post-line-1"></div><div class="post-line-2"></div></div></div>',
-  quote: '<p><strong>Back in old country</strong> only nerds who is playing on computers. Now all bros is wanting to make codes and junk. I lost foot in war. You dont see girls asking me about homework.</p>',
+  title: 'Making troubleproof layouts',
+  quote: "Human readability and semantics of resulting code are powered by modern frontend toolboxes and template engines. Well formed pages are to be produced on every iteration of employer's development lifecycle.",
   logo: 'JS'}
 - {content: 'vector.png',
-  quote: '<p><strong>Yea, I guess hes good at computers or something,</strong> but let me ask you this: If a cat always lands on its feet, and buttered bread always lands butter side down, what would happen if you tied buttered bread on top of a cat?</p>',
+  title: 'Making troubleproof layouts',
+  quote: "Human readability and semantics of resulting code are powered by modern frontend toolboxes and template engines. Well formed pages are to be produced on every iteration of employer's development lifecycle.",
   logo: 'SVG'}
 - {content: 'wp.png',
-  quote: '<p><strong>Back in old country</strong> only nerds who is playing on computers. Now all bros is wanting to make codes and junk. I lost foot in war. You dont see girls asking me about homework.</p>',
+  title: 'Making troubleproof layouts',
+  quote: "Human readability and semantics of resulting code are powered by modern frontend toolboxes and template engines. Well formed pages are to be produced on every iteration of employer's development lifecycle.",
   logo: 'CMS'}
 - {content: 'php.png',
-  quote: '<p><strong>Back in old country</strong> only nerds who is playing on computers. Now all bros is wanting to make codes and junk. I lost foot in war. You dont see girls asking me about homework.</p>',
+  title: 'Making troubleproof layouts',
+  quote: "Human readability and semantics of resulting code are powered by modern frontend toolboxes and template engines. Well formed pages are to be produced on every iteration of employer's development lifecycle.",
   logo: 'PHP'}
 
 
@@ -88,11 +94,4 @@ social:
 - {icon: 'twitter', link: 'https://twitter.com/Const_Naumov'}
 - {icon: 'github', link: 'https://github.com/const-int'}
 - {icon: 'linkedin', link: 'http://ru.linkedin.com/pub/konstantin-naumov/a1/847/b33/'}
-
-
-# social network icons available: 'twitter' / 'facebook' / 'github' / 'pinterest' 'google-plus' / 'linkedin' / 'youtube' / 'instagram' / 'dribbble' / 'behance' / 'soundcloud' / 'vine'
-
-
-
-
 

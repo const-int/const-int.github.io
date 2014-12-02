@@ -19,43 +19,33 @@
 </head>
 <body>
 
-  <!-- Preloader -->
-  <div id="preloader">
-      <div id="status">
-        <div class="loader">
-          <div class="bounce1"></div>
-          <div class="bounce2"></div>
-          <div class="bounce3"></div>
-        </div>
-      </div>
-  </div>
+  {% include components/preloader.html %}
 
-  <!-- Navigation -->
-  <nav>
-    {% for item in site.data.settings.menu %}
-      <span>{{ item.name }}</span>
-    {% endfor %}
-  </nav>
+  {% include components/navigation.html %}
 
-  <div id="sections">
+  <div class="sections-container">
 
-    {% include header.html %}
+    {% include pages/home.html %}
 
-    {% include about.html %}
+    {% include pages/about.html %}
 
-    {% include work.html %}
+    {% include pages/work.html %}
 
-    {% include clients.html %}
+    {% include pages/expirience.html %}
 
-    {% include contact.html %}
+    {% include pages/contact.html %}
 
   </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="assets/js/preloader.js"></script>
 <script src="assets/js/waves.js"></script>
-<script src="assets/js/fittext.js"></script>
-<script src="assets/js/functions.js"></script>
+<script src="assets/js/navigation.js"></script>
+<script src="assets/js/sections/section-expierence.js"></script>
+<script src="assets/js/sections/section-contact.js"></script>
+<script src="assets/js/sections/section-work.js"></script>
+<script src="assets/js/sections/section-about.js"></script>
+<script src="assets/js/global.js"></script>
 <!-- REMEMBER TO ADD ANALYTICS! -->
 </body>
 </html>

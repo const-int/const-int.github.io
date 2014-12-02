@@ -1,0 +1,44 @@
+<section class="section-work full-screen-block">
+
+  <input type="radio" name="trigger" id="return" class="return" />
+
+  <div class="work-belt">
+
+    <div class="thumb-wrap">
+
+      <div class="thumb-container">
+        <!-- <h3 id="work">Projects I involved in</h3> -->
+        {% for project in site.data.settings.projects %}
+          <input type="radio" name="trigger" class="trigger" id="{{ project.folder }}" />
+        {% endfor %}
+        {% for project in site.data.settings.projects %}
+        <label for="{{ project.folder }}">
+          <div class="thumb-unit">
+            <div class="thumb" style="background-image: url(assets/img/work/{{project.folder}}/thumb.jpg);">
+              <div class="title" >
+                <a href="http://{{ project.url }}" target="_blank">{{ project.url }}</a>
+                <span data-name='{{ project.name }}' data-folder="{{ project.folder }}" class="icon-search-plus show-work-trigger"></span>
+              </div>
+            </div>
+          </div>
+        </label>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="work-wrap">
+      <div class="work-container">
+      <div class="loader work"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>
+
+      <label for="return">
+        <div class="work-return"></div>
+      </label>
+      <h4 class="project-title"></h4>
+      <div class="project-load"></div>
+
+
+    </div>
+    </div>
+  </div>
+
+</section>
