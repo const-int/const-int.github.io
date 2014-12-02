@@ -7,37 +7,58 @@
     <div class="thumb-wrap">
 
       <div class="thumb-container">
-        <!-- <h3 id="work">Projects I involved in</h3> -->
+
         {% for project in site.data.settings.projects %}
           <input type="radio" name="trigger" class="trigger" id="{{ project.folder }}" />
         {% endfor %}
+
         {% for project in site.data.settings.projects %}
         <label for="{{ project.folder }}">
           <div class="thumb-unit">
-            <div class="thumb" style="background-image: url(assets/img/work/{{project.folder}}/thumb.jpg);">
-              <div class="title" >
-                <a href="http://{{ project.url }}" target="_blank">{{ project.url }}</a>
-                <span data-name='{{ project.name }}' data-folder="{{ project.folder }}" class="icon-search-plus show-work-trigger"></span>
+            <div class="thumb-click-area"
+              data-name='{{ project.name }}'
+              data-folder="{{ project.folder }}">
+
+              <img src="assets/img/work/{{project.folder}}/thumb.jpg" alt="{{ project.name }}">
+
+              <div class="unit-info icon-arrow-right">
+
+                <div class="unit-title">
+                  {{ project.name }} <br/>
+                  <a href="http://{{ project.url }}" class="live-url" target="_blank">{{ project.url }}</a>
+                </div>
+
               </div>
+
             </div>
           </div>
         </label>
         {% endfor %}
+
+        <label for="{{ project.folder }}">
+          <div class="thumb-unit thumb-empty"></div>
+        </label>
+
       </div>
     </div>
 
     <div class="work-wrap">
       <div class="work-container">
-      <div class="loader work"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>
+        <div class="loader work">
+          <div class="bounce1"></div>
+          <div class="bounce2"></div>
+          <div class="bounce3"></div>
+        </div>
 
-      <label for="return">
-        <div class="work-return"></div>
-      </label>
-      <h4 class="project-title"></h4>
-      <div class="project-load"></div>
+        <label for="return">
+          <div class="work-return"></div>
+        </label>
 
+        <h4 class="project-title"></h4>
 
-    </div>
+        <div class="project-load"></div>
+
+      </div>
     </div>
   </div>
 

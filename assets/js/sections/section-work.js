@@ -3,7 +3,7 @@ $(document).ready(function() {
   // Var init
   work_section = $('.section-work');
   navigation = $('nav');
-  show_work_trigger = $('.show-work-trigger');
+  show_work_trigger = $('.thumb-click-area');
   loader_work = $('.loader.work');
   work_belt = $('.work-belt');
   work_container = $('.work-container');
