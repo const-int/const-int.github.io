@@ -45,6 +45,7 @@
   min-height: 100%
 
 .thumb-container
+  background: url(../img/bortfolio-bg.png)
   @extend %center-container
   position: absolute
   top: 50%
@@ -70,8 +71,6 @@
       position: center top
       repeat: no-repeat
 
-    &.thumb-empty
-      visibility: hidden
 
     &[data-position = "1"]
       +position(absolute, 0 null null 0)
@@ -83,13 +82,13 @@
       +position(absolute, 0 null null 568px)
 
     &[data-position = "4"]
-      +position(absolute, 204px null null 0)
+      +position(absolute, 204px null null 568px)
 
     &[data-position = "5"]
       +position(absolute, 204px null null 284px)
 
     &[data-position = "6"]
-      +position(absolute, 204px null null 568px)
+      +position(absolute, 204px null null 0)
 
     &[data-position = "7"]
       +position(absolute, 408px null null 0)

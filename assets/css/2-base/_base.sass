@@ -127,11 +127,15 @@ body
   height: 100%
   overflow: hidden
   background-color: #fff
-
   font-size: 14px
   line-height: 1.6
   font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif
   color: $textColor
+
+a.mock-link-for-new-tabs
+  +size(0)
+  visibility: hidden
+
 @mixin center-trans($asix: "both")
   position: absolute
   @if $asix == "hor"
