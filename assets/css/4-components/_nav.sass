@@ -1,12 +1,12 @@
 nav
-  +position(fixed, 30px 30px null null)
+  +position(fixed, 30px  null null 30px)
   z-index: 10
   cursor: default
   +user-select(none)
   +transition(.5s .4s)
+  opacity: 0
+  +animation(nav-opacity .7s 1.5s ease-in-out forwards)
 
-  &.shifted
-    right: 50px
 
   &.dark span
     color: #555
@@ -41,3 +41,10 @@ nav
 
     &:not(.active):not(.faded):hover
       color: white
+
++keyframes(nav-opacity)
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+

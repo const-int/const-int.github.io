@@ -53,6 +53,7 @@ projects:
 - {url: google.ru, name: Timeline Page, folder: 'proj-6', file: 'work/proj-6.html'}
 - {url: google.ru, name: Weather Dashboard, folder: 'proj-7', file: 'work/proj-7.html'}
 - {url: google.ru, name: Stripes , folder: 'proj-8', file: 'work/proj-8.html'}
+- {url: google.ru, name: Weather app, folder: 'proj-9', file: 'work/proj-9.html'}
 
 
 

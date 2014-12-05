@@ -2,8 +2,6 @@ $(document).ready(function() {
 
   // Initiate menu index and shift
   nav_index = 0;
-  nav_shifted = false;
-  portfolio_animated = false;
 
   // Init clicked flag
   clicked = false;
@@ -37,10 +35,6 @@ $(document).ready(function() {
           break;
         case 2:
           active_link.parent().removeClass('dark');
-          if (!portfolio_animated) {
-            start_portfolio_carousel()
-            portfolio_animated = true;
-          }
           break;
         case 3:
           active_link.parent().addClass('dark');
@@ -51,13 +45,6 @@ $(document).ready(function() {
             $('#client-name').focus();
           }, 1000);
           break;
-      }
-
-      // Shifting nav if shifted
-      if (nav_shifted) {
-        setTimeout(function(){
-          fold_work()
-        }, 1000)
       }
 
 

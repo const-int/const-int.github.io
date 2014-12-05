@@ -20,8 +20,6 @@ $(document).ready(function() {
         newfolder = that.data('folder'),
         newHTML = 'work/'+ newfolder;
 
-    nav_shifted = true;
-
     work_belt.addClass("slided");
     work_container.show();
     navigation.addClass('shifted');

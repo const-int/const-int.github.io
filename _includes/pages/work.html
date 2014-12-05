@@ -6,7 +6,13 @@
 
     <div class="thumb-wrap">
 
+      <div class="blink1"></div>
+      <div class="blink2"></div>
+      <div class="blink3"></div>
+      <div class="blink4"></div>
+
       <div class="thumb-container">
+
 
         {% for project in site.data.settings.projects %}
           <input type="radio" name="trigger" class="trigger" id="{{ project.folder }}" />
@@ -38,6 +44,7 @@
     </div>
 
     <div class="work-wrap">
+
       <div class="work-container">
         <div class="loader work">
           <div class="bounce1"></div>

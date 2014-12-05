@@ -44,8 +44,16 @@
   float: left
   min-height: 100%
 
+  .blink1, .blink2
+    +position(fixed, 0 null null 0)
+    +size(9px)
+    background: #444
+    opacity: 0
+
+    &.animated
+      +animation(pixel_blink 1.2s ease forwards)
+
 .thumb-container
-  background: url(../img/bortfolio-bg.png)
   @extend %center-container
   position: absolute
   top: 50%
@@ -53,9 +61,8 @@
   width: 852px
   +size(834px 594px)
   +transform(translate(-50%, -50%))
-
-
   +clearfix
+
 
   .thumb-unit
     +transition(.6s ease-in-out)
@@ -231,4 +238,8 @@
 
 
 
-
++keyframes(pixel_blink)
+  0%, 100%
+    opacity: 0
+  50%
+    opacity: 1
