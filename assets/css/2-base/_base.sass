@@ -12,10 +12,14 @@
   +backface-visibility(hidden)
   +transform(translate3d(0, 0, 0))
   +transform-style(preserve-3d)
+  +backface-visibility(hidden)
+  opacity: 0
 
-  &.sections-current
+  &.section-active
     visibility: visible
     z-index: 999
+    opacity: 1
+    +animation(scaleUp .4s ease both)
 
 
 /*  Typography presets

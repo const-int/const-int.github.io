@@ -5,43 +5,41 @@ nav
   +user-select(none)
   +transition(.5s .4s)
   opacity: 0
-  +animation(nav-opacity .7s 1.5s ease-in-out forwards)
+  +animation(nav-opacity .5s 1s ease-in-out forwards)
 
+  // Dark menu styles
+  &.dark > span
+    color: #777
 
-  &.dark span
-    color: #555
-
-    &:not(.active):not(.faded):hover
+    &:not(.active):hover
       color: #000
 
-  span
-    +transition
+    &.active
+      color: #000
+
+  // Light menu styles
+  & > span
+    +transition(.2s)
     display: inline-block
     margin-left: 20px
     +user-select(none)
     color: #c1bebb
     cursor: pointer
     position: relative
+    padding-bottom: 14px
     border-bottom: 2px solid transparent
-    top: 0
     +user-select(none)
-
-    &.shown
-      opacity: 1
-      +transition(opacity 1200ms)
-
-    &.faded
-      opacity: .3
-      cursor: default
-
 
     &.active
       border-bottom: 2px solid
+      padding-bottom: 1px
       cursor: default
 
-    &:not(.active):not(.faded):hover
+    &:not(.active):hover
       color: white
 
+
+// Menu appeac animation
 +keyframes(nav-opacity)
   0%
     opacity: 0

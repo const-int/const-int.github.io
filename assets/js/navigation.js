@@ -1,31 +1,27 @@
 $(document).ready(function() {
 
-  // Initiate menu index and shift
+  // Global variables
   nav_index = 0;
+  all_pages = $(".full-screen-block");
 
-  // Init clicked flag
-  clicked = false;
 
   $('nav > *').click(function(event) {
+
     var active_link = $(this);
 
-    if (!active_link.hasClass('active') && !active_link.hasClass('faded') && clicked == false) {
-
-      // Open clicked flag
-      clicked = true;
+    if (!active_link.hasClass('active')) {
 
       // Set vars
-      var current_page = $(".sections-current");
-      var next_page = $(".full-screen-block");
+      var current_page = $(".section-active");
       nav_index = active_link.index() + 1;
 
       // Apply animation classes
-      current_page.addClass('section-faded-out');
-      next_page.eq(nav_index).addClass('sections-current section-scaleUp');
+      current_page.removeClass('section-active')
 
-      // Add Border to menu
-      active_link.addClass('active').siblings().removeClass('active shown').addClass('faded');
+      all_pages.eq(nav_index).addClass('section-active');
 
+      // Adding active hightlight to link
+      active_link.addClass('active').siblings().removeClass('active');
 
       // Page openning actions
       switch (nav_index) {
@@ -46,29 +42,6 @@ $(document).ready(function() {
           }, 1000);
           break;
       }
-
-
-      setTimeout(function(){
-
-        // Removing animation classes
-        current_page.removeClass('sections-current section-faded-out');
-        next_page.eq(nav_index).removeClass('section-scaleUp');
-
-        setTimeout(function(){
-
-          // Show menu
-          $('.faded').removeClass('faded').addClass('shown');
-
-          setTimeout(function(){
-
-            // Close clicked flag
-            clicked = false;
-
-          }, 500);
-
-        }, 1000);
-
-      }, 1000);
 
     } // End of If statment
 
