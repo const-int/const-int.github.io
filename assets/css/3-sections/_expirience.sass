@@ -42,18 +42,27 @@
     .exp-content
       font-size: 18px
       font-weight: 300
-      margin-top: 51px
+      margin-top: 86px
       position: relative
+      background: white
+      border: 2px solid #ccc
+      border-top: none
+      height: 366px
+      border-radius: 4px
+      border-top-left-radius: 0
+      border-top-right-radius: 0
+      padding: 60px 40px 0
+      +box-sizing(border-box)
+
 
       .caption
         text-indent: 27px
 
       .icon-gear
-        +position(absolute, -22px null null 0)
+        +position(absolute, 38px null null 40px)
         +size(70px)
         font-size: 70px
         color: #aaa
-        z-index: -1
         opacity: 0.3
 
         path
@@ -61,8 +70,7 @@
 
       p
         line-height: 32px
-        margin-top: 28px
-        text-indent: 27px
+        margin-top: 48px
 
       a
         color: #666
@@ -79,7 +87,7 @@
   +position(absolute, null 50% 50% null)
   width: 450px
   padding: 0
-  margin: 0 -376px -230px 0
+  margin: 0 -375px 135px 0
   z-index: 100
   text-align: justify
   cursor: default
@@ -93,41 +101,63 @@
   .exp-tab
     display: inline-block
     padding: 0
-    height: 60px !important
-    width: 60px !important
+    height: 50px !important
+    width: 16.666666% !important
+    float: left
     background:
       color: transparent
     font:
-      size: 16px
+      size: 14px
       weight: 700
-    border-radius: 50%
-    color: #ccc
+    border-radius: 0 !important
     text-align: center
-    line-height: 59px
+    line-height: 52px
     position: relative
     +user-select(none)
+    border-bottom: 2px solid #ccc
+    color: #999
+    cursor: pointer
+    overflow: hidden
 
+    &:after
+      content: ""
+      +size(100%)
+      +box-sizing(border-box)
+      background: #fff
+      +position(absolute, null 0px 0px null)
+      z-index: -1
+      border: 2px solid #ccc
+      border-bottom: none
+      border-radius: 4px
+      border-bottom-left-radius: 0
+      border-bottom-right-radius: 0
+      z-index: -1
+      +transition(transform .4s cubic-bezier(0.7,0,0.3,1))
+      +transform(perspective(150px) rotate3d(1,0,0,90deg))
+      +transform-origin(50% 100%)
+      +perspective-origin(50% 100%)
 
-    &:not(.active-exp-tab):hover
-      color: #666
-      background: #ddd
+    &:hover
+      color: #333
 
     &.active-exp-tab
-      color: #fff
-      background:
-        color: #424242
-      transition: background-color .1s .4s, color .1s .1s
+      border-bottom: 2px solid rgba(0,0,0,0)
+      color: #424242
+      position: relative
+      top: 2px
 
-    .waves-ripple
-      background:
-        color: #424242
-      z-index: -1
+      &:after
+        +transform(perspective(900px) rotate3d(1,0,0,0deg))
+
+      span
+        position: relative
+        top: -2px
+        font-size: 16px
 
     span
       display: inline-block
       +size(100%)
-
-
+      +transition(font-size .0s .3s)
 
 // Mobile
 $ratio: 320 / 568

@@ -1,14 +1,55 @@
 $(document).ready(function() {
 
-  // Random positioning thumbnails
-  thumb_container = $('.thumb-container');
-  units = thumb_container.find('.thumb-unit');
+  var window_width       = $(window).width();
+  var window_height      = $(window).height();
 
-  positions = shuffle( [1, 2, 3, 4, 5, 6, 7, 8, 9] );
+  $(window).on('load resize', function(event) {
 
-  units.each(function(index, el) {
-    $(this).attr('data-position', positions[index]);
+    // Variables
+    thumb_container        = $('.thumb-container');
+    units                  = thumb_container.find('.thumb-unit');
+
+    // Get window dimentions
+    window_width       = $(window).width();
+    window_height      = $(window).height();
+
+    // Calculating container sizes
+    thumb_container_height = get_by_module( window_height * 0.7 );
+    thumb_container_width  = get_by_module( thumb_container_height * 1.618 );
+
+    // Calculating container offsets
+    containero_offset_top  = get_by_module( window_height * 0.15) + 1;
+    containero_offset_left = get_by_module( (window_width - thumb_container_width) / 2 );
+
+    // Calculating unit sizes and margins
+    var unit_width  = get_by_module( (thumb_container_width - 20) / 3 );
+    var unit_height = get_by_module( (thumb_container_height - 20) / 3 );
+
+    // Apply metrix to container
+    thumb_container
+      .css({
+        top: containero_offset_top,
+        left: containero_offset_left
+      })
+      .width(thumb_container_width)
+      .height(thumb_container_height);
+
+    // Apply metrix to unit
+    units.each(function(index, el) {
+
+      $(el).css({
+        width:  unit_width,
+        height: unit_height
+      })
+
+      if (  (index + 1) % 3 == 0 ) { $(el).css('margin-right', '0') }
+      if ( index > 5 ) { $(el).css('margin-bottom', '0') }
+
+    });
+
+
   });
+
 
 
   // ---------------------------------------------
@@ -16,9 +57,7 @@ $(document).ready(function() {
   // Blink blocks
   var blink = $('.thumb-wrap .blink');
 
-  // Get window dimentions
-  var window_width = $(window).width();
-  var window_height = $(window).height();
+
 
   // Get possible ranges (840x600 Thumbs Container dimentions)
   var possible_x_shift = (window_width  - 840) / 2 ;
@@ -56,11 +95,10 @@ $(document).ready(function() {
             }
 
       // Make it 0 mod 10 + 1
-      positions_x[i] = Math.floor(positions_x[i] / 10) * 10;
-      positions_y[i] = Math.floor(positions_y[i] / 10) * 10;
+      positions_x[i] = get_by_module( positions_x[i] );
+      positions_y[i] = get_by_module( positions_y[i] );
 
     };
-
 
 
     var coordintes_starts = [
@@ -102,8 +140,12 @@ $(document).ready(function() {
 
 });
 
-// Array shuffle  function
-function shuffle(o){
-    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-    return o;
+
+// Return by module 10 (to fit the grid)
+function get_by_module(argument){
+
+    return Math.floor( argument / 10 ) * 10;
+
 };
+
+

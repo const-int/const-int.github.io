@@ -6,15 +6,12 @@ $(document).ready(function() {
   // TABS animation navigation
   $('.exp-unit:first-child, .exp-tab:first-child').addClass(active_class);
 
-  $('.exp-tab > span').on('click', function() {
+  $('.exp-tab').on('click', function() {
 
-    var nav_el = $(this).parent()
+    $(this).addClass(active_class).siblings('.exp-tab').removeClass(active_class);
 
-    nav_el.addClass(active_class).siblings().each(function() {
-      $(this).removeClass(active_class).find('.waves-ripple').remove();
-    });
+    $('.exp-unit').removeClass(active_class).eq($(this).index()).addClass(active_class);
 
-    $('.exp-unit').removeClass(active_class).eq(nav_el.index()).addClass(active_class);
   });
 
 
