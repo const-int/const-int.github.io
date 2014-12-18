@@ -87,11 +87,11 @@
     }
 
     &:nth-child(odd) {
-      @include animation(postDimentions .5s 2s+.5s forwards, oddPostShift .3s 3s forwards);
+      @include animation(postDimentions .5s 2.5s forwards, oddPostShift .3s 3s forwards);
     }
 
     &:nth-child(even) {
-      @include animation(postDimentions .5s 2s forwards);
+      @include animation(postDimentions .5s 2.5s forwards);
     }
 
     &:after {

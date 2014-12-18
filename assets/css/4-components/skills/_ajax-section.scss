@@ -1,0 +1,140 @@
+.ajax-section {
+
+  & {
+      @include size(100%);
+      @include position(absolute, -1px null null 0px);
+      overflow: hidden;
+      border-radius: 3px;
+      overflow: hidden;
+      padding-top: 50px;
+  }
+
+  .phone-header {
+    @include position(absolute, 12px null null 162px);
+    @include size(29px);
+    border-radius: 50%;
+    background: #ddd;
+    z-index: 3;
+
+    .icon-search {
+      @include transform(rotateY(180deg));
+      @include position(absolute, 4px null null -153px);
+      font-size: 20px;
+      color: #737373;
+    }
+
+    &:before {
+      content: "";
+      @include position(absolute, 23px 47px null null);
+      @include size(113px 0px);
+      border-radius: 0;
+      background: transparent;
+      box-shadow: 0 0 0 1px #797979;
+    }
+  }
+
+  .phone-header .phone-menu, .phone-header .phone-menu:after, .phone-header .phone-menu:before {
+    background: #333;
+  }
+
+  .phone-header .phone-menu {
+    @include position(absolute, 9px 7px null null);
+    @include size(15px 2px);
+    background: #292929;
+
+    &:before {
+      content: "";
+      @include position(absolute, 5px 0px null null);
+      @include size(15px 2px);
+      background: #292929;
+    }
+
+    &:after {
+      content: "";
+      @include size(15px 2px);
+      @include position(absolute, 10px 0px null null);
+      background: #292929;
+    }
+  }
+
+  .phone-post {
+    @include size(50% 66px);
+    padding: 12px 10px 15px;
+    overflow: visible;
+    display: inline-block;
+    float: left;
+    z-index: 2;
+    opacity: .5;
+    position: relative;
+
+    &:nth-child(odd) {
+      left: -5px;
+    }
+
+    &:nth-child(2), &:nth-child(3) {
+      display: none;
+    }
+
+    &:nth-child(12), &:nth-child(13)  {
+      &:after {
+        display: none;
+      }
+    }
+
+    &:after {
+      content: "";
+      @include size(300px 2px);
+      @include position(absolute, null null 6px 0px );
+      background: #62605d;
+    }
+
+    .post-thumb {
+      @include size(29px);
+      background: #b0b0b0;
+      position: absolute;
+      margin-right: 5px;
+      border-radius: 50%;
+    }
+
+     // Posts thumbs selectors
+    @for $i from 1 through length($post-thumb-colors) {
+      &:nth-child(#{$i + 3}) .post-thumb {
+        background: nth($post-thumb-colors, $i);
+      }
+    }
+
+    // Lines and titles
+    %post-title {
+      height: 4px;
+      margin-top: 3px;
+      background: #fff;
+      position: absolute;
+    }
+    .post-title-1 {
+      @extend %post-title;
+      width: 14px;
+      left: 45px;
+    }
+    .post-title-2 {
+      @extend %post-title;
+      width: 26px;
+      left: 64px;
+    }
+    %post-line {
+      height: 4px;
+      background: #b0b0b0;
+      position: absolute;
+      left: 45px;
+    }
+    .post-line-1 {
+      width: 52px;
+      top: 25px;
+      @extend %post-line;
+    }
+    .post-line-2 {
+      width: 47px;
+      top: 33px;
+      @extend %post-line;
+    }
+  }
+}
