@@ -155,7 +155,7 @@
       @include position(absolute, 4px null null -153px);
       font-size: 20px;
       color: #737373;
-      @include animation(fadeSearch .05s 2.8s forwards);
+      @include animation(fadeSearch .05s 1.2s forwards);
     }
 
     &:before {
@@ -165,7 +165,7 @@
       border-radius: 0;
       background: transparent;
       box-shadow: 0 0 0 1px #797979;
-      @include animation(fadeSearch .05s 2.8s forwards);
+      @include animation(fadeSearch .05s 1.2s forwards);
     }
 
     &:after {
@@ -176,7 +176,7 @@
       border-radius: 50%;
       opacity: 0;
       @include transform(scale(0));
-      @include animation(pressMenuButton 1s 2.5s ease-out forwards);
+      @include animation(pressMenuButton 1s 1s ease-out forwards);
     }
   }
 
@@ -188,14 +188,14 @@
     @include position(absolute, 9px 7px null null);
     @include size(15px 2px);
     background: #292929;
-    @include animation(transformMenu3 .2s 2.75s forwards);
+    @include animation(transformMenu3 .2s 1.2s forwards);
 
     &:before {
       content: "";
       @include position(absolute, 5px 0px null null);
       @include size(15px 2px);
       background: #292929;
-      @include animation(transformMenu1 .5s 2.75s forwards);
+      @include animation(transformMenu1 .5s 1.2s forwards);
     }
 
     &:after {
@@ -203,7 +203,7 @@
       @include size(15px 2px);
       @include position(absolute, 10px 0px null null);
       background: #292929;
-      @include animation(transformMenu2 .5s 2.75s forwards);
+      @include animation(transformMenu2 .5s 1.2s forwards);
     }
   }
 
@@ -319,7 +319,7 @@
 
 @include keyframes( sideBarShow ) {
   0% { @include transform(translate3d(-100%, 0, 0)); }
-  40% { @include transform(translate3d(-100%, 0, 0)); }
-  60% { @include transform(translate3d(0, 0, 0)); }
+  10% { @include transform(translate3d(-100%, 0, 0)); }
+  30% { @include transform(translate3d(0, 0, 0)); }
   100% { @include transform(translate3d(0, 0, 0)); }
 }
