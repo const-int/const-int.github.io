@@ -1,0 +1,325 @@
+.js-section {
+
+  & {
+      @include size(100%);
+      @include position(absolute, -1px null null 0px);
+      overflow: hidden;
+      border-radius: 3px;
+      overflow: hidden;
+      padding-top: 50px;
+  }
+
+  .sb-header {
+    height: 17%;
+    background: #777;
+    position: relative;
+
+    #sb-user-logo {
+      @include size(50px);
+      overflow: visible;
+      margin-top: 11px;
+      border-radius: 50%;
+      float: left;
+      margin-left: 8%;
+      border: 1px solid #555;
+    }
+
+    #sb-name1 {
+      width: 40px;
+      height: 10px;
+      @include position(absolute, 24px null null 78px);
+      background: rgb(157, 157, 157);
+    }
+    #sb-name2 {
+      width: 60px;
+      height: 10px;
+      @include position(absolute, 38px null null 78px);
+      background: rgb(157, 157, 157);
+    }
+  }
+
+  .phone-sidebar {
+    @include size(100%);
+    @include position(absolute, 0 null null 0);
+    background: #414141;
+    z-index: 20;
+    @include transform(translate3d(-100%, 0, 0));
+    @include animation(sideBarShow 5s .85s ease forwards);
+
+    .sb-link1 {
+      @include size(170px 45px);
+      @include position(absolute, 140px null null 20px);
+      background: #a07861;
+
+      svg {
+        float: right;
+        width: 30px;
+        margin-top: 12px;
+        margin-right: 25px;
+      }
+    }
+
+    .sb-link2 {
+      @include size(170px 45px);
+      @include position(absolute, 195px null null 20px);
+      background: #a06186;
+
+
+      svg {
+        float: right;
+        width: 30px;
+        margin-top: 11px;
+        margin-right: 25px;
+      }
+    }
+
+    .sb-link3 {
+      @include size(170px 45px);
+      @include position(absolute, 250px null null 20px);
+      background: #6189a0;
+
+      svg {
+        float: right;
+        width: 30px;
+        margin-top: 10px;
+        margin-right: 25px;
+      }
+    }
+
+    .sb-link4 {
+      @include size(170px 45px);
+      @include position(absolute, 305px null null 20px);
+      background: #616ca0;
+
+      svg {
+        float: right;
+        width: 30px;
+        margin-top: 9px;
+        margin-right: 25px;
+      }
+    }
+
+    svg {
+      height: 50%;
+      display: inline-block;
+      margin-top: 9px;
+      fill: #ddd;
+    }
+
+    .sb-link1, .sb-link2, .sb-link3, .sb-link4, .sb-logout, .sb-plus {
+      border-radius: 3px;
+
+      &:before {
+        content: '';
+        width: 55px;
+        height: 5px;
+        background: #bbb;
+        @include position(absolute, 16px null null 20px);
+      }
+
+      &:after{
+        content: '';
+        width: 70px;
+        height: 5px;
+        background: #bbb;
+        @include position(absolute, 25px null null 20px);
+      }
+    }
+
+    .sb-logout, .sb-plus {
+      @include size(80px 40px);
+      @include position(absolute, 90px null null 20px);
+      background: #8ba061;
+
+      &:before, &:after  {
+        display: none;
+      }
+    }
+
+
+    .sb-logout {
+      @include position(absolute, 90px null null 110px);
+      background:  #a06161;
+    }
+  }
+
+  .phone-header {
+    @include position(absolute, 12px null null 162px);
+    @include size(29px);
+    border-radius: 50%;
+    background: #ddd;
+    z-index: 30;
+
+    .icon-search {
+      @include transform(rotateY(180deg));
+      @include position(absolute, 4px null null -153px);
+      font-size: 20px;
+      color: #737373;
+      @include animation(fadeSearch .05s 2.8s forwards);
+    }
+
+    &:before {
+      content: "";
+      @include position(absolute, 23px 47px null null);
+      @include size(113px 0px);
+      border-radius: 0;
+      background: transparent;
+      box-shadow: 0 0 0 1px #797979;
+      @include animation(fadeSearch .05s 2.8s forwards);
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      @include size(100%);
+      background: #555;
+      border-radius: 50%;
+      opacity: 0;
+      @include transform(scale(0));
+      @include animation(pressMenuButton 1s 2.5s ease-out forwards);
+    }
+  }
+
+  .phone-header .phone-menu, .phone-header .phone-menu:after, .phone-header .phone-menu:before {
+    background: #333;
+  }
+
+  .phone-header .phone-menu {
+    @include position(absolute, 9px 7px null null);
+    @include size(15px 2px);
+    background: #292929;
+    @include animation(transformMenu3 .2s 2.75s forwards);
+
+    &:before {
+      content: "";
+      @include position(absolute, 5px 0px null null);
+      @include size(15px 2px);
+      background: #292929;
+      @include animation(transformMenu1 .5s 2.75s forwards);
+    }
+
+    &:after {
+      content: "";
+      @include size(15px 2px);
+      @include position(absolute, 10px 0px null null);
+      background: #292929;
+      @include animation(transformMenu2 .5s 2.75s forwards);
+    }
+  }
+
+  .phone-post {
+    @include size(50% 66px);
+    padding: 12px 10px 15px;
+    overflow: visible;
+    display: inline-block;
+    float: left;
+    z-index: 2;
+    opacity: .5;
+    position: relative;
+
+    &:nth-child(odd) {
+      left: -5px;
+    }
+
+    &:nth-child(2), &:nth-child(3) {
+      display: none;
+    }
+
+    &:nth-child(12), &:nth-child(13)  {
+      &:after {
+        display: none;
+      }
+    }
+
+    &:after {
+      content: "";
+      @include size(300px 2px);
+      @include position(absolute, null null 6px 0px );
+      background: #62605d;
+    }
+
+    .post-thumb {
+      @include size(29px);
+      background: #b0b0b0;
+      position: absolute;
+      margin-right: 5px;
+      border-radius: 50%;
+    }
+
+     // Posts thumbs selectors
+    @for $i from 1 through length($post-thumb-colors) {
+      &:nth-child(#{$i + 3}) .post-thumb {
+        background: nth($post-thumb-colors, $i);
+      }
+    }
+
+    // Lines and titles
+    %post-title {
+      height: 4px;
+      margin-top: 3px;
+      background: #fff;
+      position: absolute;
+    }
+    .post-title-1 {
+      @extend %post-title;
+      width: 14px;
+      left: 45px;
+    }
+    .post-title-2 {
+      @extend %post-title;
+      width: 26px;
+      left: 64px;
+    }
+    %post-line {
+      height: 4px;
+      background: #b0b0b0;
+      position: absolute;
+      left: 45px;
+    }
+    .post-line-1 {
+      width: 52px;
+      top: 25px;
+      @extend %post-line;
+    }
+    .post-line-2 {
+      width: 47px;
+      top: 33px;
+      @extend %post-line;
+    }
+  }
+}
+
+
+@include keyframes( pressMenuButton ) {
+  0% { @include transform(scale(0)); opacity: 0; }
+  50% { @include transform(scale(1.1)); opacity: .4; }
+  100% { @include transform(scale(1.1)); opacity: 0; }
+}
+
+
+@include keyframes( transformMenu1 ) {
+  0% { @include transform(rotate(0deg)); }
+  100% { @include transform(rotate(-45deg)); }
+}
+
+@include keyframes( transformMenu2 ) {
+  0% { @include transform(rotate(0deg)); top: 10px; }
+  100% { @include transform(rotate(45deg)); top: 5px; }
+}
+
+@include keyframes( transformMenu3 ) {
+  0% {  background: rgba(41, 41, 41, 1); }
+  100% { background: rgba(41, 41, 41, 0); }
+}
+
+@include keyframes( fadeSearch ) {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@include keyframes( sideBarShow ) {
+  0% { @include transform(translate3d(-100%, 0, 0)); }
+  40% { @include transform(translate3d(-100%, 0, 0)); }
+  60% { @include transform(translate3d(0, 0, 0)); }
+  100% { @include transform(translate3d(0, 0, 0)); }
+}
