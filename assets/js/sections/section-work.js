@@ -22,7 +22,6 @@ $(document).ready(function() {
 
     work_belt.addClass("slided");
     work_container.show();
-    navigation.addClass('shifted');
     loader_work.fadeIn();
 
     // Add content

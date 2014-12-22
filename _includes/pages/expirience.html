@@ -2,7 +2,7 @@
 
   <div class="exp-nav">
     {% for client in site.data.settings.clients %}
-      <div class="exp-tab">
+      <div class="exp-tab" data-file="{{ client.file }}">
         <span>{{ client.logo }} </span>
       </div>
     {% endfor %}
@@ -15,9 +15,7 @@
     <div class="exp-unit">
 
       <div class="exp-animation">
-        <div class="wrap">
-          {{ client.content }}
-        </div>
+        <div class="wrap"></div>
       </div>
 
       <div class="exp-content">

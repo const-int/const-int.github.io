@@ -9,6 +9,194 @@
       padding-top: 50px;
   }
 
+  .search-result {
+    position: absolute;
+    width: 100%;
+    height: 76px;
+    opacity: 0;
+    @include transform(translate3d(100%, 0, 0));
+
+    .desc {
+      @include size(100%);
+
+      &:after, &:before, span {
+        @include position(absolute, 25px null null 95px);
+        content: "";
+        @include size(100px 5px);
+        background: #666;
+      }
+
+      &:before {
+        top: 35px;
+      }
+
+      &:after {
+        top: 45px;
+        @include size(60px 5px);
+      }
+    }
+
+    .title {
+      @include size(100%);
+
+      &:before {
+        @include position(absolute, 5px null null 95px);
+        content: "";
+        @include size(30px 10px);
+        background: #999;
+      }
+
+      &:after {
+        @include position(absolute, 5px null null 135px);
+        content: "";
+        @include size(50px 10px);
+        background: #999;
+      }
+    }
+
+    .num {
+      float: left;
+      @include size(60px);
+      font-size: 35px;
+      margin: 0 0 0 20px;
+      background: rgb(92, 92, 92);
+      color: #aaa;
+      border-radius: 50%;
+      line-height: 60px;
+      font-family: Monaco,'Courier New',monospace;
+    }
+
+    &.result1 {
+      top: 66px;
+      @include animation(showResult .3s 9.3s ease forwards);
+    }
+
+    &.result2 {
+      top: 142px;
+      @include animation(showResult .3s 9.6s ease forwards);
+    }
+
+    &.result3 {
+      top: 218px;
+      @include animation(showResult .3s 9.9s ease forwards);
+    }
+
+    &.result4 {
+      top: 294px;
+      @include animation(showResult .3s 10.2s ease forwards);
+    }
+  }
+
+  .phone-loader {
+    @include position(absolute, 50% null null 50%);
+    @include size(70px);
+    @include transform(translate(-50%, -60%));
+    opacity: 0;
+
+    @include animation(showLoader .3s 7.4s ease forwards, hideCursor .3s 9s ease forwards);
+  }
+
+  .cursor {
+    @include size(1px 20px);
+    @include position(absolute, 13px null null 37px);
+    background: #aaa;
+    opacity: 0;
+
+    @include animation(blinkCursor 1s 1.2s infinite, cursorAnim steps(10) 3s 2.3s forwards, hideCursor .3s 7s ease forwards);
+  }
+
+  .word1 {
+    @include size(0 15px);
+    @include position(absolute, 15px null null 35px);
+    background: #888;
+
+    @include animation(word1anim .9s 2.3s steps(3) forwards);
+  }
+
+  .word2 {
+    @include size(0 15px);
+    @include position(absolute, 15px null null 75px);
+    background: #888;
+
+    @include animation(word2anim 1.8s 3.5s steps(6) forwards);
+  }
+
+
+  .phone-keyboard {
+    @include transform(translate3d(0, 100%, 0));
+    padding: 20px 6px;
+    @include size(100% 200px);
+    @include position(absolute, null -1px 50px null);
+    background: #272727;
+    z-index: 30;
+
+    @include animation(showKeyboard .3s  1s ease forwards, hideKeyboard .3s 7s ease forwards);
+
+    .key-opt {
+      @include position(absolute, 23px null null 15px);
+      @include size(25px);
+      font-size: 30px;
+      color: #777;
+    }
+    .key-enter {
+      @include position(absolute, 18px 8px null null);
+      @include size(40px);
+      border-radius: 2px;
+
+      &:before {
+        content: "";
+        opacity: 0;
+        @include position(absolute, 50% 50% 50% 50%);
+        background: #444;
+        border-radius: 50%;
+        @include animation(pressKey .8s  6s ease forwards);
+      }
+
+
+      svg {
+        @include size(25px);
+        @include position(absolute, 7px 4px null null);
+      }
+    }
+
+    .key {
+      display: inline-block;
+      margin: 3px 1px;
+      @include size(17px 30px);
+      border-radius: 2px;
+      background: #585858;
+      position: relative;
+
+      &.press {
+
+        & {
+          overflow: hidden;
+        }
+
+        &:before {
+          content: "";
+          opacity: 0;
+          @include position(absolute, 50% 50% 50% 50%);
+          background: #aaa;
+          border-radius: 3px;
+        }
+
+        @for $i from 1 through 10 {
+          &.press#{$i}:before {
+            @include animation(pressKey .3s  #{ 2s + $i * .3s} ease forwards);
+          }
+        }
+
+      }
+
+
+      &.space {
+        width: 61px;
+      }
+    }
+
+  }
+
   .phone-header {
     @include position(absolute, 12px null null 162px);
     @include size(29px);
@@ -66,6 +254,8 @@
     z-index: 2;
     opacity: .5;
     position: relative;
+
+    @include animation(hidePosts .3s 7s ease forwards);
 
     &:nth-child(odd) {
       left: -5px;
@@ -136,5 +326,103 @@
       top: 33px;
       @extend %post-line;
     }
+  }
+}
+
+
+
+@include keyframes(pressKey) {
+  0% {
+    @include position(absolute, 50% 50% 50% 50%);
+    opacity: 0;
+  }
+
+  50% {
+    @include position(absolute, 0 0 0 0);
+    opacity: 1;
+  }
+
+  100% {
+    @include position(absolute, 0 0 0 0);
+    opacity: 0;
+  }
+
+}
+
+@include keyframes(word1anim) {
+
+  0%   { width: 0;    }
+
+  100% { width: 30px; }
+
+}
+
+@include keyframes(word2anim) {
+
+  0%    {  width: 0;    }
+
+  100%  {  width: 60px; }
+
+}
+
+@include keyframes(cursorAnim) {
+
+  0%    {  @include transform(translate3d(0, 0, 0)) }
+
+  100%  {  @include transform(translate3d(100px, 0, 0)) }
+
+}
+
+@include keyframes( blinkCursor ) {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+@include keyframes( showKeyboard ) {
+  0% {
+    @include transform(translate3d(0, 100%, 0));
+    opacity: 0;
+  }
+  100% {
+    @include transform(translate3d(0, 0, 0));
+    opacity: 1;
+  }
+}
+
+@include keyframes( hideKeyboard ) {
+  0% {
+    @include transform(translate3d(0, 0, 0));
+    opacity: 1;
+  }
+  100% {
+    @include transform(translate3d(0, 100%, 0));
+    opacity: 0;
+  }
+}
+
+@include keyframes( hidePosts ) {
+  0% { opacity: .5; }
+  100% { opacity: 0; }
+}
+
+@include keyframes( showLoader ) {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@include keyframes( hideCursor ) {
+  100% { visibility: hidden; }
+}
+
+@include keyframes( showResult ) {
+  0% {
+    @include transform(translate3d(100%, 0, 0));
+    opacity: 0;
+  }
+  100% {
+    @include transform(translate3d(0, 0, 0));
+    opacity: 1;
   }
 }

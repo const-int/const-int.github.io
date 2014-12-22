@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-  var window_width       = $(window).width();
-  var window_height      = $(window).height();
+  window_width       = $(window).width();
+  window_height      = $(window).height();
 
   $(window).on('load resize', function(event) {
 
@@ -55,88 +55,16 @@ $(document).ready(function() {
   // ---------------------------------------------
 
   // Blink blocks
-  var blink = $('.thumb-wrap .blink');
+  blink = $('.thumb-wrap .blink');
 
 
 
   // Get possible ranges (840x600 Thumbs Container dimentions)
-  var possible_x_shift = (window_width  - 840) / 2 ;
-  var possible_y_shift = (window_height - 600) / 2 ;
+  possible_x_shift = (window_width  - 840) / 2 ;
+  possible_y_shift = (window_height - 600) / 2 ;
 
 
-  setInterval(function () {
 
-    // Get random coordinates
-    var positions_x = [
-                        Math.floor( (Math.random() * window_width) ),
-                        Math.floor( (Math.random() * window_width) ),
-                        Math.floor( (Math.random() * window_width) ),
-                        Math.floor( (Math.random() * window_width) ),
-                      ]
-
-    var positions_y = [
-                        Math.floor( (Math.random() * window_height) ),
-                        Math.floor( (Math.random() * window_height) ),
-                        Math.floor( (Math.random() * window_height) ),
-                        Math.floor( (Math.random() * window_height) ),
-                      ]
-
-    for (var i = 0; i <= 3 ; i++) {
-
-      if (
-            (positions_x[i] > possible_x_shift) &&
-            (positions_x[i] < window_width - possible_x_shift) &&
-            (positions_y[i] > possible_y_shift) &&
-            (positions_y[i] < window_width - possible_y_shift)
-          )
-            {
-              positions_x[i] -= possible_x_shift;
-              positions_y[i] -= possible_y_shift;
-            }
-
-      // Make it 0 mod 10 + 1
-      positions_x[i] = get_by_module( positions_x[i] );
-      positions_y[i] = get_by_module( positions_y[i] );
-
-    };
-
-
-    var coordintes_starts = [
-                      [ 'top',     'left'  ,  'bottom'  ,  'right' ] ,
-                      [ 'top',     'right' ,  'bottom'  ,  'left'  ] ,
-                      [ 'bottom',  'left'  ,  'top'     ,  'right' ] ,
-                      [ 'bottom',  'right' ,  'top'     ,  'left'  ]
-                    ];
-
-    var random_coordintes_starts =  [
-                              coordintes_starts[Math.floor(Math.random()*4)] ,
-                              coordintes_starts[Math.floor(Math.random()*4)] ,
-                              coordintes_starts[Math.floor(Math.random()*4)] ,
-                              coordintes_starts[Math.floor(Math.random()*4)]
-                            ]
-
-
-    // Stop animation and Change position
-    blink.each(function(index, el) {
-
-      var that = $(this);
-      var indx = index;
-
-      that.removeClass('animated');
-
-      setTimeout(function () {
-        that
-          .addClass('animated')
-          .css(random_coordintes_starts[indx][0], positions_x[indx])
-          .css(random_coordintes_starts[indx][1], positions_y[indx])
-          .css(random_coordintes_starts[indx][2], 'auto')
-          .css(random_coordintes_starts[indx][3], 'auto');
-      }, ( indx + 1 ) * 300);
-
-    });
-
-
-  }, 2000);
 
 });
 
@@ -147,5 +75,81 @@ function get_by_module(argument){
     return Math.floor( argument / 10 ) * 10;
 
 };
+
+
+// main blink func
+function blink_pixels () {
+
+  // Get random coordinates
+  var positions_x = [
+                      Math.floor( (Math.random() * window_width) ),
+                      Math.floor( (Math.random() * window_width) ),
+                      Math.floor( (Math.random() * window_width) ),
+                      Math.floor( (Math.random() * window_width) ),
+                    ]
+
+  var positions_y = [
+                      Math.floor( (Math.random() * window_height) ),
+                      Math.floor( (Math.random() * window_height) ),
+                      Math.floor( (Math.random() * window_height) ),
+                      Math.floor( (Math.random() * window_height) ),
+                    ]
+
+  for (var i = 0; i <= 3 ; i++) {
+
+    if (
+          (positions_x[i] > possible_x_shift) &&
+          (positions_x[i] < window_width - possible_x_shift) &&
+          (positions_y[i] > possible_y_shift) &&
+          (positions_y[i] < window_width - possible_y_shift)
+        )
+          {
+            positions_x[i] -= possible_x_shift;
+            positions_y[i] -= possible_y_shift;
+          }
+
+    // Make it 0 mod 10 + 1
+    positions_x[i] = get_by_module( positions_x[i] );
+    positions_y[i] = get_by_module( positions_y[i] );
+
+  };
+
+
+  var coordintes_starts = [
+                    [ 'top',     'left'  ,  'bottom'  ,  'right' ] ,
+                    [ 'top',     'right' ,  'bottom'  ,  'left'  ] ,
+                    [ 'bottom',  'left'  ,  'top'     ,  'right' ] ,
+                    [ 'bottom',  'right' ,  'top'     ,  'left'  ]
+                  ];
+
+  var random_coordintes_starts =  [
+                            coordintes_starts[Math.floor(Math.random()*4)] ,
+                            coordintes_starts[Math.floor(Math.random()*4)] ,
+                            coordintes_starts[Math.floor(Math.random()*4)] ,
+                            coordintes_starts[Math.floor(Math.random()*4)]
+                          ]
+
+
+  // Stop animation and Change position
+  blink.each(function(index, el) {
+
+    var that = $(this);
+    var indx = index;
+
+    that.removeClass('animated');
+
+    setTimeout(function () {
+      that
+        .addClass('animated')
+        .css(random_coordintes_starts[indx][0], positions_x[indx])
+        .css(random_coordintes_starts[indx][1], positions_y[indx])
+        .css(random_coordintes_starts[indx][2], 'auto')
+        .css(random_coordintes_starts[indx][3], 'auto');
+    }, ( indx + 1 ) * 300);
+
+  });
+
+
+}
 
 

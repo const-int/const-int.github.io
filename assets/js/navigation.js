@@ -11,14 +11,17 @@ $(document).ready(function() {
 
     if (!active_link.hasClass('active')) {
 
-      // Set vars
-      var current_page = $(".section-active");
+      // Killing blink interval if defined
+      if (typeof blink_interval != 'undefined') { clearInterval(blink_interval); }
+
+      // Get page #
       nav_index = active_link.index() + 1;
 
       // Apply animation classes
-      current_page.removeClass('section-active')
-
-      all_pages.eq(nav_index).addClass('section-active');
+      all_pages
+        .removeClass('section-active')
+        .eq(nav_index)
+          .addClass('section-active');
 
       // Adding active hightlight to link
       active_link.addClass('active').siblings().removeClass('active');
@@ -31,9 +34,11 @@ $(document).ready(function() {
           break;
         case 2:
           active_link.parent().removeClass('dark');
+          blink_interval = setInterval(blink_pixels, 2000);
           break;
         case 3:
           active_link.parent().addClass('dark');
+          $('.exp-animation .wrap').load('exp/exp_html.html');
           break;
         case 4:
           active_link.parent().removeClass('dark');
