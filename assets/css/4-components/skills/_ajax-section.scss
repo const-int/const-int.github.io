@@ -20,7 +20,7 @@
       @include size(100%);
 
       &:after, &:before, span {
-        @include position(absolute, 25px null null 95px);
+        @include position(absolute, 25px null null 90px);
         content: "";
         @include size(100px 5px);
         background: #666;
@@ -40,14 +40,14 @@
       @include size(100%);
 
       &:before {
-        @include position(absolute, 5px null null 95px);
+        @include position(absolute, 5px null null 90px);
         content: "";
         @include size(30px 10px);
         background: #999;
       }
 
       &:after {
-        @include position(absolute, 5px null null 135px);
+        @include position(absolute, 5px null null 130px);
         content: "";
         @include size(50px 10px);
         background: #999;
@@ -58,7 +58,7 @@
       float: left;
       @include size(60px);
       font-size: 35px;
-      margin: 0 0 0 20px;
+      margin: 0 0 0 15px;
       background: rgb(92, 92, 92);
       color: #aaa;
       border-radius: 50%;
