@@ -7,6 +7,8 @@ $(document).ready(function() {
 
   $('nav > *').click(function(event) {
 
+    event.preventDefault();
+
     var active_link = $(this);
 
     if (!active_link.hasClass('active')) {
@@ -29,19 +31,19 @@ $(document).ready(function() {
       // Page openning actions
       switch (nav_index) {
         case 1:
-          active_link.parent().addClass('dark');
+          active_link.parent().removeClass('inverted');
           skills_animate();
           break;
         case 2:
-          active_link.parent().removeClass('dark');
+          active_link.parent().addClass('inverted');
           blink_interval = setInterval(blink_pixels, 2000);
           break;
         case 3:
-          active_link.parent().addClass('dark');
+          active_link.parent().removeClass('inverted');
           $('.exp-animation .wrap').load('exp/exp_html.html');
           break;
         case 4:
-          active_link.parent().removeClass('dark');
+          active_link.parent().addClass('inverted');
           setTimeout(function(){
             $('#client-name').focus();
           }, 1000);
