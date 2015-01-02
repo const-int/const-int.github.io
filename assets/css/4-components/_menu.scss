@@ -1,5 +1,5 @@
 nav {
-  @include position(fixed, 30px null null -2px);
+  @include position(fixed, 2% null null -2px);
   padding-left: 32px;
   z-index: 10;
   overflow: hidden;
