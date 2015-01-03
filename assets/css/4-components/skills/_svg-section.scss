@@ -67,9 +67,9 @@
     &:after {
       content: "";
       opacity: 0;
-      @include size(100%);
+      @include size(70%);
       border-radius: 3px;
-      @include position(absolute, 0 null null 0);
+      @include position(absolute, 18% null null 18%);
 
       @include animation(toSquare2 .8s 1s linear forwards);
       border-width: 2px;
