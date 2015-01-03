@@ -1,29 +1,43 @@
 .svg-section {
 
   .path {
-    stroke-dasharray: 300;
-    stroke-dashoffset: 300;
-    @include animation(dash 3s 2s linear forwards);
+    stroke-dasharray: 20000;
+    stroke-dashoffset: 20000;
+
+    @for $i from 1 through length($post-thumb-colors) {
+      &.path#{$i} {
+        @include animation(dash 3s #{ $i * .3s + 1.7s}  linear forwards);
+      }
+    }
+
   }
 
   @include keyframes(dash) {
     from {
-      stroke-dashoffset: 300;
+      stroke-dashoffset: 20000;
     }
     to {
       stroke-dashoffset: 0;
     }
   }
 
-  @include keyframes(shrinkSize) {
+  @include keyframes(toSquare) {
     from {
-      @include size(100%);
-      @include position(absolute, 0 null null 0);
+      border-radius: 50%;
+      outline-color: #424242;
     }
     to {
-      @include size(4px);
-      @include position(absolute, 12px null null 12px);
-      background: #fff;
+      border-radius: 0;
+      background: #424242;
+    }
+  }
+
+  @include keyframes(toSquare2) {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
 
@@ -31,6 +45,9 @@
     @for $i from 1 through length($post-thumb-colors) {
       &:nth-child(#{$i + 3}) .post-thumb:before {
         background: nth($post-thumb-colors, $i);
+      }
+      &:nth-child(#{$i + 3}) .post-thumb:after {
+        border-color: nth($post-thumb-colors, $i);
       }
     }
   }
@@ -44,9 +61,19 @@
       border-radius: 50%;
       @include position(absolute, 0 null null 0);
 
-      @include animation(shrinkSize .8s 1s linear forwards);
+      @include animation(toSquare .8s 1s linear forwards);
+    }
 
+    &:after {
+      content: "";
+      opacity: 0;
+      @include size(100%);
+      border-radius: 3px;
+      @include position(absolute, 0 null null 0);
 
+      @include animation(toSquare2 .8s 1s linear forwards);
+      border-width: 2px;
+      border-style: solid;
     }
   }
 
