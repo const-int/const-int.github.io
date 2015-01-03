@@ -27,6 +27,7 @@ $(document).ready(function() {
     // Add content
     $('.project-load').load(newHTML,function() {
       loader_work.fadeOut();
+      $(this).find('p').addClass('loaded');
     });
 
     $('.project-title').text(newTitle);
