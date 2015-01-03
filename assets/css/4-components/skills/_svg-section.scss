@@ -24,20 +24,16 @@
   @include keyframes(toSquare) {
     from {
       border-radius: 50%;
-      outline-color: #424242;
+      @include size(100%);
+      @include position(absolute, 0 null null 0);
+      border-width: 0px;
     }
     to {
-      border-radius: 0;
-      background: #424242;
-    }
-  }
-
-  @include keyframes(toSquare2) {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
+      @include size(70%);
+      @include position(absolute, 18% null null 18%);
+      border-radius: 3px;
+      background: rgba(0,0,0,0);
+      border-width: 2px;
     }
   }
 
@@ -45,8 +41,6 @@
     @for $i from 1 through length($post-thumb-colors) {
       &:nth-child(#{$i + 3}) .post-thumb:before {
         background: nth($post-thumb-colors, $i);
-      }
-      &:nth-child(#{$i + 3}) .post-thumb:after {
         border-color: nth($post-thumb-colors, $i);
       }
     }
@@ -61,20 +55,11 @@
       border-radius: 50%;
       @include position(absolute, 0 null null 0);
 
-      @include animation(toSquare .8s 1s linear forwards);
-    }
-
-    &:after {
-      content: "";
-      opacity: 0;
-      @include size(70%);
-      border-radius: 3px;
-      @include position(absolute, 18% null null 18%);
-
-      @include animation(toSquare2 .8s 1s linear forwards);
-      border-width: 2px;
+      @include animation(toSquare .3s 1s linear forwards);
       border-style: solid;
+      border-width: 0px;
     }
+
   }
 
   svg {
