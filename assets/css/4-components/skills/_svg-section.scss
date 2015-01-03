@@ -55,7 +55,7 @@
       border-radius: 50%;
       @include position(absolute, 0 null null 0);
 
-      @include animation(toSquare .3s 1s linear forwards);
+      @include animation(toSquare .5s 1s linear forwards);
       border-style: solid;
       border-width: 0px;
     }

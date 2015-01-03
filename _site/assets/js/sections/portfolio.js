@@ -18,12 +18,12 @@ $(document).ready(function() {
     thumb_container_width  = get_by_module( thumb_container_height * 1.618 );
 
     // Calculating container offsets
-    containero_offset_top  = get_by_module( window_height * 0.15) + 1;
+    containero_offset_top  = get_by_module( window_height * 0.2) + 1;
     containero_offset_left = get_by_module( (window_width - thumb_container_width) / 2 );
 
     // Calculating unit sizes and margins
-    var unit_width  = get_by_module( (thumb_container_width - 20) / 3 );
-    var unit_height = get_by_module( (thumb_container_height - 20) / 3 );
+    var unit_width  = get_by_module( (thumb_container_width - 40) / 3 );
+    var unit_height = get_by_module( (thumb_container_height - 40) / 3 );
 
     // Apply metrix to container
     thumb_container
