@@ -21,20 +21,9 @@
     }
   }
 
-  @include keyframes(toSquare) {
-    from {
-      border-radius: 50%;
-      @include size(100%);
-      @include position(absolute, 0 null null 0);
-      border-width: 0px;
-    }
-    to {
-      @include size(70%);
-      @include position(absolute, 18% null null 18%);
-      border-radius: 3px;
-      background: rgba(0,0,0,0);
-      border-width: 2px;
-    }
+  @include keyframes(fadeIconOut) {
+    from { opacity: 1 }
+    to   { opacity: 0 }
   }
 
   .phone-post {
@@ -42,6 +31,7 @@
       &:nth-child(#{$i + 3}) .post-thumb:before {
         background: nth($post-thumb-colors, $i);
         border-color: nth($post-thumb-colors, $i);
+        @include animation(fadeIconOut .5s #{$i * .3s + 1.5s} linear forwards);
       }
     }
   }
@@ -54,12 +44,7 @@
       @include size(100%);
       border-radius: 50%;
       @include position(absolute, 0 null null 0);
-
-      @include animation(toSquare .5s 1s linear forwards);
-      border-style: solid;
-      border-width: 0px;
     }
-
   }
 
   svg {
