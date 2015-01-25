@@ -39,7 +39,7 @@ $(document).ready(function() {
       nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash),
       block = $(".full-screen-block").eq(nav_index);
 
-      if (hash == '#about' && times_moved == 0) { return }
+      if ( (hash == '#about' || hash == '') && times_moved == 0) { return }
       move_pages(block, nav_index);
   });
 
