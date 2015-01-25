@@ -40,9 +40,9 @@ $(document).ready(function() {
       block = $(".full-screen-block").eq(nav_index);
 
       if ( times_moved == 0 ) {
-        $('nav .item').eq(nav_index).addClass('first');
+        $('nav .item').eq(nav_index).addClass('first-nav-item');
       } else {
-        $('nav .item').removeClass('first');
+        $('.first-nav-item').removeClass('first-nav-item');
       }
       if ( (hash == '#about' || hash == '') && times_moved == 0) { return }
 
