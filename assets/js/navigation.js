@@ -2,8 +2,7 @@ $(document).ready(function() {
 
   var last_nav_index = 0,
       times_moved  = 0,
-      page_animating = false,
-      just_loaded = true;
+      page_animating = false;
 
   skills_animate();
 
@@ -34,30 +33,16 @@ $(document).ready(function() {
   });
 
 
-  $(window).on("popstate", function() {
+  $(window).on("popstate load", function() {
 
-      if (!just_loaded) {
-        var url_array = document.URL.split('/'),
-        hash = url_array[url_array.length - 1],
-        nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash),
-        block = $(".full-screen-block").eq(nav_index);
-        console.log(nav_index);
-
-        move_pages(block, nav_index);
-      }
-  });
-
-
-  $(window).on("load", function() {
-    setTimeout(function(){
       var url_array = document.URL.split('/'),
       hash = url_array[url_array.length - 1],
       nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash),
       block = $(".full-screen-block").eq(nav_index);
-      console.log(nav_index);
+
+      if ( (hash == '#about' || hash == '') && times_moved == 0) { return }
+
       move_pages(block, nav_index);
-    }, 500)
-    just_loaded = false;
   });
 
 
