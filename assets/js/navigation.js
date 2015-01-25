@@ -77,11 +77,9 @@ $(document).ready(function() {
   }
 
   function higlight_link(index) {
-    setTimeout(function(){
-      $('nav .item').eq(index)
-        .addClass('active')
-        .siblings().removeClass('active');
-    }, 1000)
+    $('nav .item').eq(index)
+      .addClass('active')
+      .siblings().removeClass('active');
   }
 
   function page_actions (nav_index) {
