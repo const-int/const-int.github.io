@@ -2,7 +2,8 @@ $(document).ready(function() {
 
   var last_nav_index = 0,
       times_moved  = 0,
-      page_animating = false;
+      page_animating = false,
+      just_loaded = true;
 
   skills_animate();
 
@@ -36,7 +37,7 @@ $(document).ready(function() {
   $(window).on("popstate", function() {
 
       if ( (hash == '#about' || hash == '') && times_moved == 0) { return }
-
+      if (just_loaded) { return }
       var url_array = document.URL.split('/'),
       hash = url_array[url_array.length - 1],
       nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash),
@@ -56,6 +57,7 @@ $(document).ready(function() {
       console.log(nav_index);
       move_pages(block, nav_index);
     }, 2000)
+    just_loaded = false;
   });
 
 
