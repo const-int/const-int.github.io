@@ -21,8 +21,7 @@ $(document).ready(function() {
 
     if (!active_link.hasClass('active')) {
 
-      // history.pushState(null, null, $(active_link).attr('href'));
-      History.pushState(null, null, $(active_link).attr('href'));
+      history.pushState(null, null, $(active_link).attr('href'));
 
       // Get page #
       nav_index = active_link.index();
@@ -34,35 +33,30 @@ $(document).ready(function() {
   });
 
 
-  // Bind to StateChange Event
-    History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
-        var State = History.getState(); // Note: We are using History.getState() instead of event.state
-        var url_array = document.URL.split('/'),
-        hash = url_array[url_array.length - 1],
-        nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash),
-        block = $(".full-screen-block").eq(nav_index);
+  $(window).on("popstate", function() {
 
-        console.log(nav_index);
+      if ( (hash == '#about' || hash == '') && times_moved == 0) { return }
 
-        if ( (hash == '#about' || hash == '') && times_moved == 0) { return }
+      var url_array = document.URL.split('/'),
+      hash = url_array[url_array.length - 1],
+      nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash),
+      block = $(".full-screen-block").eq(nav_index);
+      console.log(nav_index);
 
-        move_pages(block, nav_index);
-    });
+      move_pages(block, nav_index);
+  });
 
 
-  // $(window).on("popstate load", function() {
+  $(window).on("load", function() {
 
-  //     var url_array = document.URL.split('/'),
-  //     hash = url_array[url_array.length - 1],
-  //     nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash),
-  //     block = $(".full-screen-block").eq(nav_index);
+      var url_array = document.URL.split('/'),
+      hash = url_array[url_array.length - 1],
+      nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash),
+      block = $(".full-screen-block").eq(nav_index);
+      console.log(nav_index);
 
-  //     console.log(nav_index);
-
-  //     if ( (hash == '#about' || hash == '') && times_moved == 0) { return }
-
-  //     move_pages(block, nav_index);
-  // });
+      move_pages(block, nav_index);
+  });
 
 
 
