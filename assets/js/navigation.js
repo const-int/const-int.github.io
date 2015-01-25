@@ -33,7 +33,7 @@ $(document).ready(function() {
   });
 
 
-  $(window).on("popstate load", function() {
+  $(window).on("popstate", function() {
 
       var url_array = document.URL.split('/'),
       hash = url_array[url_array.length - 1],
@@ -53,7 +53,6 @@ $(document).ready(function() {
     times_moved++;
     dirs = ( nav_index > last_nav_index ) ? ['from-bot', 'to-top'] : ['from-top','to-bot'];
 
-    console.log($(page).attr('id'));
     //move page
     $(page)
       .css('z-index', times_moved * 10)
