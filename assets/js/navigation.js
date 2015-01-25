@@ -33,7 +33,7 @@ $(document).ready(function() {
   });
 
 
-  $(window).on("popstate", function() {
+  $(window).on("popstate load", function() {
       var url_array = document.URL.split('/'),
       hash = url_array[url_array.length - 1],
       nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash),
