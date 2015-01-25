@@ -41,8 +41,8 @@ $(document).ready(function() {
 
       if ( times_moved == 0 ) {
         $('nav .item').eq(nav_index).css({
-          background: '#343435',
-          color: '#999999'
+          background: '#343434 !important',
+          color: '#bbb !important'
         });
       } else {
         $('.first-nav-item').removeClass('first-nav-item');
