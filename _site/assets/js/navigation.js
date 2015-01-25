@@ -35,8 +35,9 @@ $(document).ready(function() {
 
   $(window).on("popstate", function() {
       var url_array = document.URL.split('/'),
-      hash = url_array[url_array.length - 1],
-      nav_index = ['about', 'portfolio', 'experience', 'contact'].indexOf(hash),
+      hash = url_array[url_array.length - 1];
+      alert(hash);
+      nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash),
       block = $(".full-screen-block").eq(nav_index);
 
       move_pages(block, nav_index);
