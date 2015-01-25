@@ -56,7 +56,7 @@ $(document).ready(function() {
       block = $(".full-screen-block").eq(nav_index);
       console.log(nav_index);
       move_pages(block, nav_index);
-    }, 2000)
+    }, 500)
     just_loaded = false;
   });
 
