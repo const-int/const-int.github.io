@@ -55,7 +55,7 @@ $(document).ready(function() {
       if ( (hash == '#about' || hash == '') && times_moved == 0) { return }
 
       move_pages(block, nav_index);
-    }, 500)
+  }, 2500)
   });
 
 
