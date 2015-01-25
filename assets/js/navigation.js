@@ -36,15 +36,15 @@ $(document).ready(function() {
 
   $(window).on("popstate", function() {
 
-      if ( (hash == '#about' || hash == '') && times_moved == 0) { return }
-      if (just_loaded) { return }
-      var url_array = document.URL.split('/'),
-      hash = url_array[url_array.length - 1],
-      nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash),
-      block = $(".full-screen-block").eq(nav_index);
-      console.log(nav_index);
+      if (!just_loaded) {
+        var url_array = document.URL.split('/'),
+        hash = url_array[url_array.length - 1],
+        nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash),
+        block = $(".full-screen-block").eq(nav_index);
+        console.log(nav_index);
 
-      move_pages(block, nav_index);
+        move_pages(block, nav_index);
+      }
   });
 
 
