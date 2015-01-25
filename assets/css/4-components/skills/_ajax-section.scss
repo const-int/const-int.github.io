@@ -81,6 +81,7 @@
       @include animation(showResult .3s 9.9s ease forwards);
     }
 
+
     &.result4 {
       top: 294px;
       @include animation(showResult .3s 10.2s ease forwards);
@@ -123,20 +124,20 @@
 
 
   .phone-keyboard {
-    @include transform(translate3d(0, 100%, 0));
+    @include transform(translate(0, 100%));
     padding: 20px 6px;
     @include size(100% 200px);
     @include position(absolute, null -1px 50px null);
     background: #272727;
-    z-index: 30;
+    z-index: 40;
+    opacity: 1 !important;
 
     @include animation(showKeyboard .3s  1s ease forwards, hideKeyboard .3s 7s ease forwards);
 
     .key-opt {
       @include position(absolute, 23px null null 15px);
-      @include size(25px);
-      font-size: 30px;
-      color: #777;
+      @include size(30px);
+      fill: #797979;
     }
     .key-enter {
       @include position(absolute, 18px 8px null null);
@@ -206,9 +207,9 @@
 
     .icon-search {
       @include transform(rotateY(180deg));
-      @include position(absolute, 4px null null -153px);
-      font-size: 20px;
-      color: #737373;
+      @include position(absolute, 7px null null -153px);
+      width: 16px;
+      fill: #888;
     }
 
     &:before {
@@ -382,12 +383,10 @@
 
 @include keyframes( showKeyboard ) {
   0% {
-    @include transform(translate3d(0, 100%, 0));
-    opacity: 0;
+    @include transform(translate(0, 100%));
   }
   100% {
-    @include transform(translate3d(0, 0, 0));
-    opacity: 1;
+    @include transform(translate(0, 0));
   }
 }
 
@@ -423,6 +422,15 @@
   }
   100% {
     @include transform(translate3d(0, 0, 0));
+    opacity: 1;
+  }
+}
+
+@include keyframes(nav-opacity) {
+  0% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }

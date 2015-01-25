@@ -59,6 +59,8 @@
 
             var el = this;
 
+            $(el).click();
+
             // Create ripple
             var ripple = document.createElement('div');
             ripple.className = 'waves-ripple';

@@ -2,7 +2,7 @@
 
   &
     overflow-x: hidden
-    background: $bgcolor url(../img/#{$alternate-path})
+    +transform(translate3d(0, 100%, 0))
 
     &.section-active .thumb-unit
       opacity: 1 !important
@@ -11,7 +11,6 @@
     margin: 0
     padding: 9px
     margin-bottom: 50px
-
 
 
 /* Hackey-type CSS as a jQuery Alternative for when the browser does not have jQuery enabled. */
@@ -45,94 +44,101 @@
   &.slided
     +transform(translate3d(-50%, 0, 0))
 
+.thumb-wrap-shift
+  width: 100%
+  height: 100%
+  overflow: auto
+  padding-right: 15px
+
 .thumb-wrap, .work-wrap
   position: relative
   width: 50%
   float: left
-  min-height: 100%
+  overflow-y: scroll
 
-  .blink
-    position: fixed
-    +size(9px)
-    background: #444
-    opacity: 0
-
-    &.animated
-      +animation(pixel_blink 1s ease forwards)
-
+.thumb-wrap
+  overflow: hidden
 
 .thumb-container
-  position: absolute
+  +box-sizing(border-box)
+  margin: 0 auto
+  max-width: 920px
+  padding: 0 40px 100px
   text-align: justify
   +clearfix
 
+  .section-title
+    margin-bottom: 50px
 
   .thumb-unit
-    +transition(.6s ease-in-out)
-    display: inline-block
-    float: left
-    margin-right: 20px
-    margin-bottom: 20px
-    +size(32%)
-    overflow: hidden
     +box-sizing(border-box)
-    padding: 3px
-    border-radius: 3px
-    background: #ccc
-    background:
-      position: center top
-      repeat: no-repeat
-
-    opacity: 0
-    +transition(opacity .4s)
-
-
-  .thumb-click-area
-
+    display: block
     position: relative
-    +size(100%)
-    overflow: hidden
+    width: 100%
+    margin-bottom: 34px
+    border-radius: 2px
     cursor: pointer
+    box-shadow: rgba(0, 0, 0, 0.227451) 0px 3px 10px 0px, rgba(0, 0, 0, 0.156863) 0px 3px 10px 0px
 
-    &:hover img
-      +transform(translate3d(0,53px,0))
+    &:hover
+      .unit-title
+        opacity: 1
 
-    img
+    .img-wrap
+      width: 100%
+      height: 0
+      padding-bottom: 30%
       position: relative
       border-radius: 3px
       +backface-visibility(hidden)
-      +transition(transform .3s ease)
-      +size(100%)
+      +transition(all .3s ease)
+      overflow: hidden
       z-index: 20
-      background-size: cover
 
-    .unit-info
-      +position(absolute, 0px null null 0px)
-      +size(100% 53px)
-      z-index: 10
-      text-align: left
-      line-height: 53px
-      color: white
-      font-size: 18px
+      &:after
+        content: ""
+        +position(absolute, 0 null null 0)
+        +size(100%)
+        opacity: 0
+        background: rgba(0, 0, 0, .25)
+        +transition(all .3s ease)
 
-      &:before
-        position: relative
-        float: right
-        line-height: 50px
-        font-size: 32px
-        margin-right: 15px
-        cursor: pointer
-        color: #333
-        +user-select(none)
+      img
+        width: 100%
+        +transition(all .3s ease)
+
+    .icon-arrow-right
+      +position(absolute, 50% 30px null null)
+      width: 4%
+      height: 0
+      padding-bottom: 4%
+      +transform(translate(0, -50%))
+      background: #000 url(../img/icon-formard.svg)
+      background-size: contain
+      z-index: 40
+      border-radius: 50%
+      opacity: 0
+      border: 8px solid #000
+      +transition(all .3s ease)
 
     .unit-title
-      margin: 8px 0 0 20px
-      color: #222
-      float: left
-      font-weight: 700
-      font-family: Arial
-      line-height: 18px
+      +position(absolute, 50% null null 50%)
+      padding: 12px 50px 12px 18px
+      z-index: 30
+      opacity: 0
 
+      +transition(opacity .3s ease)
+      +transform(translate(-50%, -50%))
+      box-shadow: 0 6px 10px rgba(0,0,0,.23),0 10px 30px rgba(0,0,0,.19)
+
+      &:after
+        content: ""
+        +size(25px)
+        +position(absolute, 50% 15px null null)
+        +transform(translate(0, -50%))
+        background: url(../img/icon-formard.svg)
+        background-size: contain
+        +user-select(none)
 
     .live-url
       position: relative
@@ -149,33 +155,33 @@
         color: #000
 
 
-
-
-
-
 .work-container
-  max-width: 600px
-  margin: 100px auto 0
-  padding: 0 15px
   +box-sizing(border-box)
-
-  position: relative
   display: none
+
+  .work-center-container
+    +box-sizing(border-box)
+    position: relative
+    max-width: 920px
+    padding: 0 40px
+    margin: 60px auto 60px
 
   .project-load
     z-index: 10
     position: relative
     margin-bottom: 40px
+    background: #fff
 
     &.loaded
-      border: 3px solid #ccc
+      box-shadow: rgba(0, 0, 0, 0.227451) 0px 3px 10px 0px, rgba(0, 0, 0, 0.156863) 0px 3px 10px 0px
 
     p, img
       margin: 0
       display: block
 
   h4, noscript h4
-    color: $accent
+    display: inline-block
+    color: #252527
     font-weight: 300
     text-transform: uppercase
     font-size: 28px
@@ -183,36 +189,23 @@
     margin: 0 0 20px
 
   img
-    max-width: 100%
+    width: 100%
     margin-bottom: 20px
 
   .work-return
-    +size(40px)
-    cursor: pointer
-    opacity: 0.6
-    +position(absolute, 0 null null -70px)
-    +transform(rotateY(180deg))
+    padding: 12px 18px 12px 50px
+    top: 13px
+    margin-right: 12px
+    z-index: 30
+    top: -2px
 
-    &:before
-      content: "\f064"
-      speak: none
-      line-height: 1
-      font:
-        style: normal
-        weight: normal
-        variant: normal
-        transform: none
-        family: 'icomoon'
-        size: 40px
-
-      -webkit-font-smoothing: antialiased
-      -moz-osx-font-smoothing: grayscale
-
-    path
-      fill: rgba(255,255,255,0.8)
-
-    &:hover
-      opacity: 1
+    &:after
+      content: ""
+      +size(25px)
+      +position(absolute, 50% null  null 15px)
+      +transform(translate(0, -50%))
+      background: url(../img/icon-backward.svg)
+      background-size: contain
 
 
 

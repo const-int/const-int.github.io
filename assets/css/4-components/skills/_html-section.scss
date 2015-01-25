@@ -16,6 +16,8 @@
 
     .icon-search {
       @include position(absolute, 6px null null 7px);
+      width: 16px;
+      fill: #888;
 
       &:before {
         font-size: 16px;

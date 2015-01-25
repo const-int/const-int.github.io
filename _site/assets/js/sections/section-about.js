@@ -27,5 +27,14 @@ function skills_animate () {
       }, 1200);
     }
   })
+}
 
+
+function skills_stop() {
+  setTimeout(function(){
+    $(".meter > span").each(function() {
+
+      $(this).width(0);
+    })
+  }, 2000)
 }

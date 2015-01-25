@@ -23,11 +23,13 @@
     @include animation-fill-mode( forwards );
 
     .icon-search {
-      @include position(absolute, 6px null null 7px);
+      @include position(absolute, 4px null null 7px);
       color: #6f6f6f;
       font-size: 16px;
+      width: 16px;
+      fill: #888;
 
-      @include animation(headerTitleShift1 .6s .94s forwards);
+      @include animation(headerTitleShift1 .2s .94s forwards);
     }
 
     &:before {
@@ -190,14 +192,14 @@
   0% {
     @include transform(rotateY(0deg));
     left: 7px;
-    top: 6px;
+    top: 4px;
     font-size: 16px;
     color: #6f6f6f;
   }
   100% {
     @include transform(rotateY(180deg));
     left: -153px;
-    top: 4px;
+    top: 0;
     font-size: 20px;
     color: #737373;
   }

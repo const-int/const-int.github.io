@@ -1,5 +1,27 @@
-<nav class="ui inverted menu">
-  {% for item in site.data.settings.menu %}
-    <a href="#" class="item">{{ item.name }}</a>
-  {% endfor %}
-</nav>
+<aside class="sidebar">
+
+  <div class="profile-card">
+    <a href="/"><img src="assets/img/constavatar.png" alt="Constantin"></a>
+    <div class="title">{{ site.data.settings.description }}</div>
+    <div class="subtitle">{{ site.data.settings.subdescription }}</div>
+
+    <div class="contacts">
+      {% for link in site.data.settings.contacts %}
+        <a href="{{ link.link }}" class="contact-link" target="_blank">
+          {{ link.icon }}
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <nav>
+    {% for item in site.data.settings.menu %}
+      <a href="{{ item.hash }}" class="item waves-effect waves-button">{{ item.name }}</a>
+    {% endfor %}
+  </nav>
+
+  <div class="copyright">
+    Built with <a href="http://jekyllrb.com">Jekyll</a> and hosted on <a href="https://github.com/const-int/const-int.github.io">GitHub</a>.
+  </div>
+
+</aside>

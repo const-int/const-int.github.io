@@ -2,30 +2,50 @@
   ------------------------------------  */
 .sections-container
   position: relative
-  +size(100%)
+  margin-left: 320px
   +perspective(1200px)
+  background-image: url(../img/exp-bg.png)
 
 .full-screen-block
-  +position(fixed, 0 0 0 0)
+  +position(absolute, 0 null null 0)
   +size(100%)
-  visibility: hidden
-  +backface-visibility(hidden)
   +transform(translate3d(0, 0, 0))
   +transform-style(preserve-3d)
   +backface-visibility(hidden)
-  opacity: 0
 
-  &.section-active
-    visibility: visible
-    z-index: 999
-    opacity: 1
-    +animation(scaleUp .4s ease both)
+  &[data-move='from-top']
+    +animation(move-from-top .8s ease both)
 
+  &[data-move='from-bot']
+    +animation(move-from-bot .8s ease both)
+
+  &[data-move='to-top']
+    +animation(move-to-top .8s ease both)
+
+  &[data-move='to-bot']
+    +animation(move-to-bot .8s ease both)
+
+.container
+  +box-sizing(border-box)
+  max-width: 920px
+  padding: 0 40px
+  margin: 0 auto
 
 /*  Typography presets
   ------------------------------------  */
-.gigantic, .huge, .large, .bigger, .big,
-h1, h2, h3, h4, h5, h6
+
+.section-title
+  padding: 50px 0 14px
+  font-size: 54px
+  line-height: 68px
+  margin-bottom: 34px
+  color: #252527
+  text-align: left
+  border-bottom: 1px solid #aaa
+  margin-bottom: 50px
+
+
+.gigantic, .huge, .large, .bigger, .big, h1, h2, h3, h4, h5, h6
   color: $headlineColor
   font-weight: bold
 
@@ -86,6 +106,24 @@ a
 a:hover, a:focus
   color: lighten($linkColor, 20%)
 
+.const-button
+  cursor: pointer
+  display: inline-block
+  position: relative
+  border-radius: 3px
+  line-height: 22px
+  font:
+    size: 22px
+    weight: 300
+  color: #ccc
+  background: #252527
+  box-shadow: rgba(0,0,0,0.22745) 0px 3px 10px 0px, rgba(0,0,0,0.15686) 0px 3px 10px 0px
+  +user-select(none)
+  +transition(color .2s ease, background .2s ease)
+
+  &:hover
+    color: #fff
+    background: #343435
 
 
 /* Selection colors (easy to forget)

@@ -1,18 +1,18 @@
 .section-expirience
-  background-image: url(../img/bg_main_decor.png)
+  +transform(translate3d(0, 100%, 0))
 
   h3
     margin-top: 0
     padding-top: 100px
 
 .exp-belt
-  width: 750px
-  +center-trans
-  min-height: 250px
+  position: relative
+  margin: 0 auto
+  max-width: 920px
+  padding: 0 40px
+  +box-sizing(border-box)
 
   .exp-unit
-    max-width: 750px
-    min-height: 250px
     position: relative
     z-index: 1
     display: none
@@ -24,9 +24,11 @@
       opacity: 1
 
     .exp-animation
-      min-width: 300px
+      min-width: 240px
+      float: right
       text-align: center
       margin: 0
+      top: -68px
 
       .client-name
         display: block
@@ -41,56 +43,41 @@
 
     .exp-content
       font-size: 18px
-      font-weight: 300
-      margin-top: 86px
       position: relative
-      background: white
-      border: 2px solid #ccc
-      border-top: none
-      height: 366px
-      border-radius: 4px
-      border-top-left-radius: 0
-      border-top-right-radius: 0
-      padding: 60px 40px 0
-      +box-sizing(border-box)
-
+      padding: 20px 80px 0 0
+      text-align: justify
 
       .caption
-        text-indent: 27px
-
-      .icon-gear
-        +position(absolute, 38px null null 40px)
-        +size(70px)
-        font-size: 70px
-        color: #aaa
-        opacity: 0.3
-
-        path
-          fill: #aaa
+        font-size: 26px
+        margin-bottom: 15px
+        padding-bottom: 10px
+        border-bottom: 1px solid #aaa
+        color: #252527
 
       p
-        line-height: 32px
-        margin-top: 48px
+        line-height: 1.6
+        padding-top: 32px
+        font:
+          weight: 300
+          size: 22px
 
       a
-        color: #666
-        border-bottom: 2px solid #999
-        +transition
-
+        color: #555
+        font-weight: 400
+        border-bottom: 2px solid transparent
         &:hover
-          border-bottom: 2px solid #333
+          border-bottom: 2px solid #555
+          +transition(border .2s ease)
 
 
 // Logos
 .exp-nav
-  z-index: 100
-  +position(absolute, null 50% 50% null)
-  width: 450px
-  padding: 0
-  margin: 0 -375px 135px 0
-  z-index: 100
+  width: 520px
+  position: relative
   text-align: justify
   cursor: default
+  top: 37px
+  z-index: 40
   +user-select(none)
 
   &:after
@@ -101,63 +88,22 @@
   .exp-tab
     display: inline-block
     padding: 0
-    height: 50px !important
-    width: 16.666666% !important
-    float: left
-    background:
-      color: transparent
-    font:
-      size: 14px
-      weight: 700
-    border-radius: 0 !important
-    text-align: center
-    line-height: 52px
-    position: relative
     +user-select(none)
-    border-bottom: 2px solid #ccc
-    color: #999
-    cursor: pointer
-    overflow: hidden
 
-    &:after
-      content: ""
-      +size(100%)
-      +box-sizing(border-box)
-      background: #fff
-      +position(absolute, null 0px 0px null)
-      z-index: -1
-      border: 2px solid #ccc
-      border-bottom: none
-      border-radius: 4px
-      border-bottom-left-radius: 0
-      border-bottom-right-radius: 0
-      z-index: -1
-      +transition(transform .4s cubic-bezier(0.7,0,0.3,1))
-      +transform(perspective(150px) rotate3d(1,0,0,90deg))
-      +transform-origin(50% 100%)
-      +perspective-origin(50% 100%)
-
-    &:hover
-      color: #333
-
-    &.active-exp-tab
-      border-bottom: 2px solid rgba(0,0,0,0)
-      color: #424242
-      position: relative
-      top: 2px
-
-      &:after
-        +transform(perspective(900px) rotate3d(1,0,0,0deg))
-
-      span
-        position: relative
-        top: -2px
-        font-size: 16px
+    &.active-exp-tab span
+      color: #fff
+      background: #343435
 
     span
+      width: 76px
+      font-size: 18px
+      text-align: center
       display: inline-block
-      +size(100%)
-      +transition(font-size .0s .3s)
+      padding: 12px 0
+      color: #666
+
+      &:hover
+        color: #fff
 
 // Mobile
 $ratio: 320 / 568
@@ -181,41 +127,6 @@ $height: 400px
     & *, & *:before, & *:after
       +box-sizing(border-box)
 
-@media (max-width: 750px)
-  .exp-nav
-    +flex-wrap(wrap)
-
-  .exp-animation
-    display: none
-
-  .exp-belt
-    overflow-x: hidden
-
-    .exp-unit.active-exp-tab
-      display: block
-      position: relative
-      margin-left: 0px
-      left: auto
-
-      .exp-animation
-        margin-bottom: 30px
-
-      .exp-content
-        padding: 0px 30px
-        max-width: 400px
-        margin: 0px auto
-
-      .icon-gear
-        left: 6px
-
-  .client-controls
-    display: none
-
-  .exp-nav
-    display: none
-
-  .exp-mobile-nav
-    display: block
 
 
 

@@ -1,0 +1,118 @@
+$text-color: #808080
+
+aside.sidebar
+  &
+    +position(fixed, 0 null null 0)
+    font-size: 0.72727rem
+    text-align: center
+    width: 320px
+    background: #252527
+    height: 100%
+    z-index: 2
+
+  .copyright
+    position: absolute
+    bottom: 0
+    width: 100%
+    height: 20px
+    padding-bottom: 20px
+    font-weight: 400
+    opacity: .7
+
+    a
+      display: inline-block
+      color: #888
+      +transition(border .2s ease)
+      border-bottom: 1px solid #252527
+
+      &:hover
+        border-bottom: 1px solid #888
+
+  .profile-card
+    &
+      padding: 34px 20px
+      +user-select(none)
+
+    img
+      max-width: 120px
+      border-radius: 50%
+      margin-bottom: 18px
+
+    .title
+      font-size: 18px
+      color: #9f9f9f
+
+    .subtitle
+      font-size: 16px
+      color: $text-color
+      color: #666
+
+      span
+        color: #9f9f9f
+        padding: 0 1px
+
+    .contacts
+      &
+        margin-top: 26px
+        +user-select(none)
+
+      .contact-link
+        display: inline-block
+        +size(17px)
+        margin: 0 2px
+        padding: 7px
+        background: rgba(255, 255, 255, .07)
+        +user-select(none)
+        border-radius: 50%
+
+        &:hover
+          background: rgba(255, 255, 255, .10)
+          path
+            fill: #ccc
+
+        path
+          fill: #9f9f9f
+
+
+  nav
+    &.disabled .item:not(.active)
+      cursor: default !important
+      color: $text-color !important
+
+    .item
+      &
+        display: block
+        width: 100%
+        padding: 18px 0
+        font-size: 14px
+        color: $text-color
+        cursor: pointer
+        border-bottom: 1px solid #333335
+        @include transition(all .2s)
+
+        &:first-child
+          border-top: 1px solid #333335
+
+        &.active
+          @include transition(background .1s 1s )
+          background: #343435
+          color: #bbb
+          cursor: default !important
+
+
+        &:not(.active):hover
+          color: #bbb
+
+      &:not(.active)
+        .waves-ripple
+          display: none
+
+      .waves-ripple
+        background: #343435 !important
+        color: #bbb
+        opacity: 1 !important
+
+      .waves-ripple
+        z-index: -1
+
+

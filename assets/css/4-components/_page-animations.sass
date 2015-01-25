@@ -1,4 +1,31 @@
-+keyframes (scaleUp)
++keyframes (move-from-top)
   from
     opacity: 0
-    +transform(scale(1.06))
+    +transform(translate3d(0, -100%, 0))
+  to
+    +transform(translate3d(0, 0, 0))
+    opacity: 1
+
++keyframes (move-from-bot)
+  from
+    opacity: 0
+    +transform(translate3d(0, 100%, 0))
+  to
+    +transform(translate3d(0, 0, 0))
+    opacity: 1
+
++keyframes (move-to-top)
+  from
+    +transform(translate3d(0, 0, 0))
+    opacity: 1
+  to
+    opacity: 0
+    +transform(translate3d(0, -100%, 0))
+
++keyframes (move-to-bot)
+  from
+    +transform(translate3d(0, 0, 0))
+    opacity: 1
+  to
+    opacity: 0
+    +transform(translate3d(0, 100%, 0))

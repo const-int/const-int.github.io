@@ -6,9 +6,10 @@ $(document).ready(function() {
   show_work_trigger = $('.thumb-click-area');
   loader_work = $('.loader.work');
   work_belt = $('.work-belt');
+  work_wrap = $('.work-wrap');
   work_container = $('.work-container');
   return_sign = $('.work-return');
-
+  thumb_wrap_shift = $('.thumb-wrap-shift')
 
 
   $.ajaxSetup({ cache: true });
@@ -34,37 +35,20 @@ $(document).ready(function() {
 
   });
 
-  work_section.on('scroll', function(event) {
-    return_sign.css('top', work_section.scrollTop());
+  work_wrap.on('scroll', function(event) {
+    return_sign.css('top', work_wrap.scrollTop() -2);
   });
 
   return_sign.click(function() {
-    fold_work();
+    roll_back();
   });
 
 });
 
 function roll_back () {
   work_belt.removeClass("slided");
-  work_container.hide(800);
-  navigation.removeClass('shifted');
-}
-
-
-function fold_work () {
-
-  var scrolled_pixels = work_section.scrollTop();
-
-  if ( scrolled_pixels > 0 ) {
-
-    work_section.animate({ scrollTop: 0 }, scrolled_pixels/5);
-
-    setTimeout(function(){
-      roll_back();
-    }, scrolled_pixels/5 + 150);
-
-  } else { roll_back() }
-
-
+  setTimeout(function(){
+    work_container.hide(200);
+  }, 800)
 }
 

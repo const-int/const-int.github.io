@@ -152,9 +152,11 @@
 
     .icon-search {
       @include transform(rotateY(180deg));
-      @include position(absolute, 4px null null -153px);
-      font-size: 20px;
-      color: #737373;
+      @include position(absolute, 7px null null -153px);
+      width: 16px;
+      fill: #888;
+      display: block !important;
+      opacity: 1 !important;
       @include animation(fadeSearch .05s 1.2s forwards);
     }
 

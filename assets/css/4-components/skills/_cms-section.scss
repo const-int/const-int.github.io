@@ -1,4 +1,122 @@
-.svg-section {
+.cms-section {
+  .logo {
+    padding-top: 25px;
+    svg {
+      height: 90px;
+      width: 80px;
+    }
+  }
+
+  .done {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 57px;
+    left: 39px;
+
+    svg {
+      border-radius: 50%;
+      border: 2px solid #555;
+      fill: #ccc;
+      background: #7a7a7a;
+      opacity: 0;
+      @include animation(noOffset 1s 10s ease forwards);
+    }
+  }
+
+  .bg {
+    width: 90%;
+    margin: 0;
+    height: 0;
+    margin: 25px auto 0;
+    background: #ccc;
+    padding-bottom: 90%;
+    border-radius: 3px;
+    overflow: hidden;
+
+    .input, .submit {
+      margin: 17px auto 12px;
+      width: 85%;
+      border: 2px solid #666;
+      border-radius: 3px;
+      padding: 11px 8px 4px 8px;
+
+      .text {
+        opacity: 0;
+        background: rgba(0,0,0, .2);
+        height: 10px;
+        margin: 0 0 7px 0;
+
+        &:last-child {
+          width: 60%;
+          margin-top: 0;
+        }
+
+        @for $i from 1 to 5 {
+          &:nth-child(#{$i}) {
+            @include animation(typeText steps(10) 2s #{2s * ($i - 1)} forwards);
+          }
+        }
+
+        &:nth-child(5) {
+          @include animation(typeTextlast steps(6) 1.2s 8s forwards);
+        }
+
+      }
+    }
+
+    .submit {
+      float: right;
+      margin-top: 0;
+      margin-right: 14.2px;
+      width: 50%;
+      height: 40px;
+      background: rgba(0,0,0, .2);
+      color: #444;
+      line-height: 13px;
+      font-variant: small-caps;
+      font-size: 16px;
+      @include animation(submitColor .5s 9.5s ease forwards);
+    }
+  }
+
+  @include keyframes(submitColor) {
+    0% {
+      background: rgba(0,0,0, .2);
+      color: #444;
+    }
+    100% {
+      background: rgba(0,0,0, .4);
+      color: #ccc;
+    }
+  }
+
+  @include keyframes(typeText) {
+    0% {
+      opacity: 1;
+      width: 0;
+    }
+    100% {
+      width: 100%;
+      opacity: 1;
+    }
+  }
 
 
+  @include keyframes(typeTextlast) {
+    0% {
+      opacity: 1;
+      width: 0;
+    }
+    100% {
+      width: 60%;
+      opacity: 1;
+    }
+  }
+
+  @include keyframes(noOffset) {
+    100% {
+      opacity: 1;
+    }
+  }
 }

@@ -1,42 +1,33 @@
-<section class="section-about full-screen-block" id="about-me">
+<section class="section-about full-screen-block section-active" id="about-me">
 
-  <div class="splash-container">
-    <div class="face-lockup">
+  <div class="container">
 
-      <div class="face-img"></div>
-
-      <div class="icon-pencil">{% include icons/icon-tag.html %}</div>
-      <div class="icon-browser">{% include icons/icon-browser.html %}</div>
-      <div class="icon-video">{% include icons/icon-responsive.html %}</div>
-      <div class="icon-mouse">{% include icons/icon-tools.html %}</div>
-
-    </div>
-
+    <div class="section-title">{{ site.data.settings.section-titles.about }}</div>
 
     <div class="blurb">
       {{ site.data.settings.blurb | markdownify }}
     </div>
-
-    {% if site.data.settings.skills %}
 
     <div class="skill-lockup">
 
       {% for skill in site.data.settings.skills %}
 
         <div class="skill-unit">
+          <div class="skill-icon">{% include icons/{{ skill.icon }}.html %}</div>
           <div class="skill-label">{{ skill.name }}</div>
-          <div class="skill-icons ">
-            <div class="meter">
-              <span class="skill-{{ skill.value }}"></span>
-            </div>
-          </div>
+          <div class="meter"><span class="skill-{{ skill.value }}"></span></div>
         </div>
 
       {% endfor %}
 
     </div>
 
-    {% endif %}
+    <div class="blurb2">
+      {{ site.data.settings.blurb2 | markdownify }}
+    </div>
+
+    <a href="mailto:{{email}}" class="const-button hire-button">...let’s get in touch</a>
+
   </div>
 
 </section>

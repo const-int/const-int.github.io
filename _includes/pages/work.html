@@ -6,60 +6,62 @@
 
     <div class="thumb-wrap">
 
-      <!-- just blinking pixel -->
-      <div class="blink"></div>
-      <div class="blink"></div>
-      <div class="blink"></div>
-      <div class="blink"></div>
+      <div class="thumb-wrap-shift">
 
-      <div class="thumb-container">
+        <div class="thumb-container">
+
+          <div class="section-title">{{ site.data.settings.section-titles.portfolio }}</div>
 
 
-        {% for project in site.data.settings.projects %}
-          <input type="radio" name="trigger" class="trigger" id="{{ project.folder }}" />
-        {% endfor %}
+          {% for project in site.data.settings.projects %}
+            <input type="radio" name="trigger" class="trigger" id="{{ project.folder }}" />
+          {% endfor %}
 
-        {% for project in site.data.settings.projects %}
-        <label for="{{ project.folder }}">
-          <div class="thumb-unit">
-            <div class="thumb-click-area"
-              data-name='{{ project.name }}'
-              data-folder="{{ project.folder }}">
+          {% for project in site.data.settings.projects %}
+          <label for="{{ project.folder }}">
+            <div class="thumb-unit">
+              <div class="thumb-click-area"
+                data-name='{{ project.name }}'
+                data-folder="{{ project.folder }}">
 
-              <img src="assets/img/work/{{project.folder}}/thumb.jpg" alt="{{ project.name }}">
-
-              <div class="unit-info icon-arrow-right">
-
-                <div class="unit-title">
-                  {{ project.name }} <br/>
-                  <a href="http://{{ project.url }}" class="live-url" target="_blank">{{ project.url }}</a>
+                <div class="img-wrap">
+                  <img src="assets/img/work/{{project.folder}}/thumb.jpg" alt="{{ project.name }}">
                 </div>
 
-              </div>
+                <div class="unit-title const-button">
+                  {{ project.name }}
+                  <!-- <a href="http://{{ project.url }}" class="live-url" target="_blank">{{ project.url }}</a> -->
+                </div>
 
+                <div class="icon-arrow-right"></div>
+
+              </div>
             </div>
-          </div>
-        </label>
-        {% endfor %}
+          </label>
+          {% endfor %}
+        </div>
       </div>
     </div>
 
     <div class="work-wrap">
 
       <div class="work-container">
-        <div class="loader work">
-          <div class="bounce1"></div>
-          <div class="bounce2"></div>
-          <div class="bounce3"></div>
-        </div>
 
-        <label for="return">
-          <div class="work-return"></div>
-        </label>
+          <div class="work-center-container">
+            <div class="loader work">
+              <div class="bounce1"></div>
+              <div class="bounce2"></div>
+              <div class="bounce3"></div>
+            </div>
 
-        <h4 class="project-title"></h4>
+            <label for="return">
+              <div class="work-return const-button">Another</div>
+            </label>
 
-        <div class="project-load"></div>
+            <h4 class="project-title"></h4>
+
+            <div class="project-load"></div>
+          </div>
 
       </div>
     </div>

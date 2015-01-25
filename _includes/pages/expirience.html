@@ -1,34 +1,34 @@
 <section class="section-expirience full-screen-block">
 
-  <div class="exp-nav">
-    {% for client in site.data.settings.clients %}
-      <div class="exp-tab" data-file="{{ client.file }}">
-        <span>{{ client.logo }} </span>
-      </div>
-    {% endfor %}
-  </div>
-
-
   <div class="exp-belt">
+
+    <div class="section-title">{{ site.data.settings.section-titles.experience}}</div>
+
+    <div class="exp-nav">
+      {% for client in site.data.settings.clients %}
+        <div class="exp-tab" data-file="{{ client.file }}">
+          <span class="const-button">{{ client.logo }} </span>
+        </div>
+      {% endfor %}
+    </div>
 
     {% for client in site.data.settings.clients %}
     <div class="exp-unit">
 
-      <div class="exp-animation">
-        <div class="wrap"></div>
-      </div>
-
       <div class="exp-content">
-        <div class="icon-gear"></div>
 
-        <div class='caption'>
-          <strong>{{ client.title }}</strong>
-        </div>
+<!--         <div class='caption'>
+          {{ client.title }}
+        </div> -->
 
         <p>
           {{ client.quote }}
         </p>
 
+      </div>
+
+      <div class="exp-animation">
+        <div class="wrap"></div>
       </div>
 
     </div>

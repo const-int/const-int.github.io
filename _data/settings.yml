@@ -1,18 +1,19 @@
 #-------------------------------
 # General Site Settings
 
-title: Constantin Naumov
-description: Front-End Web Developer
+title: Konstantin Naumov
+description: Front-end web developer
+subdescription: loving to make <span>cool</span> stuff
 email: const.int.naumov@gmail.com
-copyright: Constantin Naumov © 2014
+copyright: Konstantin Naumov © 2014
 
 # NOTE: The Logo and Background image are defined in the all.sass document.
 
 menu:
-- {name: About Me }
-- {name: Portfolio }
-- {name: Experience }
-- {name: Contact }
+- {name: About Me, hash: about }
+- {name: Portfolio, hash: portfolio }
+- {name: Experience, hash: experience }
+- {name: Contact, hash: contact }
 
 #-------------------------------
 # SEO Section
@@ -25,21 +26,33 @@ seo:
   rel-publisher: ''
 
 #-------------------------------
+# Titles
+section-titles:
+  about: "Hi, I'm Konstantin Naumov."
+  portfolio: "Some of my latest work."
+  experience: "Things I've mastered so far."
+  contact: "Let's get in touch."
+
+
+#-------------------------------
 # About Section
 
-# NOTE: The avatar is defined in the all.sass document.
-
 blurb: >
-  **Constantin is all about the web on front of ends.** <br/>
-  He used to deliver user experience as technology masterpiece. He know the value of making emotional UI stuff well designed for backend coders.
+  I am a person with a passion for crafting beautiful interfaces and usable experiences that people love.
+  Knowing the value of making reliable UI stuff for back-end coders I focus on writing clean, elegant and efficient code.
+  Here are fields I am excited of:
+
+blurb2: >
+  I want to be involved in projects that I can be proud of,
+  join an amazing team, and advance my design and development career.
+  Take some time to look at my works, experiences, and if you're interested
+  in helping me make this happen...
 
 skills:
-- {name: JavaScript Programming, value: '7'}
-- {name: Responsive Layouting, value: '8'}
-- {name: CSS3 Animations, value: '9'}
-- {name: UX Design, value: '5'}
-- {name: Learning, value: '10'}
-- {name: Communication, value: '6'}
+- {name: Responsive Layouting, value: '9', icon: 'icon-responsive'}
+- {name: JavaScript Programming, value: '6', icon: 'icon-tag'}
+- {name: Interface Design, value: '5', icon: 'icon-tools'}
+- {name: Modern Browser Tools, value: '8', icon: 'icon-browser'}
 
 #-------------------------------
 # Work Section
@@ -63,36 +76,31 @@ projects:
 
 clients:
 - {file: 'exp/exp_html.html',
-  title: 'Making troubleproof layouts',
-  quote: "Human readability and semantics of resulting code are powered by <a href='http://gruntjs.com/' target='_blank'>frontend toolboxes</a> and modern <a href='http://jekyllrb.com' target='_blank'>template engines</a>. <br /> Well formed pages are to be produced on every iteration of employer's development lifecycle.",
+  quote: "Converting designs into clean, cross browser compatible, troubleproof layouts. Well formed pages are produced on every iteration of employer's development lifecycle.<br> Human readability and semantics of my resulting code are powered by <a href='http://gruntjs.com/' target='_blank'>frontend toolboxes</a> and modern <a href='http://jekyllrb.com' target='_blank'>template engines</a>.",
   logo: 'HTML'}
 - {file: 'exp/exp_css.html',
-  title: 'Making troubleproof layouts',
-  quote: "Human readability and semantics of resulting code are powered by modern frontend toolboxes and template engines. Well formed pages are to be produced on every iteration of employer's development lifecycle.",
+  quote: "Styling is essential and pretty complicated part of progressive web application. To maintain cross-browser and cross-devise consistency I build my stilesheets based on <a target='_blnk' href='http://getbootstrap.com/'>front-end frameworks</a>. <br> With help of <a target='_blnk' href='http://sass-lang.com/'>CSS preprocessors</a> and <a target='_blnk' href='http://bourbon.io/'>mixin libraries</a> I keep project styles DRY and structured. When it comes to really large applications I prefer <a target='_blnk' href='http://compass-style.org/'>CSS authoring frameworks</a>.",
   logo: 'CSS'}
+- {file: 'exp/exp_svg.html',
+  quote: "Growing number of high DPI displays nowdays affects quality requirements for a regular web app. Scalable vector graphics bring an ability to create crystal clear user interfaces and very high quality cross-platform animations. <br> To deliver such experience to user I craft elements with support of powerful <a href='http://snapsvg.io/' target='_blank'>JavaScript SVG libraries</a>.",
+  logo: 'SVG'}
 - {file: 'exp/exp_js.html',
-  title: 'Making troubleproof layouts',
-  quote: "Human readability and semantics of resulting code are powered by modern frontend toolboxes and template engines. Well formed pages are to be produced on every iteration of employer's development lifecycle.",
+  quote: "JavaScript is mine core skill in making interactive web and jQuery is very useful thing for me as well as for industry. I'm very familiar with DOM interfacing that brings ability to take any aspect of webpage under control instantly. I've also put my hands on <a href='http://coffeescript.org/' target='_blank'>CoffeeScript preprocessor</a> and keep going so.",
   logo: 'JS'}
 - {file: 'exp/exp_ajax.html',
-  title: 'Making troubleproof layouts',
-  quote: "Human readability and semantics of resulting code are powered by modern frontend toolboxes and template engines. Well formed pages are to be produced on every iteration of employer's development lifecycle.",
-  logo: 'AJAX'}
-- {file: 'exp/exp_svg.html',
-  title: 'Making troubleproof layouts',
-  quote: "Human readability and semantics of resulting code are powered by modern frontend toolboxes and template engines. Well formed pages are to be produced on every iteration of employer's development lifecycle.",
-  logo: 'SVG'}
+  quote: "In every project I try to create higly dinamic user experience by turning beautiful design files into working product.",
+  logo: 'UX'}
 - {file: 'exp/exp_cms.html',
-  title: 'Making troubleproof layouts',
-  quote: "Human readability and semantics of resulting code are powered by modern frontend toolboxes and template engines. Well formed pages are to be produced on every iteration of employer's development lifecycle.",
+  quote: "I mostly do front-end development but occasionally I get my hands dirty with some backend (mostly php/MySQL). And I create WordPess templates time after time. <br>Also I really love dealing with static site generators like <a href='http://jekyllrb.com/'>this one</a> or <a href='https://middlemanapp.com/'>that one</a> to get maximum performance.",
   logo: 'CMS'}
 
 
 #-------------------------------
 # Contact Section
 
-social:
-- {icon: 'twitter', link: 'http://twitter.com/Const_Naumov'}
-- {icon: 'github', link: 'http://github.com/const-int'}
-- {icon: 'linkedin', link: 'http://ru.linkedin.com/pub/konstantin-naumov/a1/847/b33/'}
+contacts:
+- {name: 'linkedin', link: 'ru.linkedin.com/pub/konstantin-naumov/a1/847/b33/', icon: '<svg xmlns="http://www.w3.org/2000/svg" width="448" height="448" viewBox="0 0 448 448"><path d="M0 79.75q0-18.5 12.875-30.625t33.625-12.125 33.25 12.125 12.75 30.625q0.25 18.25-12.625 30.5t-33.875 12.25h-0.5q-20.5 0-33-12.25t-12.5-30.5zM4.75 404v-247.75h82.5v247.75h-82.5zM132.75 404q0.5-99.75 0.5-161.75t-0.25-74l-0.25-12h82.25v36h-0.5q5-8 10.25-14t14.125-13 21.75-10.875 28.625-3.875q42.75 0 68.75 28.375t26 83.125v142h-82.25v-132.5q0-26.25-10.125-41.125t-31.625-14.875q-15.75 0-26.375 8.625t-15.875 21.375q-2.75 7.5-2.75 20.25v138.25h-82.25z"></path></svg>' }
+- {name: 'twitter', link: 'http://github.com/const-int', icon: '<svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448"><path d="M11 347.75q8.75 1 19.5 1 56.25 0 100.25-34.5-26.25-0.5-47-16.125t-28.5-39.875q8.25 1.25 15.25 1.25 10.75 0 21.25-2.75-28-5.75-46.375-27.875t-18.375-51.375v-1q17 9.5 36.5 10.25-16.5-11-26.25-28.75t-9.75-38.5q0-22 11-40.75 30.25 37.25 73.625 59.625t92.875 24.875q-2-9.5-2-18.5 0-33.5 23.625-57.125t57.125-23.625q35 0 59 25.5 27.25-5.25 51.25-19.5-9.25 28.75-35.5 44.5 23.25-2.5 46.5-12.5-16.75 24.5-40.5 41.75 0.25 3.5 0.25 10.5 0 32.5-9.5 64.875t-28.875 62.125-46.125 52.625-64.5 36.5-80.75 13.625q-67.75 0-124-36.25z"></path></svg>' }
+- {name: 'mail', link: 'mailto:const.int.naumov@gmail.com', icon: '<svg xmlns="http://www.w3.org/2000/svg" width="448" height="448" viewBox="0 0 448 448"><path d="M0 376v-272q0-16.5 11.75-28.25t28.25-11.75h368q16.5 0 28.25 11.75t11.75 28.25v272q0 16.5-11.75 28.25t-28.25 11.75h-368q-16.5 0-28.25-11.75t-11.75-28.25zM32 376q0 3.25 2.375 5.625t5.625 2.375h368q3.25 0 5.625-2.375t2.375-5.625v-192q-8 9-17.25 16.5-67 51.5-106.5 84.5-12.75 10.75-20.75 16.75t-21.625 12.125-25.625 6.125h-0.5q-12 0-25.625-6.125t-21.625-12.125-20.75-16.75q-39.5-33-106.5-84.5-9.25-7.5-17.25-16.5v192zM32 104q0 42 36.75 71 48.25 38 100.25 79.25 1.5 1.25 8.75 7.375t11.5 9.375 11.125 7.875 12.625 6.875 10.75 2.25h0.5q5 0 10.75-2.25t12.625-6.875 11.125-7.875 11.5-9.375 8.75-7.375q52-41.25 100.25-79.25 13.5-10.75 25.125-28.875t11.625-32.875v-6.125t-0.125-3.25-0.75-3.125-1.375-2.25-2.25-1.875-3.5-0.625h-368q-3.25 0-5.625 2.375t-2.375 5.625z"></path></svg>' }
+- {name: 'github', link: 'http://twitter.com/Const_Naumov', icon: '<svg xmlns="http://www.w3.org/2000/svg"  width="448" height="448" viewBox="0 0 448 448"><path d="M17 382.25q0-41.25 45.5-56.25v-1q-16.75-10.25-16.75-31.5 0-27.25 15.75-34.25v-1q-18-6-29.875-27.125t-11.875-41.375q0-34.75 23.75-57.875t58.75-23.125q24 0 44.5 11.75 24.5 0 54.5-11.75v50.5q-9 3-19.75 5.5 4 10.75 4 21 0 31.75-18.25 54.125t-49.25 28.125q-10 2-14.875 6.75t-4.875 14.5q0 7.75 5.625 12.875t14.5 8 19.625 5.5 21.5 6.375 19.625 9.375 14.5 16 5.625 24.625q0 76-90.75 76-17.25 0-32.5-3.125t-29-10.25-21.875-20.5-8.125-31.875zM68 379.5q0 25.25 43 25.25 37.75 0 37.75-26.25 0-25-41.25-25-39.5 0-39.5 26zM73.25 190.25q0 33.75 31 33.75 29.75 0 29.75-34.25 0-15.25-7.5-25.5t-22.25-10.25q-31 0-31 36.25zM218.75 36.75q0-14.75 9.875-25.75t24.625-11q14.5 0 24.125 11.125t9.625 25.625-9.75 25.375-24 10.875q-14.5 0-24.5-10.875t-10-25.375zM225.25 329q1-11.25 1-33.5v-152.25q0-23.5-1-32h55.5q-1 8.25-1 31v153.25q0 22.25 1 33.5h-55.5zM304.25 158.75v-47.5h24v-19q0-13.5-1.5-22.25h56.75q-1.5 10.25-1.5 41.25h42.75v47.5q-3.75 0-10.875-0.5t-10.625-0.5h-21.25v91.25q0 32.75 21.75 32.75 15.25 0 27.25-8.25v49q-17.75 9.75-43.5 9.75-15.5 0-26.75-5t-17.5-12.5-9.875-19.5-4.625-23-1-25.75v-87.75h0.5v-1q-1.75 0-4.75-0.25t-4.5-0.25q-5.25 0-14.75 1.5z"></path></svg>' }
 

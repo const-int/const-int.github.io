@@ -1,45 +1,35 @@
 <section class="section-contact full-screen-block" id="contact">
 
+  <div class="container">
+    <div class="section-title">{{ site.data.settings.section-titles.contact }}</div>
 
-  <div class="splash-center">
+      <form class="awesome-form">
 
-    <a class="biglink" href="mailto:{{ site.data.settings.email }}">
-    {{site.data.settings.email }}</a>
+        <div class="input-group">
+          <input type="text" id="client-name" name="name" required>
+          <label>Your Full Name</label>
+        </div>
 
-    <div class="social-links">
-      {% for link in site.data.settings.social %}
-      <a href="{{ link.link }}" class="waves-effect waves-button icon-{{ link.icon }}">
-        <span>{{ link.icon }}</span>
-      </a>
-      {% endfor %}
-    </div>
-    <br>
-    <div class="kicker">let's work together</div>
+        <div class="spacer"></div>
 
-    <form method="POST" action="//forms.brace.io/{{ site.data.settings.email }}">
+        <div class="input-group">
+          <input type="email" name="email" required>
+          <label>Your Email Address</label>
+        </div>
 
-      <div class="contact-info-group">
+        <div class="spacer"></div>
 
-        <label><span>Your Name</span>
-        <input type="text" name="name" id="client-name"></label>
+        <div class="input-group">
+          <textarea name="" class="textarea" name="message" required></textarea>
+          <label>Your Message</label>
+        </div>
 
-        <label><span>Your Email</span>
-        <input type="email" name="_replyto"></label>
 
-      </div>
+        <div class="spacer"></div>
 
-      <label><span>Tell me about your project</span>
-      <textarea name="message"></textarea></label>
-
-      <div class="submit-wrap ">
-        <button type="submit" class="icon-check-square waves-effect waves-button">
-          <span>submit</span>
-        </button>
-      </div>
-
-    </form>
+        <input type="submit" value="Send message" class="const-button">
+      </form>
 
   </div>
-
 
 </section>

@@ -1,108 +1,55 @@
 .section-about
   position: relative
-  background-image: url(../img/bg_main_decor.png)
+  overflow: auto
+  z-index: 4
 
-.splash-container
-  +center-trans
-
-.face-lockup
-  width: 780px
-  +display(flex)
-  margin: 0 auto
-  +align-items(center)
-  +justify-content(space-between)
-
-  .face-img
-    border-radius: 50%
-    background-size: cover
-    background-position: center
-    background-image: url(../img/#{$avatar-path})
-    +size(200px)
-    +order(3)
-
-  [class^="icon-"]
-    +size(100px)
-    background: lighten($bgcolor, 10%) url(../img/#{$alternate-path})
-    border-radius: 50%
-
-    path, polygon
-      fill: $accent
-
-    &.icon-pencil
-      +order(3)
-    &.icon-mouse
-      +order(2)
-    &.icon-browser
-      +order(1)
-    &.icon-video
-      +order(5)
-
-@media screen and (max-width: 650px)
-  .face-lockup
-    display: block
-    text-align: center
-
-    div
-      display: inline-block
-
-    .face-img
-      display: block
-      background:
-        position: center center
-        repeat: no-repeat
-      margin: 0 auto 30px
-
-    [class^="icon-"]
-      margin: 10px 9%
-
-
-.skill-label
-  font-size: 16px
-  padding-left: 8px
+.hire-button
+  margin-bottom: 50px
+  height: 101px
+  line-height: 101px
+  width: 100%
+  text-align: center
 
 .blurb
-  max-width: 620px
-  padding: 0 20px
   margin: 50px auto
-  font-size: 24px
-  text-align: center
+  font-size: 22px
   font-weight: 300
 
-  a
-    color: black
-    display: inline-block
-    border-bottom: 2px solid $bgcolor
-    +transition
-
-    &:hover
-      border-color: $accent
-
+.blurb2
+  margin-top: -12px
+  font-size: 22px
+  font-weight: 300
+  margin-bottom: 50px
 
 .skill-lockup
-  max-width: 780px
-  margin: 50px auto 0
-  color: #999
-  +clearfix
-  +display(flex)
-  +flex-wrap(wrap)
-  +align-items(center)
-  +justify-content(space-between)
+  text-align: justify
 
   &:after
-    display: none
-
+    content: ''
+    display: inline-block
+    width: 100%
 
   .skill-unit
-    width: 240px
+    position: relative
     display: inline-block
+    +box-sizing(border-box)
+    +size(390px 100px)
+    margin: 0 0 40px 0
+    padding: 12px 0 0 120px
 
+    .skill-icon
+      +position(absolute, 0 null null 0)
+      display: inline-block
+      +size(100px)
+      background: #252527 url(../img/#{$alternate-path})
+      border-radius: 50%
 
-  .skill-icons
-    font-size: 0
-    margin: 3px 0 30px
+      path, polygon
+        fill: $accent
 
-    span
-      opacity: 0
+    .skill-label
+      text-align: left
+      font-size: 22px
 
 
 @for $i from 1 through 10
@@ -110,12 +57,5 @@
   .skill-#{$i}
     width: $percent*$i
 
-
-@media screen and (max-width: 541px)
-  .skill-lockup
-    width: 220px
-
-    .skill-unit
-      width: 220px
 
 

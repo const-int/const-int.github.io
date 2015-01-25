@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 
   // TABS animation navigation
-  $('.exp-unit:first-child, .exp-tab:first-child').addClass(active_class);
+  $('.exp-unit:nth-child(3), .exp-tab:first-child').addClass(active_class);
 
   $(exp_tabs).on('click', function() {
 
@@ -22,15 +22,12 @@ $(document).ready(function() {
 
   $(exp_tabs).click(function() {
 
-    var that = $(this),
-        newAnimation = that.data('file');
-
     // Load animation layouts
-    $('.exp-animation .wrap').load(newAnimation);
+    $('.exp-animation .wrap')
+      .eq($(this).index())
+      .load($(this).data('file'));
 
   });
-
-
 
   // HTML TAB animation
   setInterval(function() {
@@ -41,7 +38,6 @@ $(document).ready(function() {
     }, 2500);
   }, 5000);
 
-
-
-
 });
+
+
