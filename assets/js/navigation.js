@@ -41,7 +41,7 @@ $(document).ready(function() {
 
       if ( (hash == '#about' || hash == '') && times_moved == 0) { return }
       if ( times_moved == 0 ) {
-        $('nav .item').css('transition-delay', 0);
+        $('nav .item').css('transition-delay', 10000);
       } else {
         $('nav .item').css('transition-delay', 1000);
       }
