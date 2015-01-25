@@ -34,6 +34,7 @@ $(document).ready(function() {
 
 
   $(window).on("popstate", function() {
+      alert(1);
       var url_array = document.URL.split('/'),
       hash = url_array[url_array.length - 1],
       nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash),
@@ -44,19 +45,6 @@ $(document).ready(function() {
       move_pages(block, nav_index);
   });
 
-
-  $(window).on("load", function() {
-    setTimeout(function(){
-      var url_array = document.URL.split('/'),
-      hash = url_array[url_array.length - 1],
-      nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash),
-      block = $(".full-screen-block").eq(nav_index);
-
-      if ( (hash == '#about' || hash == '') && times_moved == 0) { return }
-
-      move_pages(block, nav_index);
-  }, 2500)
-  });
 
 
   function move_pages(page, nav_index) {
