@@ -39,6 +39,14 @@ $(document).ready(function() {
       nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash),
       block = $(".full-screen-block").eq(nav_index);
 
+      if ( times_moved == 0 ) {
+        $('nav .item').eq(nav_index).css({
+          background: '#343435',
+          color: '#999999'
+        });
+      } else {
+        $('.first-nav-item').removeClass('first-nav-item');
+      }
       if ( (hash == '#about' || hash == '') && times_moved == 0) { return }
 
       move_pages(block, nav_index);
