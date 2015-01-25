@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   var last_nav_index = 0,
-      times_clicked  = 0,
+      times_moved  = 0,
       page_animating = false;
 
   skills_animate();
@@ -39,17 +39,18 @@ $(document).ready(function() {
       nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash),
       block = $(".full-screen-block").eq(nav_index);
 
+      if (hash == '#about' && times_moved == 0) { return }
       move_pages(block, nav_index);
   });
 
 
   function move_pages(page, nav_index) {
-    times_clicked++;
+    times_moved++;
     dirs = ( nav_index > last_nav_index ) ? ['from-bot', 'to-top'] : ['from-top','to-bot'];
 
     //move page
     $(page)
-      .css('z-index', times_clicked * 10)
+      .css('z-index', times_moved * 10)
       .attr('data-move', dirs[0]);
     $('.section-active')
       .removeClass('section-active')
