@@ -17,8 +17,11 @@ $(document).ready(function() {
 
   $(window).on("load hashchange", function() {
 
-      hash = window.location.hash
-      if ( hash == '') { hash == '#about' }
+      if(window.location.hash) {
+        hash = window.location.hash
+      } else {
+        hash == '#about'
+      }
       console.log(hash);
 
       var nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash);
