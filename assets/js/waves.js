@@ -60,6 +60,7 @@
             var el = this;
 
             $(el).click();
+            window.location.hash = $(el).attr('href');
 
             // Create ripple
             var ripple = document.createElement('div');
