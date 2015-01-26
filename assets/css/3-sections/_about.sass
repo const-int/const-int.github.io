@@ -10,6 +10,18 @@
   width: 100%
   text-align: center
 
+  &:hover svg path
+    fill: #fff
+
+  svg
+    +size(32px 32px)
+    margin-left: 10px
+    position: relative
+    top: 8px
+    path
+      +transition(fill .2s ease)
+      fill: #ccc
+
 .blurb
   margin: 50px auto
   font-size: 22px
