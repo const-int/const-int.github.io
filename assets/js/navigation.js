@@ -1,0 +1,60 @@
+$(document).ready(function() {
+
+
+  $('nav > *').click(function(event) {
+
+    // event.preventDefault();
+    var active_link = $(this);
+
+    $(active_link).siblings().each(function(index, el) {
+      $(el).find('.waves-ripple').remove();
+    });
+
+    if (!active_link.hasClass('active')) {
+      nav_index = active_link.index();
+      move_pages(nav_index);
+    }
+
+  });
+
+
+  $(window).on("load hashchange", function() {
+
+      var url_array = document.URL.split('/'),
+      hash = url_array[url_array.length - 1];
+      if ( hash == '') { hash == '#about' }
+
+      var nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash);
+      move_pages(nav_index);
+  });
+
+
+
+  function move_pages(nav_index) {
+    higlight_link(nav_index);
+    page_actions(nav_index);
+  }
+
+
+  function higlight_link(index) {
+    $('nav .item').eq(index)
+      .addClass('active')
+      .siblings().removeClass('active');
+  }
+
+  function page_actions (nav_index) {
+    switch (nav_index) {
+      case 0:
+        skills_animate();
+        break;
+      case 1, 3:
+        skills_stop();
+        break;
+      case 2:
+        skills_stop();
+        $('.exp-animation .wrap').load('exp/exp_html.html');
+        break;
+    }
+  }
+
+});
