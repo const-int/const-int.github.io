@@ -35,18 +35,30 @@
       border: none
       border-bottom: solid 2px #343435
 
-    &[type="submit"]
-      margin-top: 20px
-      margin-bottom: 50px
-      height: 101px
-      line-height: 101px
-      width: 100%
-      background: #252527
-      text-align: center
+  button
+    margin-top: 20px
+    margin-bottom: 50px
+    height: 101px
+    line-height: 101px
+    width: 100%
+    background: #252527
+    text-align: center
 
-      &:hover, &:focus
-        color: #fff
-        background: #343435
+    &:hover, &:focus
+      color: #fff
+      background: #343435
+
+    &:hover svg path
+      fill: #fff
+
+    svg
+      +size(32px 32px)
+      margin-left: 10px
+      position: relative
+      top: 8px
+      path
+        +transition(fill .2s ease)
+        fill: #ccc
 
 
 
