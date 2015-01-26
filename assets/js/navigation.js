@@ -23,7 +23,7 @@ $(document).ready(function() {
         hash = '#about';
       }
       var nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash);
-      $('nav .item').eq(nav_index).addClass('first-loaded');
+      $('nav .item').removeClass('first-loaded').eq(nav_index).addClass('first-loaded');
       page_actions(nav_index);
   });
 
