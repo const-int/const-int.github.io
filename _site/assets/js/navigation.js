@@ -21,10 +21,11 @@ $(document).ready(function() {
       hash = url_array[url_array.length - 1];
       if ( hash == '') { hash == '#about' }
 
+        alert(window.location.hash);
+
       var nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash);
       move_pages(nav_index);
   });
-
 
 
   function move_pages(nav_index) {
