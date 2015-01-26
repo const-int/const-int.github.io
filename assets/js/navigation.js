@@ -43,15 +43,13 @@ $(document).ready(function() {
     }
     $('nav .item').removeClass('first-loaded');
     higlight_link(nav_index);
-    alert(nav_index);
-  })
+  });
 
 
   function move_pages(nav_index) {
     higlight_link(nav_index);
     page_actions(nav_index);
   }
-
 
   function higlight_link(index) {
     $('nav .item').eq(index)
