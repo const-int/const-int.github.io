@@ -22,10 +22,8 @@ $(document).ready(function() {
       } else {
         hash = '#about';
       }
-      console.log(hash);
-
       var nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash);
-      $('nav .item').eq(index).addClass('first-loaded');
+      $('nav .item').eq(nav_index).addClass('first-loaded');
       move_pages(nav_index);
   });
 
