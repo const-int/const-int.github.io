@@ -17,11 +17,9 @@ $(document).ready(function() {
 
   $(window).on("load hashchange", function() {
 
-      var url_array = document.URL.split('/'),
-      hash = url_array[url_array.length - 1];
+      hash = window.location.hash
       if ( hash == '') { hash == '#about' }
-
-      console.log(window.location.hash);
+      console.log(hash);
 
       var nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash);
       move_pages(nav_index);
