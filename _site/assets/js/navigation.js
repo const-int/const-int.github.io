@@ -18,9 +18,9 @@ $(document).ready(function() {
   $(window).on("load hashchange", function() {
 
       if(window.location.hash) {
-        hash = window.location.hash
+        hash = window.location.hash;
       } else {
-        hash == '#about'
+        hash = '#about';
       }
       console.log(hash);
 
