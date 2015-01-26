@@ -30,13 +30,13 @@ aside.sidebar
 
   .profile-card
     &
-      padding: 34px 20px
+      padding: 34px 20px 30px
       +user-select(none)
 
     img
       max-width: 120px
       border-radius: 50%
-      margin-bottom: 18px
+      margin-bottom: 20px
 
     .title
       font-size: 18px
@@ -53,13 +53,15 @@ aside.sidebar
 
     .contacts
       &
-        margin-top: 26px
+        +position(absolute, null null 55px 0)
+        width: 100%
+        text-align: center
         +user-select(none)
 
       .contact-link
         display: inline-block
         +size(17px)
-        margin: 0 2px
+        margin: 0 3px
         padding: 7px
         background: rgba(255, 255, 255, .07)
         +user-select(none)

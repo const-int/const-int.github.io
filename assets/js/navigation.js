@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+  nav_index = 0;
+  sections = ['#about', '#portfolio', '#experience', '#contact'];
 
   // nav click
   $('nav > *').click(function(event) {
@@ -12,16 +14,28 @@ $(document).ready(function() {
 
 
   $(window).on("load", function() {
-      var nav_index = get_page_from_location();
+      nav_index = get_page_from_location();
       $('nav .item').eq(nav_index).addClass('first-loaded');
       page_actions(nav_index);
   });
 
 
+  // track width, set to window width
+  var height = $(window).height();
+  // fire on window resize
+  $(window).resize(function() {
+      // do nothing if the height is the same
+      if ($(window).height()==height) return;
+      // update new height value
+      height = $(window).height();
+      window.location.hash = '#about';
+  });
+
+
   $(window).on('hashchange',function(){
-    var nav_index = get_page_from_location();
-    $('nav .item').removeClass('first-loaded');
-    higlight_link(nav_index);
+     nav_index = get_page_from_location();
+     $('nav .item').removeClass('first-loaded');
+     higlight_link(nav_index);
   });
 
 
@@ -31,7 +45,7 @@ $(document).ready(function() {
     } else {
       hash = '#about';
     }
-    var nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash);
+    var nav_index = sections.indexOf(hash);
     if (nav_index == -1) { nav_index = 0; }
     return  nav_index;
   }
