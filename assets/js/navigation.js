@@ -33,17 +33,17 @@ $(document).ready(function() {
   });
 
 
-  $(window).on("popstate load", function() {
+  // $(window).on("popstate load", function() {
 
-      var url_array = document.URL.split('/'),
-      hash = url_array[url_array.length - 1],
-      nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash),
-      block = $(".full-screen-block").eq(nav_index);
+  //     var url_array = document.URL.split('/'),
+  //     hash = url_array[url_array.length - 1],
+  //     nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash),
+  //     block = $(".full-screen-block").eq(nav_index);
 
-      if ( (hash == '#about' || hash == '') && times_moved == 0) { return }
+  //     if ( (hash == '#about' || hash == '') && times_moved == 0) { return }
 
-      move_pages(block, nav_index);
-  });
+  //     move_pages(block, nav_index);
+  // });
 
 
 
