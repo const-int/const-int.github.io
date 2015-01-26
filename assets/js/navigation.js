@@ -31,7 +31,7 @@ $(document).ready(function() {
   });
 
 
-  $(window).hashchange( function(){
+  $(window).on('hashchange',function(){
     $('nav .item').removeClass('first-loaded');
     if(window.location.hash) {
       hash = window.location.hash;
