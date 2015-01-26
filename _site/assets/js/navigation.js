@@ -15,7 +15,7 @@ $(document).ready(function() {
   });
 
 
-  $(window).on("load hashchange", function() {
+  $(window).on("load", function() {
 
       if(window.location.hash) {
         hash = window.location.hash;
@@ -23,9 +23,27 @@ $(document).ready(function() {
         hash = '#about';
       }
       var nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash);
-      $('nav .item').removeClass('first-loaded').eq(nav_index).addClass('first-loaded');
+      if (nav_index == -1) {
+        nav_index = 0;
+      }
+      $('nav .item').eq(nav_index).addClass('first-loaded');
       page_actions(nav_index);
   });
+
+
+  $(window).hashchange( function(){
+    $('nav .item').removeClass('first-loaded');
+    if(window.location.hash) {
+      hash = window.location.hash;
+    } else {
+      hash = '#about';
+    }
+    var nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash);
+    if (nav_index == -1) {
+      nav_index = 0;
+    }
+    page_actions(nav_index);
+  })
 
 
   function move_pages(nav_index) {
