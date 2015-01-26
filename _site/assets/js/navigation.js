@@ -32,7 +32,12 @@ $(document).ready(function() {
 
 
   $(window).on('hashchange',function(){
-    alert(1);
+    if(window.location.hash) {
+      hash = window.location.hash;
+    } else {
+      hash = '#about';
+    }
+    alert(hash);
   })
 
 
