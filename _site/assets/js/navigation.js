@@ -37,7 +37,13 @@ $(document).ready(function() {
     } else {
       hash = '#about';
     }
-    alert(hash);
+    var nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash);
+    if (nav_index == -1) {
+      nav_index = 0;
+    }
+    $('nav .item').removeClass('first-loaded');
+    higlight_link(nav_index);
+    alert(nav_index);
   })
 
 
