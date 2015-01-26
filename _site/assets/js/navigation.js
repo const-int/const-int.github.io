@@ -10,10 +10,10 @@ $(document).ready(function() {
   $('nav .item:first-child').addClass('active');
 
   $('nav > *').click(function(event) {
-    event.preventDefault();
+    // event.preventDefault();
     var active_link = $(this);
 
-    if (page_animating) { return;  }
+    // if (page_animating) { return;  }
 
     $(active_link).siblings().each(function(index, el) {
       $(el).find('.waves-ripple').remove();
@@ -21,7 +21,7 @@ $(document).ready(function() {
 
     if (!active_link.hasClass('active')) {
 
-      history.pushState(null, null, $(active_link).attr('href'));
+      // history.pushState(null, null, $(active_link).attr('href'));
 
       // Get page #
       nav_index = active_link.index();
@@ -48,17 +48,17 @@ $(document).ready(function() {
 
 
   function move_pages(page, nav_index) {
-    times_moved++;
-    dirs = ( nav_index > last_nav_index ) ? ['from-bot', 'to-top'] : ['from-top','to-bot'];
+    // times_moved++;
+    // dirs = ( nav_index > last_nav_index ) ? ['from-bot', 'to-top'] : ['from-top','to-bot'];
 
-    //move page
-    $(page)
-      .css('z-index', times_moved * 10)
-      .attr('data-move', dirs[0]);
-    $('.section-active')
-      .removeClass('section-active')
-      .attr('data-move', dirs[1]);
-    $(page).addClass('section-active');
+    // //move page
+    // $(page)
+    //   .css('z-index', times_moved * 10)
+    //   .attr('data-move', dirs[0]);
+    // $('.section-active')
+    //   .removeClass('section-active')
+    //   .attr('data-move', dirs[1]);
+    // $(page).addClass('section-active');
 
     disable_nav();
     higlight_link(nav_index);
