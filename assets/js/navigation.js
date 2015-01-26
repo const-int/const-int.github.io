@@ -1,19 +1,16 @@
 $(document).ready(function() {
 
 
+  // nav click
   $('nav > *').click(function(event) {
 
-    // event.preventDefault();
-    var active_link = $(this);
+    if ($(this).hasClass('active')) { return }
 
-    $(active_link).siblings().each(function(index, el) {
+    $(this).siblings().each(function(index, el) {
       $(el).find('.waves-ripple').remove();
     });
 
-    if (!active_link.hasClass('active')) {
-      nav_index = active_link.index();
-      move_pages(nav_index);
-    }
+    move_pages($(this).index());
 
   });
 
