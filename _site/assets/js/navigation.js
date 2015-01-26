@@ -3,15 +3,11 @@ $(document).ready(function() {
 
   // nav click
   $('nav > *').click(function(event) {
-
     if ($(this).hasClass('active')) { return }
-
     $(this).siblings().each(function(index, el) {
       $(el).removeClass('first-loaded').find('.waves-ripple').remove();
     });
-
     move_pages($(this).index());
-
   });
 
 
