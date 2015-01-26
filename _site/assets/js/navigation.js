@@ -16,34 +16,29 @@ $(document).ready(function() {
 
 
   $(window).on("load", function() {
-
-      if(window.location.hash) {
-        hash = window.location.hash;
-      } else {
-        hash = '#about';
-      }
-      var nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash);
-      if (nav_index == -1) {
-        nav_index = 0;
-      }
+      var nav_index = get_page_from_location();
       $('nav .item').eq(nav_index).addClass('first-loaded');
       page_actions(nav_index);
   });
 
 
   $(window).on('hashchange',function(){
+    var nav_index = get_page_from_location();
+    $('nav .item').removeClass('first-loaded');
+    higlight_link(nav_index);
+  });
+
+
+  function get_page_from_location() {
     if(window.location.hash) {
       hash = window.location.hash;
     } else {
       hash = '#about';
     }
     var nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash);
-    if (nav_index == -1) {
-      nav_index = 0;
-    }
-    $('nav .item').removeClass('first-loaded');
-    higlight_link(nav_index);
-  });
+    if (nav_index == -1) { nav_index = 0; }
+    return  nav_index;
+  }
 
 
   function move_pages(nav_index) {
