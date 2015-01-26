@@ -32,17 +32,7 @@ $(document).ready(function() {
 
 
   $(window).on('hashchange',function(){
-    $('nav .item').removeClass('first-loaded');
-    if(window.location.hash) {
-      hash = window.location.hash;
-    } else {
-      hash = '#about';
-    }
-    var nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash);
-    if (nav_index == -1) {
-      nav_index = 0;
-    }
-    page_actions(nav_index);
+    alert(1);
   })
 
 
