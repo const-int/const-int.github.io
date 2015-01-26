@@ -7,7 +7,7 @@ $(document).ready(function() {
     if ($(this).hasClass('active')) { return }
 
     $(this).siblings().each(function(index, el) {
-      $(el).find('.waves-ripple').remove();
+      $(el).removeClass('first-loaded').find('.waves-ripple').remove();
     });
 
     move_pages($(this).index());
@@ -25,6 +25,7 @@ $(document).ready(function() {
       console.log(hash);
 
       var nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash);
+      $('nav .item').eq(index).addClass('first-loaded');
       move_pages(nav_index);
   });
 
