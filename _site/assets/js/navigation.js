@@ -15,7 +15,7 @@ $(document).ready(function() {
   });
 
 
-  $(window).on("load hashchange", function() {
+  $(window).on("load", function() {
 
       if(window.location.hash) {
         hash = window.location.hash;
