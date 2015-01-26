@@ -24,7 +24,7 @@ $(document).ready(function() {
       }
       var nav_index = ['#about', '#portfolio', '#experience', '#contact'].indexOf(hash);
       $('nav .item').eq(nav_index).addClass('first-loaded');
-      move_pages(nav_index);
+      page_actions(nav_index);
   });
 
 
