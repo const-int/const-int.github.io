@@ -21,12 +21,12 @@ $(document).ready(function() {
   });
 
 
-  var height = $(window).height();
-  $(window).resize(function() {
-      if ($(window).height()==height) return;
-      height = $(window).height();
-      window.location.hash = '#about';
-  });
+  // var height = $(window).height();
+  // $(window).resize(function() {
+  //     if ($(window).height()==height) return;
+  //     height = $(window).height();
+  //     window.location.hash = '#about';
+  // });
 
 
   $(window).on('hashchange',function(){
