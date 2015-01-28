@@ -11,9 +11,6 @@ $(document).ready(function() {
       $(el).removeClass('first-loaded').find('.waves-ripple').remove();
     });
     move_pages(eq);
-    if ( $(window).width() < 1000 ) {
-      $(".full-screen-block").hide().eq(eq).show();
-    }
   });
 
 
