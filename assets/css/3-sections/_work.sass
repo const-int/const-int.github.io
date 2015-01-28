@@ -73,6 +73,9 @@
   .section-title
     margin-bottom: 50px
 
+    @media (max-width: 1000px)
+      margin-bottom: 40px
+
   .thumb-unit
     +box-sizing(border-box)
     display: block
@@ -97,6 +100,9 @@
       +transition(all .3s ease)
       overflow: hidden
       z-index: 20
+
+      @media (max-width: 1000px)
+        padding-bottom: 50%
 
       &:after
         content: ""
