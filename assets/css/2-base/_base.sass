@@ -3,32 +3,25 @@
 .sections-container
   position: relative
   margin-left: 320px
-  background-image: url(../img/exp-bg.png)
+
+  @media (max-width: 1000px)
+    margin-left: 0
+
 
 .full-screen-block
-  // +position(absolute, 0 null null 0)
   +size(100%)
-  // +transform(translate3d(0, 0, 0))
-  // +transform-style(preserve-3d)
-  // +backface-visibility(hidden)
 
-  // &[data-move='from-top']
-  //   +animation(move-from-top .8s ease both)
-
-  // &[data-move='from-bot']
-  //   +animation(move-from-bot .8s ease both)
-
-  // &[data-move='to-top']
-  //   +animation(move-to-top .8s ease both)
-
-  // &[data-move='to-bot']
-  //   +animation(move-to-bot .8s ease both)
 
 .container
   +box-sizing(border-box)
   max-width: 920px
   padding: 0 40px
   margin: 0 auto
+
+  @media (max-width: 1000px)
+    max-width: auto
+    padding: 0 20px
+
 
 /*  Typography presets
   ------------------------------------  */
@@ -43,17 +36,21 @@
   border-bottom: 1px solid #aaa
   margin-bottom: 50px
 
+  @media (max-width: 1000px)
+    font-size: 1.6rem
+    line-height: 2.5rem
 
-.gigantic, .huge, .large, .bigger, .big, h1, h2, h3, h4, h5, h6
+
+  @media (min-width: 1001px) and (max-width: 1240px)
+    font-size: 44px
+
+
+.large, .bigger, .big, h1, h2, h3, h4, h5, h6
   color: $headlineColor
   font-weight: bold
 
-.gigantic
-  font-size: 110px
-  line-height: 1.09
-  letter-spacing: -2px
 
-.huge, h1
+h1
   font-size: 68px
   line-height: 1.05
   letter-spacing: -1px
@@ -162,16 +159,16 @@ body
 
 /* Basic Styles
   ------------------------------------	*/
-html
-  // overflow: hidden
 
 body, html
   height: 100%
-  overflow: hidden
+
+  @media (min-width: 1001px)
+    overflow: hidden
 
 body
   height: 100%
-  // overflow: hidden
+  background-image: url(../img/exp-bg.png)
   background-color: #fff
   font-size: 14px
   line-height: 1.6
@@ -200,14 +197,11 @@ a.mock-link-for-new-tabs
     -ms-transform: translate(-50%, -50%)
     -webkit-transform: translate(-50%, -50%)
     transform: translate(-50%, -50%)
-.splash-center
-  +center-trans
 
 svg
   +size(100%)
 
 h3
-  // @extend %small-bold
   color: $accent-light
   text-align: center
   padding: 70px 0 30px

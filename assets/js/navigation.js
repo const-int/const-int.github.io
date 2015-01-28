@@ -5,11 +5,15 @@ $(document).ready(function() {
 
   // nav click
   $('nav > *').click(function(event) {
+    var eq = $(this).index();
     if ($(this).hasClass('active')) { return }
     $(this).siblings().each(function(index, el) {
       $(el).removeClass('first-loaded').find('.waves-ripple').remove();
     });
-    move_pages($(this).index());
+    move_pages(eq);
+    if ( $(window).width() < 1000 ) {
+      $(".full-screen-block").hide().eq(eq).show();
+    }
   });
 
 
@@ -20,13 +24,9 @@ $(document).ready(function() {
   });
 
 
-  // track width, set to window width
   var height = $(window).height();
-  // fire on window resize
   $(window).resize(function() {
-      // do nothing if the height is the same
       if ($(window).height()==height) return;
-      // update new height value
       height = $(window).height();
       window.location.hash = '#about';
   });

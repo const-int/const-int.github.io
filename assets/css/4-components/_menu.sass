@@ -10,6 +10,13 @@ aside.sidebar
     height: 100%
     z-index: 2
 
+    @media (max-width: 1000px)
+      position: relative
+      width: 100%
+      height: 322px
+      z-index: 80
+
+
   .copyright
     position: absolute
     bottom: 0
@@ -18,6 +25,9 @@ aside.sidebar
     padding-bottom: 20px
     font-weight: 400
     opacity: .7
+
+    @media (max-width: 1000px)
+      display: none
 
     a
       display: inline-block
@@ -51,12 +61,20 @@ aside.sidebar
         color: #9f9f9f
         padding: 0 1px
 
+    #info
+      width: 100%
+      position: absolute
+      bottom: 60px
+      left: 0
     .contacts
       &
         +position(absolute, null null 55px 0)
         width: 100%
         text-align: center
         +user-select(none)
+
+        @media (max-width: 1000px)
+          display: none
 
       .contact-link
         display: inline-block
@@ -77,9 +95,19 @@ aside.sidebar
 
 
   nav
+    &
+      background: #252527
+      width: 100%
+      z-index: 1000
+
     &.disabled .item:not(.active)
       cursor: default !important
       color: $text-color !important
+
+    &.fixed
+      +position(fixed, 0 null null 0)
+
+
 
     .item
       &
@@ -91,6 +119,14 @@ aside.sidebar
         cursor: pointer
         border-bottom: 1px solid #333335
         @include transition(all .2s)
+
+        @media (max-width: 1000px)
+          width: 33.33%
+          float: left
+          border-top: 1px solid #333335
+
+          &:nth-child(3)
+            display: none
 
         &:first-child
           border-top: 1px solid #333335

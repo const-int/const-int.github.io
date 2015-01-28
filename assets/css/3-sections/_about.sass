@@ -27,6 +27,9 @@
   font-size: 22px
   font-weight: 300
 
+  @media (max-width: 1000px)
+    margin-bottom: 20px
+
 .blurb2
   margin-top: -12px
   font-size: 22px
@@ -49,12 +52,19 @@
     margin: 0 0 40px 0
     padding: 12px 0 0 120px
 
+    @media (max-width: 1000px)
+      height: 3em
+      padding: 0
+
     .skill-icon
       +position(absolute, 0 null null 0)
       display: inline-block
       +size(100px)
       background: #252527 url(../img/#{$alternate-path})
       border-radius: 50%
+
+      @media (max-width: 1000px)
+        display: none
 
       path, polygon
         fill: $accent
@@ -64,10 +74,39 @@
       font-size: 22px
 
 
+
+
 @for $i from 1 through 10
   $percent: 10%
   .skill-#{$i}
     width: $percent*$i
 
 
+
+@media (min-width: 1001px) and (max-width: 1240px)
+  .skill-lockup
+    margin-bottom: 20px
+
+  .skill-unit
+    width: 49%!important
+    height: 75px !important
+    line-height: 75px !important
+    padding: 0 0 0 90px !important
+    margin: 0 0 20px 0 !important
+
+    .meter
+      display: none
+
+    .skill-icon
+      width: 75px !important
+      height: 75px !important
+
+@media (min-width: 1001px) and (max-width: 1100px)
+  .skill-label
+    font-size: 18px !important
+
+
+@media (max-width: 1000px)
+  .skill-unit
+    width: 100% !important
 

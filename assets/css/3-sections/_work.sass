@@ -67,6 +67,9 @@
   text-align: justify
   +clearfix
 
+  @media (max-width: 1000px)
+    padding: 0 20px 20px 20px
+
   .section-title
     margin-bottom: 50px
 
@@ -126,10 +129,14 @@
       padding: 12px 50px 12px 18px
       z-index: 30
       opacity: 0
-
+      white-space: nowrap
       +transition(opacity .3s ease)
       +transform(translate(-50%, -50%))
       box-shadow: 0 6px 10px rgba(0,0,0,.23),0 10px 30px rgba(0,0,0,.19)
+
+      @media (max-width: 1000px)
+        opacity: 1
+        font-size: 1.3em
 
       &:after
         content: ""
@@ -166,6 +173,9 @@
     padding: 0 40px
     margin: 60px auto 60px
 
+    @media (max-width: 1000px)
+      padding: 0 20px
+
   .project-load
     z-index: 10
     position: relative
@@ -187,6 +197,8 @@
     font-size: 28px
     line-height: 1.2
     margin: 0 0 20px
+    @media (max-width: 1000px)
+      margin: 20px 0 20px 0 !important
 
   img
     width: 100%
