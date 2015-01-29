@@ -35,9 +35,24 @@ $(document).ready(function() {
 
   });
 
-  work_wrap.on('scroll', function(event) {
-    return_sign.css('top', work_wrap.scrollTop() -2);
-  });
+  // work_wrap.on('scroll', function(event) {
+  //   return_sign.css('top', work_wrap.scrollTop() -2);
+  // });
+
+  var $whatever = $( ".thumb-container" );
+  var rt = ($(window).width() - ($whatever.offset().left + $whatever.outerWidth()));
+
+  var ww = $('.work-wrap').width();
+  var wc = $('.thumb-container').outerWidth();
+
+  console.log(ww - (ww - wc));
+
+  var shift = 0;
+  if ($(window).width() <= 1000) {
+    shift = 12;
+  }
+
+  return_sign.css('right', ww - ( (ww - wc) / 2) - 178 + shift) ;
 
   return_sign.click(function() {
     roll_back();
