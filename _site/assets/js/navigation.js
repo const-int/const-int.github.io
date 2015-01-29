@@ -21,12 +21,12 @@ $(document).ready(function() {
   });
 
 
-  // var height = $(window).height();
-  // $(window).resize(function() {
-  //     if ($(window).height()==height) return;
-  //     height = $(window).height();
-  //     window.location.hash = '#about';
-  // });
+  var height = $(window).height();
+  $(window).resize(function() {
+      if ($(window).height()==height) return;
+      height = $(window).height();
+      window.location.hash = '#about';
+  });
 
 
   $(window).on('hashchange',function(){
@@ -65,10 +65,8 @@ $(document).ready(function() {
         skills_animate();
         break;
       case 1, 3:
-        skills_stop();
         break;
       case 2:
-        skills_stop();
         $('.exp-animation .wrap').load('exp/exp_html.html');
         break;
     }

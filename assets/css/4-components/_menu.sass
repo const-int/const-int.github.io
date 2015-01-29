@@ -110,8 +110,6 @@ aside.sidebar
     &.fixed
       +position(fixed, 0 null null 0)
 
-
-
     .item
       &
         display: block
@@ -127,7 +125,6 @@ aside.sidebar
           width: 33.33%
           float: left
           border-top: 1px solid #333335
-
           &:nth-child(3)
             display: none
 
@@ -135,10 +132,13 @@ aside.sidebar
           border-top: 1px solid #333335
 
         &.active
-          @include transition(all .5s 1s)
+          @include transition(background .5s 1s)
           background: #343435
           color: #bbb
           cursor: default !important
+
+          @media (max-width: 1000px)
+            color: #ccc
 
         &.first-loaded
           background: #343435 !important

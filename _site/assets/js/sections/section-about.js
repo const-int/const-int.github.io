@@ -13,6 +13,7 @@ function skills_animate () {
 
   $(".meter > span").each(function() {
     var element = $(this);
+    var wd = $('.skill-unit:first-child .meter').width();
     var opsty = $(this).data("origWidth");
     var indexOfBar = $(this).parents('.skill-unit').index();
 
@@ -23,18 +24,10 @@ function skills_animate () {
     function animateBars() {
       $(element).animate({
         width: opsty,
-        opacity: opsty / 240
+        opacity: opsty / wd
       }, 1200);
     }
   })
 }
 
 
-function skills_stop() {
-  setTimeout(function(){
-    $(".meter > span").each(function() {
-
-      $(this).width(0);
-    })
-  }, 2000)
-}

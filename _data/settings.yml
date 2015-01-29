@@ -48,6 +48,13 @@ blurb2: >
   Take some time to look at my works, experiences, and if you're interested
   in helping me make this happen...
 
+contact:
+  "[Twitter](https://twitter.com/Const_Naumov) is my way to share things of interest.
+  I push projects to [GitHub](https://github.com/const-int)
+  and create personal handcrafts on [CodePen](http://codepen.io/const-int/).
+  I also connect with people on [LinkedIn](http://ru.linkedin.com/pub/konstantin-naumov/a1/847/b33/).
+  You can always email me, and i'll get back to your inquiry asap."
+
 skills:
 - {name: Responsive Layouting, value: '9', icon: 'icon-responsive'}
 - {name: JavaScript Programming, value: '6', icon: 'icon-tag'}

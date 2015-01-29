@@ -2,6 +2,35 @@
   text-align: center
   overflow-y: auto
 
+  .mailto-button
+    display: none
+    margin-top: 20px
+    @extend .hire-button
+    @extend .const-button
+    margin-bottom: 40px
+
+    @media (max-width: 1000px)
+      display: block
+
+  .contact-text
+    display: none
+    font-size: 1.2rem
+    text-align: left
+    font-weight: 300
+
+    @media (max-width: 1000px)
+      display: block
+
+    a
+      color: #333
+      font-weight: 400
+
+  .awesome-form
+    text-align: left
+
+    @media (max-width: 1000px)
+      display: none
+
   .section-title
     border-bottom: 0
     margin-bottom: 20px

@@ -19,12 +19,12 @@
 .meter > span:after
   content: ""
   +position(absolute, 0 0 0 0)
-  background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255, 255, .3)),  color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .3)),color-stop(.75, rgba(255, 255, 255, .3)), color-stop(.75, transparent), to(transparent))
-  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .3) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .3) 50%, rgba(255, 255, 255, .3) 75%, transparent 75%, transparent)
+  // background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255, 255, .3)),  color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .3)),color-stop(.75, rgba(255, 255, 255, .3)), color-stop(.75, transparent), to(transparent))
+  // background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .3) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .3) 50%, rgba(255, 255, 255, .3) 75%, transparent 75%, transparent)
   z-index: 1
   background-size: 50px 50px
   border-radius: 20px
-  +animation(move  2s linear infinite)
+  // +animation(move  2s linear infinite)
 
 +keyframes(move)
   0%

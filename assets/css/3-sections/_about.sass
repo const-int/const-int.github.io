@@ -3,12 +3,40 @@
   overflow: auto
   z-index: 4
 
+  .section-title
+    @media (max-width: 1000px)
+      margin-bottom: 0
+      border-bottom: 0 !important
+      padding-top: 70px
+      padding-bottom: 25px
+      height: 40px
+      line-height: 60px
+      overflow: hidden
+
+  .profile-card
+    text-align: center
+    margin: 0 -20px 20px
+    padding: 0
+    overflow: hidden
+    max-height: 400px
+
+    @media (min-width: 1001px)
+      display: none
+
+    img
+      width: 100%
+      display: block
+      margin: 0 auto
+
 .hire-button
   margin-bottom: 50px
   height: 101px
   line-height: 101px
   width: 100%
   text-align: center
+
+  @media (max-width: 1000px)
+    margin-bottom: 40px
 
   &:hover svg path
     fill: #fff
@@ -22,6 +50,8 @@
       +transition(fill .2s ease)
       fill: #ccc
 
+
+
 .blurb
   margin: 50px auto
   font-size: 22px
@@ -31,11 +61,19 @@
     margin-bottom: 20px
     margin-top: 0
 
+    p
+      font-size: 1.2rem
+
 .blurb2
   margin-top: -12px
   font-size: 22px
   font-weight: 300
   margin-bottom: 50px
+
+  @media (max-width: 1000px)
+    margin-bottom: 20px
+    p
+      font-size: 1.2rem
 
 .skill-lockup
   text-align: justify
@@ -54,8 +92,12 @@
     padding: 12px 0 0 120px
 
     @media (max-width: 1000px)
-      height: 3em
-      padding: 0
+      padding: 0 0 0 75px
+      height: 60px
+      margin-bottom: 12px
+
+      &:last-child
+        margin-bottom: 10px
 
     .skill-icon
       +position(absolute, 0 null null 0)
@@ -64,17 +106,21 @@
       background: #252527 url(../img/#{$alternate-path})
       border-radius: 50%
 
-      @media (max-width: 1000px)
-        display: none
-
       path, polygon
         fill: $accent
+
+      @media (max-width: 1000px)
+        +size(60px)
+
 
     .skill-label
       text-align: left
       font-size: 22px
 
-
+      @media (max-width: 1000px)
+        font-size: 1.25em
+        padding-top: 1px
+        padding-left: 6px
 
 
 @for $i from 1 through 10
@@ -91,12 +137,12 @@
   .skill-unit
     width: 49%!important
     height: 75px !important
-    line-height: 75px !important
-    padding: 0 0 0 90px !important
+    line-height: 25px !important
+    padding: 0 20px 0 90px !important
     margin: 0 0 20px 0 !important
 
     .meter
-      display: none
+      margin-top: 10px
 
     .skill-icon
       width: 75px !important
@@ -104,6 +150,7 @@
 
 @media (min-width: 1001px) and (max-width: 1100px)
   .skill-label
+    padding-top: 8px
     font-size: 18px !important
 
 
