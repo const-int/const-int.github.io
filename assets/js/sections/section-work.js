@@ -10,6 +10,7 @@ $(document).ready(function() {
   work_container = $('.work-container');
   return_sign = $('.work-return');
   thumb_wrap_shift = $('.thumb-wrap-shift')
+  animating_work = false;
 
 
   $.ajaxSetup({ cache: true });
@@ -17,15 +18,21 @@ $(document).ready(function() {
   // Click handlers
   show_work_trigger.click(function() {
 
+    if (animating_work) return;
+
     var that = $(this),
         newTitle = that.data('name'),
         newfolder = that.data('folder'),
         newHTML = 'work/'+ newfolder;
 
+    animating_work = true;
+
     work_belt.addClass("slided");
     work_container.show();
+
     setTimeout(function(){
-      return_sign.addClass('slide');
+      $('aside .work-return').show();
+      animating_work = false;
     }, 800);
 
     // Add content
@@ -38,16 +45,23 @@ $(document).ready(function() {
   });
 
 
-  $('nav, .work-return').click(function() {
-    work_belt.removeClass('slided');
-    return_sign.removeClass('slide');
+  return_sign.click(function() {
+    slide_back();
     setTimeout(function(){
+      $('aside .work-return').hide();
       work_container.hide(200);
-    }, 800)
+      animating_work = false;
+    }, 800);
   });
 
 
 });
+
+function slide_back () {
+  if (animating_work) return;
+  animating_work = true;
+  work_belt.removeClass('slided');
+}
 
 // Scrollbar width
 function getScrollbarWidth() {
@@ -76,6 +90,8 @@ function calc_return_button_place() {
       padding_value = parseInt(padding_right.substring(0, padding_right.length - 2)),
       return_offset = scrollbar + (thumb_container.outerWidth(true) - thumb_container.outerWidth()) / 2 + padding_value + thumb_container.width() - 56;
 
-  return_sign.css('right', return_offset );
+  $('.work-center-container .work-return').css('right', return_offset );
 }
+
+
 

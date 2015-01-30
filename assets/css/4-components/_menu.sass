@@ -11,6 +11,11 @@ aside.sidebar
     z-index: 2
     min-height: 540px
 
+    .work-return
+      display: none
+      @media (min-width: 1001px)
+        display: none !important
+
     @media (max-width: 1000px)
       +position(fixed, auto 0 0 auto )
       position: fixed
@@ -153,7 +158,6 @@ aside.sidebar
           background: #343435
           color: #bbb
           cursor: default !important
-          font-weight: 700
 
           @media (max-width: 1000px)
             color: #ccc
@@ -162,7 +166,6 @@ aside.sidebar
           background: #343435 !important
           color: #bbb !important
           cursor: default !important
-          font-weight: 700
 
         &:not(.active):hover
           color: #bbb

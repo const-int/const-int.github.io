@@ -5,6 +5,13 @@ $(document).ready(function() {
 
   // nav click
   $('nav > *').click(function(event) {
+
+    // slide back portfolio
+    slide_back();
+    $('aside .work-return').hide();
+    work_container.hide(200);
+    animating_work = false;
+
     var eq = $(this).index();
     if ($(this).hasClass('active')) { return }
     $(this).siblings().each(function(index, el) {
