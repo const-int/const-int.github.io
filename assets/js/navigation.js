@@ -21,10 +21,9 @@ $(document).ready(function() {
   });
 
 
-  var height = $(window).height();
   $(window).resize(function() {
-      if ($(window).height()==height) return;
-      height = $(window).height();
+      if ( $(window).height() == win_height ) return;
+      win_height = $(window).height();
       window.location.hash = '#about';
   });
 

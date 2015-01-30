@@ -35,9 +35,6 @@ $(document).ready(function() {
 
   });
 
-  // work_wrap.on('scroll', function(event) {
-  //   return_sign.css('top', work_wrap.scrollTop() -2);
-  // });
 
   var $whatever = $( ".thumb-container" );
   var rt = ($(window).width() - ($whatever.offset().left + $whatever.outerWidth()));

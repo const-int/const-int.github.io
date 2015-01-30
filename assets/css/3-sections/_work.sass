@@ -217,6 +217,9 @@
     width: 100%
     margin-bottom: 20px
 
+  label
+    +user-select(none)
+
   .work-return
     +position(fixed, 54px 0 null null)
     padding: 12px 18px 12px 50px
@@ -224,6 +227,9 @@
     width: 78px
     opacity: 0
     +transition(opacity .3s .5s ease)
+    color: #fff !important
+    background-color: #343435 !important
+    +user-select(none)
 
     @media (max-width: 1000px)
       top: 73px
