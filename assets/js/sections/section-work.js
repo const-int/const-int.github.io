@@ -63,35 +63,3 @@ function slide_back () {
   work_belt.removeClass('slided');
 }
 
-// Scrollbar width
-function getScrollbarWidth() {
-    var outer = document.createElement("div");
-    outer.style.visibility = "hidden";
-    outer.style.width = "100px";
-    outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
-    document.body.appendChild(outer);
-    var widthNoScroll = outer.offsetWidth;
-    outer.style.overflow = "scroll";
-    var inner = document.createElement("div");
-    inner.style.width = "100%";
-    outer.appendChild(inner);
-    var widthWithScroll = inner.offsetWidth;
-    outer.parentNode.removeChild(outer);
-    return widthNoScroll - widthWithScroll;
-}
-
-// Calc button placemant
-function calc_return_button_place() {
-  var thumb_container = $( ".thumb-container"),
-      scrollbar = ( win_width > 1000 ) ? getScrollbarWidth() : 0,
-      margin_right = thumb_container.css('margin-right'),
-      padding_right = thumb_container.css('padding-right'),
-      margin_value = parseInt(margin_right.substring(0, margin_right.length - 2)),
-      padding_value = parseInt(padding_right.substring(0, padding_right.length - 2)),
-      return_offset = scrollbar + (thumb_container.outerWidth(true) - thumb_container.outerWidth()) / 2 + padding_value + thumb_container.width() - 56;
-
-  $('.work-center-container .work-return').css('right', return_offset );
-}
-
-
-

@@ -196,15 +196,11 @@
       .work-return
         display: none !important
 
-    .work-return
-      position: fixed
-      top: 50px
-
   .project-load
     z-index: 10
     position: relative
     margin-bottom: 40px
-    margin-top: 5px
+    margin-top: 18px
     background: #fff
 
     @media (max-width: 1000px)
@@ -241,6 +237,8 @@
 
 
 .work-return
+  position: absolute
+  top: 0
   +size(56px 46px)
   z-index: 30
   +transition(opacity .4s ease)

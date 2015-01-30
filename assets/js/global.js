@@ -16,9 +16,6 @@ $(document).ready(function() {
     $(".full-screen-block").height( win_height );
     $(".thumb-wrap, .work-wrap").height( win_height );
 
-    // Position return button
-    calc_return_button_place();
-
     // Hide Exp menu item on vertically small items
     if ( win_width > 1000 ) {
       if ( win_height < 605 ) {

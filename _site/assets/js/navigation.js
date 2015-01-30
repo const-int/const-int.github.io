@@ -20,25 +20,22 @@ $(document).ready(function() {
     move_pages(eq);
   });
 
-  var handheld = false;
-  var desctop = false;
 
   $(window).on("load", function() {
-      handheld = ( win_width < 1001 ) ? true : false;
-      desctop = ( win_width > 1000 ) ? true : false;
       nav_index = get_page_from_location();
       $('nav .item').eq(nav_index).addClass('first-loaded');
       page_actions(nav_index);
+      window.location.hash = sections[nav_index];
   });
 
-
   $(window).resize(function() {
-      win_width = $(window).width();
-      if ( win_width > 1000  && handheld ) { location.reload() }
-      if ( win_width < 1001  && desctop ) { location.reload() }
-      if ( $(window).height() == win_height || win_width < 1001 ) return;
-      win_height = $(window).height();
-      window.location.hash = '#about';
+      if ( $(window).height()==win_height || $(window).width() < 1000 ) return;
+      height = $(window).height();
+      setTimeout(function() {
+        window.location.hash = '#about';
+        location.reload();
+        win_height = $(window).height;
+      }, 1);
   });
 
 
