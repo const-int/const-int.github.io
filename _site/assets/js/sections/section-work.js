@@ -44,6 +44,12 @@ $(document).ready(function() {
 
   });
 
+  var large_return = $('.work-wrap .work-return');
+
+  work_wrap.on('scroll', function(event) {
+    large_return.css('top', work_wrap.scrollTop());
+  });
+
 
   return_sign.click(function() {
     slide_back();
