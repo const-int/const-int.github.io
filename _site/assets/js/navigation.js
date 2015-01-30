@@ -25,7 +25,9 @@ $(document).ready(function() {
       nav_index = get_page_from_location();
       $('nav .item').eq(nav_index).addClass('first-loaded');
       page_actions(nav_index);
-      window.location.hash = sections[nav_index];
+      if (nav_index > 0 ) {
+        window.location.hash = sections[nav_index];
+      }
   });
 
   $(window).resize(function() {
@@ -47,11 +49,7 @@ $(document).ready(function() {
 
 
   function get_page_from_location() {
-    if(window.location.hash) {
-      hash = window.location.hash;
-    } else {
-      hash = '#about';
-    }
+    hash = window.location.hash;
     var nav_index = sections.indexOf(hash);
     if (nav_index == -1) { nav_index = 0; }
     return  nav_index;
