@@ -14,6 +14,7 @@ $(document).ready(function() {
 
   $.ajaxSetup({ cache: true });
 
+  // Click handlers
   show_work_trigger.click(function() {
 
     var that = $(this),
@@ -23,11 +24,9 @@ $(document).ready(function() {
 
     work_belt.addClass("slided");
     work_container.show();
-    loader_work.fadeIn();
 
     // Add content
     $('.project-load').load(newHTML,function() {
-      loader_work.fadeOut();
       $(this).addClass('loaded');
     });
 
@@ -36,13 +35,20 @@ $(document).ready(function() {
   });
 
 
+  return_sign.click(function() {
+    work_belt.removeClass("slided");
+    setTimeout(function(){
+      work_container.hide(200);
+    }, 800)
+  });
+
+
+  // Return button placemant
   var $whatever = $( ".thumb-container" );
   var rt = ($(window).width() - ($whatever.offset().left + $whatever.outerWidth()));
 
   var ww = $('.work-wrap').width();
   var wc = $('.thumb-container').outerWidth();
-
-  console.log(ww - (ww - wc));
 
   var shift = 0;
   if ($(window).width() <= 1000) {
@@ -51,16 +57,5 @@ $(document).ready(function() {
 
   return_sign.css('right', ww - ( (ww - wc) / 2) - 178 + shift) ;
 
-  return_sign.click(function() {
-    roll_back();
-  });
-
 });
-
-function roll_back () {
-  work_belt.removeClass("slided");
-  setTimeout(function(){
-    work_container.hide(200);
-  }, 800)
-}
 
