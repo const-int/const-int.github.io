@@ -46,7 +46,6 @@ $(document).ready(function() {
     return  nav_index;
   }
 
-
   function move_pages(nav_index) {
     higlight_link(nav_index);
     page_actions(nav_index);
@@ -59,15 +58,11 @@ $(document).ready(function() {
   }
 
   function page_actions (nav_index) {
-    switch (nav_index) {
-      case 0:
-        skills_animate();
-        break;
-      case 1, 3:
-        break;
-      case 2:
+    if ( nav_index == 0 ) {
+        skills_animate()
+     }
+    if ( nav_index == 2 ) {
         $('.exp-animation .wrap').load('exp/exp_html.html');
-        break;
     }
   }
 

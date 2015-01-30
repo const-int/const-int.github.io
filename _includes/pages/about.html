@@ -18,7 +18,7 @@
 
       {% for skill in site.data.settings.skills %}
 
-        <div class="skill-unit">
+        <div class="skill-unit" >
           <div class="skill-icon">{% include icons/{{ skill.icon }}.html %}</div>
           <div class="skill-label">{{ skill.name }}</div>
           <div class="meter"><span data-skill="{{ skill.value }}"></span></div>

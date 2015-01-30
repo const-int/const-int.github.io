@@ -141,7 +141,7 @@ img::-moz-selection
   background: transparent
 
 body
-  -webkit-tap-highlight-color: $selectionColor
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
 
 
 /* Preloader
@@ -174,28 +174,6 @@ body
   font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif
   color: $textColor
 
-a.mock-link-for-new-tabs
-  +size(0)
-  visibility: hidden
-
-@mixin center-trans($asix: "both")
-  position: absolute
-  @if $asix == "hor"
-    left: 50%
-    -ms-transform: translate(-50px,0)
-    -webkit-transform: translate(-50px,0)
-    transform: translate(-50px,0)
-  @if $asix == "vert"
-    top: 50%
-    -ms-transform: translate(0,-50px)
-    -webkit-transform: translate(0,-50px)
-    transform: translate(0,-50px)
-  @if $asix == "both"
-    top: 50%
-    left: 50%
-    -ms-transform: translate(-50%, -50%)
-    -webkit-transform: translate(-50%, -50%)
-    transform: translate(-50%, -50%)
 
 svg
   +size(100%)

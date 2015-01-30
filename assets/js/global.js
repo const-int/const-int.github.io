@@ -13,13 +13,16 @@ $(document).ready(function() {
     $(".full-screen-block").height( win_height );
     $(".thumb-wrap, .work-wrap").height( win_height );
 
+    // Return button place
+    calc_return_button_place();
+
     // Hide Exp menu item on vertically small items
     if ( win_width > 1000 ) {
       if ( win_height < 605 ) {
-        $('nav a.item:nth-child(3)').hide();
+        $('nav a.item:nth-child(3)').addClass('large-hidden');
       }
       else {
-        $('nav a.item:nth-child(3)').show();
+        $('nav a.item:nth-child(3)').removeClass('large-hidden');
       }
     }
 
