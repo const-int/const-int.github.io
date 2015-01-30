@@ -29,7 +29,7 @@ $(document).ready(function() {
       win_width = $(window).width();
       if ( win_width > 1000  && handheld ) { location.reload() }
       if ( win_width < 1001  && desctop ) { location.reload() }
-      if ( $(window).height() == win_height ) return;
+      if ( $(window).height() == win_height || win_width < 1001 ) return;
       win_height = $(window).height();
       window.location.hash = '#about';
   });
