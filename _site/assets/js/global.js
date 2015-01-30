@@ -7,7 +7,10 @@ $(document).ready(function() {
   win_width  = $(window).width();
   win_height = $(window).height();
 
+
+
   $(window).on('load resize', function () {
+
 
     // Fitting blocks size to screen size
     $(".full-screen-block").height( win_height );

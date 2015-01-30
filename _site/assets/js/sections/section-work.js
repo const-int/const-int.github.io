@@ -24,6 +24,9 @@ $(document).ready(function() {
 
     work_belt.addClass("slided");
     work_container.show();
+    setTimeout(function(){
+      return_sign.addClass('slide');
+    }, 800);
 
     // Add content
     $('.project-load').load(newHTML,function() {
@@ -37,6 +40,7 @@ $(document).ready(function() {
 
   return_sign.click(function() {
     work_belt.removeClass("slided");
+    return_sign.removeClass('slide');
     setTimeout(function(){
       work_container.hide(200);
     }, 800)
