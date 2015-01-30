@@ -38,8 +38,8 @@ $(document).ready(function() {
   });
 
 
-  return_sign.click(function() {
-    work_belt.removeClass("slided");
+  $('nav, .work-return').click(function() {
+    work_belt.removeClass('slided');
     return_sign.removeClass('slide');
     setTimeout(function(){
       work_container.hide(200);
