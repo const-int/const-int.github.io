@@ -14,7 +14,7 @@ aside.sidebar
     @media (max-width: 1000px)
       position: fixed
       width: 100%
-      height: 60px
+      height: 50px
       z-index: 80
       min-height: initial
 
@@ -125,9 +125,14 @@ aside.sidebar
 
 
         @media (max-width: 1000px)
+          +box-sizing(border-box)
+          height: 50px
+          line-height: 50px
+          padding: 0
           width: 33.33%
           float: left
-          border-top: 1px solid #333335
+          border-left: 1px solid #333335
+          border-bottom: 0
           &:nth-child(3)
             display: none
 
