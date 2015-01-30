@@ -156,7 +156,7 @@
       width: 16px;
       fill: #888;
       display: block !important;
-      opacity: 1 !important;
+      opacity: 1;
       @include animation(fadeSearch .05s 1.2s forwards);
     }
 
