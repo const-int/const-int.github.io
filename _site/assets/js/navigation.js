@@ -13,8 +13,12 @@ $(document).ready(function() {
     move_pages(eq);
   });
 
+  var handheld = false;
+  var desctop = false;
 
   $(window).on("load", function() {
+      handheld = ( win_width < 1001 ) ? true : false;
+      desctop = ( win_width > 1000 ) ? true : false;
       nav_index = get_page_from_location();
       $('nav .item').eq(nav_index).addClass('first-loaded');
       page_actions(nav_index);
@@ -22,6 +26,9 @@ $(document).ready(function() {
 
 
   $(window).resize(function() {
+      win_width = $(window).width();
+      if ( win_width > 1000  && handheld ) { location.reload() }
+      if ( win_width < 1001  && desctop ) { location.reload() }
       if ( $(window).height() == win_height ) return;
       win_height = $(window).height();
       window.location.hash = '#about';
