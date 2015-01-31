@@ -63,13 +63,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 4, ../../_sass/typography.scss */
-p {
-  color: red !important;
-  color: red !important;
-}
-
-/* line 9, ../../_sass/typography.scss */
+/* line 7, ../../_sass/typography.scss */
 #border-box {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
