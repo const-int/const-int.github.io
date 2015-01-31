@@ -4,6 +4,7 @@
   z-index: 4
 
   .section-title
+    margin-bottom: 40px
     @media (max-width: 1000px)
       margin-bottom: 0
       border-bottom: 0 !important
@@ -53,9 +54,8 @@
 
 
 .blurb
-  margin: 50px auto
+  margin: 0 auto 40px
   font-size: 22px
-  font-weight: 300
 
   @media (max-width: 1000px)
     margin-bottom: 20px
@@ -67,8 +67,7 @@
 .blurb2
   margin-top: -12px
   font-size: 22px
-  font-weight: 300
-  margin-bottom: 50px
+  margin-bottom: 40px
 
   @media (max-width: 1000px)
     margin-bottom: 20px
@@ -77,19 +76,27 @@
 
 .skill-lockup
   text-align: justify
+  overflow: hidden
+  margin-bottom: 20px
 
-  &:after
-    content: ''
-    display: inline-block
-    width: 100%
+  @media (min-width: 1001px)
+    margin-bottom: 44px
 
   .skill-unit
     position: relative
     display: inline-block
     +box-sizing(border-box)
     +size(390px 100px)
-    margin: 0 0 40px 0
-    padding: 12px 0 0 120px
+    margin: 0 0 33px 0
+    padding: 15px 0 0 120px
+
+    @media (min-width: 1001px)
+
+      &:nth-child(3), &:nth-child(4)
+        margin: 0
+
+    &:nth-child(4)
+      float: right
 
     @media (max-width: 1000px)
       padding: 0 0 0 75px
@@ -115,7 +122,10 @@
 
     .skill-label
       text-align: left
-      font-size: 22px
+      font-size: 24px
+      font-weight: 300
+      color: #000
+      white-space: nowrap
 
       @media (max-width: 1000px)
         font-size: 1.25em

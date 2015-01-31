@@ -186,7 +186,7 @@
     position: relative
     max-width: 920px
     padding: 0 40px
-    margin: 60px auto 60px
+    margin: 0 auto 60px
 
 
     @media (max-width: 1000px)
@@ -214,31 +214,51 @@
       margin: 0
       display: block
 
-  h4, noscript h4
-    display: inline-block
-    color: #252527
-    font-weight: 300
-    text-transform: uppercase
-    font-size: 28px
-    line-height: 1.2
-    margin: 0 0 0 68px
-    height: 46px
-    line-height: 46px
+  .project-title
+    @extend .section-title
+    font-weight: 400
+    margin-top: 0
+    @media (min-width: 1001px)
+      padding-left: 78px
 
-    @media (max-width: 1000px)
-      margin: 14px 0 0 0 !important
-      line-height: 38px
+    a.project-url
+      float: right
+      padding: 12px 50px 12px 18px
+      margin-top: 11px
+
+
+      &[href='#']
+        display: none
+
+      &:after
+        content: ""
+        +position(absolute, 50% 15px null null )
+        +size(25px)
+        +transform(translate(0, -50%))
+        background: url(../img/icon-url.svg)
+        background-size: contain
+
+      @media (max-width: 1000px)
+        font-size: 0
+        +size(10px)
+        padding: 12px 14px
+        margin-top: 5px
+
+        &:after
+          +transform(translate(50%, -50%))
+          right: 50%
+          +size(18px)
+
+
 
   img
     width: 100%
     margin-bottom: 20px
 
-  label
-    +user-select(none)
-
 
 .work-return
   position: absolute
+  margin-top: 61px
   top: 0
   +size(56px 46px)
   z-index: 30

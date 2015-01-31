@@ -22,6 +22,7 @@
             <div class="thumb-unit">
               <div class="thumb-click-area"
                 data-name='{{ project.name }}'
+                data-url='{{ project.url }}'
                 data-folder="{{ project.folder }}">
 
                 <div class="img-wrap">
@@ -30,7 +31,6 @@
 
                 <div class="unit-title const-button">
                   {{ project.name }}
-                  <!-- <a href="http://{{ project.url }}" class="live-url" target="_blank">{{ project.url }}</a> -->
                 </div>
 
                 <div class="icon-arrow-right"></div>
@@ -58,7 +58,10 @@
           <label for="return">
             <div class="work-return const-button">Back</div>
           </label>
-          <h4 class="project-title"></h4>
+          <h4 class="project-title">
+            <span></span>
+            <a href="#" class="project-url const-button">View online</a>
+          </h4>
           <div class="project-load"></div>
         </div>
 

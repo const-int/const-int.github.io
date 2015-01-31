@@ -26,6 +26,12 @@
 /*  Typography presets
   ------------------------------------  */
 
+div
+  +user-select(none)
+
+p
+  +user-select(text)
+
 .section-title
   padding: 50px 0 14px
   font-size: 54px
@@ -109,9 +115,7 @@ a:hover, a:focus
   position: relative
   border-radius: 3px
   line-height: 22px
-  font:
-    size: 22px
-    weight: 300
+  font-size: 22px
   color: #ccc
   background: #252527
   box-shadow: rgba(0,0,0,0.22745) 0px 3px 10px 0px, rgba(0,0,0,0.15686) 0px 3px 10px 0px

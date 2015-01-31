@@ -18,38 +18,35 @@ $(document).ready(function() {
   // Click handlers
   show_work_trigger.click(function() {
 
-    if (animating_work) return;
+      if (animating_work) return;
 
-    var that = $(this),
-        newTitle = that.data('name'),
-        newfolder = that.data('folder'),
-        newHTML = 'work/'+ newfolder;
+      var that = $(this),
+          newTitle = that.data('name'),
+          newUrl = that.data('url'),
+          newfolder = that.data('folder'),
+          newHTML = 'work/'+ newfolder;
 
-    animating_work = true;
+      animating_work = true;
 
-    work_belt.addClass("slided");
-    work_container.show();
+      work_belt.addClass("slided");
+      work_container.show();
 
-    setTimeout(function(){
-      $('aside .work-return').show();
-      animating_work = false;
-    }, 800);
+      setTimeout(function(){
+        $('aside .work-return').show();
+        animating_work = false;
+      }, 800);
 
-    // Add content
-    $('.project-load').load(newHTML,function() {
-      $(this).addClass('loaded');
-    });
+      // Add content
+      $('.project-load').load(newHTML,function() {
+        $(this).addClass('loaded');
+      });
 
-    $('.project-title').text(newTitle);
+      $('.project-title span').text(newTitle);
+      if (newUrl != '') {
+        $('.project-url').attr('href', 'http://' + newUrl);
+      }
 
   });
-
-  var large_return = $('.work-wrap .work-return');
-
-  work_wrap.on('scroll', function(event) {
-    large_return.css('top', work_wrap.scrollTop());
-  });
-
 
   return_sign.click(function() {
     slide_back();

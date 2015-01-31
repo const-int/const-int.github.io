@@ -3,7 +3,7 @@
 
 title: Konstantin Naumov
 description: Front-end web developer
-subdescription: loving to make <span>cool</span> stuff
+subdescription: loves to make <span>cool</span> stuff
 email: const.int.naumov@gmail.com
 copyright: Konstantin Naumov © 2014
 
@@ -65,7 +65,7 @@ skills:
 # Work Section
 
 projects:
-- {url: google.ru, name: ennoaeao.py , folder: 'proj-1', file: 'work/proj-1.html'}
+- {url: '', name: ennoaeao.py , folder: 'proj-1', file: 'work/proj-1.html'}
 - {url: google.ru, name: City-IN website , folder: 'proj-2', file: 'work/proj-2.html'}
 - {url: google.ru, name: Crispy Icons, folder: 'proj-3', file: 'work/proj-3.html'}
 - {url: google.ru, name: Flat Mobile , folder: 'proj-4', file: 'work/proj-4.html'}
@@ -83,10 +83,10 @@ projects:
 
 clients:
 - {file: 'exp/exp_html.html',
-  quote: "Converting designs into clean, cross browser compatible, troubleproof layouts. Well formed pages are produced on every iteration of employer's development lifecycle.<br> Human readability and semantics of my resulting code are powered by <a href='http://gruntjs.com/' target='_blank'>frontend toolboxes</a> and modern <a href='http://jekyllrb.com' target='_blank'>template engines</a>.",
+  quote: "Converting designs into clean, cross browser compatible, troubleproof layouts. Well formed pages are produced on every iteration of employer's development lifecycle.<br> Human readability and semantics of my resulting code are powered by <a href='http://gruntjs.com/' target='_blank' class='grunt'>frontend toolboxes</a> and modern <a href='http://jade-lang.com/' target='_blank' class='jade'>template engines</a>.",
   logo: 'HTML'}
 - {file: 'exp/exp_css.html',
-  quote: "Styling is essential and pretty complicated part of progressive web application. To maintain cross-browser and cross-devise consistency I build my stilesheets based on <a target='_blnk' href='http://getbootstrap.com/'>front-end frameworks</a>. <br> With help of <a target='_blnk' href='http://sass-lang.com/'>CSS preprocessors</a> and <a target='_blnk' href='http://bourbon.io/'>mixin libraries</a> I keep project styles DRY and structured. When it comes to really large applications I prefer <a target='_blnk' href='http://compass-style.org/'>CSS authoring frameworks</a>.",
+  quote: "Styling is essential and pretty complicated part of progressive web application. To maintain cross-browser and cross-devise consistency I build my stilesheets based on <a target='_blnk' href='http://getbootstrap.com/'>front-end frameworks</a>. <br> With help of <a target='_blnk' href='http://sass-lang.com/'>CSS preprocessors</a> and <a target='_blnk' href='http://bourbon.io/'>mixin libraries</a> I keep project styles DRY and structured. When it comes to sufficiently large applications I begin with <a target='_blnk' href='http://compass-style.org/'>CSS authoring frameworks</a>.",
   logo: 'CSS'}
 - {file: 'exp/exp_svg.html',
   quote: "Growing number of high DPI displays nowdays affects quality requirements for a regular web app. Scalable vector graphics bring an ability to create crystal clear user interfaces and very high quality cross-platform animations. <br> To deliver such experience to user I craft elements with support of powerful <a href='http://snapsvg.io/' target='_blank'>JavaScript SVG libraries</a>.",
@@ -98,7 +98,7 @@ clients:
   quote: "In every project I try to create higly dinamic user experience by turning beautiful design files into working product.",
   logo: 'UX'}
 - {file: 'exp/exp_cms.html',
-  quote: "I mostly do front-end development but occasionally I get my hands dirty with some backend (mostly php/MySQL). And I create WordPess templates time after time. <br>Also I really love dealing with static site generators like <a href='http://jekyllrb.com/'>this one</a> or <a href='https://middlemanapp.com/'>that one</a> to get maximum performance.",
+  quote: "I mostly do front-end development but occasionally I get my hands dirty with some backend (mostly php/MySQL). And I create WordPess templates time after time. <br>Also I really love dealing with static site generators like <a href='http://jekyllrb.com/'>this one</a> or <a href='https://middlemanapp.com/'>that one</a> to obtain maximum performance.",
   logo: 'CMS'}
 
 

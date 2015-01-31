@@ -125,7 +125,8 @@
 
   .phone-keyboard {
     @include transform(translate(0, 100%));
-    padding: 20px 6px;
+    padding: 17px 0;
+    font-size: 0;
     @include size(100% 200px);
     @include position(absolute, null -1px 50px null);
     background: #272727;
@@ -140,7 +141,7 @@
       fill: #797979;
     }
     .key-enter {
-      @include position(absolute, 18px 8px null null);
+      @include position(absolute, 18px 10px null null);
       @include size(40px);
       border-radius: 2px;
 
@@ -162,7 +163,7 @@
 
     .key {
       display: inline-block;
-      margin: 3px 1px;
+      margin: 6px 2.5px;
       @include size(17px 30px);
       border-radius: 2px;
       background: #585858;
