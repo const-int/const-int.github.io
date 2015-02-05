@@ -1,39 +1,58 @@
 <section class="section-expirience full-screen-block" id="experience">
 
-  <div class="exp-belt">
+    <div class="container">
 
-    <div class="section-title">{{ site.data.settings.section-titles.experience}}</div>
+        <!-- Heading -->
+        <h1 class="section-title">{{ site.data.settings.section-titles.experience}}</h1>
 
-    <div class="exp-nav">
-      {% for client in site.data.settings.clients %}
-        <div class="exp-tab" data-file="{{ client.file }}">
-          <span class="const-button">{{ client.logo }} </span>
+        <!-- Animations -->
+        <div class="exp-animation">
+          <div class="wrap"></div>
         </div>
-      {% endfor %}
+
+        <!-- Navigation -->
+        <div class="exp-nav">
+          <nav class="select-skill">
+            {% for client in site.data.settings.clients %}
+              {% if forloop.index == 1 %}
+                <div  class="selected">
+                  <div class="ripple-effect select-option selected-center checked"
+                    data-file="{{ client.file }}"
+                    data-text="{{ client.logo }}"
+                    data-index="{{ forloop.index }}">
+                    {{ client.logo }}
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+
+            <ul>
+              {% for client in site.data.settings.clients %}
+                {% if forloop.index > 1 %}
+                  <li class=" select-option ripple-effect"
+                    data-index="{{ forloop.index }}"
+                    data-file="{{ client.file }}">
+                    {{ client.logo }}
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Text -->
+        <div class="exp-unit-wrapper">
+          {% for client in site.data.settings.clients %}
+            <div class="exp-unit">
+              <div class="exp-content">
+                <p>
+                  {{ client.quote }}
+                </p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
     </div>
-
-    {% for client in site.data.settings.clients %}
-    <div class="exp-unit">
-
-      <div class="exp-content">
-
-<!--         <div class='caption'>
-          {{ client.title }}
-        </div> -->
-
-        <p>
-          {{ client.quote }}
-        </p>
-
-      </div>
-
-      <div class="exp-animation">
-        <div class="wrap"></div>
-      </div>
-
-    </div>
-    {% endfor %}
-
-  </div>
 
 </section>

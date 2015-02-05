@@ -1,6 +1,10 @@
 
 $(document).ready(function() {
 
+  $(window).on('load', function(event) {
+    $('input, textarea').val('');
+  });
+
   var form = $('.awesome-form');
   var form_msg = $('.awesome-form textarea');
   var form_name = $('.awesome-form input[name=name]');
@@ -26,7 +30,7 @@ $(document).ready(function() {
 
     $(form_name).val('').removeClass('has-value');
     $(form_email).val('').removeClass('has-value');
-    $(form_msg).val('').removeClass('has-value').css('overflow', 'hidden');
+    $(form_msg).val('').removeClass('has-value');
     $(form_submit).val('Thank you! I promise to reply asap ☺')
   });
 
@@ -45,19 +49,37 @@ $(document).ready(function() {
   });
 
 
-  $('.awesome-form textarea').focusin(function(event) {
-    var that = $(this);
-    setTimeout(function(){
-      $(that).css('overflow', 'auto');
-    }, 500)
-  });
+  // Auto resize textarea
 
-  $('.awesome-form textarea').focusout(function(event) {
-    var that = $(this);
-    if (!$(that).hasClass('has-value')) {
-      $(that).css('overflow', 'hidden');
-    }
-  });
+  (function() {
+    var content, hiddenDiv, txt;
+
+    txt = $('.awesome-form textarea');
+    content = null;
+    hiddenDiv = $(document.createElement('div'));
+    hiddenDiv.addClass('auto-height-hidden-div');
+
+    $('.textarea-wrapper').append(hiddenDiv);
+    txt.on('keyup focus', function() {
+      content = $(this).val();
+      content = content.replace(/\n/g, '<br>');
+      hiddenDiv.html(content + '<br><br>');
+      $('.textarea-wrapper').css('height', hiddenDiv.height());
+      return $(this).css('height', hiddenDiv.height() - 2);
+    });
+
+    txt.on('focusout', function() {
+      content = $(this).val();
+      content = content.replace(/\n/g, '<br>');
+      hiddenDiv.html(content);
+      ta_size = (hiddenDiv.height() < 28 ) ? 28 : hiddenDiv.height();
+      wra_size = (hiddenDiv.height() < 60 ) ? 60 : hiddenDiv.height();
+
+      $('.textarea-wrapper').css('height', wra_size);
+      $(this).css('height', ta_size);
+    });
+
+  }).call(this);
 
 
 });

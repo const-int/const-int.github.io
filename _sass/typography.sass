@@ -1,0 +1,297 @@
+@import "compass/typography"
+@import "compass/css3"
+@import "compass/reset"
+
+
+$base-font-size: 20px !global
+$base-line-height: 30px !global
+$st_fz: 60px !global
+$rythm-unit: "rem" !global
+$rem-with-px-fallback: true !global
++establish-baseline
+
+
+
+// -------------------------
+// BASE --------------------
+// -------------------------
+
+*
+  vertical-align: top !important
+  font-family: 'Source Sans Pro'
+
+html
+  background: #666
+  +debug-vertical-alignment
+
+body
+  font-family: 'Source Sans Pro'
+  background: #fff url(../img/exp-bg.png)
+
+.container
+  @media (min-width: 1001px)
+    +rhythm-padding(2)
+  @media (max-width: 1000px)
+    +padding-leader
+    +padding-trailer(3)
+
+.section-title
+  +adjust-font-size-to($st_fz)
+  +adjust-leading-to(2, $st_fz)
+  +trailing-border(2px, 1, $st_fz)
+
+  @media (max-width: 1000px)
+    $st_fz: 36px
+
+    +adjust-font-size-to($st_fz)
+    +adjust-leading-to(1.5, $st_fz)
+    +trailing-border(2px, 1, $st_fz)
+
+
+.contact-large-button
+  +rhythm-padding(1)
+  line-height: $base-line-height
+
+  svg
+    width: $base-line-height
+    height: $base-line-height
+    margin-left: $base-line-height / 2
+
+p
+  color: #222
+  +rhythm-padding(1)
+
+
+// -------------------------
+// ASIDE NAVIGATION --------
+// -------------------------
+
+aside.sidebar
+
+  .profile-card
+    @media (min-width: 1220px)
+      +padding-leader
+
+  .avatar
+    @media (min-width: 1220px)
+      height: 120px
+      padding-top: ($base-line-height * 4 - 120px) / 2
+      padding-bottom: ($base-line-height * 4 - 120px) / 2
+
+
+
+  .slogan, .sidebar-footer
+    +margin-leader(.5)
+    +margin-trailer(.5)
+    @media (min-width: 1220px)
+      height: $base-line-height * 2
+
+  .title, .subtitle
+    position: relative
+
+  .title
+    +adjust-font-size-to(18px)
+    top: 3px
+
+  .subtitle
+    bottom: 4px
+    +adjust-font-size-to(13px)
+
+  .copyright
+    +adjust-font-size-to(12px)
+
+  .contact
+    font-size: 0
+
+
+// -------------------------
+// ABOUT PAGE --------------
+// -------------------------
+
+.section-about
+
+  .skill-lockup
+    &:before
+      margin-bottom: - $base-line-height
+
+    @media (min-width: 1001px)
+      +rhythm-padding(.5)
+
+
+  .skill-unit
+    height: $base-line-height * 3
+    padding-left: $base-line-height * 4
+    width: (840px - $base-line-height * 2 ) / 2
+    top: $base-line-height
+
+    @media (min-width: 1001px)
+      &:nth-last-child(1), &:nth-last-child(2)
+        +leader
+
+    @media (max-width: 1000px)
+      height: $base-line-height * 2
+      padding-left: $base-line-height * 2 + 20px
+
+      &:not(:first-child)
+        +leader(.5)
+
+    .skill-icon
+      padding-left: $base-line-height * 3
+      width: 0
+
+      @media (max-width: 1000px)
+        padding-left: $base-line-height * 2
+        height: $base-line-height * 2
+
+
+    .skill-desc
+      +adjust-font-size-to(16px)
+
+      @media (max-width: 1000px)
+        display: none
+
+    .skill-meter
+      height: $base-line-height
+      padding-top: ($base-line-height - 10px) / 2
+      +box-sizing(border-box)
+
+
+
+// -------------------------
+// PORTFOLIO PAGE  ---------
+// -------------------------
+
+.thumb-unit
+  +leader
+
+  .img-wrap
+    padding-bottom: 9 * $base-line-height
+
+  .unit-title
+    height: $base-line-height * 2
+    padding: 0 $base-line-height * 2 0 $base-line-height
+    +adjust-leading-to(2, $base-font-size)
+
+    &:after
+      top: $base-line-height
+      right: $base-line-height
+      height: $base-line-height
+      width: $base-line-height
+
+    @media (max-width: 1000px)
+      height: $base-line-height * 1.7
+      padding: 0 50px 0 20px
+      +adjust-font-size-to(16px)
+      +adjust-leading-to(1.7, 16px)
+
+      &:after
+        top: 26px
+        height: 25px
+        width: 25px
+
+
+
+.work-center-container
+
+  .section-title
+    +adjust-leading-to(2, $st_fz)
+
+    @media (max-width: 1000px)
+      $st_fz: 36px
+      +adjust-leading-to(1.5, $st_fz)
+
+  label
+    margin-right: $base-line-height
+
+  .icon-button
+    height: $base-line-height * 2
+    width: $base-line-height * 2
+
+  .work-return
+    margin-right: $base-line-height
+
+  .project-separator
+    height: $base-line-height - 2px
+    border-bottom: 2px solid #aaa
+
+  .project-load
+    +leader
+
+
+// -------------------------
+// CONTACT PAGE  -----------
+// -------------------------
+
+.awesome-form
+
+  .input-group
+    +adjust-leading-to(2)
+    +trailer
+
+    &.textarea-wrapper
+      +trailer(2)
+      height: $base-line-height * 2
+
+  input
+    padding: 0
+    +adjust-leading-to(2)
+
+  .auto-height-hidden-div
+    line-height: $base-line-height
+
+  textarea
+    padding: ($base-line-height / 2) 0
+    +adjust-leading-to(1)
+    height: $base-line-height - 2px
+    overflow: hidden
+    overflow-x: hidden
+    overflow-y: hidden
+
+
+  input:focus + label, textarea:focus + label, textarea.has-value + label,
+  input.has-value + label
+    top: 0
+    font-size: $base-font-size / 1.5
+    color: #aaa
+
+    &:after
+      content: ":"
+
+  button.contact-large-button
+    +adjust-font-size-to(20px)
+
+// -------------------------
+// EXPIRIETCE PAGE  --------
+// -------------------------
+
+.exp-animation
+  +leader(-3)
+
+.exp-nav
+  +leader(.5)
+  +adjust-leading-to(2)
+
+  .select-skill
+    &
+      +padding-trailer(.5)
+
+      &.opened
+        +padding-trailer(5.5)
+
+    .selected
+      +adjust-leading-to(2)
+    li
+      +adjust-leading-to(1)
+    ul
+      +leader(1)
+
+    .selected-center
+      +adjust-font-size-to($base-font-size)
+      +adjust-leading-to(1)
+
+
+
+.exp-content p
+  +padding-leader(3)
+
+

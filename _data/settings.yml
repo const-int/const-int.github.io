@@ -3,7 +3,7 @@
 
 title: Konstantin Naumov
 description: Front-end web developer
-subdescription: loves to make <span>cool</span> stuff
+subdescription: who loves to make <span>cool</span> stuff
 email: const.int.naumov@gmail.com
 copyright: Konstantin Naumov © 2014
 
@@ -30,7 +30,7 @@ seo:
 section-titles:
   about: "Hi, I'm Konstantin Naumov."
   portfolio: "Some of my latest work."
-  experience: "My core skills are:"
+  experience: "My core skills"
   contact: "Let's get in touch."
 
 
@@ -56,16 +56,16 @@ contact:
   You can always email me, and i'll get back to your inquiry asap."
 
 skills:
-- {name: Responsive Layouting, value: '9', icon: 'icon-responsive'}
-- {name: JavaScript Programming, value: '6', icon: 'icon-tag'}
-- {name: Interface Design, value: '5', icon: 'icon-tools'}
-- {name: Modern Browser Tools, value: '8', icon: 'icon-browser'}
+- {name: 'Responsive Layouting', desc: 'Making web for every device', value: '9', icon: 'icon-responsive'}
+- {name: 'Client-side Coding', desc: 'High-level website interactivity', value: '6', icon: 'icon-tag'}
+- {name: 'Interface Design', desc: 'Latest trends and standarts', value: '5', icon: 'icon-tools'}
+- {name: 'Modern Web Tools', desc: 'New tendencies, APIs, techniques. ', value: '8', icon: 'icon-browser'}
 
 #-------------------------------
 # Work Section
 
 projects:
-- {url: '', name: ennoaeao.py , folder: 'proj-1', file: 'work/proj-1.html'}
+- {url: , name: International Design , folder: 'proj-1', file: 'work/proj-1.html'}
 - {url: google.ru, name: City-IN website , folder: 'proj-2', file: 'work/proj-2.html'}
 - {url: google.ru, name: Crispy Icons, folder: 'proj-3', file: 'work/proj-3.html'}
 - {url: google.ru, name: Flat Mobile , folder: 'proj-4', file: 'work/proj-4.html'}
@@ -83,23 +83,23 @@ projects:
 
 clients:
 - {file: 'exp/exp_html.html',
-  quote: "Converting designs into clean, cross browser compatible, troubleproof layouts. Well formed pages are produced on every iteration of employer's development lifecycle.<br> Human readability and semantics of my resulting code are powered by <a href='http://gruntjs.com/' target='_blank' class='grunt'>frontend toolboxes</a> and modern <a href='http://jade-lang.com/' target='_blank' class='jade'>template engines</a>.",
-  logo: 'HTML'}
+  quote: "I convert designs into clean, cross browser compatible, troubleproof layouts. Well formed pages are produced on every iteration of employer's development lifecycle.<br> Human readability and semantics of my resulting code are powered by <a href='http://gruntjs.com/' target='_blank' class='grunt'>frontend toolboxes</a> and modern <a href='http://jade-lang.com/' target='_blank' class='jade'>template engines</a>.",
+  logo: 'High-quality page layouts'}
 - {file: 'exp/exp_css.html',
   quote: "Styling is essential and pretty complicated part of progressive web application. To maintain cross-browser and cross-devise consistency I build my stilesheets based on <a target='_blnk' href='http://getbootstrap.com/'>front-end frameworks</a>. <br> With help of <a target='_blnk' href='http://sass-lang.com/'>CSS preprocessors</a> and <a target='_blnk' href='http://bourbon.io/'>mixin libraries</a> I keep project styles DRY and structured. When it comes to sufficiently large applications I begin with <a target='_blnk' href='http://compass-style.org/'>CSS authoring frameworks</a>.",
-  logo: 'CSS'}
+  logo: 'Cross-browser stylesheets'}
 - {file: 'exp/exp_svg.html',
   quote: "Growing number of high DPI displays nowdays affects quality requirements for a regular web app. Scalable vector graphics bring an ability to create crystal clear user interfaces and very high quality cross-platform animations. <br> To deliver such experience to user I craft elements with support of powerful <a href='http://snapsvg.io/' target='_blank'>JavaScript SVG libraries</a>.",
-  logo: 'SVG'}
+  logo: 'Dynamic vector manipulation'}
 - {file: 'exp/exp_js.html',
-  quote: "JavaScript is mine core skill in making interactive web and jQuery is very useful thing for me as well as for industry. I'm very familiar with DOM interfacing that brings ability to take any aspect of webpage under control instantly. I've also put my hands on <a href='http://coffeescript.org/' target='_blank'>CoffeeScript preprocessor</a> and keep going so.",
-  logo: 'JS'}
-- {file: 'exp/exp_ajax.html',
-  quote: "In every project I try to create higly dinamic user experience by turning beautiful design files into working product.",
-  logo: 'UX'}
+  quote: "JavaScript is mine core skill in making interactive web and jQuery is very useful thing for me as well as for industry. <br> I'm very familiar with DOM interfacing that brings ability to take any aspect of webpage under control instantly. I've also put my hands on <a href='http://coffeescript.org/' target='_blank'>CoffeeScript</a> and keep going so.",
+  logo: 'JavaScript programming'}
 - {file: 'exp/exp_cms.html',
   quote: "I mostly do front-end development but occasionally I get my hands dirty with some backend (mostly php/MySQL). And I create WordPess templates time after time. <br>Also I really love dealing with static site generators like <a href='http://jekyllrb.com/'>this one</a> or <a href='https://middlemanapp.com/'>that one</a> to obtain maximum performance.",
-  logo: 'CMS'}
+  logo: 'CMS setup and templating'}
+- {file: 'exp/exp_ajax.html',
+  quote: "In every project I try to create higly dinamic user experience by turning beautiful design files into working product.",
+  logo: 'Improving user experience'}
 
 
 #-------------------------------

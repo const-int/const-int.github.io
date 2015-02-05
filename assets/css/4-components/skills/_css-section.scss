@@ -17,13 +17,12 @@
     color: white;
     border-radius: 3px;
 
-
     @include animation( headerResize .7s .9s ease forwards, headerRadius .3s 3.6s ease forwards, headerColor .4s .5s, ease forwards );
     @include animation-timing-function( ease );
     @include animation-fill-mode( forwards );
 
     .icon-search {
-      @include position(absolute, 4px null null 7px);
+      @include position(absolute, 6px null null 7px);
       color: #6f6f6f;
       font-size: 16px;
       width: 16px;
@@ -69,14 +68,22 @@
   }
 
   .phone-post {
-    @include size(100% 60px);
-    padding: 12px 10px 15px;
+    @include size(100% 58px);
+    padding: 11px 10px 15px;
     display: inline-block;
     position: relative;
     overflow: visible;
     float: left;
     z-index: 2;
     opacity: .5;
+
+    &:nth-child(4) {
+      padding-top: 12px;
+    }
+
+    &:last-child {
+      padding-top: 13px;
+    }
 
     &:nth-child(2), &:nth-child(3) {
       display: none;
@@ -90,19 +97,30 @@
 
     &:nth-child(odd) {
       @include animation(postDimentions .5s 2.5s forwards, oddPostShift .3s 3s forwards);
+
+      &:after {
+        content: "";
+        @include position(absolute, null null 3px 0px);
+        @include size(300px 2px);
+        background: #62605d;
+        @include animation(barShift2 1s 2s+.5s forwards);
+      }
+
     }
 
     &:nth-child(even) {
       @include animation(postDimentions .5s 2.5s forwards);
+
+      &:after {
+        content: "";
+        @include position(absolute, null null 3px 0px);
+        @include size(300px 2px);
+        background: #62605d;
+        @include animation(barShift 1s 2s+.5s forwards);
+      }
+
     }
 
-    &:after {
-      content: "";
-      @include position(absolute, null null 3px 0px);
-      @include size(300px 2px);
-      background: #62605d;
-      @include animation(barShift 1s 2s+.5s forwards);
-    }
 
     .post-thumb {
       @include size(29px);
@@ -150,13 +168,13 @@
     }
     .post-line-1 {
       width: 150px;
-      top: 25px;
+      top: 24px;
       @extend %post-line;
       @include animation(changeLineWidth1 1s 1.7s+.5s forwards);
     }
     .post-line-2 {
       width: 100px;
-      top: 33px;
+      top: 32px;
       @extend %post-line;
       @include animation(changeLineWidth2 1s 1.7s+.5s forwards);
     }
@@ -192,14 +210,14 @@
   0% {
     @include transform(rotateY(0deg));
     left: 7px;
-    top: 4px;
+    top: 6px;
     font-size: 16px;
     color: #6f6f6f;
   }
   100% {
     @include transform(rotateY(180deg));
     left: -153px;
-    top: 0;
+    top: 7px;
     font-size: 20px;
     color: #737373;
   }
@@ -222,7 +240,13 @@
   100% { right: 7px; }
 }
 
-// Separator animation
+// Separator animation odd
+@include keyframes( barShift2 ) {
+  0% { bottom: 3px; opacity: 1; }
+  100% { bottom: 6px; opacity: 0; }
+}
+
+// Separator animation even
 @include keyframes( barShift ) {
   0% { bottom: 3px; }
   100% { bottom: 6px; }

@@ -1,111 +1,176 @@
 .section-expirience
-  // +transform(translate3d(0, 100%, 0))
 
   @media (max-width: 1000px)
     display: none
 
-  h3
-    margin-top: 0
-    padding-top: 100px
-
   .section-title
-    margin-bottom: 20px
-    border-bottom: 0
+    border-color: transparent
 
-.exp-belt
-  position: relative
-  margin: 0 auto
-  max-width: 920px
-  padding: 0 40px
-  +box-sizing(border-box)
 
-  .exp-unit
-    position: relative
-    z-index: 1
-    display: none
+.exp-unit-wrapper
+  padding-right: 306px
+  visibility: visible
+  opacity: 1
+  +transition(all .2s ease)
+
+  &.faded-out
+    visibility: hidden
     opacity: 0
 
-    &.active-exp-tab
-      +display(flex)
-      height: auto
-      opacity: 1
+.exp-unit
+  position: relative
+  z-index: 1
+  display: none
+  opacity: 0
 
-    .exp-animation
-      min-width: 240px
-      float: right
-      text-align: center
-      margin: 0
-      top: -154px
+  &.active-exp-tab
+    display: block
+    height: auto
+    opacity: 1
 
-      .client-name
-        display: block
-        text-transform: uppercase
-        font-weight: 400
-        letter-spacing: 1px
+  .exp-animation
+    min-width: 240px
+    float: right
+    text-align: center
+    margin: 0
+    top: -174px
 
-      .client-title
-        font-style: normal
-        font-size: 12px
-        color: #999
+    .client-name
+      display: block
+      text-transform: uppercase
+      font-weight: 400
+      letter-spacing: 1px
 
-    .exp-content
-      font-size: 18px
-      position: relative
-      padding: 20px 80px 0 0
-      text-align: justify
+    .client-title
+      font-style: normal
+      font-size: 12px
+      color: #999
 
-      .caption
-        font-size: 26px
-        margin-bottom: 15px
-        padding-bottom: 10px
-        border-bottom: 1px solid #aaa
-        color: #252527
+  .exp-content
+    position: relative
+    text-align: justify
 
-      p
-        line-height: 1.6
-        font-size: 1.4rem
+    .caption
+      font-size: 26px
+      margin-bottom: 15px
+      padding-bottom: 10px
+      border-bottom: 1px solid #aaa
+      color: #252527
 
-      a
-        color: #666
-        border-bottom: 2px solid
-        +transition(.3s ease)
-        &:hover
-          border-bottom: 2px solid transparent
+    a
+      color: #666
+      border-bottom: 2px solid
+      text-decoration: none
+      +transition(.3s ease)
+      &:hover
+        border-bottom: 2px solid transparent
 
 
 // Logos
 .exp-nav
-  width: 520px
-  position: relative
-  text-align: justify
-  cursor: default
-  z-index: 40
-  +user-select(none)
+  width: 534px
+  position: absolute
+  z-index: 50
 
-  &:after
-    display: inline-block
-    content: ""
-    width: 100%
+  nav.select-skill
+    position: relative
+    overflow: hidden
+    +transition(all .5s ease)
+    cursor: default
 
-  .exp-tab
-    display: inline-block
-    padding: 0
-    +user-select(none)
+    &:after
+      content: ''
+      +position(absolute,  null null 0 0)
+      +size(100% 2px)
+      background: #252525
 
-    &.active-exp-tab span
-      color: #fff
-      background: #343435
+    ul
+      display: none
 
-    span
-      width: 76px
-      font-size: 18px
-      text-align: center
-      display: inline-block
-      padding: 12px 0
-      color: #666
+    &.show-list
+      ul
+        display: block
 
-      &:hover
-        color: #fff
+    &.opened
+      cursor: pointer
+
+      li:hover
+        color: #000
+        opacity: 1
+
+      .ink
+        background: #aaa
+
+      .selected-center:hover,li.checked, .selected-center.checked
+        color: #000 !important
+        opacity: 1 !important
+
+        &:before
+          content: ''
+          background: url(../img/icon-check.svg)
+          background-size: contain
+          +size(22px)
+          +position(absolute, 50% 4px null null)
+          +transform(translate(0, -50%))
+
+      .selected:after
+        opacity: 0
+
+      .selected-center
+        opacity: .5
+
+
+    .selected
+      position: relative
+      width: 100%
+      float: left
+      font-size: 1em
+      padding: 0
+      text-align: left
+      position: relative
+
+      &:after
+        opacity: 1
+        +transition(all .4s)
+        content: ''
+        +position(absolute, 50% 6px null null)
+        +size(0)
+        +transform(translate(0, -50%))
+        border-top: 10px solid #343435
+        border-left: 10px solid transparent
+        border-right: 10px solid transparent
+
+      .selected-center
+        width: 100%
+        padding: 0
+        text-align: left
+        +transition(opacity .2 ease)
+
+
+
+    ul
+      width: 100%
+      +position(absolute, 0 null null 0)
+
+      li
+        width: 100%
+        float: left
+        font-size: 1em
+        padding: 0
+        text-align: left
+        opacity: .5
+        +transition(opacity .2 ease)
+        position: relative
+
+
+
+
+
+  .select-skill-border
+    height: 2px
+    background: #252527
+    margin-top: 0.5em
+
 
 // Mobile
 $ratio: 320 / 568
@@ -113,6 +178,7 @@ $height: 400px
 
 .exp-animation
   position: relative
+  float: right
   +size(240px 486px)
   background:
     image: url(../img/clients/phone.png)
@@ -124,46 +190,13 @@ $height: 400px
     +size(209px 372px)
     overflow: hidden
     border-radius: 3px !important
+    +transition(opacity .5s ease)
+
+    &.faded-out
+      opacity: 0 !important
 
   .phone-screen
     & *, & *:before, & *:after
       +box-sizing(border-box)
-
-
-@media (min-width: 1100px) and (max-width: 1240px)
-  .exp-tab:last-child
-    display: none
-
-  .exp-tab
-    margin-right: 7px
-
-  .exp-content p
-    min-width: 425px
-
-  .exp-nav
-    text-align: left
-
-
-@media (max-width: 1099px)
-  .section-title
-    border-bottom: 1px solid #aaa !important
-
-  .exp-animation
-    display: none
-
-  .exp-nav
-    text-align: left
-    width: 100%
-
-  .exp-tab
-    margin-bottom: 12px
-    margin-right: 12px
-
-  .exp-content
-    text-align: left !important
-    padding: 0 !important
-
-
-
 
 

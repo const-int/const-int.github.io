@@ -1,16 +1,41 @@
+/* Basic Styles
+  ------------------------------------  */
+body, html
+  height: 100%
+  overflow: hidden
+
+body
+  height: 100%
+  color: $textColor
+
+
+svg
+  +size(100%)
+  vertical-align: top
+
+a, a *
+  cursor: pointer
+
 /*  Sections
   ------------------------------------  */
 .sections-container
   position: relative
-  margin-left: 320px
+  margin-left: 300px
+
+  @media (min-width: 1001px) and (max-width: 1220px)
+    margin-left: 90px
 
   @media (max-width: 1000px)
     margin-left: 0
 
+.section-title
+  color: #252527
+  text-align: left
+  border-bottom: 1px solid #aaa
+
 
 .full-screen-block
   +size(100%)
-
 
 .container
   +box-sizing(border-box)
@@ -19,116 +44,77 @@
   margin: 0 auto
 
   @media (max-width: 1000px)
-    max-width: auto
+    max-width: initial
     padding: 0 20px
 
 
-/*  Typography presets
-  ------------------------------------  */
 
-div
-  +user-select(none)
-
-p
-  +user-select(text)
-
-.section-title
-  padding: 50px 0 14px
-  font-size: 54px
-  line-height: 68px
-  color: #252527
-  text-align: left
-  border-bottom: 1px solid #aaa
-  margin-bottom: 50px
-
-  @media (max-width: 1000px)
-    font-size: 1.6rem
-    line-height: 2.5rem
-    padding-top: 10px
-    margin-bottom: 30px
-
-
-  @media (min-width: 1001px) and (max-width: 1240px)
-    font-size: 44px
-
-
-.large, .bigger, .big, h1, h2, h3, h4, h5, h6
-  color: $headlineColor
-  font-weight: bold
-
-
-h1
-  font-size: 68px
-  line-height: 1.05
-  letter-spacing: -1px
-
-.large, h2
-  font-size: 42px
-  line-height: 1.14
-
-.bigger, h3
-  font-size: 26px
-  line-height: 1.38
-
-.big, h4
-  font-size: 22px
-  line-height: 1.38
-
-.small, small
-  font-size: 10px
-  line-height: 1.2
-
-p
-  margin: 0 0 20px 0
-
-em
-  font-style: italic
-
-strong
-  font-weight: bold
-
-hr
-  border: solid #ddd
-  border-width: 1px 0 0
-  clear: both
-  margin: 10px 0 30px
-  height: 0
-
-section
-  position: relative
-
-
-
-/* Links
+/* Custom UI
   ------------------------------------	*/
-a
-  color: $linkColor
-  text-decoration: none
-  outline: 0
-
-a:hover, a:focus
-  color: lighten($linkColor, 20%)
 
 .const-button
   cursor: pointer
   display: inline-block
   position: relative
   border-radius: 3px
-  line-height: 22px
-  font-size: 22px
+  text-decoration: none
   color: #ccc
   background: #252527
   box-shadow: rgba(0,0,0,0.22745) 0px 3px 10px 0px, rgba(0,0,0,0.15686) 0px 3px 10px 0px
   +user-select(none)
   +transition(color .2s ease, background .2s ease)
+  white-space: nowrap
+
+  svg, span
+    cursor: pointer
 
   &:hover
     color: #fff
     background: #343435
 
 
+.icon-button:after
+  content: ""
+  +position(absolute, 50% null  null 50%)
+  +transform(translate(-50%, -50%))
+  background-size: contain
+
+.contact-large-button
+  display: block
+  width: 100%
+  text-align: center
+
+  &:hover svg path
+    fill: #fff
+
+  svg
+    path
+      +transition(fill .2s ease)
+      fill: #ccc
+
+
+
 /* Selection colors (easy to forget)
   ------------------------------------	*/
+
+*, *:before, *:after
+  +box-sizing(border-box)
+
+*
+  +user-select(none)
+  cursor: default
+
+p
+  +user-select(text)
+  cursor: text
+
+
+input:-moz-placeholder
+  box-shadow: none !important
+
+input, textarea
+  outline: none !important
+  box-shadow: none !important
 
 ::selection
   background: $selectionColor
@@ -155,43 +141,34 @@ body
   background-color: #fff
   z-index: 99
 
-
 #status
   +size(70px 24px)
   +position(absolute, 50% null null 50%)
   margin: -12px 0 0 -35px /* is width and height divided by two */
 
 
-/* Basic Styles
-  ------------------------------------	*/
-
-body, html
-  height: 100%
+/* -- Ripple effect -------------------------------- */
+.ripple-effect
+  position: relative
   overflow: hidden
+  cursor: pointer
+  +transform(translate3d(0,0,0))
 
-body
-  height: 100%
-  background-image: url(../img/exp-bg.png)
-  background-color: #fff
-  font-size: 14px
-  line-height: 1.6
-  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif
-  color: $textColor
+.ink
+  display: block
+  position: absolute
+  pointer-events: none
+  border-radius: 50%
+  +transform(scale(0))
+  background: #fff
+  opacity: 1
 
 
-svg
-  +size(100%)
+// animation effect
+.ink.animate
+  +animation(ripple .5s linear)
 
-h3
-  color: $accent-light
-  text-align: center
-  padding: 70px 0 30px
-
-@media screen and (max-width: 480px)
-  h3
-    padding: 50px 0 50px
-    color: rgba(147, 147, 147, 1)
-
-.hide-on-small
-  @media screen and (max-width: 1000px)
-    display: none
++keyframes(ripple)
+  100%
+    opacity: 0
+    +transform(scale(2.5))

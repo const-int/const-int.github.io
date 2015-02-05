@@ -115,13 +115,17 @@
 
   .phone-post {
     @include size(50% 66px);
-    padding: 12px 10px 15px;
+    padding: 11px 10px 15px;
     overflow: visible;
     display: inline-block;
     float: left;
     z-index: 2;
     opacity: .5;
     position: relative;
+
+    &:nth-child(4) {
+      padding-top: 12px;
+    }
 
     &:nth-child(odd) {
       left: -5px;
@@ -184,12 +188,12 @@
     }
     .post-line-1 {
       width: 52px;
-      top: 25px;
+      top: 24px;
       @extend %post-line;
     }
     .post-line-2 {
       width: 47px;
-      top: 33px;
+      top: 32px;
       @extend %post-line;
     }
   }

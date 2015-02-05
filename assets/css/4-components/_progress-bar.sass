@@ -2,20 +2,21 @@
   height: 10px
   position: relative
   background: transparent
-  border-radius: 25px
-  padding: 5px
+  +box-sizing(border-box)
   box-shadow: 0 0 0 1px #ccc
+  border-radius: 4px
   background: white
-  margin-top: 5px
+
 
   & > span
     display: block
+    border-radius: 4px
     height: 100%
-    border-radius: 20px
     background-color: #333
     width: 0
     overflow: hidden
     position: relative
+    opacity: 0
 
     +transition(all 1.2s ease)
 

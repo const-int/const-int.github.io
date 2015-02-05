@@ -1,31 +1,41 @@
 <aside class="sidebar">
 
-  <div class="profile-card">
-    <a href="/"><img src="assets/img/constavatar.png" alt="Constantin"></a>
-    <div class="title">{{ site.data.settings.description }}</div>
-    <div class="subtitle">{{ site.data.settings.subdescription }}</div>
+  <div class="side-bar-wrapper">
 
-    <div class="contacts">
-      {% for link in site.data.settings.contacts %}
-        <a href="{{ link.link }}" class="contact-link" target="_blank">
-          {{ link.icon }}
-        </a>
-      {% endfor %}
+    <div class="profile-card">
+      <a href="/"><img src="assets/img/constavatar.png" class="avatar" alt="Konstantin"></a>
+
+      <div class="slogan">
+        <div class="title">{{ site.data.settings.description }}</div>
+        <div class="subtitle">{{ site.data.settings.subdescription }}</div>
+      </div>
+
     </div>
+
+    <nav class="main-nav">
+      {% for item in site.data.settings.menu %}
+        <a href="{{ item.hash }}" class="item ripple-effect">{{ item.name }}</a>
+      {% endfor %}
+    </nav>
+
+    <label for="return">
+      <div class="work-return const-button ripple-effect">Back</div>
+    </label>
+
+    <footer class="sidebar-footer">
+      <div class="contacts">
+        {% for link in site.data.settings.contacts %}
+          <a href="{{ link.link }}" class="contact-link" target="_blank">
+            {{ link.icon }}
+          </a>
+        {% endfor %}
+      </div>
+
+      <div class="copyright">
+        Built with <a href="http://jekyllrb.com">Jekyll</a> and hosted on <a href="https://github.com/const-int/const-int.github.io">GitHub</a>.
+      </div>
+    </footer>
+
   </div>
-
-  <nav>
-    {% for item in site.data.settings.menu %}
-      <a href="{{ item.hash }}" class="item waves-effect waves-button">{{ item.name }}</a>
-    {% endfor %}
-  </nav>
-
-  <div class="copyright">
-    Built with <a href="http://jekyllrb.com">Jekyll</a> and hosted on <a href="https://github.com/const-int/const-int.github.io">GitHub</a>.
-  </div>
-
-  <label for="return">
-    <div class="work-return const-button">Back</div>
-  </label>
 
 </aside>

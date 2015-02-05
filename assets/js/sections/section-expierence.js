@@ -1,42 +1,90 @@
 
 $(document).ready(function() {
 
-  var active_class = 'active-exp-tab';
-  var exp_tabs = $('.exp-tab');
-
-
-  // TABS animation navigation
-  $('.exp-unit:nth-child(3), .exp-tab:first-child').addClass(active_class);
-
-  $(exp_tabs).on('click', function() {
-
-    $(this).addClass(active_class).siblings('.exp-tab').removeClass(active_class);
-
-    $('.exp-unit').removeClass(active_class).eq($(this).index()).addClass(active_class);
-
-  });
-
-
-  // Ajax load content
   $.ajaxSetup({ cache: true });
 
-  $(exp_tabs).click(function() {
+  var exp_nav_wrap = $('.exp-nav'),
+      exp_nav_select = $('.exp-nav .select-skill'),
+      exp_nav_li = $('nav.select-skill li'),
+      exp_nav_selected = $('nav.select-skill .selected-center'),
+      tmp_text = exp_nav_selected.text(),
+      active_class = 'active-exp-tab',
+      exp_tabs = $('.exp-tab'),
+      exp_texts_wrap = $('.exp-unit-wrapper'),
+      animation_wrap = $('.exp-animation .wrap')
 
-    // Load animation layouts
-    $('.exp-animation .wrap')
-      .eq($(this).index())
-      .load($(this).data('file'));
+  $('.exp-unit').eq(0).addClass('active-exp-tab');
 
+  exp_nav_wrap
+    .mouseenter(function() {
+        if (!exp_nav_select.hasClass('animating')) {
+            $(this).find('.select-skill').addClass('opened show-list');
+            exp_texts_wrap.addClass('faded-out');
+            new_text = exp_nav_selected.text();
+            exp_nav_selected.text(tmp_text)
+        };
+    });
+
+
+  $('.select-option').click(function(event) {
+
+    $(this).addClass('checked');
+
+    if (exp_nav_select.hasClass('opened')) {
+
+      var that = $(this);
+
+      animation_wrap.load(that.data('file'));
+
+      setTimeout(function(){
+
+        setTimeout(function(){
+            exp_nav_selected.text(that.text());
+            remove_ripple();
+            setTimeout(function(){
+            exp_texts_wrap.removeClass('faded-out');
+            exp_nav_select.removeClass('animating')
+            }, 50);
+        }, 500);
+
+        setTimeout(function(){
+            exp_nav_select.removeClass('show-list');
+        }, 450);
+
+        exp_nav_select.removeClass('opened').addClass('animating');
+
+      }, 500);
+
+      $('.exp-unit')
+        .removeClass(active_class)
+        .eq($(this).data('index') - 1).addClass(active_class);
+      } else {
+        exp_nav_select.addClass('opened show-list');
+        exp_texts_wrap.addClass('faded-out');
+        setTimeout(function(){
+          remove_ripple()
+        }, 1000)
+      }
   });
 
-  // HTML TAB animation
-  setInterval(function() {
-    $('.html-section .phone-post').addClass('active');
 
-    setTimeout(function() {
-      $('.html-section .phone-post').removeClass('active');
-    }, 2500);
-  }, 5000);
+
+  function remove_ripple() {
+    $('.ink').remove();
+  }
+
+
+  // ------------------
+  // HTML TAB animation
+  // ------------------
+
+  // setInterval(function() {
+  //   $('.html-section .phone-post').addClass('active');
+
+  //   setTimeout(function() {
+  //     $('.html-section .phone-post').removeClass('active');
+  //   }, 2500);
+  // }, 5000);
 
 });
 

@@ -2,12 +2,11 @@
 
   <div class="container">
 
-
-    <div class="section-title">{{ site.data.settings.section-titles.about }}</div>
-
     <div class="profile-card">
       <img src="assets/img/constavatar_wide.jpg" alt="">
     </div>
+
+    <h1 class="section-title">{{ site.data.settings.section-titles.about }}</h1>
 
 
     <div class="blurb">
@@ -21,7 +20,10 @@
         <div class="skill-unit" >
           <div class="skill-icon">{% include icons/{{ skill.icon }}.html %}</div>
           <div class="skill-label">{{ skill.name }}</div>
-          <div class="meter"><span data-skill="{{ skill.value }}"></span></div>
+          <div class="skill-desc"> {{ skill.desc }}</div>
+          <div class="skill-meter">
+            <div class="meter"><span data-skill="{{ skill.value }}"></span></div>
+          </div>
         </div>
 
       {% endfor %}
@@ -32,7 +34,8 @@
       {{ site.data.settings.blurb2 | markdownify }}
     </div>
 
-    <a href="mailto:{{site.data.settings.email}}" class="const-button hire-button">...let’s get in touch!
+    <a href="mailto:{{site.data.settings.email}}" class="const-button contact-large-button">
+      <span>...let’s get in touch!</span>
       <svg xmlns="http://www.w3.org/2000/svg" width="768" height="768" viewBox="0 0 768 768">
         <path d="M703.68 256c0-23.040-12-43.040-30.080-54.4l-289.6-169.6-289.6 169.6c-18.080 11.36-30.4 31.36-30.4 54.4v320c0 35.36 28.64 64 64 64h512c35.36 0 64-28.64 64-64l-0.32-320zM384 416l-264.32-165.28 264.32-154.72 264.32 154.72-264.32 165.28z"></path>
       </svg>

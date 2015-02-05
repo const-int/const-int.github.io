@@ -3,16 +3,9 @@
   overflow: auto
   z-index: 4
 
-  .section-title
-    margin-bottom: 40px
+  .container
     @media (max-width: 1000px)
-      margin-bottom: 0
-      border-bottom: 0 !important
       padding-top: 0
-      padding-bottom: 25px
-      height: 40px
-      line-height: 60px
-      overflow: hidden
 
   .profile-card
     text-align: center
@@ -29,144 +22,44 @@
       display: block
       margin: 0 auto
 
-.hire-button
-  margin-bottom: 50px
-  height: 101px
-  line-height: 101px
-  width: 100%
-  text-align: center
-
-  @media (max-width: 1000px)
-    margin-bottom: 80px
-
-  &:hover svg path
-    fill: #fff
-
-  svg
-    +size(32px 32px)
-    margin-left: 10px
-    position: relative
-    top: 8px
-    path
-      +transition(fill .2s ease)
-      fill: #ccc
-
-
-
-.blurb
-  margin: 0 auto 40px
-  font-size: 22px
-
-  @media (max-width: 1000px)
-    margin-bottom: 20px
-    margin-top: 0
-
-    p
-      font-size: 1.2rem
-
-.blurb2
-  margin-top: -12px
-  font-size: 22px
-  margin-bottom: 40px
-
-  @media (max-width: 1000px)
-    margin-bottom: 20px
-    p
-      font-size: 1.2rem
-
 .skill-lockup
   text-align: justify
   overflow: hidden
-  margin-bottom: 20px
 
-  @media (min-width: 1001px)
-    margin-bottom: 44px
+  &:before
+    content: ''
+    display: block
+    width: 100%
+
+  &:after
+    content: ''
+    width: 100%
+    display: inline-block
 
   .skill-unit
     position: relative
     display: inline-block
     +box-sizing(border-box)
-    +size(390px 100px)
-    margin: 0 0 33px 0
-    padding: 15px 0 0 120px
-
-    @media (min-width: 1001px)
-
-      &:nth-child(3), &:nth-child(4)
-        margin: 0
-
-    &:nth-child(4)
-      float: right
-
-    @media (max-width: 1000px)
-      padding: 0 0 0 75px
-      height: 60px
-      margin-bottom: 12px
-
-      &:last-child
-        margin-bottom: 10px
 
     .skill-icon
       +position(absolute, 0 null null 0)
       display: inline-block
-      +size(100px)
+      height: 100%
       background: #252527 url(../img/#{$alternate-path})
       border-radius: 50%
+
+      svg
+        +position(absolute, 0 null null 0)
 
       path, polygon
         fill: $accent
 
-      @media (max-width: 1000px)
-        +size(60px)
-
-
     .skill-label
       text-align: left
-      font-size: 24px
-      font-weight: 300
       color: #000
       white-space: nowrap
-
-      @media (max-width: 1000px)
-        font-size: 1.25em
-        padding-top: 1px
-        padding-left: 6px
-
-
-
-
-@media (min-width: 1001px) and (max-width: 1240px)
-  .skill-lockup
-    margin-bottom: 20px
-
-  .skill-unit
-    width: 49%!important
-    height: 75px !important
-    line-height: 25px !important
-    padding: 0 20px 0 90px !important
-    margin: 0 0 20px 0 !important
-
-    .meter
-      margin-top: 10px
-
-    .skill-icon
-      width: 75px !important
-      height: 75px !important
-
-@media (min-width: 1001px) and (max-width: 1100px)
-  .skill-label
-    padding-top: 8px
-    font-size: 16px !important
-
-@media (min-width: 1101px) and (max-width: 1180px)
-  .skill-label
-    padding-top: 8px
-    font-size: 18px !important
-
-@media (min-width: 1181px) and (max-width: 1239px)
-  .skill-label
-    padding-top: 10px
-    font-size: 20px !important
+      overflow: hidden
+      text-overflow: ellipsis
 
 
 @media (max-width: 1000px)

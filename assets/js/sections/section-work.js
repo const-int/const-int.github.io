@@ -61,6 +61,7 @@ $(document).ready(function() {
 });
 
 function slide_back () {
+  $('.project-load').removeClass('loaded');
   if (animating_work) return;
   animating_work = true;
   work_belt.removeClass('slided');

@@ -2,37 +2,10 @@
 
   &
     overflow-x: hidden
-    // +transform(translate3d(0, 100%, 0))
 
     &.section-active .thumb-unit
       opacity: 1 !important
 
-  h3
-    margin: 0
-    padding: 9px
-    margin-bottom: 50px
-
-
-/* Hackey-type CSS as a jQuery Alternative for when the browser does not have jQuery enabled. */
-.noscript
-  display: none
-
-@each $proj in $projects
-  ##{$proj}:checked ~ .work-belt .work-wrap .work-container noscript #content-#{$proj}
-    display: block
-
-.return
-  display: none
-
-.trigger
-  display: none
-
-  &:checked ~ .work-belt
-    left: -100%
-
-    .work-wrap .work-container
-      display: block
-/* End of gross / hackey CSS */
 
 .work-belt
   width: 200%
@@ -52,6 +25,10 @@
   height: 100%
   overflow: auto
   padding-right: 20px
+  +box-sizing(content-box)
+
+  @media (max-width: 1000px)
+    padding-right: 0
 
 .thumb-wrap, .work-wrap
   position: relative
@@ -63,34 +40,24 @@
   overflow: hidden
 
 .thumb-container
+  position: relative
   +box-sizing(border-box)
   margin: 0 auto
   max-width: 920px
-  padding: 0 40px 100px
   text-align: justify
   +clearfix
 
-  @media (max-width: 1000px)
-    padding: 0 20px 60px 20px
-
-  .section-title
-    margin-bottom: 50px
-
-    @media (max-width: 1000px)
-      margin-bottom: 28px
 
   .thumb-unit
     +box-sizing(border-box)
     display: block
     position: relative
     width: 100%
-    margin-bottom: 34px
     border-radius: 2px
     cursor: pointer
     box-shadow: rgba(0, 0, 0, 0.227451) 0px 3px 10px 0px, rgba(0, 0, 0, 0.156863) 0px 3px 10px 0px
 
-    @media (max-width: 1000px)
-      margin-bottom: 20px
+
 
     &:hover
       .unit-title
@@ -99,7 +66,6 @@
     .img-wrap
       width: 100%
       height: 0
-      padding-bottom: 30%
       position: relative
       border-radius: 3px
       +backface-visibility(hidden)
@@ -138,42 +104,24 @@
 
     .unit-title
       +position(absolute, 50% null null 50%)
-      padding: 12px 50px 12px 18px
       z-index: 30
       opacity: 0
-      white-space: nowrap
       +transition(opacity .3s ease)
       +transform(translate(-50%, -50%))
       box-shadow: 0 6px 10px rgba(0,0,0,.23),0 10px 30px rgba(0,0,0,.19)
-
-      @media (max-width: 500px)
-        font-size: 1.3em
 
       @media (max-width: 1000px)
         opacity: 1
 
       &:after
         content: ""
-        +size(25px)
-        +position(absolute, 50% 15px null null)
-        +transform(translate(0, -50%))
+        position: absolute
+        +transform(translate(50%, -50%))
         background: url(../img/icon-formard.svg)
         background-size: contain
         +user-select(none)
 
-    .live-url
-      position: relative
-      +user-select(none)
-      top: -1px
-      border-bottom: 1px solid #777
-      font:
-        size: 14px
-        weight: 300
-      color: #777
-      +transition(border-color .3s, opacity .5s ease)
 
-      &:hover
-        color: #000
 
 
 .work-container
@@ -186,12 +134,17 @@
     position: relative
     max-width: 920px
     padding: 0 40px
-    margin: 0 auto 60px
 
+
+    .work-return
+      float: left
+      &:after
+        content: ''
+        background-image: url(../img/icon-backward.svg)
 
     @media (max-width: 1000px)
       margin-top: 0
-      padding: 0 20px
+      padding: 0
 
       .work-return
         display: none !important
@@ -199,113 +152,57 @@
   .project-load
     z-index: 10
     position: relative
-    margin-bottom: 40px
-    margin-top: 18px
     background: #fff
-
-    @media (max-width: 1000px)
-      margin-top: 4px
-      margin-bottom: 80px
+    +transition(all .5s ease)
 
     &.loaded
       box-shadow: rgba(0, 0, 0, 0.227451) 0px 3px 10px 0px, rgba(0, 0, 0, 0.156863) 0px 3px 10px 0px
 
     p, img
       margin: 0
+      padding: 0
+      display: block
+
+  .project-separator
+    display: none
+    @media (max-width: 1000px)
       display: block
 
   .project-title
-    @extend .section-title
-    font-weight: 400
-    margin-top: 0
-    @media (min-width: 1001px)
-      padding-left: 78px
+    position: relative
+    @media (max-width: 1000px)
+      padding: 0 70px  0 0
+      border: 0
 
     a.project-url
       float: right
-      padding: 12px 50px 12px 18px
-      margin-top: 11px
-
 
       &[href='#']
         display: none
 
       &:after
-        content: ""
-        +position(absolute, 50% 15px null null )
-        +size(25px)
-        +transform(translate(0, -50%))
-        background: url(../img/icon-url.svg)
-        background-size: contain
+        background-image: url(../img/icon-url.svg)
 
       @media (max-width: 1000px)
-        font-size: 0
-        +size(10px)
-        padding: 12px 14px
-        margin-top: 5px
-
-        &:after
-          +transform(translate(50%, -50%))
-          right: 50%
-          +size(18px)
-
-
+        +position(absolute, 50% 0 null null)
+        +transform(translate(0, -50%))
 
   img
     width: 100%
     margin-bottom: 20px
 
+  .icon-button
+    border-radius: 50%
+    overflow: hidden
 
-.work-return
-  position: absolute
-  margin-top: 61px
-  top: 0
-  +size(56px 46px)
-  z-index: 30
-  +transition(opacity .4s ease)
-  background-color: #252527
-  +user-select(none)
-  text-indent: 9999px
-  overflow: hidden
-  vertical-align: bottom
+    &:before
+      border-radius: 50%
 
-  &:hover, &:active
-    color: #fff
-    background: #343435
+    &.work-return:after
+      +size(27px)
 
-  @media (max-width: 1000px)
-    text-indent: 0
-    position: absolute !important
-    bottom: 0 !important
-    left: 33.33% !important
-    right: auto !important
-    top: auto !important
-    width: 33.33% !important
-    height: 60px !important
-    line-height: 60px !important
-    font-size: 14px
-    box-shadow: none !important
-    border-left: 1px solid #333
-    background: #343435 !important
-    +box-sizing(border-box)
-
-
-  &:before
-    content: ""
-    +size(25px)
-    +position(absolute, 50% null  null 15px)
-    +transform(translate(0, -50%))
-    background: url(../img/icon-backward.svg)
-    background-size: contain
-
-    @media (max-width: 1000px)
-      position: static
-      margin-right: 5px
-      margin-top: -1px
+    &.project-url:after
       +size(25px)
-      +transform(none)
-      display: inline-block
-      vertical-align: middle
 
 
 

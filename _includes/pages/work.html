@@ -1,7 +1,5 @@
 <section class="section-work full-screen-block" id="portfolio">
 
-  <input type="radio" name="trigger" id="return" class="return" />
-
   <div class="work-belt">
 
     <div class="thumb-wrap">
@@ -10,35 +8,32 @@
 
         <div class="thumb-container">
 
-          <div class="section-title">{{ site.data.settings.section-titles.portfolio }}</div>
+          <div class="container">
 
+            <h1 class="section-title">{{ site.data.settings.section-titles.portfolio }}</h1>
 
-          {% for project in site.data.settings.projects %}
-            <input type="radio" name="trigger" class="trigger" id="{{ project.folder }}" />
-          {% endfor %}
+            {% for project in site.data.settings.projects %}
+              <div class="thumb-unit">
 
-          {% for project in site.data.settings.projects %}
-          <label for="{{ project.folder }}">
-            <div class="thumb-unit">
-              <div class="thumb-click-area"
-                data-name='{{ project.name }}'
-                data-url='{{ project.url }}'
-                data-folder="{{ project.folder }}">
+                <div class="thumb-click-area"
+                  data-name='{{ project.name }}'
+                  data-url='{{ project.url }}'
+                  data-folder="{{ project.folder }}">
 
-                <div class="img-wrap">
-                  <img src="assets/img/work/{{project.folder}}/thumb.jpg" alt="{{ project.name }}">
+                  <div class="img-wrap">
+                    <img src="assets/img/work/{{project.folder}}/thumb.jpg" alt="{{ project.name }}">
+                  </div>
+
+                  <div class="unit-title const-button">
+                    <span>{{ project.name }}</span>
+                  </div>
+
+                  <div class="icon-arrow-right"></div>
                 </div>
-
-                <div class="unit-title const-button">
-                  {{ project.name }}
-                </div>
-
-                <div class="icon-arrow-right"></div>
 
               </div>
-            </div>
-          </label>
-          {% endfor %}
+            {% endfor %}
+          </div>
         </div>
       </div>
     </div>
@@ -51,21 +46,28 @@
         <div class="bounce3"></div>
       </div>
 
-
       <div class="work-container">
 
-        <div class="work-center-container">
-          <label for="return">
-            <div class="work-return const-button">Back</div>
-          </label>
-          <h4 class="project-title">
-            <span></span>
-            <a href="#" class="project-url const-button">View online</a>
-          </h4>
-          <div class="project-load"></div>
+        <div class="container">
+
+          <div class="work-center-container">
+
+            <h4 class="project-title section-title">
+              <a href="#" class="project-url const-button icon-button"></a>
+              <div class="work-return const-button icon-button"></div><!--
+           --><span></span>
+            </h4>
+
+            <div class="project-separator"></div>
+
+            <div class="project-load"></div>
+
+          </div>
+
         </div>
 
       </div>
+
     </div>
   </div>
 

@@ -4,7 +4,7 @@ $(document).ready(function() {
   sections = ['#about', '#portfolio', '#experience', '#contact'];
 
   // nav click
-  $('nav > *').click(function(event) {
+  $('nav.main-nav > *').click(function(event) {
 
     // slide back portfolio
     slide_back();
@@ -76,3 +76,20 @@ $(document).ready(function() {
   }
 
 });
+
+
+function getScrollbarWidth() {
+    var outer = document.createElement("div");
+    outer.style.visibility = "hidden";
+    outer.style.width = "100px";
+    outer.style.msOverflowStyle = "scrollbar";
+    document.body.appendChild(outer);
+    var widthNoScroll = outer.offsetWidth;
+    outer.style.overflow = "scroll";
+    var inner = document.createElement("div");
+    inner.style.width = "100%";
+    outer.appendChild(inner);
+    var widthWithScroll = inner.offsetWidth;
+    outer.parentNode.removeChild(outer);
+    return widthNoScroll - widthWithScroll;
+}

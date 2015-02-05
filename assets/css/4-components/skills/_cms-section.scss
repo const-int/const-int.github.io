@@ -1,4 +1,9 @@
 .cms-section {
+
+  & {
+    text-align: center;
+  }
+
   .logo {
     padding-top: 25px;
     svg {
@@ -11,14 +16,12 @@
     width: 30px;
     height: 30px;
     position: absolute;
-    bottom: 57px;
+    bottom: 63px;
     left: 39px;
 
     svg {
       border-radius: 50%;
       border: 2px solid #555;
-      fill: #ccc;
-      background: #7a7a7a;
       opacity: 0;
       @include animation(noOffset 1s 10s ease forwards);
     }
@@ -115,7 +118,12 @@
   }
 
   @include keyframes(noOffset) {
+    0% {
+      opacity: 0;
+      @include transform(scale(1.2));
+    }
     100% {
+      @include transform(scale(1));
       opacity: 1;
     }
   }

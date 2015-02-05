@@ -5,7 +5,6 @@
       @include position(absolute, -1px null null 0px);
       overflow: hidden;
       border-radius: 3px;
-      overflow: hidden;
       padding-top: 50px;
   }
 
@@ -17,23 +16,21 @@
     #sb-user-logo {
       @include size(50px);
       overflow: visible;
-      margin-top: 11px;
+      margin: 8%;
+      margin: 7px auto auto 8%;
       border-radius: 50%;
       float: left;
-      margin-left: 8%;
       border: 1px solid #555;
     }
 
     #sb-name1 {
-      width: 40px;
-      height: 10px;
       @include position(absolute, 24px null null 78px);
+      @include size(40px 10px);
       background: rgb(157, 157, 157);
     }
     #sb-name2 {
-      width: 60px;
-      height: 10px;
       @include position(absolute, 38px null null 78px);
+      @include size(60px 10px);
       background: rgb(157, 157, 157);
     }
   }
@@ -45,6 +42,13 @@
     z-index: 20;
     @include transform(translate3d(-100%, 0, 0));
     @include animation(sideBarShow 5s .85s ease forwards);
+
+    svg {
+      height: 50%;
+      display: inline-block;
+      margin-top: 9px;
+      fill: #ddd;
+    }
 
     .sb-link1 {
       @include size(170px 45px);
@@ -64,12 +68,10 @@
       @include position(absolute, 195px null null 20px);
       background: #a06186;
 
-
       svg {
         float: right;
         width: 30px;
-        margin-top: 11px;
-        margin-right: 25px;
+        margin: 12px 25px auto auto;
       }
     }
 
@@ -81,7 +83,7 @@
       svg {
         float: right;
         width: 30px;
-        margin-top: 10px;
+        margin-top: 11px;
         margin-right: 25px;
       }
     }
@@ -94,16 +96,13 @@
       svg {
         float: right;
         width: 30px;
-        margin-top: 9px;
+        margin-top: 11px;
         margin-right: 25px;
       }
     }
 
-    svg {
-      height: 50%;
-      display: inline-block;
-      margin-top: 9px;
-      fill: #ddd;
+    .sb-plus svg {
+      margin-top: 10px;
     }
 
     .sb-link1, .sb-link2, .sb-link3, .sb-link4, .sb-logout, .sb-plus {
@@ -211,13 +210,17 @@
 
   .phone-post {
     @include size(50% 66px);
-    padding: 12px 10px 15px;
+    padding: 11px 10px 15px;
     overflow: visible;
     display: inline-block;
     float: left;
     z-index: 2;
     opacity: .5;
     position: relative;
+
+    &:nth-child(4) {
+      padding-top: 12px;
+    }
 
     &:nth-child(odd) {
       left: -5px;
@@ -280,12 +283,12 @@
     }
     .post-line-1 {
       width: 52px;
-      top: 25px;
+      top: 24px;
       @extend %post-line;
     }
     .post-line-2 {
       width: 47px;
-      top: 33px;
+      top: 32px;
       @extend %post-line;
     }
   }

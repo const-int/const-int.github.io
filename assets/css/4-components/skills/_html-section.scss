@@ -14,6 +14,25 @@
     color: white;
     border-radius: 3px;
 
+    .phone-menu {
+      @include position(absolute, 9px 10px null null);
+      @include size(15px 2px);
+      background: #000;
+
+      &:before {
+        content: "";
+        @include size(15px 2px);
+        @include position(absolute, 5px 0px null null);
+        background: #000;
+      }
+      &:after {
+        content: "";
+        @include size(15px 2px);
+        @include position(absolute, 10px 0px null null);
+        background: #000;
+      }
+    }
+
     .icon-search {
       @include position(absolute, 6px null null 7px);
       width: 16px;
@@ -35,124 +54,103 @@
     }
   }
 
-  .phone-header .phone-menu {
-    @include position(absolute, 9px 10px null null);
-    @include size(15px 2px);
-    background: #000;
-
-    &:before {
-      content: "";
-      @include size(15px 2px);
-      @include position(absolute, 5px 0px null null);
-      background: #000;
-    }
-    &:after {
-      content: "";
-      @include size(15px 2px);
-      @include position(absolute, 10px 0px null null);
-      background: #000;
-    }
-  }
-
   .phone-post {
     position: relative;
-    padding: 15px 10px;
-    border-bottom: 2px solid #62605d;
+    padding: 14px 10px;
+    border-bottom: 2px solid #424242;
     overflow: hidden;
-    height: 60px;
+    height: 58px;
     z-index: 2;
     opacity: .5;
-    @include transform(translateY(-60px));
 
-    &.active {
-      @include animation(new-post 1s ease forwards);
+    &:nth-child(2) {
+      padding-top: 15px;
     }
-  }
 
-  .phone-post .post-thumb {
-    @include size(29px);
-    background: #b0b0b0;
-    position: absolute;
-    margin-right: 5px;
-    border-radius: 2px;
-  }
-  %post-title {
-    height: 4px;
-    margin-top: 3px;
-    background: #fff;
-    position: absolute;
-  }
-  .post-title-1 {
-    @extend %post-title;
-    width: 14px;
-    left: 45px;
-  }
-  .post-title-2 {
-    @extend %post-title;
-    width: 26px;
-    left: 64px;
-  }
-  %post-line {
-    height: 4px;
-    background: #b0b0b0;
-    position: absolute;
-    left: 45px;
-  }
-  .post-line-1 {
-    width: 150px;
-    top: 28px;
-    @extend %post-line;
-  }
-  .post-line-2 {
-    width: 100px;
-    top: 36px;
-    @extend %post-line;
-  }
+    &:last-child {
+      padding-top: 13px;
+    }
 
-  #first-post .line {
-    width: 0;
-  }
+    @for $i from 2 through 7 {
+      &:nth-child(#{$i}) {
+        @include animation(post-border 1s #{$i * .4s} ease forwards);
+        .post-thumb   { @include animation(box-grow 1s #{$i * .4s} ease forwards); }
+        .post-title-1 { @include animation(line-draw1 .4s #{$i * .4s + .3s} ease forwards); }
+        .post-title-2 { @include animation(line-draw2 .4s #{$i * .4s + .3s} ease forwards); }
+        .post-line-1  { @include animation(line-draw3 .6s #{$i * .4s + .3s} ease forwards); }
+        .post-line-2  { @include animation(line-draw4 .6s #{$i * .4s + .3s} ease forwards); }
+      }
+    }
 
-  #first-post.active {
     .post-thumb {
+      @include size(29px);
+      background: #b0b0b0;
+      position: absolute;
+      margin-right: 5px;
+      border-radius: 2px;
       @include transform(scale(0));
-      @include animation(box-grow 700ms ease 700ms forwards);
+    }
+
+    %post-title {
+      height: 4px;
+      margin-top: 3px;
+      background: #fff;
+      position: absolute;
     }
     .line {
-      transition: width 500ms 600ms ease;
+      width: 0;
     }
     .post-title-1 {
-        width: 14px;
+      @extend %post-title;
+      left: 45px;
     }
     .post-title-2 {
-        width: 26px;
+      @extend %post-title;
+      left: 64px;
+    }
+    %post-line {
+      height: 4px;
+      background: #b0b0b0;
+      position: absolute;
+      left: 45px;
     }
     .post-line-1 {
-        width: 150px;
+      top: 27px;
+      @extend %post-line;
     }
     .post-line-2 {
-        width: 100px;
+      top: 35px;
+      @extend %post-line;
     }
   }
 
-  @include keyframes( new-post ) {
-    0% {
-      @include transform(translateY(-100%));
-    }
-    100% {
-      @include transform(translateY(0px));
-    }
+  @include keyframes(post-border) {
+    100% { border-bottom: 2px solid #62605d; }
   }
 
   @include keyframes(box-grow) {
-    0% {
-      @include transform(scale(0) rotate(25deg));
-    }
-    60% {
-      @include transform(scale(1.2) rotate(-10deg));
-    }
-    100% {
-      @include transform(scale(1) rotate(0));
-    }
+    0%   { @include transform(scale(0) rotate(25deg)); }
+    60%  { @include transform(scale(1.2) rotate(-10deg)); }
+    100% { @include transform(scale(1) rotate(0)); }
+  }
+
+  @include keyframes(line-draw1) {
+    0%   { width: 0; }
+    100% { width: 14px; }
+  }
+
+  @include keyframes(line-draw2) {
+    0%   { width: 0; }
+    100% { width: 26px; }
+  }
+
+  @include keyframes(line-draw3) {
+    0%   { width: 0; }
+    100% { width: 150px; }
+  }
+
+  @include keyframes(line-draw4) {
+    0%   { width: 0; }
+    100% { width: 100px; }
   }
 }

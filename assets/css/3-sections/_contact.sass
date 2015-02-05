@@ -3,20 +3,11 @@
   overflow-y: auto
 
   .mailto-button
-    display: none
-    margin-top: 20px
-    @extend .hire-button
-    @extend .const-button
-    margin-bottom: 40px
-
-
-    @media (max-width: 1000px)
-      display: block
-      margin-bottom: 80px
+    @media (min-width: 1001px)
+      display: none
 
   .contact-text
     display: none
-    font-size: 1.2rem
     text-align: left
     font-weight: 300
 
@@ -34,22 +25,27 @@
       display: none
 
   .section-title
-    border-bottom: 0
-    margin-bottom: 20px
+    @media (min-width: 1001px)
+      border-bottom: 2px solid transparent
 
-  .spacer
-    height: 40px
 
   textarea
     +transition(height .5s ease, overflow 1s 2s ease)
+    +box-sizing(content-box)
     height: 22px
     overflow: hidden
+    resize: none
+    border-bottom: 2px solid #343435 !important
 
-    &:focus, &.has-value
-      height: 80px
+  .auto-height-hidden-div
+    display: none
+    white-space: pre-wrap
+    word-wrap: break-word
+    overflow-wrap: break-word
+    overflow: hidden
 
   input, textarea
-    display: block
+    display: inline-block
     width: 100%
 
     &:focus,
@@ -58,63 +54,32 @@
 
     &[type="text"],
     &[type="email"], &.textarea
-      border: solid 2px #343435
       color: #343435
-      padding: 15px 40px
-      font-size: 18px
       background: none
       border: none
-      border-bottom: solid 2px #343435
-
-  button
-    margin-top: 20px
-    margin-bottom: 50px
-    height: 101px
-    line-height: 101px
-    width: 100%
-    background: #252527
-    text-align: center
-
-    &:hover, &:focus
-      color: #fff
-      background: #343435
-
-    &:hover svg path
-      fill: #fff
-
-    svg
-      +size(32px 32px)
-      margin-left: 10px
-      position: relative
-      top: 8px
-      path
-        +transition(fill .2s ease)
-        fill: #ccc
-
-
 
   .input-group
-    display: inline-block
-    margin-right: 20px
     position: relative
-    width: 100%
+    +transition(height .5s ease)
 
-    input, textarea
-      padding: 15px 0px
+    &:after
+      content: ''
+      +position(absolute, null null 0 0)
+      +size(100% 2px)
+      background: #343435
+
+    &.textarea-wrapper
+      &:after
+        display: none
+
 
     label
       +position(absolute, 50% null null 0px)
       +transform(translateY(-50%))
-      font-size: 18px
       color: #999
       pointer-events: none
       +transition
 
-    input:focus + label, textarea:focus + label, textarea.has-value + label,
-    input.has-value + label
-      top: -10px
-      font-size: 12px
-      color: #aaa
 
 
 

@@ -3,68 +3,76 @@ $text-color: #808080
 aside.sidebar
   &
     +position(fixed, 0 null null 0)
-    font-size: 0.72727rem
     text-align: center
-    width: 320px
+    width: 300px
     background: #252527
-    height: 100%
+    min-height: 100%
+    max-height: 100%
     z-index: 2
-    min-height: 540px
+    overflow: auto
 
-    .work-return
-      display: none
-      @media (min-width: 1001px)
-        display: none !important
+    @media (min-width: 1001px) and (max-width: 1220px)
+      width: 90px
 
     @media (max-width: 1000px)
       +position(fixed, auto 0 0 auto )
-      position: fixed
-      width: 100%
-      height: 60px
+      +size(100% 60px)
       z-index: 80
       min-height: initial
 
+    .work-return
+      display: none
+      text-indent: 0
+      +position(absolute, auto auto auto 33.33%)
+      +size(33.33% 60px)
+      line-height: 60px
+      font-size: 14px
+      box-shadow: none
+      border-left: 1px solid #333
+      background: #343435
+      z-index: 50
+      +box-sizing(border-box)
 
-  .copyright
-    position: absolute
-    bottom: 0
-    width: 100%
-    height: 20px
-    padding-bottom: 20px
-    font-weight: 400
-    opacity: .7
+      &:before
+        content: ''
+        +size(25px)
+        display: inline-block
+        background-image: url(../img/icon-backward.svg)
+        background-size: contain
+        vertical-align: middle
+        margin-right: 5px
 
+      @media (min-width: 1001px)
+        display: none !important
+
+    .side-bar-wrapper
+      +position(absolute, 0 0 null null)
+      +size(100%)
+      min-height: 600px
+      @media (min-width: 1001px) and (max-width: 1220px)
+        min-height: 500px
+      @media (max-width: 1000px)
+        min-height: initial
+
+  .profile-card
     @media (max-width: 1000px)
       display: none
 
-    a
-      display: inline-block
-      color: #888
-      +transition(border .2s ease)
-      border-bottom: 1px solid #252527
 
-      &:hover
-        border-bottom: 1px solid #888
-
-  .profile-card
-    &
-      padding: 34px 20px 30px
-      +user-select(none)
-
-      @media (max-width: 1000px)
-        display: none
 
     img
-      max-width: 120px
-      border-radius: 50%
-      margin-bottom: 20px
+      max-width: 100%
+      @media (min-width: 1220px)
+        border-radius: 50%
+
+    .slogan
+      @media (max-width: 1220px)
+        display: none
 
     .title
-      font-size: 18px
       color: #9f9f9f
 
     .subtitle
-      font-size: 16px
       color: $text-color
       color: #666
 
@@ -77,33 +85,6 @@ aside.sidebar
       position: absolute
       bottom: 60px
       left: 0
-
-    .contacts
-      &
-        +position(absolute, null null 55px 0)
-        width: 100%
-        text-align: center
-        +user-select(none)
-
-        @media (max-width: 1000px)
-          display: none
-
-      .contact-link
-        display: inline-block
-        +size(17px)
-        margin: 0 3px
-        padding: 7px
-        background: rgba(255, 255, 255, .07)
-        +user-select(none)
-        border-radius: 50%
-
-        &:hover
-          background: rgba(255, 255, 255, .10)
-          path
-            fill: #ccc
-
-        path
-          fill: #9f9f9f
 
 
   nav
@@ -122,14 +103,24 @@ aside.sidebar
     .item
       &
         display: block
-        width: 100%
-        padding: 18px 0
+        padding: 0
+        height: 58px
+        line-height: 58px
         font-size: 14px
         color: $text-color
         cursor: pointer
-        border-bottom: 1px solid #333335
-        @include transition(all .2s)
+        position: relative
+        text-decoration: none
+        +transition(all .2s)
 
+        &:first-child:before, &:after
+          content: ''
+          +position(absolute, null null 0 0)
+          +size(100% 1px)
+          background: #343435
+
+        &:first-child:before
+          +position(absolute, 0 null auto  0)
 
         @media (max-width: 1000px)
           +box-sizing(border-box)
@@ -151,11 +142,9 @@ aside.sidebar
           @media (min-width: 1001px)
             display: none
 
-        &:first-child
-          border-top: 1px solid #333335
 
         &.active
-          @include transition(background .5s 1s)
+          @include transition(background .1s .3s)
           background: #343435
           color: #bbb
           cursor: default !important
@@ -182,5 +171,72 @@ aside.sidebar
 
       .waves-ripple
         z-index: -1
+
+
+  .sidebar-footer
+    +position(absolute, null null 0 0)
+    width: 100%
+
+    @media (min-width: 1001px) and (max-width: 1220px)
+      height: 120px
+
+    .copyright
+      width: 100%
+      font-weight: 400
+      opacity: .7
+
+      @media (max-width: 1220px)
+        display: none
+
+      a
+        display: inline-block
+        color: #888
+        border-bottom: 1px solid #252527
+
+        &:hover
+          color: #ccc
+
+
+    .contacts
+
+      &
+        +position(relative, null null 5px null)
+        width: 100%
+        text-align: center
+
+        @media (min-width: 1001px) and (max-width: 1220px)
+          bottom: 0
+
+        @media (max-width: 1000px)
+          display: none
+
+      .contact-link
+        display: inline-block
+        +box-sizing(content-box)
+        +size(17px)
+        margin: 0 2px
+        padding: 7px
+        background: rgba(255, 255, 255, .07)
+        +user-select(none)
+        border-radius: 50%
+
+        @media (min-width: 1001px) and (max-width: 1220px)
+          +box-sizing(border-box)
+          +size(90px 40px)
+          padding: 8px
+          border-radius: 0
+          background: none
+          margin: 0
+
+          &:first-child
+            display: none
+
+        &:hover
+          background: rgba(255, 255, 255, .10)
+          path
+            fill: #ccc
+
+        path
+          fill: #9f9f9f
 
 

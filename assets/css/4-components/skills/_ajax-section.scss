@@ -3,7 +3,6 @@
   & {
       @include size(100%);
       @include position(absolute, -1px null null 0px);
-      overflow: hidden;
       border-radius: 3px;
       overflow: hidden;
       padding-top: 50px;
@@ -11,8 +10,7 @@
 
   .search-result {
     position: absolute;
-    width: 100%;
-    height: 76px;
+    @include size(100% 76px);
     opacity: 0;
     @include transform(translate3d(100%, 0, 0));
 
@@ -21,8 +19,8 @@
 
       &:after, &:before, span {
         @include position(absolute, 25px null null 90px);
-        content: "";
         @include size(100px 5px);
+        content: "";
         background: #666;
       }
 
@@ -56,6 +54,7 @@
 
     .num {
       float: left;
+      text-align: center;
       @include size(60px);
       font-size: 35px;
       margin: 0 0 0 15px;
@@ -126,9 +125,10 @@
   .phone-keyboard {
     @include transform(translate(0, 100%));
     padding: 17px 0;
+    text-align: center;
     font-size: 0;
     @include size(100% 200px);
-    @include position(absolute, null -1px 50px null);
+    @include position(absolute, null -1px 0 null);
     background: #272727;
     z-index: 40;
     opacity: 1 !important;
@@ -249,7 +249,7 @@
 
   .phone-post {
     @include size(50% 66px);
-    padding: 12px 10px 15px;
+    padding: 11px 10px 15px;
     overflow: visible;
     display: inline-block;
     float: left;
@@ -258,6 +258,10 @@
     position: relative;
 
     @include animation(hidePosts .3s 7s ease forwards);
+
+    &:nth-child(4) {
+      padding-top: 12px;
+    }
 
     &:nth-child(odd) {
       left: -5px;
@@ -320,12 +324,12 @@
     }
     .post-line-1 {
       width: 52px;
-      top: 25px;
+      top: 24px;
       @extend %post-line;
     }
     .post-line-2 {
       width: 47px;
-      top: 33px;
+      top: 32px;
       @extend %post-line;
     }
   }
