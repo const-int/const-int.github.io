@@ -121,6 +121,11 @@ aside.sidebar
         &:first-child:before
           +position(absolute, 0 null auto  0)
 
+        @media (min-width: 1001px) and (max-width: 1220px)
+          font-size: 13px
+          height: 52px
+          line-height: 52px
+
         @media (max-width: 1000px)
           +size(33.33% 60px)
           line-height: 60px
@@ -215,6 +220,9 @@ aside.sidebar
         background: rgba(255, 255, 255, .07)
         +user-select(none)
         border-radius: 50%
+
+        @media (min-width: 1221px)
+          +box-sizing(content-box)
 
         @media (min-width: 1001px) and (max-width: 1220px)
           +size(90px 40px)

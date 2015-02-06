@@ -61,7 +61,6 @@ html {
 
 * {
   vertical-align: top !important;
-  font-family: "Source Sans Pro";
 }
 
 html {
@@ -80,8 +79,8 @@ html {
 }
 
 body {
-  font-family: "Source Sans Pro";
   background: #fff url(../img/exp-bg.png);
+  font-family: "Source-Sans-Pro-Regular", sans-serif;
 }
 
 @media (min-width: 1001px) {
@@ -98,21 +97,22 @@ body {
 }
 
 .section-title {
-  font-size: 3em;
-  line-height: 1.5em;
+  font-family: "Source-Sans-Pro-Semibold", sans-serif;
+  font-size: 2.25em;
+  line-height: 1.33333em;
   line-height: 1em;
-  border-bottom-width: 0.03333em;
+  border-bottom-width: 0.04444em;
   border-bottom-style: solid;
-  padding-bottom: 0.46667em;
+  padding-bottom: 0.62222em;
 }
 @media (max-width: 1000px) {
   .section-title {
-    font-size: 1.8em;
-    line-height: 1.66667em;
+    font-size: 1.5em;
+    line-height: 2em;
     line-height: 1.25em;
-    border-bottom-width: 0.05556em;
+    border-bottom-width: 0.06667em;
     border-bottom-style: solid;
-    padding-bottom: 0.77778em;
+    padding-bottom: 0.93333em;
   }
 }
 
@@ -156,6 +156,7 @@ aside.sidebar .slogan, aside.sidebar .sidebar-footer {
 }
 aside.sidebar .title, aside.sidebar .subtitle {
   position: relative;
+  font-family: "Source-Sans-Pro-Semibold", sans-serif;
 }
 aside.sidebar .title {
   font-size: 0.9em;
@@ -175,6 +176,9 @@ aside.sidebar .contact {
   font-size: 0;
 }
 
+.section-about .profile-card {
+  margin-bottom: 1.5em;
+}
 .section-about .skill-lockup:before {
   margin-bottom: -30px;
 }
@@ -228,32 +232,50 @@ aside.sidebar .contact {
   padding-top: 10px;
 }
 
-.thumb-unit {
+.section-work .section-title {
+  margin-bottom: 0.83333em;
+}
+@media (max-width: 1000px) {
+  .section-work .section-title {
+    margin-bottom: 1.25em;
+  }
+}
+.section-work .thumb-unit {
   margin-top: 1.5em;
 }
-.thumb-unit .img-wrap {
+.section-work .thumb-unit .img-wrap {
   padding-bottom: 270px;
 }
-.thumb-unit .unit-title {
+@media (max-width: 650px) {
+  .section-work .thumb-unit .img-wrap {
+    padding-bottom: 150px;
+  }
+}
+@media (min-width: 651px) and (max-width: 1000px) {
+  .section-work .thumb-unit .img-wrap {
+    padding-bottom: 210px;
+  }
+}
+.section-work .thumb-unit .unit-title {
   height: 60px;
   padding: 0 60px 0 30px;
   line-height: 3em;
 }
-.thumb-unit .unit-title:after {
+.section-work .thumb-unit .unit-title:after {
   top: 30px;
   right: 30px;
   height: 30px;
   width: 30px;
 }
 @media (max-width: 1000px) {
-  .thumb-unit .unit-title {
+  .section-work .thumb-unit .unit-title {
     height: 51px;
     padding: 0 50px 0 20px;
     font-size: 0.8em;
     line-height: 1.875em;
     line-height: 3.1875em;
   }
-  .thumb-unit .unit-title:after {
+  .section-work .thumb-unit .unit-title:after {
     top: 26px;
     height: 25px;
     width: 25px;
@@ -261,11 +283,20 @@ aside.sidebar .contact {
 }
 
 .work-center-container .section-title {
-  line-height: 1em;
+  line-height: 1.33333em;
 }
 @media (max-width: 1000px) {
   .work-center-container .section-title {
+    font-size: 1.5em;
+    line-height: 2em;
     line-height: 1.25em;
+    border-bottom-width: 0.06667em;
+    border-bottom-style: solid;
+    padding-bottom: 0.93333em;
+    border-color: #aaa;
+  }
+  .work-center-container .section-title .project-url {
+    margin-top: -0.5em;
   }
 }
 .work-center-container label {
@@ -278,54 +309,12 @@ aside.sidebar .contact {
 .work-center-container .work-return {
   margin-right: 30px;
 }
-.work-center-container .project-separator {
-  height: 28px;
-  border-bottom: 2px solid #aaa;
-}
 .work-center-container .project-load {
   margin-top: 1.5em;
 }
 
-.awesome-form .input-group {
-  line-height: 3em;
-  margin-bottom: 1.5em;
-}
-.awesome-form .input-group.textarea-wrapper {
-  margin-bottom: 3em;
-  height: 60px;
-}
-.awesome-form input {
-  padding: 0;
-  line-height: 3em;
-}
-.awesome-form .auto-height-hidden-div {
-  line-height: 30px;
-}
-.awesome-form textarea {
-  padding: 15px 0;
-  line-height: 1.5em;
-  height: 28px;
-  overflow: hidden;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-.awesome-form input:focus + label, .awesome-form textarea:focus + label, .awesome-form textarea.has-value + label,
-.awesome-form input.has-value + label {
-  top: 0;
-  font-size: 13.33333px;
-  color: #aaa;
-}
-.awesome-form input:focus + label:after, .awesome-form textarea:focus + label:after, .awesome-form textarea.has-value + label:after,
-.awesome-form input.has-value + label:after {
-  content: ":";
-}
-.awesome-form button.contact-large-button {
-  font-size: 1em;
-  line-height: 1.5em;
-}
-
 .exp-animation {
-  margin-top: -4.5em;
+  margin-top: -3.75em;
 }
 
 .exp-nav {
@@ -355,4 +344,46 @@ aside.sidebar .contact {
 
 .exp-content p {
   padding-top: 4.5em;
+}
+
+.awesome-form .input-group {
+  line-height: 3em;
+  margin-bottom: 1.5em;
+}
+.awesome-form .input-group.textarea-wrapper {
+  margin-bottom: 3em;
+  height: 60px;
+}
+.awesome-form input {
+  padding: 0;
+  font-size: 1em;
+  line-height: 1.5em;
+  line-height: 3em;
+}
+.awesome-form .auto-height-hidden-div {
+  line-height: 30px;
+}
+.awesome-form textarea {
+  padding: 15px 0;
+  font-size: 1em;
+  line-height: 1.5em;
+  line-height: 1.5em;
+  height: 28px;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.awesome-form input:focus + label, .awesome-form textarea:focus + label, .awesome-form textarea.has-value + label,
+.awesome-form input.has-value + label {
+  top: 0;
+  font-size: 13.33333px;
+  color: #aaa;
+}
+.awesome-form input:focus + label:after, .awesome-form textarea:focus + label:after, .awesome-form textarea.has-value + label:after,
+.awesome-form input.has-value + label:after {
+  content: ":";
+}
+.awesome-form button.contact-large-button {
+  font-size: 1em;
+  line-height: 1.5em;
 }

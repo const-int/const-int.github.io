@@ -5,7 +5,7 @@
 
 $base-font-size: 20px !global
 $base-line-height: 30px !global
-$st_fz: 60px !global
+$st_fz: 45px !global
 $rythm-unit: "rem" !global
 $rem-with-px-fallback: true !global
 +establish-baseline
@@ -18,15 +18,14 @@ $rem-with-px-fallback: true !global
 
 *
   vertical-align: top !important
-  font-family: 'Source Sans Pro'
 
 html
   background: #666
   +debug-vertical-alignment
 
 body
-  font-family: 'Source Sans Pro'
   background: #fff url(../img/exp-bg.png)
+  font-family: 'Source-Sans-Pro-Regular', sans-serif
 
 .container
   @media (min-width: 1001px)
@@ -36,15 +35,16 @@ body
     +padding-trailer(3)
 
 .section-title
+  font-family: 'Source-Sans-Pro-Semibold', sans-serif
   +adjust-font-size-to($st_fz)
-  +adjust-leading-to(2, $st_fz)
+  +adjust-leading-to(1.5, $st_fz)
   +trailing-border(2px, 1, $st_fz)
 
   @media (max-width: 1000px)
-    $st_fz: 36px
+    $st_fz: 30px
 
     +adjust-font-size-to($st_fz)
-    +adjust-leading-to(1.5, $st_fz)
+    +adjust-leading-to(1.25, $st_fz)
     +trailing-border(2px, 1, $st_fz)
 
 
@@ -88,6 +88,7 @@ aside.sidebar
 
   .title, .subtitle
     position: relative
+    font-family: 'Source-Sans-Pro-Semibold', sans-serif
 
   .title
     +adjust-font-size-to(18px)
@@ -109,6 +110,10 @@ aside.sidebar
 // -------------------------
 
 .section-about
+
+  .profile-card
+    @media (max-width: 1000px)
+    +trailer(1)
 
   .skill-lockup
     &:before
@@ -160,33 +165,47 @@ aside.sidebar
 // PORTFOLIO PAGE  ---------
 // -------------------------
 
-.thumb-unit
-  +leader
+.section-work
 
-  .img-wrap
-    padding-bottom: 9 * $base-line-height
-
-  .unit-title
-    height: $base-line-height * 2
-    padding: 0 $base-line-height * 2 0 $base-line-height
-    +adjust-leading-to(2, $base-font-size)
-
-    &:after
-      top: $base-line-height
-      right: $base-line-height
-      height: $base-line-height
-      width: $base-line-height
-
+  .section-title
+    +margin-trailer(1.25, $st_fz)
     @media (max-width: 1000px)
-      height: $base-line-height * 1.7
-      padding: 0 50px 0 20px
-      +adjust-font-size-to(16px)
-      +adjust-leading-to(1.7, 16px)
+      $st_fz: 30px
+      +margin-trailer(1.25, $st_fz)
+
+  .thumb-unit
+    +leader
+
+    .img-wrap
+      padding-bottom: 9 * $base-line-height
+
+      @media (max-width: 650px)
+        padding-bottom: 5 * $base-line-height
+
+      @media (min-width: 651px) and (max-width: 1000px)
+        padding-bottom: 7 * $base-line-height
+
+    .unit-title
+      height: $base-line-height * 2
+      padding: 0 $base-line-height * 2 0 $base-line-height
+      +adjust-leading-to(2, $base-font-size)
 
       &:after
-        top: 26px
-        height: 25px
-        width: 25px
+        top: $base-line-height
+        right: $base-line-height
+        height: $base-line-height
+        width: $base-line-height
+
+      @media (max-width: 1000px)
+        height: $base-line-height * 1.7
+        padding: 0 50px 0 20px
+        +adjust-font-size-to(16px)
+        +adjust-leading-to(1.7, 16px)
+
+        &:after
+          top: 26px
+          height: 25px
+          width: 25px
 
 
 
@@ -196,8 +215,14 @@ aside.sidebar
     +adjust-leading-to(2, $st_fz)
 
     @media (max-width: 1000px)
-      $st_fz: 36px
-      +adjust-leading-to(1.5, $st_fz)
+      $st_fz: 30px
+      +adjust-font-size-to($st_fz)
+      +adjust-leading-to(1.25, $st_fz)
+      +trailing-border(2px, 1, $st_fz)
+      border-color: #aaa
+
+      .project-url
+        +leader(-.5, $st_fz)
 
   label
     margin-right: $base-line-height
@@ -209,62 +234,18 @@ aside.sidebar
   .work-return
     margin-right: $base-line-height
 
-  .project-separator
-    height: $base-line-height - 2px
-    border-bottom: 2px solid #aaa
-
   .project-load
     +leader
 
 
-// -------------------------
-// CONTACT PAGE  -----------
-// -------------------------
-
-.awesome-form
-
-  .input-group
-    +adjust-leading-to(2)
-    +trailer
-
-    &.textarea-wrapper
-      +trailer(2)
-      height: $base-line-height * 2
-
-  input
-    padding: 0
-    +adjust-leading-to(2)
-
-  .auto-height-hidden-div
-    line-height: $base-line-height
-
-  textarea
-    padding: ($base-line-height / 2) 0
-    +adjust-leading-to(1)
-    height: $base-line-height - 2px
-    overflow: hidden
-    overflow-x: hidden
-    overflow-y: hidden
-
-
-  input:focus + label, textarea:focus + label, textarea.has-value + label,
-  input.has-value + label
-    top: 0
-    font-size: $base-font-size / 1.5
-    color: #aaa
-
-    &:after
-      content: ":"
-
-  button.contact-large-button
-    +adjust-font-size-to(20px)
 
 // -------------------------
 // EXPIRIETCE PAGE  --------
 // -------------------------
 
 .exp-animation
-  +leader(-3)
+  +leader(-2.5)
+
 
 .exp-nav
   +leader(.5)
@@ -289,8 +270,51 @@ aside.sidebar
       +adjust-leading-to(1)
 
 
-
 .exp-content p
   +padding-leader(3)
 
+
+// -------------------------
+// CONTACT PAGE  -----------
+// -------------------------
+
+.awesome-form
+
+  .input-group
+    +adjust-leading-to(2)
+    +trailer
+
+    &.textarea-wrapper
+      +trailer(2)
+      height: $base-line-height * 2
+
+  input
+    padding: 0
+    +adjust-font-size-to($base-font-size)
+    +adjust-leading-to(2)
+
+  .auto-height-hidden-div
+    line-height: $base-line-height
+
+  textarea
+    padding: ($base-line-height / 2) 0
+    +adjust-font-size-to($base-font-size)
+    +adjust-leading-to(1)
+    height: $base-line-height - 2px
+    overflow: hidden
+    overflow-x: hidden
+    overflow-y: hidden
+
+
+  input:focus + label, textarea:focus + label, textarea.has-value + label,
+  input.has-value + label
+    top: 0
+    font-size: $base-font-size / 1.5
+    color: #aaa
+
+    &:after
+      content: ":"
+
+  button.contact-large-button
+    +adjust-font-size-to(20px)
 
