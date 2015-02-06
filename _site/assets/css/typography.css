@@ -226,9 +226,6 @@ aside.sidebar .contact {
 .section-about .skill-unit .skill-meter {
   height: 30px;
   padding-top: 10px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
 .thumb-unit {

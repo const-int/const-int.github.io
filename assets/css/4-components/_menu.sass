@@ -31,7 +31,6 @@ aside.sidebar
       border-left: 1px solid #333
       background: #343435
       z-index: 50
-      +box-sizing(border-box)
 
       &:before
         content: ''
@@ -123,11 +122,9 @@ aside.sidebar
           +position(absolute, 0 null auto  0)
 
         @media (max-width: 1000px)
-          +box-sizing(border-box)
-          height: 60px
+          +size(33.33% 60px)
           line-height: 60px
           padding: 0
-          width: 33.33%
           float: left
           border-left: 1px solid #333
           border-bottom: 0
@@ -221,7 +218,6 @@ aside.sidebar
         border-radius: 50%
 
         @media (min-width: 1001px) and (max-width: 1220px)
-          +box-sizing(border-box)
           +size(90px 40px)
           padding: 8px
           border-radius: 0

@@ -40,7 +40,6 @@ $(document).ready(function() {
 
         setTimeout(function(){
             exp_nav_selected.text(that.text());
-            remove_ripple();
             setTimeout(function(){
             exp_texts_wrap.removeClass('faded-out');
             exp_nav_select.removeClass('animating')
@@ -61,30 +60,10 @@ $(document).ready(function() {
       } else {
         exp_nav_select.addClass('opened show-list');
         exp_texts_wrap.addClass('faded-out');
-        setTimeout(function(){
-          remove_ripple()
-        }, 1000)
       }
   });
 
 
-
-  function remove_ripple() {
-    $('.ink').remove();
-  }
-
-
-  // ------------------
-  // HTML TAB animation
-  // ------------------
-
-  // setInterval(function() {
-  //   $('.html-section .phone-post').addClass('active');
-
-  //   setTimeout(function() {
-  //     $('.html-section .phone-post').removeClass('active');
-  //   }, 2500);
-  // }, 5000);
 
 });
 

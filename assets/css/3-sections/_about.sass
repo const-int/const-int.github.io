@@ -39,7 +39,19 @@
   .skill-unit
     position: relative
     display: inline-block
-    +box-sizing(border-box)
+
+    &:nth-child(even)
+      @media (min-width: 651px) and (max-width: 1000px)
+        margin-left: 5%
+
+    @media (min-width: 651px) and (max-width: 1000px)
+      width: 46% !important
+      float: left
+
+    @media (max-width: 650px)
+      width: 95% !important
+
+
 
     .skill-icon
       +position(absolute, 0 null null 0)
@@ -62,7 +74,6 @@
       text-overflow: ellipsis
 
 
-@media (max-width: 1000px)
-  .skill-unit
-    width: 100% !important
+
+
 
