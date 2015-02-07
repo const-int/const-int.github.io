@@ -6,44 +6,35 @@ $(document).ready(function() {
   // nav click
   $('nav.main-nav > *').click(function(event) {
 
-    // slide back portfolio
-    slide_back();
-    $('aside .work-return').hide();
-    work_container.hide(200);
-    animating_work = false;
+    if (!$(this).hasClass('active')) {
+      move_pages($(this).index());
+      // slide back portfolio
+      if (work_opened) {
+        slide_back();
+      }
+    }
 
-    var eq = $(this).index();
-    if ($(this).hasClass('active')) { return }
-    $(this).siblings().each(function(index, el) {
-      $(el).removeClass('first-loaded').find('.waves-ripple').remove();
-    });
-    move_pages(eq);
   });
 
 
   $(window).on("load", function() {
-      nav_index = get_page_from_location();
-      $('nav .item').eq(nav_index).addClass('first-loaded');
-      page_actions(nav_index);
-      if (nav_index > 0 ) {
-        window.location.hash = sections[nav_index];
-      }
-  });
 
-  $(window).resize(function() {
-      if ( $(window).height()==win_height || $(window).width() < 1000 ) return;
-      height = $(window).height();
-      setTimeout(function() {
-        window.location.hash = '#about';
-        location.reload();
-        win_height = $(window).height;
-      }, 1);
+      nav_index = get_page_from_location();
+      window.location.hash = sections[nav_index];
+
+      var active_tab = $('nav .item').eq(nav_index)
+      active_tab.addClass('first-loaded');
+      page_actions(nav_index);
+
+      setTimeout(function(){
+        active_tab.removeClass('first-loaded').addClass('active');
+      }, 200);
   });
 
 
   $(window).on('hashchange',function(){
+
      nav_index = get_page_from_location();
-     $('nav .item').removeClass('first-loaded');
      higlight_link(nav_index);
   });
 
@@ -70,8 +61,10 @@ $(document).ready(function() {
     if ( nav_index == 0 ) {
         skills_animate()
      }
-    if ( nav_index == 2 ) {
-        $('.exp-animation .wrap').load('exp/exp_html.html');
+    if ( nav_index == 2 && !$('.exp-animation').hasClass('viewed') ) {
+      $('.exp-animation')
+        .addClass('viewed')
+        .find('.wrap').load('exp/exp_html.html');
     }
   }
 

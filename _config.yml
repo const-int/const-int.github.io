@@ -6,6 +6,7 @@ permalink: pretty
 port: 8000
 
 include: ['_includes/work']
+exclude: ['node_modules']
 
 sass:
   sass_dir: assets/css

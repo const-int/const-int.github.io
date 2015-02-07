@@ -79,7 +79,11 @@ html {
 }
 
 body {
-  background: #fff url(../img/exp-bg.png);
+  background: #fff url(../img/backgrounds/exp-bg.png);
+  font-family: "Source-Sans-Pro-Regular", sans-serif;
+}
+
+button {
   font-family: "Source-Sans-Pro-Regular", sans-serif;
 }
 
@@ -122,9 +126,12 @@ body {
   line-height: 30px;
 }
 .contact-large-button svg {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   margin-left: 15px;
+}
+.contact-large-button svg use path {
+  fill: #ccc !important;
 }
 
 p {

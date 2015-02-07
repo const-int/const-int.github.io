@@ -81,25 +81,25 @@ projects:
 #-------------------------------
 # Clients Section
 
-clients:
+exps:
 - {file: 'exp/exp_html.html',
   quote: "I convert designs into clean, cross browser compatible, troubleproof layouts. Well formed pages are produced on every iteration of employer's development lifecycle.<br> Human readability and semantics of my resulting code are powered by <a href='http://gruntjs.com/' target='_blank' class='grunt'>frontend toolboxes</a> and modern <a href='http://jade-lang.com/' target='_blank' class='jade'>template engines</a>.",
-  logo: 'High-quality page layouts'}
+  title: 'High-quality page layouts'}
 - {file: 'exp/exp_css.html',
   quote: "Styling is essential and pretty complicated part of progressive web application. To maintain cross-browser and cross-devise consistency I build my stilesheets based on <a target='_blnk' href='http://getbootstrap.com/'>front-end frameworks</a>. <br> With help of <a target='_blnk' href='http://sass-lang.com/'>CSS preprocessors</a> and <a target='_blnk' href='http://bourbon.io/'>mixin libraries</a> I keep project styles DRY and structured. When it comes to sufficiently large applications I begin with <a target='_blnk' href='http://compass-style.org/'>CSS authoring frameworks</a>.",
-  logo: 'Cross-browser stylesheets'}
+  title: 'Cross-browser stylesheets'}
 - {file: 'exp/exp_svg.html',
   quote: "Growing number of high DPI displays nowdays affects quality requirements for a regular web app. Scalable vector graphics bring an ability to create crystal clear user interfaces and very high quality cross-platform animations. <br> To deliver such experience to user I craft elements with support of powerful <a href='http://snapsvg.io/' target='_blank'>JavaScript SVG libraries</a>.",
-  logo: 'Dynamic vector manipulation'}
+  title: 'Dynamic vector manipulation'}
 - {file: 'exp/exp_js.html',
   quote: "JavaScript is mine core skill in making interactive web and jQuery is very useful thing for me as well as for industry. <br> I'm very familiar with DOM interfacing that brings ability to take any aspect of webpage under control instantly. I've also put my hands on <a href='http://coffeescript.org/' target='_blank'>CoffeeScript</a> and keep going so.",
-  logo: 'JavaScript programming'}
+  title: 'JavaScript programming'}
 - {file: 'exp/exp_cms.html',
   quote: "I mostly do front-end development but occasionally I get my hands dirty with some backend (mostly php/MySQL). And I create WordPess templates time after time. <br>Also I really love dealing with static site generators like <a href='http://jekyllrb.com/'>this one</a> or <a href='https://middlemanapp.com/'>that one</a> to obtain maximum performance.",
-  logo: 'CMS setup and templating'}
+  title: 'CMS setup and templating'}
 - {file: 'exp/exp_ajax.html',
   quote: "In every project I try to create higly dinamic user experience by turning beautiful design files into working product.",
-  logo: 'Improving user experience'}
+  title: 'Improving user experience'}
 
 
 #-------------------------------

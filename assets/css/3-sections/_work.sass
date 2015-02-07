@@ -8,21 +8,15 @@
 
 
 .work-belt
-  width: 200%
-  height: 100%
-  position: relative
-  left: 0%
+  +size(200% 100%)
+  +position(relative, null null null 0)
   +transition(all, 800ms)
 
   &.slided
     +transform(translate3d(-50%, 0, 0))
 
-    .work-return
-      opacity: 1 !important
-
 .thumb-wrap-shift
-  width: 100%
-  height: 100%
+  +size(100%)
   overflow: auto
   padding-right: 20px
   +box-sizing(content-box)
@@ -54,8 +48,6 @@
     border-radius: 2px
     cursor: pointer
     box-shadow: rgba(0, 0, 0, 0.227451) 0px 3px 10px 0px, rgba(0, 0, 0, 0.156863) 0px 3px 10px 0px
-
-
 
     &:hover
       .unit-title
@@ -92,7 +84,7 @@
       height: 0
       padding-bottom: 4%
       +transform(translate(0, -50%))
-      background: #000 url(../img/icon-formard.svg)
+      background: #000 url(../img/icon-forward.svg)
       background-size: contain
       z-index: 40
       border-radius: 50%
@@ -108,22 +100,21 @@
       +transform(translate(-50%, -50%))
       box-shadow: 0 6px 10px rgba(0,0,0,.23),0 10px 30px rgba(0,0,0,.19)
 
+      svg
+        +size(20px)
+        +position(absolute, 50% 33px null null)
+        +transform(translate(50%, -50%))
+
       @media (max-width: 1000px)
         opacity: 1
+        padding-right: 44px !important
 
-      &:after
-        content: ""
-        position: absolute
-        +transform(translate(50%, -50%))
-        background: url(../img/icon-formard.svg)
-        background-size: contain
-        +user-select(none)
-
-
+        svg
+          right: 24px
+          +size(16px)
 
 
 .work-container
-  display: none
   position: relative
 
   .work-center-container
@@ -131,12 +122,8 @@
     max-width: 920px
     padding: 0 40px
 
-
     .work-return
       float: left
-      &:after
-        content: ''
-        background-image: url(../img/icon-backward.svg)
 
     @media (max-width: 1000px)
       margin-top: 0
@@ -158,6 +145,14 @@
       margin: 0
       padding: 0
       display: block
+      width: 100%
+
+    img
+      cursor: default
+
+
+
+
 
   .project-title
     position: relative
@@ -171,29 +166,13 @@
       &[href='#']
         display: none
 
-      &:after
-        background-image: url(../img/icon-url.svg)
-
       @media (max-width: 1000px)
         +position(absolute, 50% 0 null null)
         +transform(translate(0, -50%))
 
-  img
-    width: 100%
-    margin-bottom: 20px
+        svg
+          +size(16px)
 
   .icon-button
     border-radius: 50%
     overflow: hidden
-
-    &:before
-      border-radius: 50%
-
-    &.work-return:after
-      +size(27px)
-
-    &.project-url:after
-      +size(25px)
-
-
-

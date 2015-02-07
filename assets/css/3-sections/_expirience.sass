@@ -91,6 +91,13 @@
       ul
         display: block
 
+    .select-option
+      svg
+        display: none
+        +size(15px 11px)
+        +position(absolute, 50% 5px null null)
+        +transform(translate(0, -50%))
+
     &.opened
       cursor: pointer
 
@@ -105,13 +112,8 @@
         color: #000 !important
         opacity: 1 !important
 
-        &:before
-          content: ''
-          background: url(../img/icon-check.svg)
-          background-size: contain
-          +size(22px)
-          +position(absolute, 50% 4px null null)
-          +transform(translate(0, -50%))
+        svg
+          display: block
 
       .selected:after
         opacity: 0
@@ -181,7 +183,7 @@ $height: 400px
   float: right
   +size(240px 486px)
   background:
-    image: url(../img/clients/phone.png)
+    image: url(../img/pictures/phone.png)
     repeat: no-repeat
     size: contain
 

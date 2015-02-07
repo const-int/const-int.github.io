@@ -11,6 +11,7 @@ $(document).ready(function() {
   return_sign = $('.work-return');
   thumb_wrap_shift = $('.thumb-wrap-shift')
   animating_work = false;
+  work_opened = false;
 
 
   $.ajaxSetup({ cache: true });
@@ -26,10 +27,9 @@ $(document).ready(function() {
           newfolder = that.data('folder'),
           newHTML = 'work/'+ newfolder;
 
-      animating_work = true;
+      animating_work = work_opened = true;
 
       work_belt.addClass("slided");
-      work_container.show();
 
       setTimeout(function(){
         $('aside .work-return').show();
@@ -50,20 +50,23 @@ $(document).ready(function() {
 
   return_sign.click(function() {
     slide_back();
-    setTimeout(function(){
-      $('aside .work-return').hide();
-      work_container.hide(200);
-      animating_work = false;
-    }, 800);
   });
 
 
 });
 
 function slide_back () {
-  $('.project-load').removeClass('loaded');
-  if (animating_work) return;
-  animating_work = true;
-  work_belt.removeClass('slided');
+
+  if ( !animating_work && work_opened ) {
+      animating_work = true;
+      work_opened = false;
+
+    $('.project-load').removeClass('loaded');
+    work_belt.removeClass('slided');
+    $('aside .work-return').hide();
+    setTimeout(function(){
+      animating_work = false;
+    }, 800);
+  }
 }
 

@@ -24,7 +24,10 @@ html
   +debug-vertical-alignment
 
 body
-  background: #fff url(../img/exp-bg.png)
+  background: #fff url(../img/backgrounds/exp-bg.png)
+  font-family: 'Source-Sans-Pro-Regular', sans-serif
+
+button
   font-family: 'Source-Sans-Pro-Regular', sans-serif
 
 .container
@@ -53,9 +56,12 @@ body
   line-height: $base-line-height
 
   svg
-    width: $base-line-height
-    height: $base-line-height
+    width: 25px
+    height: 25px
     margin-left: $base-line-height / 2
+
+    use path
+      fill: #ccc !important
 
 p
   color: #222

@@ -8,10 +8,10 @@ body
   height: 100%
   color: $textColor
 
-
 svg
   +size(100%)
   vertical-align: top
+  cursor: pointer
 
 a, a *
   cursor: pointer
@@ -52,31 +52,30 @@ a, a *
   ------------------------------------	*/
 
 .const-button
-  cursor: pointer
-  display: inline-block
   position: relative
+  display: inline-block
   border-radius: 3px
   text-decoration: none
   color: #ccc
   background: #252527
   box-shadow: rgba(0,0,0,0.22745) 0px 3px 10px 0px, rgba(0,0,0,0.15686) 0px 3px 10px 0px
-  +user-select(none)
   +transition(color .2s ease, background .2s ease)
   white-space: nowrap
-
-  svg, span
-    cursor: pointer
+  cursor: pointer
 
   &:hover, &:active
     color: #fff
     background: #343435
 
+  &:hover *
+    cursor: pointer !important
 
-.icon-button:after
-  content: ""
+.icon-button svg
+  +size(20px)
   +position(absolute, 50% null  null 50%)
   +transform(translate(-50%, -50%))
   background-size: contain
+
 
 .contact-large-button
   display: block
@@ -101,9 +100,8 @@ a, a *
 
 *
   +user-select(none)
-  cursor: default
 
-p
+p, h1, h2, h3, h4, h5, h6
   +user-select(text)
   cursor: text
 
@@ -146,7 +144,10 @@ body
   margin: -12px 0 0 -35px /* is width and height divided by two */
 
 
-/* -- Ripple effect -------------------------------- */
+
+/* Ripple effect
+  ------------------------------------  */
+
 .ripple-effect
   position: relative
   overflow: hidden

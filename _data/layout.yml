@@ -1,11 +1,3 @@
-# Layout settings
-
-# Images
-hero: "home-bg.jpg"
-avatar: "constavatar.png"
-alternate: "alternate-bg.png"
-mailbg: "contact-bg.jpg"
-
 # Colors
 accent: "#fff"
 accent-light: "#666"

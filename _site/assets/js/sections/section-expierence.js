@@ -6,7 +6,7 @@ $(document).ready(function() {
   var exp_nav_wrap = $('.exp-nav'),
       exp_nav_select = $('.exp-nav .select-skill'),
       exp_nav_li = $('nav.select-skill li'),
-      exp_nav_selected = $('nav.select-skill .selected-center'),
+      exp_nav_selected = $('nav.select-skill .selected-center span'),
       tmp_text = exp_nav_selected.text(),
       active_class = 'active-exp-tab',
       exp_tabs = $('.exp-tab'),

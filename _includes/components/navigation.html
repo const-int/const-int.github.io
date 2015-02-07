@@ -3,7 +3,7 @@
   <div class="side-bar-wrapper">
 
     <div class="profile-card">
-      <a href="/"><img src="assets/img/constavatar.png" class="avatar" alt="Konstantin"></a>
+      <a href="/"><img id="small-ava" data-src="assets/img/pictures/constavatar.png" class="avatar" alt="Konstantin"></a>
 
       <div class="slogan">
         <div class="title">{{ site.data.settings.description }}</div>
@@ -18,9 +18,13 @@
       {% endfor %}
     </nav>
 
-    <label for="return">
-      <div class="work-return const-button ripple-effect">Back</div>
-    </label>
+
+    <div class="work-return const-button ripple-effect">
+      <svg viewBox="0 0 25 25">
+        <use xlink:href="#icon-backward" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+      </svg>
+      <span>Back</span>
+    </div>
 
     <footer class="sidebar-footer">
       <div class="contacts">

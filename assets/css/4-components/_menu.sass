@@ -32,13 +32,11 @@ aside.sidebar
       background: #343435
       z-index: 50
 
-      &:before
-        content: ''
-        +size(25px)
+      svg
+        +size(20px)
+        line-height: 60px
         display: inline-block
-        background-image: url(../img/icon-backward.svg)
-        background-size: contain
-        vertical-align: middle
+        vertical-align: middle !important
         margin-right: 5px
 
       @media (min-width: 1001px)
@@ -162,18 +160,6 @@ aside.sidebar
 
         &:not(.active):hover
           color: #bbb
-
-      &:not(.active)
-        .waves-ripple
-          display: none
-
-      .waves-ripple
-        background: #343435 !important
-        color: #bbb
-        opacity: 1 !important
-
-      .waves-ripple
-        z-index: -1
 
 
   .sidebar-footer
