@@ -3,7 +3,7 @@
   <div class="side-bar-wrapper">
 
     <div class="profile-card">
-      <a href="/"><img id="small-ava" data-src="assets/img/pictures/constavatar.png" class="avatar" alt="Konstantin"></a>
+      <a href="/"><img id="small-ava" data-src="assets/img/pictures/constavatar.jpg" class="avatar" alt="Konstantin"></a>
 
       <div class="slogan">
         <div class="title">{{ site.data.settings.description }}</div>
@@ -30,7 +30,9 @@
       <div class="contacts">
         {% for link in site.data.settings.contacts %}
           <a href="{{ link.link }}" class="contact-link" target="_blank">
-            {{ link.icon }}
+            <svg viewBox="0 0 20 20" height="100%" width="100%" class='icon-{{ link.name }}' xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#icon-{{ link.name }}" xmlns:xlink="http://www.w3.org/1999/xlink" ></use>
+            </svg>
           </a>
         {% endfor %}
       </div>

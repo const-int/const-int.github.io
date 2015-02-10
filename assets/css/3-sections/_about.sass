@@ -1,7 +1,6 @@
 .section-about
   position: relative
   overflow: auto
-  z-index: 4
 
   .container
     @media (max-width: 1000px)
@@ -58,14 +57,24 @@
       +position(absolute, 0 null null 0)
       display: inline-block
       height: 100%
-      background: #252527 url(../img/backgrounds/alternate-bg.png)
+      background: $bg-color url(../img/backgrounds/alternate-bg.png)
       border-radius: 50%
 
       svg
-        +position(absolute, 0 null null 0)
+        +position(absolute, 50% null null 50%)
+        +transform(translate(-50%, -50%))
 
-      path, polygon
-        fill: $accent
+        &.icon-tag
+          +size(53%)
+
+        &.icon-browser
+          +size(48%)
+
+        &.icon-tools
+          +size(40%)
+
+        &.icon-responsive
+          +size(60%)
 
     .skill-label
       font-family: 'Source-Sans-Pro-Semibold', sans-serif

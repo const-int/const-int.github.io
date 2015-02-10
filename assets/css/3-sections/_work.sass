@@ -61,7 +61,6 @@
       +backface-visibility(hidden)
       +transition(all .3s ease)
       overflow: hidden
-      z-index: 20
 
       @media (max-width: 1000px)
         padding-bottom: 50%
@@ -78,23 +77,8 @@
         width: 100%
         +transition(all .3s ease)
 
-    .icon-arrow-right
-      +position(absolute, 50% 30px null null)
-      width: 4%
-      height: 0
-      padding-bottom: 4%
-      +transform(translate(0, -50%))
-      background: #000 url(../img/icon-forward.svg)
-      background-size: contain
-      z-index: 40
-      border-radius: 50%
-      opacity: 0
-      border: 8px solid #000
-      +transition(all .3s ease)
-
     .unit-title
       +position(absolute, 50% null null 50%)
-      z-index: 30
       opacity: 0
       +transition(opacity .3s ease)
       +transform(translate(-50%, -50%))
@@ -133,7 +117,7 @@
         display: none !important
 
   .project-load
-    z-index: 10
+    z-index: $z-level2
     position: relative
     background: #fff
     +transition(all .5s ease)

@@ -7,7 +7,9 @@
 
         <!-- Animations -->
         <div class="exp-animation">
-          <div class="wrap"></div>
+          <div class="exp-animation-wrap">
+            <div class="wrap"></div>
+          </div>
         </div>
 
         <!-- Navigation -->
@@ -20,7 +22,7 @@
                     data-file="{{ exp.file }}"
                     data-text="{{ exp.title }}"
                     data-index="{{ forloop.index }}">
-                    {{ exp.title }}
+                    <span>{{ exp.title }}</span>
                     <svg viewBox="0 0 15 11">
                         <use xlink:href="#icon-check"></use>
                     </svg>

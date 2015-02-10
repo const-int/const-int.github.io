@@ -19,7 +19,6 @@
 
 .exp-unit
   position: relative
-  z-index: 1
   display: none
   opacity: 0
 
@@ -55,15 +54,16 @@
       margin-bottom: 15px
       padding-bottom: 10px
       border-bottom: 1px solid #aaa
-      color: #252527
+      color: $bg-color
 
     a
-      color: #666
-      border-bottom: 2px solid
+      color: $link-color
+      border-bottom: 2px solid transparent
       text-decoration: none
-      +transition(.3s ease)
+      +transition(.2s ease)
       &:hover
-        border-bottom: 2px solid transparent
+        color: #222
+        border-bottom: 2px solid
 
 
 // Logos
@@ -138,7 +138,7 @@
         +position(absolute, 50% 6px null null)
         +size(0)
         +transform(translate(0, -50%))
-        border-top: 10px solid #343435
+        border-top: 10px solid $bg-color-light
         border-left: 10px solid transparent
         border-right: 10px solid transparent
 
@@ -170,7 +170,7 @@
 
   .select-skill-border
     height: 2px
-    background: #252527
+    background: $bg-color
     margin-top: 0.5em
 
 
@@ -182,10 +182,19 @@ $height: 400px
   position: relative
   float: right
   +size(240px 486px)
-  background:
-    image: url(../img/pictures/phone.png)
-    repeat: no-repeat
-    size: contain
+  display: none
+
+  &.viewed
+    display: block
+
+  .exp-animation-wrap
+    +position(absolute, 0 0 null null)
+    +size(100%)
+    background:
+      image: url(../img/pictures/phone.png)
+      repeat: no-repeat
+      size: contain
+
 
   .wrap
     +position(absolute, 47px null null 15px)

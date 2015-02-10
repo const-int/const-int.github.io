@@ -18,10 +18,10 @@
                 <div class="thumb-click-area"
                   data-name='{{ project.name }}'
                   data-url='{{ project.url }}'
-                  data-folder="{{ project.folder }}">
+                  data-folder="{{ forloop.index }}">
 
                   <div class="img-wrap">
-                    <img src="assets/img/work/{{project.folder}}/thumb.jpg" alt="{{ project.name }}">
+                    <img data-src="assets/img/work/proj-{{ forloop.index }}/thumb.jpg" alt="{{ project.name }}">
                   </div>
 
                   <div class="unit-title const-button">
@@ -56,7 +56,7 @@
           <div class="work-center-container">
 
             <h4 class="project-title section-title">
-              <a href="#" class="project-url const-button icon-button">
+              <a href="#" target="_blank" class="project-url const-button icon-button">
                 <svg viewBox="0 0 20 20">
                     <use xlink:href="#icon-url"></use>
                 </svg>
@@ -69,7 +69,9 @@
            --><span></span>
             </h4>
 
-            <div class="project-load"></div>
+            <div class="project-load">
+              <img src="" alt="">
+            </div>
 
           </div>
 

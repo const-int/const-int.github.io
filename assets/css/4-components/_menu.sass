@@ -1,14 +1,12 @@
-$text-color: #808080
-
 aside.sidebar
   &
     +position(fixed, 0 null null 0)
     text-align: center
     width: 300px
-    background: #252527
+    background: $bg-color
     min-height: 100%
     max-height: 100%
-    z-index: 2
+    z-index: $z-level2
     overflow: auto
 
     @media (min-width: 1001px) and (max-width: 1220px)
@@ -17,7 +15,6 @@ aside.sidebar
     @media (max-width: 1000px)
       +position(fixed, auto 0 0 auto )
       +size(100% 60px)
-      z-index: 80
       min-height: initial
 
     .work-return
@@ -29,8 +26,8 @@ aside.sidebar
       font-size: 14px
       box-shadow: none
       border-left: 1px solid #333
-      background: #343435
-      z-index: 50
+      background: $bg-color-light
+      z-index: $z-level3
 
       svg
         +size(20px)
@@ -55,8 +52,6 @@ aside.sidebar
     @media (max-width: 1000px)
       display: none
 
-
-
     img
       max-width: 100%
       @media (min-width: 1220px)
@@ -70,7 +65,7 @@ aside.sidebar
       color: #9f9f9f
 
     .subtitle
-      color: $text-color
+      color: $menu-text-color
       color: #666
 
       span
@@ -86,13 +81,12 @@ aside.sidebar
 
   nav
     &
-      background: #252527
+      background: $bg-color
       width: 100%
-      z-index: 1000
 
     &.disabled .item:not(.active)
       cursor: default !important
-      color: $text-color !important
+      color: $menu-text-color !important
 
     &.fixed
       +position(fixed, 0 null null 0)
@@ -104,7 +98,7 @@ aside.sidebar
         height: 58px
         line-height: 58px
         font-size: 14px
-        color: $text-color
+        color: $menu-text-color
         cursor: pointer
         position: relative
         text-decoration: none
@@ -114,7 +108,7 @@ aside.sidebar
           content: ''
           +position(absolute, null null 0 0)
           +size(100% 1px)
-          background: #343435
+          background: $bg-color-light
 
         &:first-child:before
           +position(absolute, 0 null auto  0)
@@ -146,20 +140,20 @@ aside.sidebar
 
         &.active
           @include transition(background .1s .3s)
-          background: #343435
-          color: #bbb
+          background: $bg-color-light
+          color: $menu-active-text-color
           cursor: default !important
 
           @media (max-width: 1000px)
             color: #ccc
 
         &.first-loaded
-          background: #343435 !important
-          color: #bbb !important
+          background: $bg-color-light !important
+          color: $menu-active-text-color !important
           cursor: default !important
 
         &:not(.active):hover
-          color: #bbb
+          color: $menu-active-text-color
 
 
   .sidebar-footer
@@ -172,7 +166,7 @@ aside.sidebar
     .copyright
       width: 100%
       font-weight: 400
-      opacity: .7
+      opacity: .85
 
       @media (max-width: 1220px)
         display: none
@@ -180,7 +174,7 @@ aside.sidebar
       a
         display: inline-block
         color: #888
-        border-bottom: 1px solid #252527
+        border-bottom: 1px solid $bg-color
 
         &:hover
           color: #ccc
@@ -200,16 +194,35 @@ aside.sidebar
           display: none
 
       .contact-link
+        position: relative
         display: inline-block
-        +size(17px)
+        +size(32px)
         margin: 0 2px
-        padding: 7px
         background: rgba(255, 255, 255, .07)
-        +user-select(none)
         border-radius: 50%
 
-        @media (min-width: 1221px)
-          +box-sizing(content-box)
+        &
+          svg
+            +position(absolute, 50%  null null 50%)
+            +size(16px)
+            margin: -8px auto auto -8px
+            fill: #aaa
+
+            &.icon-github
+              +size(18px)
+              margin: -9px auto auto -9px
+
+            &.icon-linkedin
+              +size(14px)
+              margin: -7px auto auto -7px
+
+          &:hover
+            background: rgba(255, 255, 255, .15)
+            svg
+              fill: #fff
+
+
+
 
         @media (min-width: 1001px) and (max-width: 1220px)
           +size(90px 40px)
@@ -220,13 +233,5 @@ aside.sidebar
 
           &:first-child
             display: none
-
-        &:hover
-          background: rgba(255, 255, 255, .10)
-          path
-            fill: #ccc
-
-        path
-          fill: #9f9f9f
 
 

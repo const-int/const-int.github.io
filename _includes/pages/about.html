@@ -18,7 +18,11 @@
       {% for skill in site.data.settings.skills %}
 
         <div class="skill-unit" >
-          <div class="skill-icon">{% include icons/{{ skill.icon }}.html %}</div>
+          <div class="skill-icon">
+            <svg viewBox="0 0 100 100" class='{{ skill.icon }}'>
+              <use xlink:href="#{{ skill.icon }}" xmlns:xlink="http://www.w3.org/1999/xlink" ></use>
+            </svg>
+          </div>
           <div class="skill-label">{{ skill.name }}</div>
           <div class="skill-desc"> {{ skill.desc }}</div>
           <div class="skill-meter">

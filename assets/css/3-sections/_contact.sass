@@ -35,9 +35,9 @@
     height: 22px
     overflow: hidden
     resize: none
-    border-bottom: 2px solid #343435 !important
+    border-bottom: 2px solid $bg-color-light !important
 
-  .auto-height-hidden-div
+  #auto-height-hidden-div
     display: none
     white-space: pre-wrap
     word-wrap: break-word
@@ -54,7 +54,7 @@
 
     &[type="text"],
     &[type="email"], &.textarea
-      color: #343435
+      color: $bg-color-light
       background: none
       border: none
 
@@ -66,7 +66,7 @@
       content: ''
       +position(absolute, null null 0 0)
       +size(100% 2px)
-      background: #343435
+      background: $bg-color-light
 
     &.textarea-wrapper
       &:after

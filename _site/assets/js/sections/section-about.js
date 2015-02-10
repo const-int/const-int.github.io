@@ -1,9 +1,3 @@
-$(document).ready(function() {
-
-
-});
-
-
 // Skills animate functions
 function skills_animate() {
 

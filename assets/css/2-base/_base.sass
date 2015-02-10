@@ -1,3 +1,12 @@
+/* Z-index
+  ------------------------------------  */
+$z-level1: 1
+$z-level2: 20
+$z-level3: 300
+$z-level4: 4000
+$z-level5: 50000
+
+
 /* Basic Styles
   ------------------------------------  */
 body, html
@@ -7,6 +16,7 @@ body, html
 body
   height: 100%
   color: $textColor
+  +ui-reset
 
 svg
   +size(100%)
@@ -29,7 +39,7 @@ a, a *
     margin-left: 0
 
 .section-title
-  color: #252527
+  color: $bg-color
   text-align: left
   border-color: #aaa
 
@@ -56,8 +66,8 @@ a, a *
   display: inline-block
   border-radius: 3px
   text-decoration: none
-  color: #ccc
-  background: #252527
+  color: $button-text-color
+  background: $bg-color
   box-shadow: rgba(0,0,0,0.22745) 0px 3px 10px 0px, rgba(0,0,0,0.15686) 0px 3px 10px 0px
   +transition(color .2s ease, background .2s ease)
   white-space: nowrap
@@ -65,7 +75,7 @@ a, a *
 
   &:hover, &:active
     color: #fff
-    background: #343435
+    background: $bg-color-light
 
   &:hover *
     cursor: pointer !important
@@ -82,13 +92,12 @@ a, a *
   width: 100%
   text-align: center
 
-  &:hover svg path
+  &:hover svg
     fill: #fff
 
   svg
-    path
-      +transition(fill .2s ease)
-      fill: #ccc
+    +transition(fill .2s ease)
+    fill: $button-text-color
 
 
 
@@ -136,7 +145,7 @@ body
 #preloader
   +position(fixed, 0 0 0 0)
   background-color: #fff
-  z-index: 99
+  z-index: $z-level5
 
 #status
   +size(70px 24px)

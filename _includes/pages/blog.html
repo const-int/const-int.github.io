@@ -1,0 +1,29 @@
+<section class="section-blog full-screen-block" id="blog">
+
+  <div class="container">
+
+    <div id="blog-posts"
+      data-pager-number="{{ site.paginate }}"
+      data-total-number="{{ site.posts | size }}">
+
+      <div class="post-section">
+        {% for post in paginator.posts %}
+          <h2 class="post-link" data-url="{{ post.url }}">{{ post.title }}</h2>
+          <span class="post-meta">
+            {{ post.date | date: "%B %-d, %Y" }} #{{ post.categories }}
+          </span>
+          <div class="post-excerpt">
+            {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+
+
+    <div id="ccc" hidden></div>
+
+  </div>
+
+
+</section>

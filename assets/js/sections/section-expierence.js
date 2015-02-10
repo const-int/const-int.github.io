@@ -34,7 +34,7 @@ $(document).ready(function() {
 
       var that = $(this);
 
-      animation_wrap.load(that.data('file'));
+      animation_wrap.load('assets/' + that.data('file'));
 
       setTimeout(function(){
 

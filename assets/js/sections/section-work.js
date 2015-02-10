@@ -24,8 +24,7 @@ $(document).ready(function() {
       var that = $(this),
           newTitle = that.data('name'),
           newUrl = that.data('url'),
-          newfolder = that.data('folder'),
-          newHTML = 'work/'+ newfolder;
+          folderIndex = that.data('folder');
 
       animating_work = work_opened = true;
 
@@ -37,9 +36,10 @@ $(document).ready(function() {
       }, 800);
 
       // Add content
-      $('.project-load').load(newHTML,function() {
-        $(this).addClass('loaded');
-      });
+      $('.project-load')
+        .addClass('loaded')
+        .find('img')
+          .attr('src', 'assets/img/work/proj-' + folderIndex + '/image.jpg');
 
       $('.project-title span').text(newTitle);
       if (newUrl != '') {
@@ -66,6 +66,7 @@ function slide_back () {
     $('aside .work-return').hide();
     setTimeout(function(){
       animating_work = false;
+      $('.project-load img').attr('src', '');
     }, 800);
   }
 }
