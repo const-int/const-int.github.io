@@ -41,7 +41,7 @@ $(document).ready(function() {
         .find('img')
           .attr('src', 'assets/img/work/proj-' + folderIndex + '/image.jpg');
 
-      $('.project-title span').text(newTitle);
+      $('.project-title span.title-text').text(newTitle);
       if (newUrl != '') {
         $('.project-url').attr('href', 'http://' + newUrl);
       }
