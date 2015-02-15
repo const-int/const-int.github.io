@@ -7,6 +7,7 @@ $(document).ready(function() {
         total_number = $('#blog-posts').data('total-number'),
         pager_size = $('#blog-posts').data('pager-number'),
         shown_pages = 1,
+        loading_offset = 200, // Loading starts px from bottom
         posts_loading_icon = $('#posts-loading-icon');
 
 
@@ -19,7 +20,7 @@ $(document).ready(function() {
             var top_offset  = $(this).scrollTop(),
                 blog_height = blog_contain.outerHeight();
 
-            if ( top_offset + 200 + win_height >= blog_height  ) {
+            if ( top_offset + loading_offset + win_height >= blog_height  ) {
 
                 shown_pages++;
 
