@@ -14,7 +14,7 @@ menu:
 - {name: Portfolio, hash: '#portfolio' }
 - {name: Experience, hash: '#experience' }
 - {name: Contact, hash: '#contact' }
-# - {name: Blog, hash: '#blog' }
+- {name: Blog, hash: '#blog' }
 
 #-------------------------------
 # SEO Section
