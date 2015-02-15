@@ -39,6 +39,7 @@ gulp.task('js-concat', function(){
 
 gulp.task('watch', function() {
     gulp.watch(['assets/img/svg_icons/*.svg'], ['svg-sprites']);
+    gulp.watch(['assets/js/*/*.js'], ['js-concat']);
 });
 
 gulp.task('default', ['watch']);
