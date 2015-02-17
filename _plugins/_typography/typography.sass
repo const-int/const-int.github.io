@@ -22,6 +22,9 @@ html
   background: #666
   +debug-vertical-alignment
 
+  *
+    // color: #fff !important
+
 body
   background: #fff url(../img/backgrounds/exp-bg.png)
   font-family: 'Source-Sans-Pro-Regular', sans-serif
@@ -279,6 +282,48 @@ aside.sidebar
   +padding-leader(3)
 
 
+// -------------------------
+// BLOG PAGE  -----------
+// -------------------------
+
+.section-blog
+
+  .post-list-title
+    +leader(1, $st_fz)
+    +trailer(7, $st_fz)
+
+
+  .post-name
+    +adjust-font-size-to(32px)
+    +adjust-leading-to(1.25, 32px)
+    font-family: 'Source-Sans-Pro-Semibold', sans-serif
+
+  .post-meta
+    display: block
+    +adjust-font-size-to(16px)
+    +adjust-leading-to(1.25, 16px)
+    opacity: .75
+
+  .post-preview
+    +trailer(3)
+
+
+
+  .post-container
+
+    .post-content
+      +padding-leader(.5)
+
+    .post-title
+      +trailer(1, $st_fz)
+
+
+      .icon-button
+        height: $base-line-height * 2
+        width: $base-line-height * 2
+
+      .work-return
+        margin-right: $base-line-height
 // -------------------------
 // CONTACT PAGE  -----------
 // -------------------------

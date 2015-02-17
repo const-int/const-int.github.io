@@ -1,18 +1,111 @@
 .section-blog
-  overflow: auto
+  overflow: hidden
 
-  .post-section
+  .splash-poster
+    img
+      max-width: 100%
+
+
+
+  .post-list-title
+    position: relative
+    z-index: $z-level3
+    border: 0
+    color: rgba(#fff, .5)
+
+
+  .post-preview
+    padding-left: 150px
+    position: relative
+    min-height: 120px
+
+    .ava
+      +position(absolute, 0 null null 0)
+      border-radius: 50%
 
     .post-link
-      font-size: 30px
-      margin: 10px 0
+      white-space: nowrap
 
-    .post-meta
-      font-size: 14px
-      opacity: .8
-
-    .post-excerpt
-      padding: 5px 0 40px 0
+    .post-link:hover
+      color: #666
+      border-bottom: 2px solid #666
 
   .loader
     margin: 40px auto
+
+
+  .blog-belt
+    +size(200% 100%)
+    +position(relative, null null null 0)
+    +transition(all, 800ms)
+    background: #ebebeb
+
+
+    .poster, .post-poster
+      width: calc(100% + 20px)
+      height: 500px
+      background: no-repeat center center
+      background-size: cover
+      opacity: .5
+      position: relative
+      background-image: url(http://picjumbo.com/wp-content/themes/picjumbofree/data/counter.jpg)
+
+      &:after
+        content: ''
+        +position(absolute, 0 0 0 0)
+        background-image: linear-gradient(to bottom, rgba(246,246,246,0) 0%, rgba(235, 235, 235,1) 100%)
+
+    .post-poster
+      width: 100%
+
+    &.slided
+      +transform(translate3d(-50%, 0, 0))
+
+    .preview-container-shift
+      +size(100%)
+      overflow: auto
+      padding-right: 20px
+      +box-sizing(content-box)
+
+      .container
+        margin-top: -500px
+
+    .preview-container, .post-container
+      position: relative
+      +size(50% 100%)
+      overflow: auto
+      float: left
+      overflow-x: hidden
+
+    .post-container
+
+      .container
+        margin-top: -200px
+        position: relative
+        z-index: $z-level3
+
+      .post-title
+        position: relative
+        border: 0
+        padding: 0
+
+        .blog-return
+          +position(absolute, 50% null null 0)
+          border-radius: 50%
+          overflow: hidden
+          margin-right: 30px
+          +transform(translate(0, -50%))
+
+
+        .title-text
+          display: block
+          width: 100%
+          padding-left: 90px
+
+
+      .post-content
+        p
+          padding: 0 0 30px 0 !important
+
+        img
+          max-width: 100%

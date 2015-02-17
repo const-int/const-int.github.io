@@ -14,7 +14,7 @@ menu:
 - {name: Portfolio, hash: '#portfolio' }
 - {name: Experience, hash: '#experience' }
 - {name: Contact, hash: '#contact' }
-- {name: Blog, hash: '#blog' }
+# - {name: Blog, hash: '#blog' }
 
 #-------------------------------
 # SEO Section
@@ -33,6 +33,7 @@ section-titles:
   portfolio: "Some of my latest work."
   experience: "My core skills"
   contact: "Let's get in touch."
+  blog: "My notes, thoughts and more..."
 
 
 #-------------------------------
