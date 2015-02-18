@@ -19,6 +19,14 @@ $(document).ready(function() {
 
 
     $('input, textarea').val('');
+
+    setTimeout(function(){
+      var poster = $('.poster'),
+          index = Math.floor((Math.random() * poster.data('images-number')) + 1);
+
+        poster.css('background-image', 'url(' + poster.data('bg-src') + index + '.jpg)');
+    }, 100)
+
   });
 
 
@@ -46,6 +54,7 @@ $(document).ready(function() {
       $('#small-ava').attr('src', $('#small-ava').data('src'));
     } else {
       $('#large-ava').attr('src', $('#large-ava').data('src'));
+      $('.about-contact').attr('href', '#contact');
     }
   }
 

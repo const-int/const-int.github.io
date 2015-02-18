@@ -1,0 +1,50 @@
+---
+<!-- layout: compress -->_ru
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ site.data.settings_en.seo.description }}">
+
+  <title>{{ site.data.settings_ru.title }}</title>
+
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="../assets/css/all.css">
+  <link rel="stylesheet" href="../assets/css/typography.css">
+
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+
+  {% include sprites/svg/defs.html %}
+
+  {% include components_ru/preloader.html %}
+
+  {% include components_ru/navigation.html %}
+
+  <div class="sections-container">
+
+    {% include pages_ru/about.html %}
+
+    {% include pages_ru/work.html %}
+
+    {% include pages_ru/expirience.html %}
+
+    {% include pages_ru/contact.html %}
+
+    {% include pages_ru/blog.html %}
+
+  </div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="../assets/js/app.min.js"></script>
+</body>
+</html>

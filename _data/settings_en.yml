@@ -1,0 +1,114 @@
+#-------------------------------
+# General Site Settings
+
+title: Konstantin Naumov
+description: Front-end web developer
+subdescription: who loves to make <span>cool</span> stuff
+email: const.int.naumov@gmail.com
+copyright: Konstantin Naumov © 2014
+
+# NOTE: The Logo and Background image are defined in the all.sass document.
+
+menu:
+- {name: About Me, hash: '#about' }
+- {name: Portfolio, hash: '#portfolio' }
+- {name: Experience, hash: '#experience' }
+- {name: Contact, hash: '#contact' }
+- {name: Blog, hash: '#blog' }
+
+#-------------------------------
+# SEO Section
+
+# NOTE: Providing SEO information will make this website more searchable on the internet.
+
+seo:
+  description: ''
+  rel-author: ''
+  rel-publisher: ''
+
+#-------------------------------
+# Titles
+section-titles:
+  about: "Hi, I'm Konstantin Naumov."
+  portfolio: "Some of my latest work."
+  experience: "My core skills"
+  contact: "Let's get in touch."
+  blog: "My notes, thoughts and more..."
+
+
+#-------------------------------
+# About Section
+
+blurb: >
+  I am a person with a passion for crafting beautiful interfaces and usable experiences that people love.
+  Knowing the value of making reliable UI stuff for back-end coders I focus on writing clean, elegant and efficient code.
+  Here are fields I am excited of:
+
+blurb2: >
+  I want to be involved in projects that I can be proud of,
+  join an amazing team, and advance my design and development career.
+  Take some time to look at my works, experiences, and if you're interested
+  in helping me make this happen...
+
+contact:
+  "[Twitter](https://twitter.com/Const_Naumov) is my way to share things of interest.
+  I push projects to [GitHub](https://github.com/const-int)
+  and create personal handcrafts on [CodePen](http://codepen.io/const-int/).
+  I also connect with people on [LinkedIn](http://ru.linkedin.com/pub/konstantin-naumov/a1/847/b33/).
+  You can always email me, and i'll get back to your inquiry asap."
+
+skills:
+- {name: 'Responsive Layouting', desc: 'Making web for every device', value: '9', icon: 'icon-responsive'}
+- {name: 'Client-side Coding', desc: 'High-level website interactivity', value: '6', icon: 'icon-tag'}
+- {name: 'Interface Design', desc: 'Latest trends and standarts', value: '5', icon: 'icon-tools'}
+- {name: 'Modern Web Tools', desc: 'New tendencies, APIs, techniques. ', value: '8', icon: 'icon-browser'}
+
+#-------------------------------
+# Work Section
+
+projects:
+- {url: '', name: 'Corporate website' }
+- {url: 'teatrpodarkov.ru', name: 'Online Shop' }
+- {url: 'const.in/stego/', name: 'Steganography App' }
+- {url: '', name: 'Online Shop' }
+- {url: 'karavan39.ru/fotoshtory', name: 'Landing Page' }
+- {url: 'web-sendbox.tk/slk-service', name: 'Online Shop' }
+- {url: 'plektra.pro/', name: 'Agency Website' }
+- {url: 'sukho.ru', name: 'Landing Page' }
+
+
+
+
+#-------------------------------
+# Clients Section
+
+exps:
+- {file: 'exp/exp_html.html',
+  quote: "I convert designs into clean, cross browser compatible, troubleproof layouts. Well formed pages are produced on every iteration of employer's development lifecycle.<br> Human readability and semantics of my resulting code are powered by <a href='http://gruntjs.com/' target='_blank' class='grunt'>frontend toolboxes</a> and modern <a href='http://jade-lang.com/' target='_blank' class='jade'>template engines</a>.",
+  title: 'High-quality page layouts'}
+- {file: 'exp/exp_css.html',
+  quote: "Styling is essential and pretty complicated part of progressive web application. To maintain cross-browser and cross-devise consistency I build my stilesheets based on <a target='_blank' href='http://getbootstrap.com/'>front-end frameworks</a>. <br> With help of <a target='_blank' href='http://sass-lang.com/'>CSS preprocessors</a> and <a target='_blank' href='http://bourbon.io/'>mixin libraries</a> I keep project styles DRY and structured. When it comes to sufficiently large applications I begin with <a target='_blank' href='http://compass-style.org/'>CSS authoring frameworks</a>.",
+  title: 'Cross-browser stylesheets'}
+- {file: 'exp/exp_svg.html',
+  quote: "Growing number of high DPI displays nowdays affects quality requirements for a regular web app. Scalable vector graphics bring an ability to create crystal clear user interfaces and very high quality cross-platform animations. <br> To deliver such experience to user I craft elements with support of powerful <a href='http://snapsvg.io/' target='_blank'>JavaScript SVG libraries</a>.",
+  title: 'Dynamic vector manipulation'}
+- {file: 'exp/exp_js.html',
+  quote: "JavaScript is mine core skill in making interactive web and jQuery is very useful thing for me as well as for industry. <br> I'm very familiar with DOM interfacing that brings ability to take any aspect of webpage under control instantly. I've also put my hands on <a href='http://coffeescript.org/' target='_blank'>CoffeeScript</a> and keep going so.",
+  title: 'JavaScript programming'}
+- {file: 'exp/exp_cms.html',
+  quote: "I mostly do front-end development but occasionally I get my hands dirty with some backend (mostly php/MySQL). And I create WordPess templates time after time. <br>Also I really love dealing with static site generators like <a href='http://jekyllrb.com/'>this one</a> or <a href='https://middlemanapp.com/'>that one</a> to obtain maximum performance.",
+  title: 'CMS setup and templating'}
+- {file: 'exp/exp_ajax.html',
+  quote: "In every project I try to create higly dinamic user experience by turning beautiful design files into working product.",
+  title: 'Improving user experience'}
+
+
+#-------------------------------
+# Contact Section
+
+contacts:
+- {name: 'linkedin', link: 'ru.linkedin.com/pub/konstantin-naumov/a1/847/b33/' }
+- {name: 'github', link: 'http://twitter.com/Const_Naumov' }
+- {name: 'twitter', link: 'http://github.com/const-int' }
+- {name: 'email', link: 'mailto:const.int.naumov@gmail.com' }
+

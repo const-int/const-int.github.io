@@ -42,7 +42,7 @@ aside.sidebar
     .side-bar-wrapper
       +position(absolute, 0 0 null null)
       +size(100%)
-      min-height: 600px
+      min-height: 630px
       @media (min-width: 1001px) and (max-width: 1220px)
         min-height: 500px
       @media (max-width: 1000px)
@@ -121,7 +121,7 @@ aside.sidebar
         @media (max-width: 1000px)
           +size(33.33% 60px)
           line-height: 60px
-          font-family: 'Source-Sans-Pro-Semibold', sans-serif
+          font-family: $bold
           padding: 0
           float: left
           border-left: 1px solid #333
@@ -130,7 +130,7 @@ aside.sidebar
           &:nth-child(1)
             border-left: 0
 
-          &:nth-child(3)
+          &[href="#experience"], &[href="#contact"]
             display: none
 
         &.large-hidden

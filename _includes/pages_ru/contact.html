@@ -1,0 +1,48 @@
+<section class="section-contact full-screen-block" id="contact">
+
+  <div class="container">
+    <h1 class="section-title">{{ site.data.settings_ru.section-titles.contact }}</h1>
+
+
+      <div class="contact-text">
+        {{ site.data.settings_ru.contact | markdownify }}
+      </div>
+
+      <a href="mailto:{{site.data.settings_ru.email}}" class="mailto-button contact-large-button const-button">
+        Send an email
+        <svg viewBox="0 0 25 25">
+          <use xlink:href="#icon-envelope-opened" xmlns:xlink="http://www.w3.org/1999/xlink" ></use>
+        </svg>
+      </a>
+
+      <form class="awesome-form">
+
+        <div class="input-group">
+          <input type="text" id="client-name" name="name" required>
+          <label>Your Full Name</label>
+        </div>
+
+        <div class="input-group">
+          <input type="email" name="email" required>
+          <label>Your Email Address</label>
+        </div>
+
+        <div class="input-group textarea-wrapper">
+          <textarea class="textarea" name="message" required></textarea>
+          <label>Your Message</label>
+        </div>
+
+
+        <button type="submit" class="const-button contact-large-button">
+          <span>Send the message</span>
+          <svg viewBox="0 0 25 25">
+            <use xlink:href="#icon-envelope-opened" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+          </svg>
+        </button>
+
+        <div id="auto-height-hidden-div"></div>
+      </form>
+
+  </div>
+
+</section>

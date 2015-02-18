@@ -11,8 +11,51 @@
   <script src="js/save-post.js"></script>
 
   <style>
+    @media (min-width: 1000px) {
+      .container {
+        width: 700px !important;
+      }
+
+      .no-padding-right {
+        padding-right: 0;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      .no-padding-right {
+        margin-bottom: 15px;
+      }
+
+      .title-wrap, .category-wrap {
+        margin-bottom: 15px;
+      }
+    }
+
+    body {
+      font-size: 1.5em !important;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+
+
+    .input-btn, #download {
+      width: 100%;
+    }
     #download {
       outline: none !important;
+    }
+
+    * {
+      outline: none !important;
+    }
+
+    @media (min-width: 1000px) {
+      .no-padding {
+        padding: 0;
+      }
     }
   </style>
 
@@ -20,11 +63,13 @@
 <body>
 
   <div class="container">
-    <h1 style="text-align: center">Write a new post</h1>
+    <h1 style="text-align: center; margin-bottom: 40px">New post form</h1>
     <div class="form-horizontal">
       <div class="form-group">
-        <label for="category" class="col-sm-2 control-label">Category:</label>
-        <div class="col-sm-10">
+        <div class="col-sm-8 title-wrap">
+          <input type="text" placeholder="Title" class="field1 form-control" id="title">
+        </div>
+        <div class="col-sm-2 no-padding category-wrap">
           <select class="field3 form-control" id="category">
             <option value="life">life</option>
             <option value="web">web</option>
@@ -32,46 +77,38 @@
             <option value="thoughts">thoughts</option>
           </select>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="title" class="col-sm-2 control-label">Title:</label>
-        <div class="col-sm-10">
-          <input type="text" class="field1 form-control" id="title">
+        <div class="col-sm-2">
+          <select class="field3 form-control" id="lang">
+            <option value="ru">RU</option>
+            <option value="en">EN</option>
+          </select>
         </div>
       </div>
       <div class="form-group">
-        <label for="excerpt" class="col-sm-2 control-label">Excerpt:</label>
-        <div class="col-sm-10">
-          <input type="text" class="field1 form-control" id="excerpt">
+        <div class="col-sm-12">
+          <input type="text" placeholder="Excerpt" class="field1 form-control" id="excerpt">
         </div>
       </div>
       <div class="form-group">
-        <label for="content" class="col-sm-2 control-label">Text:</label>
-        <div class="col-sm-10">
-          <textarea id="content" rows="10" class="field2 form-control"></textarea>
+        <div class="col-sm-12">
+          <textarea id="content" placeholder="Post content" rows="10" class="field2 form-control"></textarea>
         </div>
       </div>
       <div class="form-group">
-        <label for="poster" class="col-sm-2 control-label">Poster:</label>
-        <div class="col-sm-10">
+        <div class="col-sm-3 no-padding-right">
+          <button type="button" class="input-btn btn btn-default">Upload Poster</button>
           <input type="file" class="field1 form-control post-image" data-index='1' id="poster">
         </div>
-      </div>
-      <div class="form-group">
-        <label for="ava" class="col-sm-2 control-label">Avatar:</label>
-        <div class="col-sm-10">
+        <div class="col-sm-3 no-padding-right">
+          <button type="button" class="input-btn btn btn-default">Upload Avatar</button>
           <input type="file" class="field1 form-control post-image" data-index='2' id="ava">
         </div>
-      </div>
-      <div class="form-group">
-        <label for="add-image" class="col-sm-2 control-label">Images:</label>
-        <div class="col-sm-10">
+        <div class="col-sm-3 no-padding-right">
+          <button type="button" id="img_upload" class="input-btn btn btn-default">Upload Images</button>
           <input type="file" multiple="multiple" class="field1 form-control input-image" id="add-image">
         </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <button id="download" class="btn btl-large btn-default">Download Post File</button>
+        <div class="col-sm-3">
+          <button id="download" class="btn btl-large btn-primary">Download File</button>
         </div>
       </div>
     </div>
@@ -80,14 +117,22 @@
   <script>
   jQuery(document).ready(function($) {
 
+    $('.input-btn').click(function(event) {
+      $(this).siblings('input[type=file]').click();
+    });
+
     pictures = ['',''];
     imgs = {};
+    img_size = 0;
 
     add_input = $('#add-image');
 
     function readImage(input) {
             var FR = new FileReader();
             var index = $(input).data('index') - 1;
+            $(input).siblings('.btn')
+              .addClass('btn-success')
+              .text('Uploaded');
             FR.onload = function(e) {
               pictures[index] = e.target.result;
             };
@@ -97,11 +142,12 @@
 
     function addImageToContent(input, i, filename) {
         var FR = new FileReader();
+        img_size++;
         FR.onload = function(e) {
           imgs[filename] = e.target.result;
-          console.log(imgs);
           $('#content').val($('#content').val() + '\n{{ '+ filename +' }}\n' );
           add_input.replaceWith( add_input.val('').clone( true ) );
+          $('#img_upload').text('Uploaded ' + img_size + ' images');
         };
         FR.readAsDataURL( input.files[i] );
     }
@@ -151,6 +197,7 @@
 
       var title = $('#title').val();
       var category = $('#category').val();
+      var lang = $('#lang').val();
       var excerpt = $('#excerpt').val();
       var content_short = $('#content').val();
 
@@ -173,6 +220,7 @@
         + '\nava: ' + pictures[1]
         + '\nexcerpt: ' + excerpt
         + '\ncategories: ' + category
+        + '\nlang: ' + lang
         + '\n---\n\n' + content;
 
       var blob = new Blob([file_content],

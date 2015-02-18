@@ -1,5 +1,7 @@
 $(window).load(function() {
-  $('#status').fadeOut();
-  $('#preloader').hide();
-  $('#header').addClass('section-active');
+  setTimeout(function(){
+    $('#status').fadeOut();
+    $('#preloader').hide();
+    $('#header').addClass('section-active');
+  }, 100)
 })

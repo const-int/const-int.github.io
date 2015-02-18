@@ -1,34 +1,71 @@
 .section-blog
   overflow: hidden
 
+
+
   .splash-poster
     img
       max-width: 100%
-
-
 
   .post-list-title
     position: relative
     z-index: $z-level3
     border: 0
-    color: rgba(#fff, .5)
+    color: rgba(#fff, .75)
+
+  .post-name
+    &:hover
+      cursor: pointer
+      color: $link-color
 
 
   .post-preview
-    padding-left: 150px
+    padding-left: 134px
     position: relative
     min-height: 120px
 
+    @media (max-width: 550px)
+      padding: 0
+
+      img
+        +size(80px)
+        left: auto !important
+        right: 0
+        height: 100%
+        max-height: 80px
+        width: auto
+
+      .post-name
+        padding-right: 100px
+
+
+    @media (min-width: 551px) and (max-width: 1000px)
+      padding: 0
+
+      .preview-head
+        padding-left: 80px
+        margin-bottom: 15px
+
+      img
+        +size(60px)
+        left: 0 !important
+        height: 100%
+        max-height: 60px
+        width: auto
+
+    .preview-head
+      position: relative
+
     .ava
-      +position(absolute, 0 null null 0)
+      +position(absolute, 0 null null -134px)
       border-radius: 50%
 
-    .post-link
+    span.post-link
       white-space: nowrap
 
-    .post-link:hover
-      color: #666
-      border-bottom: 2px solid #666
+      &:hover
+        color: #666
+        border-bottom: 2px solid #666
 
   .loader
     margin: 40px auto
@@ -46,9 +83,8 @@
       height: 500px
       background: no-repeat center center
       background-size: cover
-      opacity: .5
+      opacity: .75
       position: relative
-      background-image: url(http://picjumbo.com/wp-content/themes/picjumbofree/data/counter.jpg)
 
       &:after
         content: ''
@@ -80,27 +116,35 @@
     .post-container
 
       .container
-        margin-top: -200px
+        margin-top: -240px
         position: relative
+        max-width: 700px
         z-index: $z-level3
+
+        @media (max-width: 1000px)
+          margin-top: -500px
+
+
 
       .post-title
         position: relative
-        border: 0
-        padding: 0
 
         .blog-return
-          +position(absolute, 50% null null 0)
-          border-radius: 50%
-          overflow: hidden
-          margin-right: 30px
-          +transform(translate(0, -50%))
+          font-family: $regular
+          @extend .intext-link
 
 
         .title-text
           display: block
           width: 100%
-          padding-left: 90px
+
+        .date
+          color: rgba(#000, .3)
+          float: right
+          font-family: $italic
+
+          @media (max-width: 380px)
+            display: none
 
 
       .post-content
@@ -109,3 +153,5 @@
 
         img
           max-width: 100%
+          border-radius: 3px
+          box-shadow: rgba(0,0,0,0.22745) 0px 3px 10px 0px, rgba(0,0,0,0.15686) 0px 3px 10px 0px

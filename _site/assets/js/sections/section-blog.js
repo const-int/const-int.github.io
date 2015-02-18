@@ -25,7 +25,6 @@ $(document).ready(function() {
             var top_offset  = $(this).scrollTop(),
                 blog_height = blog_previews.outerHeight();
 
-            console.log(top_offset);
             if ( top_offset + loading_offset + win_height >= blog_height  ) {
 
                 shown_pages++;
@@ -49,8 +48,8 @@ $(document).ready(function() {
         var that = $(this),
             newTitle = that.data('name'),
             newPoster = that.data('poster'),
-            newUrl = that.data('url');
-
+            newUrl = that.data('url'),
+            newDate = that.data('date');
 
         // Slide to post
         blog_belt.addClass('slided');
@@ -60,10 +59,10 @@ $(document).ready(function() {
 
         // Put title
         $('.post-title .title-text').text(newTitle);
+        $('.post-title .date').text(newDate.toLowerCase());
 
         // Load content
         $('.post-content').load(newUrl);
-
     });
 
 

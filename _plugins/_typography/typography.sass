@@ -2,6 +2,10 @@
 @import "compass/css3"
 @import "compass/reset"
 
+$regular: 'Source-Sans-Pro-Regular', sans-serif
+$bold: 'Source-Sans-Pro-Semibold', sans-serif
+$italic: 'Source-Sans-Pro-Italc', sans-serif
+
 
 $base-font-size: 20px !global
 $base-line-height: 30px !global
@@ -27,10 +31,10 @@ html
 
 body
   background: #fff url(../img/backgrounds/exp-bg.png)
-  font-family: 'Source-Sans-Pro-Regular', sans-serif
+  font-family: $regular
 
 button
-  font-family: 'Source-Sans-Pro-Regular', sans-serif
+  font-family: $regular
 
 .container
   @media (min-width: 1001px)
@@ -40,7 +44,7 @@ button
     +padding-trailer(3)
 
 .section-title
-  font-family: 'Source-Sans-Pro-Semibold', sans-serif
+  font-family: $bold
   +adjust-font-size-to($st_fz)
   +adjust-leading-to(1.5, $st_fz)
   +trailing-border(2px, 1, $st_fz)
@@ -96,7 +100,7 @@ aside.sidebar
 
   .title, .subtitle
     position: relative
-    font-family: 'Source-Sans-Pro-Semibold', sans-serif
+    font-family: $bold
 
   .title
     +adjust-font-size-to(18px)
@@ -185,13 +189,10 @@ aside.sidebar
     +leader
 
     .img-wrap
-      padding-bottom: 9 * $base-line-height
+      height: 9 * $base-line-height
 
-      @media (max-width: 650px)
-        padding-bottom: 5 * $base-line-height
-
-      @media (min-width: 651px) and (max-width: 1000px)
-        padding-bottom: 7 * $base-line-height
+      @media (max-width: 550px)
+        height: 5 * $base-line-height
 
     .unit-title
       height: $base-line-height * 2
@@ -296,7 +297,10 @@ aside.sidebar
   .post-name
     +adjust-font-size-to(32px)
     +adjust-leading-to(1.25, 32px)
-    font-family: 'Source-Sans-Pro-Semibold', sans-serif
+    font-family: $bold
+
+    @media (max-width: 1000px)
+      +adjust-font-size-to(26px)
 
   .post-meta
     display: block
@@ -304,26 +308,23 @@ aside.sidebar
     +adjust-leading-to(1.25, 16px)
     opacity: .75
 
+    @media (max-width: 1000px)
+      +adjust-leading-to(1, 16px)
+
+
   .post-preview
     +trailer(3)
-
-
 
   .post-container
 
     .post-content
-      +padding-leader(.5)
+      +padding-leader(1)
 
-    .post-title
-      +trailer(1, $st_fz)
+    .blog-return, .date
+      font-size: $base-font-size
+      +adjust-leading-to(1, $base-font-size)
 
 
-      .icon-button
-        height: $base-line-height * 2
-        width: $base-line-height * 2
-
-      .work-return
-        margin-right: $base-line-height
 // -------------------------
 // CONTACT PAGE  -----------
 // -------------------------

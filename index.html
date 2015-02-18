@@ -8,9 +8,9 @@ layout: compress
   <meta charset="UTF-8">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{{ site.data.settings.seo.description }}">
+  <meta name="description" content="{{ site.data.settings_en.seo.description }}">
 
-  <title>{{ site.data.settings.title }}</title>
+  <title>{{ site.data.settings_en.title }}</title>
 
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="assets/css/all.css">
@@ -26,25 +26,25 @@ layout: compress
 
   {% include sprites/svg/defs.html %}
 
-  {% include components/preloader.html %}
+  {% include components_en/preloader.html %}
 
-  {% include components/navigation.html %}
+  {% include components_en/navigation.html %}
 
   <div class="sections-container">
 
-    {% include pages/about.html %}
+    {% include pages_en/about.html %}
 
-    {% include pages/work.html %}
+    {% include pages_en/work.html %}
 
-    {% include pages/expirience.html %}
+    {% include pages_en/expirience.html %}
 
-    {% include pages/contact.html %}
+    {% include pages_en/contact.html %}
 
-    <!-- {% include pages/blog.html %} -->
+    {% include pages_en/blog.html %}
 
   </div>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" ></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="assets/js/app.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,50 @@
+<section class="section-about full-screen-block section-active" id="about">
+
+  <div class="container">
+
+    <div class="profile-card">
+      <img id="large-ava" data-src="assets/img/pictures/constavatar_wide.jpg" alt="" src="">
+    </div>
+
+    <h1 class="section-title">{{ site.data.settings_en.section-titles.about }}</h1>
+
+
+    <div class="blurb">
+      {{ site.data.settings_en.blurb | markdownify }}
+    </div>
+
+    <div class="skill-lockup">
+
+      {% for skill in site.data.settings_en.skills %}
+
+        <div class="skill-unit" >
+          <div class="skill-icon">
+            <svg viewBox="0 0 100 100" class='{{ skill.icon }}'>
+              <use xlink:href="#{{ skill.icon }}" xmlns:xlink="http://www.w3.org/1999/xlink" ></use>
+            </svg>
+          </div>
+          <div class="skill-label">{{ skill.name }}</div>
+          <div class="skill-desc"> {{ skill.desc }}</div>
+          <div class="skill-meter">
+            <div class="meter"><span data-skill="{{ skill.value }}"></span></div>
+          </div>
+        </div>
+
+      {% endfor %}
+
+    </div>
+
+    <div class="blurb2">
+      {{ site.data.settings_en.blurb2 | markdownify }}
+    </div>
+
+    <a href="mailto:{{site.data.settings_en.email}}" class="const-button contact-large-button about-contact">
+      <span>...let’s get in touch!</span>
+      <svg viewBox="0 0 25 25">
+        <use xlink:href="#icon-envelope-opened" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+      </svg>
+    </a>
+
+  </div>
+
+</section>

@@ -1,0 +1,86 @@
+<section class="section-work full-screen-block" id="portfolio">
+
+  <div class="work-belt">
+
+    <div class="thumb-wrap">
+
+      <div class="thumb-wrap-shift">
+
+        <div class="thumb-container">
+
+          <div class="container">
+
+            <h1 class="section-title">{{ site.data.settings_en.section-titles.portfolio }}</h1>
+
+            {% for project in site.data.settings_en.projects %}
+              <div class="thumb-unit">
+
+                <div class="thumb-click-area"
+                  data-name='{{ project.name }}'
+                  data-url='{{ project.url }}'
+                  data-folder="{{ forloop.index }}">
+
+                  <div class="img-wrap">
+                    <img src="" data-src="assets/img/work/proj-{{ forloop.index }}/thumb.jpg" alt="{{ project.name }}">
+                  </div>
+
+                  <div class="unit-title const-button">
+                    <span>{{ project.name }}</span>
+                    <svg viewBox="0 0 20 20">
+                        <use xlink:href="#icon-forward"></use>
+                    </svg>
+                  </div>
+
+
+                </div>
+
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-wrap">
+
+      <div class="loader work">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+
+      <div class="work-container">
+
+        <div class="container">
+
+          <div class="work-center-container">
+
+            <h4 class="project-title section-title">
+              <a href="#" target="_blank" class="project-url const-button icon-button">
+                <svg viewBox="0 0 20 20">
+                    <use xlink:href="#icon-url"></use>
+                </svg>
+              </a>
+              <span class="work-return const-button icon-button">
+                <svg viewBox="0 0 20 20">
+                    <use xlink:href="#icon-backward"></use>
+                </svg>
+              </span><!--
+           --><span class="title-text"></span>
+            </h4>
+
+            <div class="project-load">
+              <img src="" alt="">
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div> <!-- End work belt -->
+
+</section>

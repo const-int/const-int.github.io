@@ -76,6 +76,7 @@ $(document).ready(function() {
               $(el).attr('src', $(el).data('src')).removeAttr('data-src');
             });;
      }
+
     if ( nav_index == 2 && !$('.exp-animation').hasClass('viewed') ) {
       $('.exp-animation')
         .addClass('viewed')
