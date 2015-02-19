@@ -3,6 +3,8 @@ $(document).ready(function() {
   // Global values
   win_width  = $(window).width();
   win_height = $(window).height();
+  lang = $('body').data('lang');
+
 
 
   $(window).on('load resize', function () {
@@ -15,7 +17,7 @@ $(document).ready(function() {
     load_ava();
 
     // Fixing position of thumb-container
-    $('.thumb-container').css('left', getScrollbarWidth() / 2);
+    $('.thumb-container, .preview-container-shift .container').css('left', getScrollbarWidth() / 2);
 
 
     $('input, textarea').val('');

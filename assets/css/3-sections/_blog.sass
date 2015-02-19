@@ -63,6 +63,20 @@
     .preview-head
       position: relative
 
+    .hashtag
+      display: inline-block
+      margin-left: 15px
+
+      @extend .intext-link
+
+      &:hover
+        border-color: transparent
+        text-decoration: underline
+
+      &:before
+        content: '#'
+
+
     .ava
       +position(absolute, 0 null null -134px)
       border-radius: 50%
@@ -112,6 +126,7 @@
 
       .container
         margin-top: -500px
+        position: relative
 
     .preview-container, .post-container
       position: relative
@@ -140,25 +155,37 @@
           font-family: $regular
           @extend .intext-link
 
-
         .title-text
           display: block
           width: 100%
 
         .date
-          color: rgba(#000, .3)
+          color: rgba(#000, .4)
           float: right
-          font-family: $italic
+          font-style: italic
+          font-family: sans-serif
 
           @media (max-width: 380px)
             display: none
 
 
       .post-content
+
+        #poster-holder
+          display: none
+
         p
           padding: 0 0 30px 0 !important
 
+        strong
+          font-family: $bold
+
+        em
+          font-family:  $italic
+
         img
           max-width: 100%
+          display: block
+          margin: auto
           border-radius: 3px
           box-shadow: rgba(0,0,0,0.22745) 0px 3px 10px 0px, rgba(0,0,0,0.15686) 0px 3px 10px 0px

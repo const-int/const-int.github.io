@@ -1,9 +1,9 @@
 # Build settings
 
 markdown: kramdown
-permalink: pretty
+permalink: /blog/:title
 paginate: 5
-paginate_path: "pagination/page:num/"
+paginate_path: '/pagination/page:num/'
 
 port: 8000
 

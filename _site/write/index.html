@@ -216,12 +216,11 @@
       var file_content =
        '---\nlayout: post\ntitle: ' + title
         + '\ndate: ' + year + '-' + month + '-' + date + ' ' + hours + ':' + minutes + ':' + seconds
-        + '\nposter: ' + pictures[0]
         + '\nava: ' + pictures[1]
         + '\nexcerpt: ' + excerpt
-        + '\ncategories: ' + category
-        + '\nlang: ' + lang
-        + '\n---\n\n' + content;
+        + '\ncategories: ' + lang + ' ' + category
+        + '\n---\n\n'
+        + '## ' + pictures[0] + '## {#poster-holder}\n' + content;
 
       var blob = new Blob([file_content],
           {type: "text/plain;charset=utf-8"});

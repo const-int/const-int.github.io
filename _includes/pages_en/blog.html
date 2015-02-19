@@ -21,28 +21,71 @@
             <div class="post-section">
               {% for post in paginator.posts %}
 
-                  <div class="post-preview lang-{{ post.lang }}">
-                    <div class="preview-head">
-                      <h2 class="post-name post-link"
-                          data-poster="{{ post.poster }}"
-                          data-url="{{ post.url }}"
-                          data-date='{{ post.date | date: "%B %-d, %Y" }}'
-                          data-name="{{ post.title }}">{{ post.title }}</h2>
+                  {% capture time %} {{ post.date | date: "%B %-d, %Y" }} {% endcapture %}
+
+                  {% capture lang %} {{ post.categories | first }} {% endcapture %}
+
+                    {% if lang == ' ru ' %}
+
+                      {% capture month %} {{ post.date | date: "%m" }} {% endcapture %}
+
+                      {% if month == ' 01 ' %}
+                         {% assign month_ru = 'января' %}
+                      {% endif %}
+                      {% if month == ' 02 ' %}
+                         {% assign month_ru = 'февраля' %}
+                      {% endif %}
+                      {% if month == ' 03 ' %}
+                         {% assign month_ru = 'марта' %}
+                      {% endif %}
+                      {% if month == ' 04 ' %}
+                         {% assign month_ru = 'апреля' %}
+                      {% endif %}
+                      {% if month == ' 05 ' %}
+                         {% assign month_ru = 'мая' %}
+                      {% endif %}
+                      {% if month == ' 06 ' %}
+                         {% assign month_ru = 'июня' %}
+                      {% endif %}
+                      {% if month == ' 07 ' %}
+                         {% assign month_ru = 'июля' %}
+                      {% endif %}
+                      {% if month == ' 08 ' %}
+                         {% assign month_ru = 'августа' %}
+                      {% endif %}
+                      {% if month == ' 09 ' %}
+                         {% assign month_ru = 'сентября' %}
+                      {% endif %}
+                      {% if month == ' 10 ' %}
+                         {% assign month_ru = 'октября' %}
+                      {% endif %}
+                      {% if month == ' 11 ' %}
+                         {% assign month_ru = 'наября' %}
+                      {% endif %}
+                      {% if month == ' 12 ' %}
+                         {% assign month_ru = 'декабря' %}
+                      {% endif %}
+
+                      {% capture time %} {{ post.date | date: "%-d" }} {{ month_ru }} {{ post.date | date: "%Y" }} {% endcapture %}
+
+                    {% endif %}
+
+
+                  <div class="post-preview lang-{{ post.categories | first }}" data-url="{{ post.url }}" data-date='{{ time }}'  data-name="{{ post.title }}">
+                    <div class="preview-head" >
+                      <h2 class="post-name post-link">{{ post.title }}</h2>
                       <img src="{{ post.ava }}" width="104" height="104" alt="" class="ava">
                       <span class="post-meta">
-                        {{ post.date | date: "%B %-d, %Y" }} &nbsp;&nbsp; #{{ post.categories }}
+                        <span class="time">{{ time }}</span>
+                        <span class='hashtag'>{{ post.categories | last }}</span>
                       </span>
                     </div>
+
                     <div class="post-excerpt">
-                      {{ post.excerpt | remove: '<p>' | remove: '</p>' }}...&nbsp;&nbsp;
-                      <span class="post-link intext-link"
-                         data-poster="{{ post.poster }}"
-                         data-url="{{ post.url }}"
-                         data-date='{{ post.date | date: "%B %-d, %Y" }}'
-                         data-name="{{ post.title }}" >
-                        Read this post →
-                      </span>
+                      {{ post.excerpt }}...&nbsp;&nbsp;
+                      <span class="post-link intext-link">Read this post →</span>
                     </div>
+
                   </div>
 
               {% endfor %}

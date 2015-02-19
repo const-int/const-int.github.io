@@ -17,7 +17,7 @@ aside.sidebar
       +size(100% 60px)
       min-height: initial
 
-    .work-return
+    .work-return, .blog-return
       display: none
       text-indent: 0
       +position(absolute, auto auto auto 33.33%)
@@ -28,6 +28,10 @@ aside.sidebar
       border-left: 1px solid #333
       background: $bg-color-light
       z-index: $z-level3
+
+      &.blog-return
+        left: auto !important
+        right: 0 !important
 
       svg
         +size(20px)

@@ -16,6 +16,9 @@ $(document).ready(function() {
       if (work_opened) {
         slide_back();
       }
+      if (blog_opened) {
+        blog_slide_back();
+      }
     }
 
   });
