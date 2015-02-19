@@ -32,7 +32,7 @@
                           data-name="{{ post.title }}">{{ post.title }}</h2>
                       <img src="{{ post.ava }}" width="104" height="104" alt="" class="ava">
                       <span class="post-meta">
-                        {{ post.date | timeago }} &nbsp;&nbsp; #{{ post.categories }}
+                        {{ post.date | date: "%F" }} &nbsp;&nbsp; #{{ post.categories }}
                       </span>
                     </div>
                     <div class="post-excerpt">
