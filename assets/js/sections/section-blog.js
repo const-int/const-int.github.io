@@ -15,6 +15,7 @@ $(document).ready(function() {
         shown_pages = 1,
         loading_offset = 200, // Loading starts px from bottom
 
+        lang = $('body').data('lang');
 
     $(blog_previews_container).on('load scroll', function(event) {
 
@@ -29,15 +30,8 @@ $(document).ready(function() {
 
                 shown_pages++;
 
-                var d = new Date();
-                var old_timeStamp = d.getTime();
-
-                $('#ccc').load('pagination/page' + shown_pages +' .post-section', function(){
-                    var d2 = new Date(),
-                        new_timeStamp = d2.getTime(),
-                        timediff = new_timeStamp - old_timeStamp
-
-                        $('#blog-posts').append($('#ccc').html());
+                $('#ccc').load( window.location.origin + '/pagination/page' + shown_pages +'.lang-' + lang, function(){
+                    $('#blog-posts').append();
                 });
             }
         }

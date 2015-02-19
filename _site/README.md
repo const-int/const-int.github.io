@@ -1,1 +1,0 @@
-# Constantin Naumov Portfolio Website

@@ -12,7 +12,7 @@
 
         <div class="container">
 
-          <div id="blog-posts"
+          <div id="blog-posts" class="en"
             data-pager-number="{{ site.paginate }}"
             data-total-number="{{ site.posts | size }}">
 
@@ -21,8 +21,7 @@
             <div class="post-section">
               {% for post in paginator.posts %}
 
-                {% if post.lang == 'en' %}
-                  <div class="post-preview">
+                  <div class="post-preview lang-{{ post.lang }}">
                     <div class="preview-head">
                       <h2 class="post-name post-link"
                           data-poster="{{ post.poster }}"
@@ -45,7 +44,6 @@
                       </span>
                     </div>
                   </div>
-                {% endif %}
 
               {% endfor %}
             </div>

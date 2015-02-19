@@ -8,21 +8,22 @@
 
       <div class="preview-container-shift">
 
-        <div class="poster" data-bg-src="assets/img/posters/blog" data-images-number='4'></div>
+        <div class="poster" data-bg-src="../assets/img/posters/blog" data-images-number='4'></div>
 
         <div class="container">
 
-          <div id="blog-posts"
+          <div id="blog-posts" class="ru"
             data-pager-number="{{ site.paginate }}"
             data-total-number="{{ site.posts | size }}">
 
             <h1 class="section-title post-list-title">{{ site.data.settings_ru.section-titles.blog }}</h1>
 
             <div class="post-section">
-              {% for post in paginator.posts %}
+              {% for post in site.posts limit: 10 %}
 
                 {% if post.lang == 'ru' %}
-                  <div class="post-preview">
+
+                  <div class="post-preview lang-{{ post.lang }}">
                     <div class="preview-head">
                       <h2 class="post-name post-link"
                           data-poster="{{ post.poster }}"
@@ -31,7 +32,7 @@
                           data-name="{{ post.title }}">{{ post.title }}</h2>
                       <img src="{{ post.ava }}" width="104" height="104" alt="" class="ava">
                       <span class="post-meta">
-                        {{ post.date | date: "%B %-d, %Y" }} &nbsp;&nbsp; #{{ post.categories }}
+                        {{ post.date | timeago }} &nbsp;&nbsp; #{{ post.categories }}
                       </span>
                     </div>
                     <div class="post-excerpt">
