@@ -18,6 +18,27 @@
 
             <h1 class="section-title post-list-title">{{ site.data.settings_en.section-titles.blog }}</h1>
 
+            <div class="category-select" id="cat-sel">
+              <div class="category-select-wrap">
+                <div class="day select-dropdown">
+                  <article>
+                    <dl class="dropy">
+                      <dt class="dropy__title"><span>Category</span></dt>
+                      <dd class="dropy__content">
+                        <ul>
+                          <li><a data-cat='news'>News </a></li>
+                          <li><a data-cat='web'>Web design</a></li>
+                          <li><a data-cat='life'>Life events</a></li>
+                          <li><a data-cat='thoughts'>My thoughts</a></li>
+                        </ul>
+                      </dd>
+                      <input type="hidden" name="first">
+                    </dl>
+                  </article>
+                </div>
+              </div>
+            </div>
+
             <div class="post-section">
               {% for post in paginator.posts %}
 
@@ -71,9 +92,9 @@
                     {% endif %}
 
 
-                  <div class="post-preview lang-{{ post.categories | first }}" data-url="{{ post.url }}" data-date='{{ time }}'  data-name="{{ post.title }}">
+                  <div class="post-preview lang-{{ post.categories | first }} cat-{{ post.categories | last }}" data-url="{{ post.url }}" data-date='{{ time }}'  data-name="{{ post.title }}">
                     <div class="preview-head" >
-                      <h2 class="post-name post-link">{{ post.title }}</h2>
+                      <h2 class="post-name post-link"><span>{{ post.title }}</span></h2>
                       <img src="{{ post.ava }}" width="104" height="104" alt="" class="ava">
                       <span class="post-meta">
                         <span class="time">{{ time }}</span>

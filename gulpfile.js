@@ -25,6 +25,7 @@ gulp.task('js-concat', function(){
     'assets/js/components/global.js',
     'assets/js/components/preloader.js',
     'assets/js/components/navigation.js',
+    'assets/js/components/dropdown.js',
     'assets/js/sections/section-expierence.js',
     'assets/js/sections/section-contact.js',
     'assets/js/sections/section-work.js',
@@ -35,7 +36,6 @@ gulp.task('js-concat', function(){
   .pipe(uglify())
   .pipe(gulp.dest('assets/js/'));
 });
-
 
 gulp.task('watch', function() {
     gulp.watch(['assets/img/svg_icons/*.svg'], ['svg-sprites']);

@@ -57,15 +57,13 @@
 
     <nav class="main-nav">
       
+        <a href="#blog" class="item ripple-effect">Блог</a>
+      
+        <a href="#portfolio" class="item ripple-effect">Портфолио</a>
+      
         <a href="#about" class="item ripple-effect">Обо мне</a>
       
-        <a href="#portfolio" class="item ripple-effect">Portfolio</a>
-      
-        <a href="#experience" class="item ripple-effect">Experience</a>
-      
-        <a href="#contact" class="item ripple-effect">Contact</a>
-      
-        <a href="#blog" class="item ripple-effect">Blog</a>
+        <a href="#contact" class="item ripple-effect">Контакты</a>
       
     </nav>
 
@@ -124,104 +122,120 @@
 
   <div class="sections-container">
 
-    <section class="section-about full-screen-block section-active" id="about">
-
-  <div class="container">
-
-    <div class="profile-card">
-      <img id="large-ava" data-src="assets/img/pictures/constavatar_wide.jpg" alt="" src="">
-    </div>
-
-    <h1 class="section-title">Здесь про меня</h1>
+    <section class="section-blog full-screen-block" id="blog">
 
 
-    <div class="blurb">
-      <p>Я человек:</p>
+  <div class="blog-belt">
 
-    </div>
 
-    <div class="skill-lockup">
+    <div class="preview-container">
 
-      
+      <div class="preview-container-shift">
 
-        <div class="skill-unit" >
-          <div class="skill-icon">
-            <svg viewBox="0 0 100 100" class='icon-responsive'>
-              <use xlink:href="#icon-responsive" xmlns:xlink="http://www.w3.org/1999/xlink" ></use>
-            </svg>
+        <div class="poster" data-bg-src="../assets/img/posters/blog" data-images-number='4'></div>
+
+        <div class="container">
+
+          <div id="blog-posts" class="ru"
+            data-pager-number="5"
+            data-total-number="22">
+
+            <h1 class="section-title post-list-title">My notes, thoughts and more...</h1>
+
+            <div class="category-select" id="cat-sel">
+              <div class="category-select-wrap">
+                <div class="day select-dropdown">
+                  <article>
+                    <dl class="dropy">
+                      <dt class="dropy__title"><span>Category</span></dt>
+                      <dd class="dropy__content">
+                        <ul>
+                          <li><a data-cat='news'>News </a></li>
+                          <li><a data-cat='web'>Web design</a></li>
+                          <li><a data-cat='life'>Life events</a></li>
+                          <li><a data-cat='thoughts'>My thoughts</a></li>
+                        </ul>
+                      </dd>
+                      <input type="hidden" name="first">
+                    </dl>
+                  </article>
+                </div>
+              </div>
+            </div>
+
+            <div class="post-section">
+              
+
+                
+
+                
+
+
+
+              
+
+                
+
+                
+
+
+
+              
+
+                
+
+                
+
+
+
+              
+
+                
+
+                
+
+
+
+              
+
+                
+
+                
+
+
+
+              
+            </div>
+
           </div>
-          <div class="skill-label">Responsive Layouting</div>
-          <div class="skill-desc"> Making web for every device</div>
-          <div class="skill-meter">
-            <div class="meter"><span data-skill="9"></span></div>
-          </div>
+
+          <div id="ccc" hidden></div>
+
         </div>
 
-      
-
-        <div class="skill-unit" >
-          <div class="skill-icon">
-            <svg viewBox="0 0 100 100" class='icon-tag'>
-              <use xlink:href="#icon-tag" xmlns:xlink="http://www.w3.org/1999/xlink" ></use>
-            </svg>
-          </div>
-          <div class="skill-label">Client-side Coding</div>
-          <div class="skill-desc"> High-level website interactivity</div>
-          <div class="skill-meter">
-            <div class="meter"><span data-skill="6"></span></div>
-          </div>
-        </div>
-
-      
-
-        <div class="skill-unit" >
-          <div class="skill-icon">
-            <svg viewBox="0 0 100 100" class='icon-tools'>
-              <use xlink:href="#icon-tools" xmlns:xlink="http://www.w3.org/1999/xlink" ></use>
-            </svg>
-          </div>
-          <div class="skill-label">Interface Design</div>
-          <div class="skill-desc"> Latest trends and standarts</div>
-          <div class="skill-meter">
-            <div class="meter"><span data-skill="5"></span></div>
-          </div>
-        </div>
-
-      
-
-        <div class="skill-unit" >
-          <div class="skill-icon">
-            <svg viewBox="0 0 100 100" class='icon-browser'>
-              <use xlink:href="#icon-browser" xmlns:xlink="http://www.w3.org/1999/xlink" ></use>
-            </svg>
-          </div>
-          <div class="skill-label">Modern Web Tools</div>
-          <div class="skill-desc"> New tendencies, APIs, techniques. </div>
-          <div class="skill-meter">
-            <div class="meter"><span data-skill="8"></span></div>
-          </div>
-        </div>
-
-      
+      </div>
 
     </div>
 
-    <div class="blurb2">
-      <p>I want to be involved in projects that I can be proud of, join an amazing team, and advance my design and development career. Take some time to look at my works, experiences, and if you’re interested in helping me make this happen…</p>
+    <div class="post-container">
+      <div class="post-poster"></div>
+      <div class="container">
+         <h4 class="post-title section-title">
+          <span class="blog-return">← Read other posts</span>
+          <span class="date"></span>
+          <span class="title-text"></span>
+         </h4>
 
-    </div>
-
-    <a href="mailto:const.int.naumov@gmail.com" class="const-button contact-large-button about-contact">
-      <span>...let’s get in touch!</span>
-      <svg viewBox="0 0 25 25">
-        <use xlink:href="#icon-envelope-opened" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-      </svg>
-    </a>
-
+         <div class="post-content">
+            <!-- Post content goes here -->
+         </div>
+      </div>
+  </div>
   </div>
 
-</section>
 
+
+</section>
 
     <section class="section-work full-screen-block" id="portfolio">
 
@@ -471,6 +485,155 @@
 
 </section>
 
+    <section class="section-about full-screen-block section-active" id="about">
+
+  <div class="container">
+
+    <div class="profile-card">
+      <img id="large-ava" data-src="assets/img/pictures/constavatar_wide.jpg" alt="" src="">
+    </div>
+
+    <h1 class="section-title">Здесь про меня</h1>
+
+
+    <div class="blurb">
+      <p>Я человек:</p>
+
+    </div>
+
+    <div class="skill-lockup">
+
+      
+
+        <div class="skill-unit" >
+          <div class="skill-icon">
+            <svg viewBox="0 0 100 100" class='icon-responsive'>
+              <use xlink:href="#icon-responsive" xmlns:xlink="http://www.w3.org/1999/xlink" ></use>
+            </svg>
+          </div>
+          <div class="skill-label">Responsive Layouting</div>
+          <div class="skill-desc"> Making web for every device</div>
+          <div class="skill-meter">
+            <div class="meter"><span data-skill="9"></span></div>
+          </div>
+        </div>
+
+      
+
+        <div class="skill-unit" >
+          <div class="skill-icon">
+            <svg viewBox="0 0 100 100" class='icon-tag'>
+              <use xlink:href="#icon-tag" xmlns:xlink="http://www.w3.org/1999/xlink" ></use>
+            </svg>
+          </div>
+          <div class="skill-label">Client-side Coding</div>
+          <div class="skill-desc"> High-level website interactivity</div>
+          <div class="skill-meter">
+            <div class="meter"><span data-skill="6"></span></div>
+          </div>
+        </div>
+
+      
+
+        <div class="skill-unit" >
+          <div class="skill-icon">
+            <svg viewBox="0 0 100 100" class='icon-tools'>
+              <use xlink:href="#icon-tools" xmlns:xlink="http://www.w3.org/1999/xlink" ></use>
+            </svg>
+          </div>
+          <div class="skill-label">Interface Design</div>
+          <div class="skill-desc"> Latest trends and standarts</div>
+          <div class="skill-meter">
+            <div class="meter"><span data-skill="5"></span></div>
+          </div>
+        </div>
+
+      
+
+        <div class="skill-unit" >
+          <div class="skill-icon">
+            <svg viewBox="0 0 100 100" class='icon-browser'>
+              <use xlink:href="#icon-browser" xmlns:xlink="http://www.w3.org/1999/xlink" ></use>
+            </svg>
+          </div>
+          <div class="skill-label">Modern Web Tools</div>
+          <div class="skill-desc"> New tendencies, APIs, techniques. </div>
+          <div class="skill-meter">
+            <div class="meter"><span data-skill="8"></span></div>
+          </div>
+        </div>
+
+      
+
+    </div>
+
+    <div class="blurb2">
+      <p>I want to be involved in projects that I can be proud of, join an amazing team, and advance my design and development career. Take some time to look at my works, experiences, and if you’re interested in helping me make this happen…</p>
+
+    </div>
+
+    <a href="mailto:const.int.naumov@gmail.com" class="const-button contact-large-button about-contact">
+      <span>...let’s get in touch!</span>
+      <svg viewBox="0 0 25 25">
+        <use xlink:href="#icon-envelope-opened" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+      </svg>
+    </a>
+
+  </div>
+
+</section>
+
+
+    <section class="section-contact full-screen-block" id="contact">
+
+  <div class="container">
+    <h1 class="section-title">Let's get in touch.</h1>
+
+
+      <div class="contact-text">
+        <p><a href="https://twitter.com/Const_Naumov">Twitter</a> is my way to share things of interest. I push projects to <a href="https://github.com/const-int">GitHub</a> and create personal handcrafts on <a href="http://codepen.io/const-int/">CodePen</a>. I also connect with people on <a href="http://ru.linkedin.com/pub/konstantin-naumov/a1/847/b33/">LinkedIn</a>. You can always email me, and i’ll get back to your inquiry asap.</p>
+
+      </div>
+
+      <a href="mailto:const.int.naumov@gmail.com" class="mailto-button contact-large-button const-button">
+        Send an email
+        <svg viewBox="0 0 25 25">
+          <use xlink:href="#icon-envelope-opened" xmlns:xlink="http://www.w3.org/1999/xlink" ></use>
+        </svg>
+      </a>
+
+      <form class="awesome-form">
+
+        <div class="input-group">
+          <input type="text" id="client-name" name="name" required>
+          <label>Your Full Name</label>
+        </div>
+
+        <div class="input-group">
+          <input type="email" name="email" required>
+          <label>Your Email Address</label>
+        </div>
+
+        <div class="input-group textarea-wrapper">
+          <textarea class="textarea" name="message" required></textarea>
+          <label>Your Message</label>
+        </div>
+
+
+        <button type="submit" class="const-button contact-large-button">
+          <span>Send the message</span>
+          <svg viewBox="0 0 25 25">
+            <use xlink:href="#icon-envelope-opened" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+          </svg>
+        </button>
+
+        <div id="auto-height-hidden-div"></div>
+      </form>
+
+  </div>
+
+</section>
+
     <section class="section-expirience full-screen-block" id="experience">
 
     <div class="container">
@@ -633,202 +796,6 @@
 
 </section>
 
-    <section class="section-contact full-screen-block" id="contact">
-
-  <div class="container">
-    <h1 class="section-title">Let's get in touch.</h1>
-
-
-      <div class="contact-text">
-        <p><a href="https://twitter.com/Const_Naumov">Twitter</a> is my way to share things of interest. I push projects to <a href="https://github.com/const-int">GitHub</a> and create personal handcrafts on <a href="http://codepen.io/const-int/">CodePen</a>. I also connect with people on <a href="http://ru.linkedin.com/pub/konstantin-naumov/a1/847/b33/">LinkedIn</a>. You can always email me, and i’ll get back to your inquiry asap.</p>
-
-      </div>
-
-      <a href="mailto:const.int.naumov@gmail.com" class="mailto-button contact-large-button const-button">
-        Send an email
-        <svg viewBox="0 0 25 25">
-          <use xlink:href="#icon-envelope-opened" xmlns:xlink="http://www.w3.org/1999/xlink" ></use>
-        </svg>
-      </a>
-
-      <form class="awesome-form">
-
-        <div class="input-group">
-          <input type="text" id="client-name" name="name" required>
-          <label>Your Full Name</label>
-        </div>
-
-        <div class="input-group">
-          <input type="email" name="email" required>
-          <label>Your Email Address</label>
-        </div>
-
-        <div class="input-group textarea-wrapper">
-          <textarea class="textarea" name="message" required></textarea>
-          <label>Your Message</label>
-        </div>
-
-
-        <button type="submit" class="const-button contact-large-button">
-          <span>Send the message</span>
-          <svg viewBox="0 0 25 25">
-            <use xlink:href="#icon-envelope-opened" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-          </svg>
-        </button>
-
-        <div id="auto-height-hidden-div"></div>
-      </form>
-
-  </div>
-
-</section>
-
-    <section class="section-blog full-screen-block" id="blog">
-
-
-  <div class="blog-belt">
-
-
-    <div class="preview-container">
-
-      <div class="preview-container-shift">
-
-        <div class="poster" data-bg-src="../assets/img/posters/blog" data-images-number='4'></div>
-
-        <div class="container">
-
-          <div id="blog-posts" class="ru"
-            data-pager-number="5"
-            data-total-number="15">
-
-            <h1 class="section-title post-list-title">My notes, thoughts and more...</h1>
-
-            <div class="post-section">
-              
-
-
-
-                
-
-                
-
-
-
-              
-
-
-
-                
-
-                
-
-
-                  
-                  
-                  
-                     
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-
-                  
-
-                    <div class="post-preview lang-ru" data-url="/blog/uoeuoeuu" data-date='19 февраля 2015 ' data-name="uoeuoeu">
-
-                      <div class="preview-head">
-                        <h2 class="post-name">uoeuoeu</h2>
-                        <img src="" width="104" height="104" alt="" class="ava">
-                        <span class="post-meta">
-                          <span class="time">19 февраля 2015 </span>
-                          <span class="hashtag">life</span>
-                        </span>
-                      </div>
-
-                      <div class="post-excerpt">
-                        eoueou...
-                        <span class="post-link intext-link">
-                          Read this post →
-                        </span>
-                      </div>
-
-
-                    </div>
-
-
-                
-
-
-
-              
-
-
-
-                
-
-                
-
-
-
-              
-
-
-
-                
-
-                
-
-
-
-              
-
-
-
-                
-
-                
-
-
-
-              
-            </div>
-
-          </div>
-
-          <div id="ccc" hidden></div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="post-container">
-      <div class="post-poster"></div>
-      <div class="container">
-         <h4 class="post-title section-title">
-          <span class="blog-return">← Read other posts</span>
-          <span class="date"></span>
-          <span class="title-text"></span>
-         </h4>
-
-         <div class="post-content">
-            <!-- Post content goes here -->
-         </div>
-      </div>
-  </div>
-  </div>
-
-
-
-</section>
 
   </div>
 

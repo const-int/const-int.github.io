@@ -10,11 +10,11 @@ copyright: Konstantin Naumov © 2014
 # NOTE: The Logo and Background image are defined in the all.sass document.
 
 menu:
+- {name: Блог, hash: '#blog' }
+- {name: Портфолио, hash: '#portfolio' }
 - {name: 'Обо мне', hash: '#about' }
-- {name: Portfolio, hash: '#portfolio' }
-- {name: Experience, hash: '#experience' }
-- {name: Contact, hash: '#contact' }
-- {name: Blog, hash: '#blog' }
+# - {name: Experience, hash: '#experience' }
+- {name: Контакты, hash: '#contact' }
 
 #-------------------------------
 # SEO Section

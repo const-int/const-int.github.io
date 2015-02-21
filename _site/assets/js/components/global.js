@@ -7,21 +7,22 @@ $(document).ready(function() {
 
 
 
-  $(window).on('load resize', function () {
+  $(window).on('load', function () {
 
     // Fitting blocks size to screen size
     $(".full-screen-block").height( win_height );
     $(".thumb-wrap, .work-wrap").height( win_height );
 
-    // Loading ava
-    load_ava();
-
     // Fixing position of thumb-container
     $('.thumb-container, .preview-container-shift .container').css('left', getScrollbarWidth() / 2);
 
-
+    // Clear form data
     $('input, textarea').val('');
 
+    // Loading ava
+    load_ava();
+
+    // Set rangom poster
     setTimeout(function(){
       var poster = $('.poster'),
           index = Math.floor((Math.random() * poster.data('images-number')) + 1);
@@ -34,18 +35,17 @@ $(document).ready(function() {
 
   $(window).on('resize', function () {
 
-    var old_height = win_height;
+    // Fitting blocks size to screen size
+    setTimeout(function() {
+      $(".full-screen-block").height( win_height );
+      $(".thumb-wrap, .work-wrap").height( win_height );
+    }, 100)
+
+    // Loading ava
+    load_ava();
+
     win_width  = $(window).width();
     win_height = $(window).height();
-
-    if ( win_height != old_height && win_width > 1000 )  {
-      setTimeout(function() {
-        window.location.hash = '#about';
-        location.reload();
-      }, 1);
-    } else {
-      load_ava();
-    }
 
   });
 
