@@ -68,10 +68,6 @@ $(document).ready(function() {
 
         animating_blog = blog_opened = true;
 
-        // Slide to post
-        blog_belt.addClass('slided');
-
-
         window.location.hash = newHash[newHash.length - 1];
 
         setTimeout(function(){
@@ -87,7 +83,12 @@ $(document).ready(function() {
         $('.post-content').load(newUrl, function(){
 
             // Change poster
-            post_poster.css('background-image', 'url(../../blog-posters/'+ newPoster +')');
+            var bgImg = new Image();
+            bgImg.src = '../../blog-posters/'+ newPoster;
+            bgImg.onload = function(){
+                blog_belt.addClass('slided');
+                post_poster.css('background-image', 'url(' + bgImg.src + ')');
+            }
         });
     });
 
