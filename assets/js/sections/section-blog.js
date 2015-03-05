@@ -75,6 +75,9 @@ $(document).ready(function() {
           animating_blog = false;
         }, 800);
 
+        blog_belt.addClass('slided');
+
+
         // Put title
         $('.post-title .title-text').text(newTitle);
         $('.post-title .date').text(newDate.toLowerCase());
@@ -82,13 +85,7 @@ $(document).ready(function() {
         // Load content
         $('.post-content').load(newUrl, function(){
 
-            // Change poster
-            var bgImg = new Image();
-            bgImg.src = '../../blog-posters/'+ newPoster;
-            bgImg.onload = function(){
-                blog_belt.addClass('slided');
-                post_poster.css('background-image', 'url(' + bgImg.src + ')');
-            }
+            post_poster.css('background-image', 'url(../../blog-posters/'+ newPoster +')');
         });
     });
 
