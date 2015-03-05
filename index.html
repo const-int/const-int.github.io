@@ -1,0 +1,127 @@
+---
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ site.data.settings_en.seo.description }}">
+  <title>{{ site.data.settings_en.title }}</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+
+<body>
+
+  <script>
+
+      function getCookie(name) {
+         var re = new RegExp(name + "=([^;]+)");
+         var value = re.exec(document.cookie);
+         return (value != null) ? unescape(value[1]) : null;
+      }
+
+      var cookieLang = getCookie('lang'),
+          client_lang = navigator.language;
+
+      if (cookieLang) {
+
+          if ( cookieLang == 'ru' ) {
+              window.location.replace(window.location.origin + '/ru' + window.location.hash);
+          } else if ( cookieLang == 'en' ) {
+              window.location.replace(window.location.origin + '/en' + window.location.hash);
+          }
+
+      } else {
+          if ( client_lang == 'ru' ) {
+              window.location.replace(window.location.origin + '/ru' + window.location.hash);
+          } else {
+              window.location.replace(window.location.origin + '/en' + window.location.hash);
+          }
+      }
+
+  </script>
+
+  <div style="display: none;">
+    {% for post in paginator.posts %}
+
+        {% capture time %} {{ post.date | date: "%B %-d, %Y" }} {% endcapture %}
+
+        {% capture lang %} {{ post.categories | first }} {% endcapture %}
+
+        {% capture continue %} Read this post {% endcapture %}
+
+          {% if lang == ' ru ' %}
+
+            {% capture month %} {{ post.date | date: "%m" }} {% endcapture %}
+
+            {% capture continue %} Читать далее {% endcapture %}
+
+            {% if month == ' 01 ' %}
+               {% assign month_ru = 'января' %}
+            {% endif %}
+            {% if month == ' 02 ' %}
+               {% assign month_ru = 'февраля' %}
+            {% endif %}
+            {% if month == ' 03 ' %}
+               {% assign month_ru = 'марта' %}
+            {% endif %}
+            {% if month == ' 04 ' %}
+               {% assign month_ru = 'апреля' %}
+            {% endif %}
+            {% if month == ' 05 ' %}
+               {% assign month_ru = 'мая' %}
+            {% endif %}
+            {% if month == ' 06 ' %}
+               {% assign month_ru = 'июня' %}
+            {% endif %}
+            {% if month == ' 07 ' %}
+               {% assign month_ru = 'июля' %}
+            {% endif %}
+            {% if month == ' 08 ' %}
+               {% assign month_ru = 'августа' %}
+            {% endif %}
+            {% if month == ' 09 ' %}
+               {% assign month_ru = 'сентября' %}
+            {% endif %}
+            {% if month == ' 10 ' %}
+               {% assign month_ru = 'октября' %}
+            {% endif %}
+            {% if month == ' 11 ' %}
+               {% assign month_ru = 'наября' %}
+            {% endif %}
+            {% if month == ' 12 ' %}
+               {% assign month_ru = 'декабря' %}
+            {% endif %}
+
+            {% capture time %} {{ post.date | date: "%-d" }} {{ month_ru }}, {{ post.date | date: "%Y" }} {% endcapture %}
+
+          {% endif %}
+
+
+        <div class="post-preview lang-{{ post.categories | first }} cat-{{ post.categories | last }} {% for tag in post.tags %} tag-{{ tag }} {% endfor %}" data-url="{{ post.url }}" data-date='{{ time }}' data-poster='{{ post.poster }}'  data-name="{{ post.title }} ">
+          <div class="preview-head" >
+            <h2 class="post-name post-link"><span>{{ post.title }}</span></h2>
+            <img src="../blog-avas/{{ post.ava }}" width="104" height="104" alt="" class="ava">
+            <span class="post-meta">
+              <span class="time">{{ time }}</span>
+              {% for tag in post.tags %}
+                <span class="hashtag">{{ tag }}</span>
+              {% endfor %}
+            </span>
+          </div>
+
+          <div class="post-excerpt">
+            {{ post.excerpt }}...&nbsp;&nbsp;
+            <span class="post-link intext-link">{{ continue }} →</span>
+          </div>
+
+        </div>
+
+    {% endfor %}
+  </div>
+
+
+</body>
+</html>
