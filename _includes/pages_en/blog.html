@@ -6,112 +6,90 @@
 
     <div class="preview-container">
 
+
       <div class="preview-container-shift">
 
-        <div class="poster" data-bg-src="assets/img/posters/blog" data-images-number='4'></div>
+        <div class="poster" data-images-number='4'></div>
 
         <div class="container">
 
-          <div id="blog-posts" class="en"
+          <div id="blog-posts" data-cat='web' class="en"
             data-pager-number="{{ site.paginate }}"
             data-total-number="{{ site.posts | size }}">
 
-            <h1 class="section-title post-list-title">{{ site.data.settings_en.section-titles.blog }}</h1>
 
-            <div class="category-select" id="cat-sel">
-              <div class="category-select-wrap">
+            <h1 class="section-title post-list-title">
+              {{ site.data.settings_en.section-titles.blog }}
+
+              <div class="category-select-wrap" id="cat-sel">
                 <div class="day select-dropdown">
                   <article>
                     <dl class="dropy">
-                      <dt class="dropy__title"><span>Category</span></dt>
+                      <dt class="dropy__title">
+                        <span class="tit">web-design</span>
+                        <span class="hsh"></span>
+                        <span class="tri"> &#x25BE;</span>
+                      </dt>
                       <dd class="dropy__content">
                         <ul>
-                          <li><a data-cat='news'>News </a></li>
-                          <li><a data-cat='web'>Web design</a></li>
-                          <li><a data-cat='life'>Life events</a></li>
-                          <li><a data-cat='thoughts'>My thoughts</a></li>
+                          {% for category in site.data.settings_en.categories %}
+                            <li data-cat='{{ category.hash }}'>{{ category.name }}</li>
+                          {% endfor %}
                         </ul>
+                        <div class="cross">×</div>
                       </dd>
                       <input type="hidden" name="first">
                     </dl>
                   </article>
                 </div>
               </div>
-            </div>
+            </h1>
 
             <div class="post-section">
-              {% for post in paginator.posts %}
 
-                  {% capture time %} {{ post.date | date: "%B %-d, %Y" }} {% endcapture %}
 
-                  {% capture lang %} {{ post.categories | first }} {% endcapture %}
 
-                    {% if lang == ' ru ' %}
+                  {% for post in site.posts limit: 5 %}
 
-                      {% capture month %} {{ post.date | date: "%m" }} {% endcapture %}
+                    {% capture lang %}{{ post.categories | first }} {% endcapture %}
 
-                      {% if month == ' 01 ' %}
-                         {% assign month_ru = 'января' %}
-                      {% endif %}
-                      {% if month == ' 02 ' %}
-                         {% assign month_ru = 'февраля' %}
-                      {% endif %}
-                      {% if month == ' 03 ' %}
-                         {% assign month_ru = 'марта' %}
-                      {% endif %}
-                      {% if month == ' 04 ' %}
-                         {% assign month_ru = 'апреля' %}
-                      {% endif %}
-                      {% if month == ' 05 ' %}
-                         {% assign month_ru = 'мая' %}
-                      {% endif %}
-                      {% if month == ' 06 ' %}
-                         {% assign month_ru = 'июня' %}
-                      {% endif %}
-                      {% if month == ' 07 ' %}
-                         {% assign month_ru = 'июля' %}
-                      {% endif %}
-                      {% if month == ' 08 ' %}
-                         {% assign month_ru = 'августа' %}
-                      {% endif %}
-                      {% if month == ' 09 ' %}
-                         {% assign month_ru = 'сентября' %}
-                      {% endif %}
-                      {% if month == ' 10 ' %}
-                         {% assign month_ru = 'октября' %}
-                      {% endif %}
-                      {% if month == ' 11 ' %}
-                         {% assign month_ru = 'наября' %}
-                      {% endif %}
-                      {% if month == ' 12 ' %}
-                         {% assign month_ru = 'декабря' %}
-                      {% endif %}
+                    {% if lang == 'en ' %}
 
-                      {% capture time %} {{ post.date | date: "%-d" }} {{ month_ru }} {{ post.date | date: "%Y" }} {% endcapture %}
+                      {% capture time %} {{ post.date | date: "%B %-d, %Y" }} {% endcapture %}
+
+                        <div class="post-preview lang-{{ post.categories | first }} cat-{{ post.categories | last }}
+                        {% for tag in post.tags %} tag-{{ tag }} {% endfor %} " data-url="{{ post.url }}" data-date='{{ time }}' data-poster='{{ post.poster }}' data-name="{{ post.title }}">
+
+                          <div class="preview-head">
+                            <h2 class="post-name"><span>{{ post.title }}</span></h2>
+                            <img src="../blog-avas/{{ post.ava }}" width="104" height="104" alt="" class="ava">
+                            <span class="post-meta">
+                              <span class="time">{{ time }}</span>
+                              {% for tag in post.tags %}
+                                <span class="hashtag">{{ tag }}</span>
+                              {% endfor %}
+                            </span>
+                          </div>
+
+                          <div class="post-excerpt">
+                            {{ post.excerpt }}...
+                            <span class="post-link intext-link">
+                              Read this post →
+                            </span>
+                          </div>
+
+
+                        </div>
+
 
                     {% endif %}
 
 
-                  <div class="post-preview lang-{{ post.categories | first }} cat-{{ post.categories | last }}" data-url="{{ post.url }}" data-date='{{ time }}'  data-name="{{ post.title }}">
-                    <div class="preview-head" >
-                      <h2 class="post-name post-link"><span>{{ post.title }}</span></h2>
-                      <img src="{{ post.ava }}" width="104" height="104" alt="" class="ava">
-                      <span class="post-meta">
-                        <span class="time">{{ time }}</span>
-                        <span class='hashtag'>{{ post.categories | last }}</span>
-                      </span>
-                    </div>
 
-                    <div class="post-excerpt">
-                      {{ post.excerpt }}...&nbsp;&nbsp;
-                      <span class="post-link intext-link">Read this post →</span>
-                    </div>
-
-                  </div>
-
-              {% endfor %}
+                  {% endfor %}
             </div>
 
+            <div class="no-more">No more posts</div>
           </div>
 
           <div id="ccc" hidden></div>
@@ -123,7 +101,7 @@
     </div>
 
     <div class="post-container">
-      <div class="post-poster"></div>
+      <div class="poster post-poster"></div>
       <div class="container">
          <h4 class="post-title section-title">
           <span class="blog-return">← Read other posts</span>

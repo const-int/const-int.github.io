@@ -6,6 +6,13 @@
     @media (min-width: 1001px)
       display: none
 
+  .poster
+    background-position-y: -50px
+
+  .container
+    margin-top: -200px
+    position: relative
+
   .contact-text
     display: none
     text-align: left
@@ -15,8 +22,7 @@
       display: block
 
     a
-      color: #333
-      font-weight: 400
+      @extend .intext-link
 
   .awesome-form
     text-align: left
@@ -47,6 +53,7 @@
   input, textarea
     display: inline-block
     width: 100%
+    cursor: text
 
     &:focus,
     &:active
@@ -57,6 +64,9 @@
       color: $bg-color-light
       background: none
       border: none
+
+      &:hover ~ label
+        color: #666
 
   .input-group
     position: relative
@@ -74,6 +84,7 @@
 
 
     label
+      cursor: text
       +position(absolute, 50% null null 0px)
       +transform(translateY(-50%))
       color: #999

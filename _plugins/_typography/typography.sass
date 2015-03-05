@@ -14,6 +14,10 @@ $rythm-unit: "rem" !global
 $rem-with-px-fallback: true !global
 +establish-baseline
 
+@media (max-width: 1000px)
+  $base-font-size: 18px !global
+  $base-line-height: 27px !global
+  +establish-baseline
 
 // -------------------------
 // BASE --------------------
@@ -30,7 +34,6 @@ $rem-with-px-fallback: true !global
     // color: #fff !important
 
 body
-  background: #fff url(../img/backgrounds/exp-bg.png)
   font-family: $regular
 
 button
@@ -49,12 +52,22 @@ button
   +adjust-leading-to(1.5, $st_fz)
   +trailing-border(2px, 1, $st_fz)
 
-  @media (max-width: 1000px)
-    $st_fz: 30px
+  @media (max-width: 550px)
+    $st_fz: 26px
 
     +adjust-font-size-to($st_fz)
     +adjust-leading-to(1.25, $st_fz)
     +trailing-border(2px, 1, $st_fz)
+
+  @media (min-width: 551px) and (max-width: 1000px)
+    $st_fz: 30px
+
+    // text-align: center
+    +adjust-font-size-to($st_fz)
+    +adjust-leading-to(1, $st_fz)
+    +trailing-border(2px, 1, $st_fz)
+
+
 
 
 .contact-large-button
@@ -91,12 +104,18 @@ aside.sidebar
       padding-bottom: ($base-line-height * 4 - 120px) / 2
 
 
-
   .slogan, .sidebar-footer
-    +margin-leader(.5)
-    +margin-trailer(.5)
+    +leader(.5)
+    margin-bottom: 1em
+
     @media (min-width: 1220px)
       height: $base-line-height * 2
+
+  .sidebar-footer
+    +trailer(1)
+    @media (max-width: 1220px)
+      +trailer(.666)
+
 
   .title, .subtitle
     position: relative
@@ -188,16 +207,15 @@ aside.sidebar
   .thumb-unit
     +leader
 
-    .img-wrap
+    .img-wrap, .thumb-click-area:before
       height: 9 * $base-line-height
 
       @media (max-width: 550px)
         height: 5 * $base-line-height
 
     .unit-title
-      height: $base-line-height * 2
       padding: 0 $base-line-height * 2 0 $base-line-height
-      +adjust-leading-to(2, $base-font-size)
+      +adjust-leading-to(2)
 
       &:after
         top: $base-line-height
@@ -216,7 +234,11 @@ aside.sidebar
           height: 25px
           width: 25px
 
+  .no-more
+    +leader(2)
 
+    @media (max-width: 1000px)
+      +leader(1)
 
 .work-center-container
 
@@ -290,9 +312,12 @@ aside.sidebar
 .section-blog
 
   .post-list-title
-    +leader(1, $st_fz)
-    +trailer(7, $st_fz)
+    @media (min-width: 1001px)
+      +trailer(7.75, $st_fz)
 
+    @media (max-width: 1000px)
+      $st_fz: 26px
+      +trailer(1.125, $st_fz)
 
   .post-name
     +adjust-font-size-to(32px)
@@ -314,6 +339,9 @@ aside.sidebar
 
   .post-preview
     +trailer(3)
+    @media (max-width: 1000px)
+      $st_fz: 30px
+      +trailer(2, $st_fz)
 
   .post-container
 
@@ -326,7 +354,6 @@ aside.sidebar
 
     .date
       font-size: 16px
-      padding-top: 3px
       +adjust-leading-to(1, 16px)
 
 
@@ -366,7 +393,7 @@ aside.sidebar
   input.has-value + label
     top: 0
     font-size: $base-font-size / 1.5
-    color: #aaa
+    color: #999 !important
 
     &:after
       content: ":"

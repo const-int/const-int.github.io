@@ -6,6 +6,9 @@
     &.section-active .thumb-unit
       opacity: 1 !important
 
+  .poster
+    width: calc(100% + 20px)
+    background-image: url('../img/posters/portfolio.jpg')
 
 .work-belt
   +size(200% 100%)
@@ -40,8 +43,12 @@
   text-align: justify
   +clearfix
 
+  .container
+    margin-top: -200px
+
   .thumb-unit
     display: block
+    text-align: center
     position: relative
     width: 100%
     border-radius: 2px
@@ -52,10 +59,17 @@
       .unit-title
         opacity: 1
 
+    .thumb-click-area:before
+      content: ''
+      display: inline-block
+      height: 100%
+      vertical-align: middle
+      margin-right: -0.25em
+
     .img-wrap
       width: 100%
       height: 0
-      position: relative
+      +position(absolute, 0 null null null)
       border-radius: 3px
       +backface-visibility(hidden)
       +transition(all .3s ease)
@@ -75,10 +89,11 @@
         +transition(all .3s ease)
 
     .unit-title
-      +position(absolute, 50% null null 50%)
+      display: inline-block
+      vertical-align: middle !important
       opacity: 0
       +transition(opacity .3s ease)
-      +transform(translate(-50%, -50%))
+      z-index: $z-level2
       box-shadow: 0 6px 10px rgba(0,0,0,.23),0 10px 30px rgba(0,0,0,.19)
 
       svg

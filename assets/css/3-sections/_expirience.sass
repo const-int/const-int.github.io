@@ -3,6 +3,14 @@
   @media (max-width: 1000px)
     display: none
 
+  .poster
+    top: -100px
+
+  .container
+    margin-top: -200px
+    position: relative
+    +clearfix
+
   .section-title
     border-color: transparent
 
@@ -78,8 +86,15 @@
     +transition(all .5s ease)
     cursor: default
 
+    &:hover:not(.opened)
+      cursor: pointer
+      &:after, .selected:after
+        opacity: 1
+
     &:after
       content: ''
+      opacity: .55
+      +transition(all .25s ease)
       +position(absolute,  null null 0 0)
       +size(100% 2px)
       background: #252525
@@ -92,6 +107,10 @@
         display: block
 
     .select-option
+
+      &, span, svg
+        cursor: pointer
+
       svg
         display: none
         +size(15px 11px)
@@ -100,6 +119,9 @@
 
     &.opened
       cursor: pointer
+
+      &:after, .selected:after
+        opacity: 1
 
       li:hover
         color: #000
@@ -110,13 +132,16 @@
 
       .selected-center:hover,li.checked, .selected-center.checked
         color: #000 !important
+        cursor: default
         opacity: 1 !important
+        cursor: pointer
 
         svg
           display: block
 
-      .selected:after
-        opacity: 0
+      .selected
+        &:after
+          opacity: 0
 
       .selected-center
         opacity: .5
@@ -131,9 +156,13 @@
       text-align: left
       position: relative
 
-      &:after
+      span
         opacity: 1
-        +transition(all .4s)
+        color: #222
+
+      &:after
+        opacity: .55
+        +transition(all .25s ease)
         content: ''
         +position(absolute, 50% 6px null null)
         +size(0)

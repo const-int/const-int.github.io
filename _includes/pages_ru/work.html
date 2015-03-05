@@ -6,6 +6,8 @@
 
       <div class="thumb-wrap-shift">
 
+        <div class="poster"></div>
+
         <div class="thumb-container">
 
           <div class="container">
@@ -20,10 +22,6 @@
                   data-url='{{ project.url }}'
                   data-folder="{{ forloop.index }}">
 
-                  <div class="img-wrap">
-                    <img src="" data-src="assets/img/work/proj-{{ forloop.index }}/thumb.jpg" alt="{{ project.name }}">
-                  </div>
-
                   <div class="unit-title const-button">
                     <span>{{ project.name }}</span>
                     <svg viewBox="0 0 20 20">
@@ -31,11 +29,16 @@
                     </svg>
                   </div>
 
+                  <div class="img-wrap">
+                    <img src="" data-src="../assets/img/work/proj-{{ forloop.index }}/thumb.jpg" alt="{{ project.name }}">
+                  </div>
 
                 </div>
 
               </div>
             {% endfor %}
+
+            <div class="no-more">Конец</div>
           </div>
         </div>
       </div>

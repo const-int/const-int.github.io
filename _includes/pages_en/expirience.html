@@ -1,5 +1,7 @@
 <section class="section-expirience full-screen-block" id="experience">
 
+    <div class="poster exp"></div>
+
     <div class="container">
 
         <!-- Heading -->
@@ -18,7 +20,7 @@
             {% for exp in site.data.settings_en.exps %}
               {% if forloop.index == 1 %}
                 <div  class="selected">
-                  <div class="ripple-effect select-option selected-center checked"
+                  <div class="select-option selected-center checked"
                     data-file="{{ exp.file }}"
                     data-text="{{ exp.title }}"
                     data-index="{{ forloop.index }}">

@@ -2,8 +2,12 @@
 
   <div class="side-bar-wrapper">
 
+    <div class="lang-switcher">
+      <span data-lang='ru'>RU</span>
+    </div>
+
     <div class="profile-card">
-      <a href="/"><img src="" id="small-ava" data-src="http://0.0.0.0:8000/assets/img/pictures/constavatar.jpg" class="avatar" alt="Konstantin"></a>
+      <a href="/"><img src="" id="small-ava" data-src="../assets/img/pictures/constavatar.jpg" class="avatar" alt="Konstantin"></a>
 
       <div class="slogan">
         <div class="title">{{ site.data.settings_en.description }}</div>
@@ -33,6 +37,11 @@
     </div>
 
     <footer class="sidebar-footer">
+
+      <div class="lang-switcher">
+        <span data-lang='ru'>RU</span>
+      </div>
+
       <div class="contacts">
         {% for link in site.data.settings_en.contacts %}
           <a href="{{ link.link }}" class="contact-link" target="_blank">

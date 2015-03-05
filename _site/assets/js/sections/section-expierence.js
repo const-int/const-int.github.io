@@ -16,7 +16,7 @@ $(document).ready(function() {
   $('.exp-unit').eq(0).addClass('active-exp-tab');
 
   exp_nav_wrap
-    .mouseenter(function() {
+    .click(function() {
         if (!exp_nav_select.hasClass('animating')) {
             $(this).find('.select-skill').addClass('opened show-list');
             exp_texts_wrap.addClass('faded-out');
@@ -34,7 +34,7 @@ $(document).ready(function() {
 
       var that = $(this);
 
-      animation_wrap.load('assets/' + that.data('file'));
+      animation_wrap.load('../assets/' + that.data('file'));
 
       setTimeout(function(){
 

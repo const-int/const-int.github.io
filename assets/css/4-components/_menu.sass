@@ -16,11 +16,12 @@ aside.sidebar
       +position(fixed, auto 0 0 auto )
       +size(100% 60px)
       min-height: initial
+      z-index: $z-level3
 
     .work-return, .blog-return
       display: none
       text-indent: 0
-      +position(absolute, auto auto auto 33.33%)
+      +position(absolute, auto auto auto 0)
       +size(33.33% 60px)
       line-height: 60px
       font-size: 14px
@@ -30,7 +31,10 @@ aside.sidebar
       z-index: $z-level3
 
       &.blog-return
-        left: 0 !important
+        left: 33.3333% !important
+
+      &.work-return
+        left: 66.6666% !important
 
       svg
         +size(20px)
@@ -45,15 +49,20 @@ aside.sidebar
     .side-bar-wrapper
       +position(absolute, 0 0 null null)
       +size(100%)
-      min-height: 630px
+      min-height: 560px
       @media (min-width: 1001px) and (max-width: 1220px)
         min-height: 500px
+        & > .lang-switcher
+          display: none
       @media (max-width: 1000px)
         min-height: initial
 
   .profile-card
     @media (max-width: 1000px)
       display: none
+
+    a
+      color: transparent
 
     img
       max-width: 100%
@@ -81,7 +90,6 @@ aside.sidebar
       bottom: 60px
       left: 0
 
-
   nav
     &
       background: $bg-color
@@ -107,6 +115,9 @@ aside.sidebar
         text-decoration: none
         +transition(all .2s)
 
+        &[href='#experience']
+          display: none
+
         &:first-child:before, &:after
           content: ''
           +position(absolute, null null 0 0)
@@ -122,7 +133,7 @@ aside.sidebar
           line-height: 52px
 
         @media (max-width: 1000px)
-          +size(33.33% 60px)
+          +size(33.3333% 60px)
           line-height: 60px
           font-family: $bold
           padding: 0
@@ -130,8 +141,15 @@ aside.sidebar
           border-left: 1px solid #333
           border-bottom: 0
 
-          &:nth-child(1)
+          &:nth-child(2)
             border-left: 0
+
+          &[href="#about"]
+            +position(absolute, 0 null null 0)
+          &[href="#blog"]
+            +position(absolute, 0 null null 33.3333%)
+          &[href="#portfolio"]
+            +position(absolute, 0 null null 66.6666%)
 
           &[href="#experience"], &[href="#contact"]
             display: none
@@ -163,8 +181,16 @@ aside.sidebar
     +position(absolute, null null 0 0)
     width: 100%
 
+    .lang-switcher
+      line-height: 40px
+      height: 40px
+      display: inline-block
+
+      @media (min-width: 1220px)
+        display: none
+
     @media (min-width: 1001px) and (max-width: 1220px)
-      height: 120px
+      height: 160px
 
     .copyright
       width: 100%

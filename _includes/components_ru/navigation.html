@@ -2,8 +2,12 @@
 
   <div class="side-bar-wrapper">
 
+    <div class="lang-switcher">
+      <span data-lang='en'>EN</span>
+    </div>
+
     <div class="profile-card">
-      <a href="/"><img src="" id="small-ava" data-src="http://0.0.0.0:8000/assets/img/pictures/constavatar.jpg" class="avatar" alt="Konstantin"></a>
+      <a href="/"><img src="" id="small-ava" data-src="../assets/img/pictures/constavatar.jpg" class="avatar" alt="Konstantin"></a>
 
       <div class="slogan">
         <div class="title">{{ site.data.settings_ru.description }}</div>
@@ -34,6 +38,11 @@
     </div>
 
     <footer class="sidebar-footer">
+
+      <div class="lang-switcher">
+        <span data-lang='en'>EN</span>
+      </div>
+
       <div class="contacts">
         {% for link in site.data.settings_ru.contacts %}
           <a href="{{ link.link }}" class="contact-link" target="_blank">
@@ -45,7 +54,7 @@
       </div>
 
       <div class="copyright">
-        Built with <a href="http://jekyllrb.com">Jekyll</a> and hosted on <a href="https://github.com/const-int/const-int.github.io">GitHub</a>.
+        Сделано на <a href="http://jekyllrb.com">Jekyll</a> и размещёно на <a href="https://github.com/const-int/const-int.github.io">GitHub</a>.
       </div>
     </footer>
 

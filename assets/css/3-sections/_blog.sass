@@ -1,12 +1,18 @@
 .section-blog
   overflow: hidden
 
-  #blog-posts.ru .post-preview.lang-ru
-    display: block
+  $lang-list: ru en
+  $cat-list: web highlight life
+
+  @each $current-lang in $lang-list
+    @each $current-cat in $cat-list
+      #blog-posts.#{$current-lang}[data-cat='#{$current-cat}'] .post-preview.lang-#{$current-lang}.cat-#{$current-cat}
+        display: block
 
 
-  #blog-posts.en .post-preview.lang-en
-    display: block
+  @media (max-width: 1000px)
+    .poster
+      display: none
 
 
   .splash-poster
@@ -14,10 +20,12 @@
       max-width: 100%
 
   .post-list-title
-    position: relative
-    z-index: $z-level3
-    border: 0
-    color: rgba(#fff, .75)
+    white-space: nowrap
+    @media (min-width: 1000px)
+      position: relative
+      z-index: $z-level3
+      border: 0
+      color: rgba(#fff, .75)
 
   .post-name
     +user-select(none)
@@ -31,28 +39,64 @@
     position: relative
     min-height: 120px
     display: none
+    +clearfix
+
+
 
     @media (max-width: 550px)
-      padding: 0
+
+      background: white
+      padding: 20px
+      border-radius: 3px
+      box-shadow: rgba(0,0,0,0.12) 0px 3px 10px 0px, rgba(0,0,0,0.07) 0px 3px 10px 0px
 
       img
-        width: 60px !important
-        height: 60px !important
-        left: auto !important
-        right: 0
-        height: 100%
-        max-height: 80px
-        width: auto
+        display: none
+
+      .preview-head
+        +display(flex)
+        +flex-direction(column)
 
       .post-name
-        padding-right: 80px
+        padding: 5px 0 10px 0
+        font-size: 22px
+        line-height: 26px
+        +order(2)
+
+
+      span.post-link
+        display: block
+        padding-top: 15px
+        border: 0 !important
+        font-size: 18px
+
+      .post-excerpt
+        color: #888
+        font-size: 14px
+        line-height: 22px
+
+      .time
+        color: #999
+
+
 
 
     @media (min-width: 551px) and (max-width: 1000px)
-      padding: 0
+      background: white
+      padding: 30px
+      border-radius: 3px
+      box-shadow: rgba(0,0,0,0.12) 0px 3px 10px 0px, rgba(0,0,0,0.07) 0px 3px 10px 0px
+
+      .post-name
+        padding: 0
+
+      span.post-link
+        display: block
+        border: 0 !important
+        padding-top: 15px
 
       .preview-head
-        padding-left: 80px
+        padding-left: 85px
         margin-bottom: 15px
 
       img
@@ -63,12 +107,24 @@
         max-height: 60px
         width: auto
 
+      .time
+        color: #000
+
+      .hashtog , .time
+        font-size: 16px !important
+
+      .post-excerpt
+        color: #888
+
     .preview-head
       position: relative
 
+    .time
+      margin-right: 5px
+
     .hashtag
       display: inline-block
-      margin-left: 15px
+      margin-left: 10px
 
       @extend .intext-link
 
@@ -99,24 +155,15 @@
     +size(200% 100%)
     +position(relative, null null null 0)
     +transition(all, 800ms)
-    background: #ebebeb
 
-
-    .poster, .post-poster
+    .poster
       width: calc(100% + 20px)
-      height: 500px
-      background: no-repeat center center
-      background-size: cover
-      opacity: .75
-      position: relative
-
-      &:after
-        content: ''
-        +position(absolute, 0 0 0 0)
-        background-image: linear-gradient(to bottom, rgba(246,246,246,0) 0%, rgba(235, 235, 235,1) 100%)
 
     .post-poster
       width: 100%
+      @media (max-width: 1000px)
+        background: none !important
+
 
     &.slided
       +transform(translate3d(-50%, 0, 0))
@@ -128,9 +175,11 @@
       +box-sizing(content-box)
 
       .container
-        min-height: 900px
+        min-height: 101%
         margin-top: -500px
         position: relative
+        @media (max-width: 1000px)
+          margin-top: 0
 
     .preview-container, .post-container
       position: relative
@@ -138,6 +187,8 @@
       overflow: auto
       float: left
       overflow-x: hidden
+
+
 
     .post-container
 
@@ -148,16 +199,18 @@
         z-index: $z-level3
 
         @media (max-width: 1000px)
-          margin-top: -500px
+          margin-top: 0
 
 
 
       .post-title
-        position: relative
 
         .blog-return
           font-family: $regular
           @extend .intext-link
+
+          @media (max-width: 1000px)
+            display: none
 
         .title-text
           display: block
@@ -175,6 +228,9 @@
 
       .post-content
 
+        .title, .date
+          display: none
+
         #poster-holder
           display: none
 
@@ -189,6 +245,7 @@
 
         img
           max-width: 100%
+          margin: 30px 0 30px 0 !important
           display: block
           margin: auto
           border-radius: 3px
@@ -200,32 +257,19 @@
 // Droppy Styles
 .section-blog
 
-  .category-select
-    +clearfix
+  @media (max-width: 1000px)
+    .dropy__title
+      display: block
+    .dropy__title .tit:after
+      display: none
 
   .category-select-wrap
-    width: 150px
-    float: right
+    display: inline-block
     position: relative
-    top: -20px
 
     @media (max-width: 1000px)
-      float: left
-
-
-  $black: #464646
-  $blackAlpha: rgba(black, 0.12)
-  $lightGray: #cccccc
-  $gray: #868686
-  $darkGray: #666666
-  $red: #be4c39
-  $white: #fafafa
-  $darkWhite: #eeeeee
-  $anim: 250ms ease-in-out
-  $triangleSize: 0.4rem
-  $triangleRatio: 1
-  $borderRadius: 0.2rem
-
+      .dropy__title, ul li, .tri
+        color: #777 !important
 
 
   .select-dropdown
@@ -251,79 +295,117 @@
     margin: 0 auto
 
   .dropy__title
-    opacity: .6
+    opacity: 1
     position: relative
     display: block
     width: 100%
-    border-bottom: 2px solid #aaa
     text-decoration: none
-    color: $black
+    color: #fff
     cursor: pointer
-    +transition(all .3s ease)
 
-    &:hover
-      opacity: 1
+    .tri
+      color: rgba(#fff, .75)
+      cursor: pointer
 
-    span
-      display: block
-      padding: 10px
+
+    .tit
+      display: inline-block
       white-space: nowrap
       text-overflow: ellipsis
-      overflow: hidden
-    transition: border-color $anim
+      position: relative
+      cursor: pointer
+
+    .hsh
+      @media (max-width: 550px)
+        display: none
+
+
     &:hover
-      border-color: $gray
-    &:after
-      content: ""
-      position: absolute
-      right: 10px
-      top: 50%
-      transform: translateY(-50%)
-      border-top: $triangleSize solid $gray
-      border-left: $triangleSize * $triangleRatio solid transparent
-      border-right: $triangleSize * $triangleRatio solid transparent
+      .tri
+        color: #fff
 
   .dropy__content
     position: absolute
     top: 0
     right: 0
     left: 0
+
+    .cross
+      display: none
+
     ul
+      visibility: hidden
       z-index: 1
-      overflow: hidden
       position: absolute
+      min-width: 300px
       left: 0
       right: 0
+      padding-bottom: 20px
       width: 100%
-      border-radius: $borderRadius
-      max-height: 0
-      opacity: 0
-      transition: opacity $anim, max-height $anim
       list-style: none
-      background: $bg-color
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)
-      li:first-child a:hover
-        border-radius: 0.2rem 0.2rem 0 0
-      li:last-child a
+      @media (max-width: 1000px)
+        margin-top: -30px
+        +position(absolute, 50% 50% null null)
+        +size(100% 180px)
+        +transform(translate(0, -50%))
+
+
+
+      li
+        cursor: pointer
+
         &:hover
-          border-radius: 0 0 0.2rem 0.2rem
-    li a
-      display: block
-      padding: 7.5px 15px
-      color: $button-text-color
-      text-decoration: none
-      cursor: pointer
-      transition: background-color $anim, color $anim
-      &:hover
-        color: #fff
-        background-color: $bg-color-light
+          color: #fff !important
+
+        &:first-child
+          color: #fff
+
+        @media (max-width: 1000px)
+          display: block
+          text-align: center
+          font-size: 22px
+          height: 60px
+          line-height: 60px
+          color: #b2b2b2 !important
+          text-transform: capitalize
+          font-family: $bold
+          position: relative
+
+          &:hover
+            color: #222 !important
+
+
+    &:hover li:first-child
+      color: rgba(#fff, .75)
+
+
     .dropy__header
-      border-bottom: 1px solid $blackAlpha
       padding: 10px 20px
-    .selected
-      color: $red
 
   .dropy.open
+
+    .dropy__title
+      opacity: 0
+
     .dropy__content ul
-      max-height: 30rem
-      opacity: 1
+      visibility: visible
+
+    @media (max-width: 1000px)
+      .dropy__content
+        +position(fixed, 0 0 0 0)
+        z-index: $z-level2
+        background: rgba(#000, .9)
+
+        ul
+          +animation(menu_move .4s ease)
+
+        .cross
+          display: block
+          font-size: 50px
+          color: $menu-text-color
+          +position(absolute, null 33px 95px null)
+
+
+  +keyframes(menu_move)
+    from
+      +transform(translateY(-120px))

@@ -1,13 +1,14 @@
 <section class="section-about full-screen-block section-active" id="about">
 
+  <div class="poster me"></div>
+
   <div class="container">
 
     <div class="profile-card">
-      <img id="large-ava" data-src="assets/img/pictures/constavatar_wide.jpg" alt="" src="">
+      <img id="large-ava" data-src="../assets/img/pictures/constavatar_wide.jpg" alt="" src="">
     </div>
 
     <h1 class="section-title">{{ site.data.settings_ru.section-titles.about }}</h1>
-
 
     <div class="blurb">
       {{ site.data.settings_ru.blurb | markdownify }}
@@ -39,7 +40,7 @@
     </div>
 
     <a href="mailto:{{site.data.settings_ru.email}}" class="const-button contact-large-button about-contact">
-      <span>...let’s get in touch!</span>
+      <span>Форма для связи</span>
       <svg viewBox="0 0 25 25">
         <use xlink:href="#icon-envelope-opened" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
       </svg>

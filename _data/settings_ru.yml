@@ -2,19 +2,18 @@
 # General Site Settings
 
 title: Konstantin Naumov
-description: Front-end web developer
-subdescription: who loves to make <span>cool</span> stuff
+description: Константин Наумов
+subdescription: веб-разработчик  из Калининиграда
 email: const.int.naumov@gmail.com
 copyright: Konstantin Naumov © 2014
 
-# NOTE: The Logo and Background image are defined in the all.sass document.
 
 menu:
 - {name: Блог, hash: '#blog' }
+- {name: Обо мне, hash: '#about' }
 - {name: Портфолио, hash: '#portfolio' }
-- {name: 'Обо мне', hash: '#about' }
-# - {name: Experience, hash: '#experience' }
 - {name: Контакты, hash: '#contact' }
+- {name: Опыт, hash: '#experience' }
 
 #-------------------------------
 # SEO Section
@@ -29,50 +28,62 @@ seo:
 #-------------------------------
 # Titles
 section-titles:
-  about: "Здесь про меня"
-  portfolio: "Some of my latest work."
-  experience: "My core skills"
-  contact: "Let's get in touch."
-  blog: "My notes, thoughts and more..."
+  about: "Пара слов про меня"
+  portfolio: "Мои последние работы"
+  experience: "Основные навыки"
+  contact: "Пишите мне"
+  blog: 'Блог про'
 
 
 #-------------------------------
 # About Section
 
 blurb: >
-  Я человек:
+  Мне нравится создавать красивые и удобные интерфейсы, которые потом нравится людям.
+  При этом я учитываю потребности серверных разработчиков и не усложняю им жизнь, так как забочусь о ясности и эффективности кода.
+  Меня интересуют
 
 blurb2: >
-  I want to be involved in projects that I can be proud of,
-  join an amazing team, and advance my design and development career.
-  Take some time to look at my works, experiences, and if you're interested
-  in helping me make this happen...
+  Вы можете ознакомиться с моими <a href="#experience">навыками</a>, а также недавними <a href="#portfolio">проектами</a>.<br>
+  Если заинтересованы в сотрудничестве, то со мной легко связаться.
 
 contact:
-  "[Twitter](https://twitter.com/Const_Naumov) is my way to share things of interest.
-  I push projects to [GitHub](https://github.com/const-int)
-  and create personal handcrafts on [CodePen](http://codepen.io/const-int/).
-  I also connect with people on [LinkedIn](http://ru.linkedin.com/pub/konstantin-naumov/a1/847/b33/).
-  You can always email me, and i'll get back to your inquiry asap."
+  "Я пишу об интересных мне вещах в [Twitter](https://twitter.com/Const_Naumov).
+  Некоторые мои проекты можно посмотреть на [GitHub](https://github.com/const-int).
+  Также я регулярно размещаю свои поделки на [CodePen](http://codepen.io/const-int/).
+  <br>Вы всегда можете связаться со мной по почте и я постараюсь ответить вам в кратчайшие сроки."
 
 skills:
-- {name: 'Responsive Layouting', desc: 'Making web for every device', value: '9', icon: 'icon-responsive'}
-- {name: 'Client-side Coding', desc: 'High-level website interactivity', value: '6', icon: 'icon-tag'}
-- {name: 'Interface Design', desc: 'Latest trends and standarts', value: '5', icon: 'icon-tools'}
-- {name: 'Modern Web Tools', desc: 'New tendencies, APIs, techniques. ', value: '8', icon: 'icon-browser'}
+- { name: 'Адаптивная верстка'      ,  desc: 'Разработка для всех устройств', value: '9', icon: 'icon-responsive' }
+- { name: 'Программирование'        ,  desc: 'Функционал клиенткой части',        value: '6', icon: 'icon-tag'        }
+- { name: 'Дизайн интерфейсов'      ,  desc: 'Актуальные тренды и стандарты',     value: '5', icon: 'icon-tools'      }
+- { name: 'Новинки веб технологий'  ,  desc: 'Использование современных API',     value: '8', icon: 'icon-browser'    }
+
+
+
+#-------------------------------
+# Blog Section
+categories:
+- {name: веб-дизайн, hash: 'web' }
+- {name: интересное, hash: 'highlight' }
+- {name: меня, hash: 'life' }
+
+
+
 
 #-------------------------------
 # Work Section
 
 projects:
-- {url: '', name: 'Corporate website' }
-- {url: 'teatrpodarkov.ru', name: 'Online Shop' }
-- {url: 'const.in/stego/', name: 'Steganography App' }
-- {url: '', name: 'Online Shop' }
-- {url: 'karavan39.ru/fotoshtory', name: 'Landing Page' }
-- {url: 'web-sendbox.tk/slk-service', name: 'Online Shop' }
-- {url: 'plektra.pro/', name: 'Agency Website' }
-- {url: 'sukho.ru', name: 'Landing Page' }
+- {url: '', name: 'Корпоративный сайт' }
+- {url: 'teatrpodarkov.ru', name: 'Онлайн магазин' }
+- {url: 'const.in/stego/', name: 'Крипто-приложение' }
+- {url: '', name: 'Онлайн магазин' }
+- {url: 'karavan39.ru/fotoshtory', name: 'Продающая страница' }
+- {url: 'web-sendbox.tk/slk-service', name: 'Онлайн магазин' }
+- {url: 'plektra.pro/', name: 'Сайт агенства' }
+- {url: 'sukho.ru', name: 'Продающая страница' }
+- {url: 'const.in/lottery/', name: 'Продающая страница' }
 
 
 
@@ -82,30 +93,30 @@ projects:
 
 exps:
 - {file: 'exp/exp_html.html',
-  quote: "I convert designs into clean, cross browser compatible, troubleproof layouts. Well formed pages are produced on every iteration of employer's development lifecycle.<br> Human readability and semantics of my resulting code are powered by <a href='http://gruntjs.com/' target='_blank' class='grunt'>frontend toolboxes</a> and modern <a href='http://jade-lang.com/' target='_blank' class='jade'>template engines</a>.",
-  title: 'High-quality page layouts'}
+  quote: "Главное для меня это создание кросс-браузерной верстки без неожиданных артефактов. Я превращаю макеты в хорошо скомпонованные страницы и подстраиваюсь под бизнес процессы заказчика. <br>Читаемость кода и соответствие семантике поддерживаю при помощи различных <a href='http://gruntjs.com/'>инструментов компановки</a> и <a href='http://jade-lang.com/'>шаблонизаторов</a>.",
+  title: 'Создание качественной разметки'}
 - {file: 'exp/exp_css.html',
-  quote: "Styling is essential and pretty complicated part of progressive web application. To maintain cross-browser and cross-devise consistency I build my stilesheets based on <a target='_blank' href='http://getbootstrap.com/'>front-end frameworks</a>. <br> With help of <a target='_blank' href='http://sass-lang.com/'>CSS preprocessors</a> and <a target='_blank' href='http://bourbon.io/'>mixin libraries</a> I keep project styles DRY and structured. When it comes to sufficiently large applications I begin with <a target='_blank' href='http://compass-style.org/'>CSS authoring frameworks</a>.",
-  title: 'Cross-browser stylesheets'}
+  quote: 'Таблицы стилей - неотъемлемая часть жизненного цикла веб проекта, они же и представляют наибольшую сложность в фронтенд разработке.<br> Для поддержания целостности и единства во всех браузерах на всех устройствах используется множество трюков, с большинством из которых я знаком и применяю на практике. <a href="http://sass-lang.com/">Препроцессоры</a> и <a href="http://bourbon.io/">примеси</a> использую повсеместно, а если проект достаточно большой, то нахожу разумным использование <a href="http://compass-style.org/">CSS фреймворков</a>.',
+  title: 'Кросс-браузерная стилизация'}
 - {file: 'exp/exp_svg.html',
-  quote: "Growing number of high DPI displays nowdays affects quality requirements for a regular web app. Scalable vector graphics bring an ability to create crystal clear user interfaces and very high quality cross-platform animations. <br> To deliver such experience to user I craft elements with support of powerful <a href='http://snapsvg.io/' target='_blank'>JavaScript SVG libraries</a>.",
-  title: 'Dynamic vector manipulation'}
+  quote: "Количество дисплеев с высоким разрешением неуклонно растет и вместе с ними требования в графике. Вектор не только позволяет получать кристально четкий результат на любом дисплее, но и упрощает анимацию, не требуя специальной поддержки конкретных браузеров. <br> В основоном я применяю SVG при разработке мобильных версиий и создии эффектов с помошью <a href='http://snapsvg.io/'>JS библиотек.</a>",
+  title: 'Манипуляции векторными элементами'}
 - {file: 'exp/exp_js.html',
-  quote: "JavaScript is mine core skill in making interactive web and jQuery is very useful thing for me as well as for industry. <br> I'm very familiar with DOM interfacing that brings ability to take any aspect of webpage under control instantly. I've also put my hands on <a href='http://coffeescript.org/' target='_blank'>CoffeeScript</a> and keep going so.",
-  title: 'JavaScript programming'}
+  quote: "JavaScript – это мой основной инструмент при создании интерактивности. <br> Я достаточно компетентен с DOM и jQuery и без труда управляю любыми элементами веб страницы. Недавно начал использовать <a href='http://coffeescript.org/'>CoffeeScript</a> и буду продолжать дальше.",
+  title: 'Прораммирование на JavaScript'}
 - {file: 'exp/exp_cms.html',
-  quote: "I mostly do front-end development but occasionally I get my hands dirty with some backend (mostly php/MySQL). And I create WordPess templates time after time. <br>Also I really love dealing with static site generators like <a href='http://jekyllrb.com/'>this one</a> or <a href='https://middlemanapp.com/'>that one</a> to obtain maximum performance.",
-  title: 'CMS setup and templating'}
+  quote: "Хоть для меня фронтенд разработка является основной, иногда приходится выполнять простые задачи по бекенду, вроде создания шаблона для WordPress и т.п. <br> Также мне очень понравились статические сайто-генераторы <a href='http://jekyllrb.com/'>Jekyll</a> и <a href='https://middlemanapp.com/'>Middleman</a>",
+  title: 'Шаблонизация и настройка CMS'}
 - {file: 'exp/exp_ajax.html',
-  quote: "In every project I try to create higly dinamic user experience by turning beautiful design files into working product.",
-  title: 'Improving user experience'}
+  quote: "Я всегда стараюсь создавать комфорт для пользователя. Это заключается в превращении красивого дизайна в удобный и работающий продукт.",
+  title: 'Аналитика и модернизация UX'}
 
 
 #-------------------------------
 # Contact Section
 
 contacts:
-- {name: 'linkedin', link: 'ru.linkedin.com/pub/konstantin-naumov/a1/847/b33/' }
+- {name: 'linkedin', link: 'http://ru.linkedin.com/pub/konstantin-naumov/a1/847/b33/' }
 - {name: 'github', link: 'http://twitter.com/Const_Naumov' }
 - {name: 'twitter', link: 'http://github.com/const-int' }
 - {name: 'email', link: 'mailto:const.int.naumov@gmail.com' }

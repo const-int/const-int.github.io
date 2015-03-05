@@ -4,8 +4,8 @@ $(document).ready(function() {
   win_width  = $(window).width();
   win_height = $(window).height();
   lang = $('body').data('lang');
-
-
+  page_url = window.location.href;
+  domain = page_url.split("/");
 
   $(window).on('load', function () {
 
@@ -13,21 +13,16 @@ $(document).ready(function() {
     $(".full-screen-block").height( win_height );
     $(".thumb-wrap, .work-wrap").height( win_height );
 
-    // Fixing position of thumb-container
-    $('.thumb-container, .preview-container-shift .container').css('left', getScrollbarWidth() / 2);
-
     // Clear form data
     $('input, textarea').val('');
 
-    // Loading ava
-    load_ava();
+    responsive_actions();
 
     // Set rangom poster
     setTimeout(function(){
-      var poster = $('.poster'),
-          index = Math.floor((Math.random() * poster.data('images-number')) + 1);
 
-        poster.css('background-image', 'url(' + poster.data('bg-src') + index + '.jpg)');
+        img_url = 'url(' + domain[0] + '//' + domain[2] + '/assets/img/posters/web.jpg)';
+        $('.section-blog .preview-container .poster').css('background-image', img_url);
     }, 100)
 
   });
@@ -41,8 +36,7 @@ $(document).ready(function() {
       $(".thumb-wrap, .work-wrap").height( win_height );
     }, 100)
 
-    // Loading ava
-    load_ava();
+    responsive_actions();
 
     win_width  = $(window).width();
     win_height = $(window).height();
@@ -51,14 +45,18 @@ $(document).ready(function() {
 
 
   // Loading particular ava depanding on viewport
-  function load_ava() {
+  function responsive_actions() {
     if ( win_width > 1000) {
       $('#small-ava').attr('src', $('#small-ava').data('src'));
     } else {
+      if (lang == 'ru') {
+          $('.section-about .section-title').text('Константин Наумов')
+      }
       $('#large-ava').attr('src', $('#large-ava').data('src'));
       $('.about-contact').attr('href', '#contact');
     }
   }
+
 
 });
 

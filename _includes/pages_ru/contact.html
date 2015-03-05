@@ -1,5 +1,7 @@
 <section class="section-contact full-screen-block" id="contact">
 
+  <div class="poster"></div>
+
   <div class="container">
     <h1 class="section-title">{{ site.data.settings_ru.section-titles.contact }}</h1>
 
@@ -9,7 +11,7 @@
       </div>
 
       <a href="mailto:{{site.data.settings_ru.email}}" class="mailto-button contact-large-button const-button">
-        Send an email
+        Отправить e-mail
         <svg viewBox="0 0 25 25">
           <use xlink:href="#icon-envelope-opened" xmlns:xlink="http://www.w3.org/1999/xlink" ></use>
         </svg>
@@ -19,22 +21,21 @@
 
         <div class="input-group">
           <input type="text" id="client-name" name="name" required>
-          <label>Your Full Name</label>
+          <label>Ваше Имя</label>
         </div>
 
         <div class="input-group">
           <input type="email" name="email" required>
-          <label>Your Email Address</label>
+          <label>Ваш E-mail</label>
         </div>
 
         <div class="input-group textarea-wrapper">
           <textarea class="textarea" name="message" required></textarea>
-          <label>Your Message</label>
+          <label>Ваше Сообщение</label>
         </div>
 
-
         <button type="submit" class="const-button contact-large-button">
-          <span>Send the message</span>
+          <span>Отправить сообщение</span>
           <svg viewBox="0 0 25 25">
             <use xlink:href="#icon-envelope-opened" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
           </svg>

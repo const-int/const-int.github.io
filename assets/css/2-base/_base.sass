@@ -9,12 +9,14 @@ $z-level5: 50000
 
 /* Basic Styles
   ------------------------------------  */
-
-
 body
   height: 100%
   color: $text-color
   +ui-reset
+  background-color: #ededed
+  // @media (max-width: 1000px)
+  background: #fff url(../img/backgrounds/exp-bg.png)
+
 
 svg
   +size(100%)
@@ -26,6 +28,7 @@ a, a *
 
 .intext-link
   color: #be4c39
+  text-decoration: none
   border-bottom: 2px solid transparent
   +transition(all 0.2s ease)
   cursor: pointer
@@ -50,7 +53,23 @@ a, a *
   color: $bg-color
   text-align: left
   border-color: #aaa
+  +user-select(none)
+  cursor: default
 
+.poster
+  +size(100% 500px)
+  background: no-repeat center center
+  background-size: cover
+  position: relative
+  background-position: top center
+
+  &:before
+    content: ''
+    +position(absolute, 0 0 0 0)
+    background-image: url(../img/backgrounds/overlay-bg.png)
+
+  @media (max-width: 1000px)
+    display: none
 
 .full-screen-block
   display: none
@@ -64,7 +83,6 @@ a, a *
   @media (max-width: 1000px)
     max-width: initial
     padding: 0 20px
-
 
 
 /* Custom UI
@@ -119,9 +137,8 @@ a, a *
 *
   +user-select(none)
 
-p, h1, h2, h3, h4, h5, h6
-  +user-select(text)
-  cursor: text
+h1, h2, h3, h4, h5, h6, p, span, div
+  cursor: default
 
 
 input:-moz-placeholder
@@ -161,7 +178,14 @@ body
   +position(absolute, 50% null null 50%)
   margin: -12px 0 0 -35px /* is width and height divided by two */
 
+.no-more
+  text-align: center
+  opacity: .3
 
+  &:before, &:after
+    display: inline-block
+    margin: 0 8px
+    content: '\2015'
 
 /* Ripple effect
   ------------------------------------  */
@@ -181,7 +205,6 @@ body
   background: #aaa
   opacity: 1
 
-// animation effect
 .ink.animate
   +animation(ripple .5s linear)
 

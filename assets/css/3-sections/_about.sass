@@ -2,9 +2,24 @@
   position: relative
   overflow: auto
 
+  .poster
+    @media (max-width: 1000px)
+      display: none
+
   .container
+    margin-top: -200px
+    position: relative
     @media (max-width: 1000px)
       padding-top: 0
+      margin-top: 0
+
+  p a
+    @extend .intext-link
+
+  @media (max-width: 1000px)
+    a[href="#experience"], .nomobile
+      display: none
+
 
   .profile-card
     text-align: center

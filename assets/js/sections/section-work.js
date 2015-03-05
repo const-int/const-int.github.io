@@ -39,7 +39,7 @@ $(document).ready(function() {
       $('.project-load')
         .addClass('loaded')
         .find('img')
-          .attr('src', 'assets/img/work/proj-' + folderIndex + '/image.jpg');
+          .attr('src', '../assets/img/work/proj-' + folderIndex + '/image.jpg');
 
       $('.project-title span.title-text').text(newTitle);
 

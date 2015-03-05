@@ -11,10 +11,10 @@ copyright: Konstantin Naumov © 2014
 
 menu:
 - {name: Blog, hash: '#blog' }
-- {name: Portfolio, hash: '#portfolio' }
 - {name: About Me, hash: '#about' }
-# - {name: Experience, hash: '#experience' }
+- {name: Portfolio, hash: '#portfolio' }
 - {name: Contact, hash: '#contact' }
+- {name: Experience, hash: '#experience' }
 
 #-------------------------------
 # SEO Section
@@ -29,26 +29,24 @@ seo:
 #-------------------------------
 # Titles
 section-titles:
-  about: "Hi, I'm Konstantin Naumov."
-  portfolio: "Some of my latest work."
+  about: "Konstantin Naumov"
+  portfolio: "Some of my latest work"
   experience: "My core skills"
-  contact: "Let's get in touch."
-  blog: "My notes, thoughts and more..."
+  contact: "Let's get in touch"
+  blog: "Blog about"
 
 
 #-------------------------------
 # About Section
 
 blurb: >
-  I am a person with a passion for crafting beautiful interfaces and usable experiences that people love.
-  Knowing the value of making reliable UI stuff for back-end coders I focus on writing clean, elegant and efficient code.
-  Here are fields I am excited of:
+  I’m person with passion for creating beautiful interfaces and usable features that people love.
+  Along the UI stuff I produce clean and efficient code to facilitate backend coders work and integration. <br>
+  The fields I’m excited about
 
 blurb2: >
-  I want to be involved in projects that I can be proud of,
-  join an amazing team, and advance my design and development career.
-  Take some time to look at my works, experiences, and if you're interested
-  in helping me make this happen...
+  My dream is being involved into the project that I can be proud of with the amazing team driving me to advance my skills in a competitive pace.
+  Take a look at my <a href="#portfolio">portfolio</a><span class="nomobile"> and</span><a href="#experience"> skillset</a>. If you see me fulfilling your business goals, I’d like to expect you can make my dream happen.
 
 contact:
   "[Twitter](https://twitter.com/Const_Naumov) is my way to share things of interest.
@@ -63,6 +61,15 @@ skills:
 - {name: 'Interface Design', desc: 'Latest trends and standarts', value: '5', icon: 'icon-tools'}
 - {name: 'Modern Web Tools', desc: 'New tendencies, APIs, techniques. ', value: '8', icon: 'icon-browser'}
 
+
+#-------------------------------
+# Blog Section
+categories:
+- {name: web-design, hash: 'web' }
+- {name: what matters, hash: 'highlight' }
+- {name: daily life, hash: 'life' }
+
+
 #-------------------------------
 # Work Section
 
@@ -75,6 +82,7 @@ projects:
 - {url: 'web-sendbox.tk/slk-service', name: 'Online Shop' }
 - {url: 'plektra.pro/', name: 'Agency Website' }
 - {url: 'sukho.ru', name: 'Landing Page' }
+- {url: 'const.in/lottery/', name: 'Landing Page' }
 
 
 
@@ -84,22 +92,22 @@ projects:
 
 exps:
 - {file: 'exp/exp_html.html',
-  quote: "I convert designs into clean, cross browser compatible, troubleproof layouts. Well formed pages are produced on every iteration of employer's development lifecycle.<br> Human readability and semantics of my resulting code are powered by <a href='http://gruntjs.com/' target='_blank' class='grunt'>frontend toolboxes</a> and modern <a href='http://jade-lang.com/' target='_blank' class='jade'>template engines</a>.",
+  quote: "I’m all about cross browser layouts without unexpected rendering issues. I convert design into clean and well-formed pages and adapt assets for employer workflow. Code readability and semantic are empowered by fancy frameworks and <a href='http://jade-lang.com/' target='_blank' class='jade'>template engines</a>.",
   title: 'High-quality page layouts'}
 - {file: 'exp/exp_css.html',
-  quote: "Styling is essential and pretty complicated part of progressive web application. To maintain cross-browser and cross-devise consistency I build my stilesheets based on <a target='_blank' href='http://getbootstrap.com/'>front-end frameworks</a>. <br> With help of <a target='_blank' href='http://sass-lang.com/'>CSS preprocessors</a> and <a target='_blank' href='http://bourbon.io/'>mixin libraries</a> I keep project styles DRY and structured. When it comes to sufficiently large applications I begin with <a target='_blank' href='http://compass-style.org/'>CSS authoring frameworks</a>.",
+  quote: "Styling is essential and pretty complicated part of the web application evolution. There are plenty of tricks, frameworks and tools to maintain cross-browser and cross-device consistency, so I’m familiar with.<br> <a href='http://sass-lang.com/'>Stylesheet preprocessors</a> and <a href='http://bourbon.io/'>mixin libraries</a> helps me to keep the projects DRY and structured. I used to taking a look at <a href='http://compass-style.org/'>CSS frameworks</a> if application is quite large and error prone while under classic development.",
   title: 'Cross-browser stylesheets'}
 - {file: 'exp/exp_svg.html',
-  quote: "Growing number of high DPI displays nowdays affects quality requirements for a regular web app. Scalable vector graphics bring an ability to create crystal clear user interfaces and very high quality cross-platform animations. <br> To deliver such experience to user I craft elements with support of powerful <a href='http://snapsvg.io/' target='_blank'>JavaScript SVG libraries</a>.",
+  quote: "Number of hi-dpi screens is growing and introduce new quality requirements for graphical assets. Vector graphics allows to create crystal clear visuals and high quality animation without vendor-specific plugins. <br> I use this format especially for mobile versions and can compose stunning effect in accompany with <a href='http://snapsvg.io/' target='_blank'>JS helpers</a>.",
   title: 'Dynamic vector manipulation'}
 - {file: 'exp/exp_js.html',
-  quote: "JavaScript is mine core skill in making interactive web and jQuery is very useful thing for me as well as for industry. <br> I'm very familiar with DOM interfacing that brings ability to take any aspect of webpage under control instantly. I've also put my hands on <a href='http://coffeescript.org/' target='_blank'>CoffeeScript</a> and keep going so.",
+  quote: "JavaScript is mine core skill in making interactive web. I'm very familiar with DOM management that brings ability to take any aspect of webpage under control through jQuery. I've also put my hands on <a href='http://coffeescript.org/' target='_blank'>CoffeeScript</a> and keep going so.",
   title: 'JavaScript programming'}
 - {file: 'exp/exp_cms.html',
-  quote: "I mostly do front-end development but occasionally I get my hands dirty with some backend (mostly php/MySQL). And I create WordPess templates time after time. <br>Also I really love dealing with static site generators like <a href='http://jekyllrb.com/'>this one</a> or <a href='https://middlemanapp.com/'>that one</a> to obtain maximum performance.",
+  quote: "I’m mostly into front-end development but occasionally do some easy backend tasks e.g. creating WordPress template time after time. But I fell in love to static site generators like <a href='jekyllrb.com'>Jekyll</a>",
   title: 'CMS setup and templating'}
 - {file: 'exp/exp_ajax.html',
-  quote: "In every project I try to create higly dinamic user experience by turning beautiful design files into working product.",
+  quote: "I’m doing my best to create comfortable user experience by turning beautiful design into working and friendly product.",
   title: 'Improving user experience'}
 
 
@@ -107,7 +115,7 @@ exps:
 # Contact Section
 
 contacts:
-- {name: 'linkedin', link: 'ru.linkedin.com/pub/konstantin-naumov/a1/847/b33/' }
+- {name: 'linkedin', link: 'http://ru.linkedin.com/pub/konstantin-naumov/a1/847/b33/' }
 - {name: 'github', link: 'http://twitter.com/Const_Naumov' }
 - {name: 'twitter', link: 'http://github.com/const-int' }
 - {name: 'email', link: 'mailto:const.int.naumov@gmail.com' }
