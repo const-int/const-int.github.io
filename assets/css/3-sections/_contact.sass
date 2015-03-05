@@ -3,22 +3,23 @@
   overflow-y: auto
 
   .mailto-button
-    @media (min-width: 1001px)
+    +at-large-screen
       display: none
 
   .poster
     background-position-y: -50px
 
   .container
-    margin-top: -200px
-    position: relative
+    +at-large-screen
+      margin-top: -200px
+      position: relative
 
   .contact-text
     display: none
     text-align: left
     font-weight: 300
 
-    @media (max-width: 1000px)
+    +at-small-screen
       display: block
 
     a
@@ -27,11 +28,11 @@
   .awesome-form
     text-align: left
 
-    @media (max-width: 1000px)
+    +at-small-screen
       display: none
 
   .section-title
-    @media (min-width: 1001px)
+    +at-large-screen
       border-bottom: 2px solid transparent
 
 

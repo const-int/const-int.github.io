@@ -12,10 +12,8 @@ $z-level5: 50000
 body
   height: 100%
   color: $text-color
-  +ui-reset
-  background-color: #ededed
-  // @media (max-width: 1000px)
   background: #fff url(../img/backgrounds/exp-bg.png)
+  +ui-reset
 
 
 svg
@@ -68,7 +66,7 @@ a, a *
     +position(absolute, 0 0 0 0)
     background-image: url(../img/backgrounds/overlay-bg.png)
 
-  @media (max-width: 1000px)
+  +at-small-screen
     display: none
 
 .full-screen-block
@@ -80,7 +78,7 @@ a, a *
   padding: 0 40px
   margin: 0 auto
 
-  @media (max-width: 1000px)
+  +at-small-screen
     max-width: initial
     padding: 0 20px
 

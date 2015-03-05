@@ -3,7 +3,7 @@
 
 title: Konstantin Naumov
 description: Константин Наумов
-subdescription: веб-разработчик  из Калининиграда
+subdescription: фронтенд разработчик
 email: const.int.naumov@gmail.com
 copyright: Konstantin Naumov © 2014
 
@@ -18,15 +18,12 @@ menu:
 #-------------------------------
 # SEO Section
 
-# NOTE: Providing SEO information will make this website more searchable on the internet.
-
 seo:
-  description: ''
-  rel-author: ''
-  rel-publisher: ''
+  description: 'Константин Наумов, фронтенд разработчик'
 
 #-------------------------------
 # Titles
+
 section-titles:
   about: "Пара слов про меня"
   portfolio: "Мои последние работы"
@@ -63,12 +60,11 @@ skills:
 
 #-------------------------------
 # Blog Section
+
 categories:
 - {name: веб-дизайн, hash: 'web' }
 - {name: интересное, hash: 'highlight' }
 - {name: меня, hash: 'life' }
-
-
 
 
 #-------------------------------

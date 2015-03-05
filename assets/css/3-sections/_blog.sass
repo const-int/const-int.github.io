@@ -10,10 +10,9 @@
         display: block
 
 
-  @media (max-width: 1000px)
+  +at-small-screen
     .poster
       display: none
-
 
   .splash-poster
     img
@@ -21,7 +20,8 @@
 
   .post-list-title
     white-space: nowrap
-    @media (min-width: 1000px)
+
+    +at-large-screen
       position: relative
       z-index: $z-level3
       border: 0
@@ -161,9 +161,8 @@
 
     .post-poster
       width: 100%
-      @media (max-width: 1000px)
+      +at-small-screen
         background: none !important
-
 
     &.slided
       +transform(translate3d(-50%, 0, 0))
@@ -178,7 +177,7 @@
         min-height: 101%
         margin-top: -500px
         position: relative
-        @media (max-width: 1000px)
+        +at-small-screen
           margin-top: 0
 
     .preview-container, .post-container
@@ -198,10 +197,8 @@
         max-width: 700px
         z-index: $z-level3
 
-        @media (max-width: 1000px)
+        +at-small-screen
           margin-top: 0
-
-
 
       .post-title
 
@@ -209,7 +206,7 @@
           font-family: $regular
           @extend .intext-link
 
-          @media (max-width: 1000px)
+          +at-small-screen
             display: none
 
         .title-text
@@ -257,9 +254,11 @@
 // Droppy Styles
 .section-blog
 
-  @media (max-width: 1000px)
+  +at-small-screen
+
     .dropy__title
       display: block
+
     .dropy__title .tit:after
       display: none
 
@@ -267,7 +266,7 @@
     display: inline-block
     position: relative
 
-    @media (max-width: 1000px)
+    +at-small-screen
       .dropy__title, ul li, .tri
         color: #777 !important
 
@@ -303,9 +302,20 @@
     color: #fff
     cursor: pointer
 
+
+    svg
+      +size(60px)
+      fill: #ccc !important
+
+
     .tri
       color: rgba(#fff, .75)
       cursor: pointer
+      +position(relative, null null null -10px)
+
+      +at-small-screen
+        +position(relative, null null null -5px)
+        vertical-align: middle !important
 
 
     .tit
@@ -323,6 +333,8 @@
     &:hover
       .tri
         color: #fff
+      svg
+        fill: #fff !important
 
   .dropy__content
     position: absolute
@@ -343,7 +355,7 @@
       padding-bottom: 20px
       width: 100%
       list-style: none
-      @media (max-width: 1000px)
+      +at-small-screen
         margin-top: -30px
         +position(absolute, 50% 50% null null)
         +size(100% 180px)
@@ -360,7 +372,7 @@
         &:first-child
           color: #fff
 
-        @media (max-width: 1000px)
+        +at-small-screen
           display: block
           text-align: center
           font-size: 22px
@@ -390,7 +402,7 @@
     .dropy__content ul
       visibility: visible
 
-    @media (max-width: 1000px)
+    +at-small-screen
       .dropy__content
         +position(fixed, 0 0 0 0)
         z-index: $z-level2

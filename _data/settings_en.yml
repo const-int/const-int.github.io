@@ -19,12 +19,8 @@ menu:
 #-------------------------------
 # SEO Section
 
-# NOTE: Providing SEO information will make this website more searchable on the internet.
-
 seo:
-  description: ''
-  rel-author: ''
-  rel-publisher: ''
+  description: 'Konstantin Naumov, front-end web developer'
 
 #-------------------------------
 # Titles
@@ -83,8 +79,6 @@ projects:
 - {url: 'plektra.pro/', name: 'Agency Website' }
 - {url: 'sukho.ru', name: 'Landing Page' }
 - {url: 'const.in/lottery/', name: 'Landing Page' }
-
-
 
 
 #-------------------------------

@@ -3,20 +3,21 @@
   overflow: auto
 
   .poster
-    @media (max-width: 1000px)
+    +at-small-screen
       display: none
 
   .container
     margin-top: -200px
     position: relative
-    @media (max-width: 1000px)
+
+    +at-small-screen
       padding-top: 0
       margin-top: 0
 
   p a
     @extend .intext-link
 
-  @media (max-width: 1000px)
+  +at-small-screen
     a[href="#experience"], .nomobile
       display: none
 
@@ -28,7 +29,7 @@
     overflow: hidden
     max-height: 400px
 
-    @media (min-width: 1001px)
+    +at-large-screen
       display: none
 
     img

@@ -24,7 +24,7 @@
   padding-right: 20px
   +box-sizing(content-box)
 
-  @media (max-width: 1000px)
+  +at-small-screen
     padding-right: 0
 
 .thumb-wrap, .work-wrap
@@ -44,7 +44,8 @@
   +clearfix
 
   .container
-    margin-top: -200px
+    +at-large-screen
+      margin-top: -200px
 
   .thumb-unit
     display: block
@@ -101,7 +102,7 @@
         +position(absolute, 50% 33px null null)
         +transform(translate(50%, -50%))
 
-      @media (max-width: 1000px)
+      +at-small-screen
         opacity: 1
         padding-right: 44px !important
 
@@ -122,7 +123,7 @@
       display: inline-block
       float: left
 
-    @media (max-width: 1000px)
+    +at-small-screen
       margin-top: 0
       padding: 0
 
@@ -153,7 +154,7 @@
 
   .project-title
     position: relative
-    @media (max-width: 1000px)
+    +at-small-screen
       padding: 0 70px  0 0
       border: 0
 
@@ -163,7 +164,7 @@
       &[href='#']
         display: none
 
-      @media (max-width: 1000px)
+      +at-small-screen
         +position(absolute, 50% 0 null null)
         +transform(translate(0, -50%))
 

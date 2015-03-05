@@ -12,3 +12,12 @@
     color: transparent
     text-shadow: 0 0 0 #000
 
+// Breakpoints
+@mixin at-small-screen
+  @media (max-width: 1000px)
+    @content
+
+// Breakpoints
+@mixin at-large-screen
+  @media (min-width: 1001px)
+    @content
