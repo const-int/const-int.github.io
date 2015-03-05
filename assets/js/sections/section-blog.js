@@ -92,6 +92,7 @@ $(document).ready(function() {
 
     blog_return.click(function() {
         window.location.hash = '#blog';
+        post_poster.css('background-image', 'none');
         blog_slide_back();
     });
 
