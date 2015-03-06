@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+  var msie = window.navigator.userAgent.indexOf("MSIE ");
+  if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) $('body').addClass('ie')
+
+
   // Global values
   win_width  = $(window).width();
   win_height = $(window).height();
@@ -7,8 +11,6 @@ $(document).ready(function() {
   page_url = window.location.href;
   domain = page_url.split("/");
   ieMobile = ( !! window.ActiveXObject && +( /IEMobile\/(\d+\.?(\d+)?)/.exec( navigator.userAgent )[1] ) ) || NaN;
-  if (ieMobile) alert('111');
-  if (ieMobile) window.location.replace('http://browsehappy.com/?locale=' + lang);
 
   $(window).on('load', function () {
 
