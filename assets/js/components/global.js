@@ -6,6 +6,8 @@ $(document).ready(function() {
   lang = $('body').data('lang');
   page_url = window.location.href;
   domain = page_url.split("/");
+  ieMobile = ( !! window.ActiveXObject && +( /IEMobile\/(\d+\.?(\d+)?)/.exec( navigator.userAgent )[1] ) ) || NaN;
+  if (ieMobile) window.location.replace('http://browsehappy.com/?locale=' + lang);
 
   $(window).on('load', function () {
 
