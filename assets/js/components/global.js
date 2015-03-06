@@ -14,7 +14,7 @@ $(document).ready(function() {
 
   if ( window.mobilecheck() ) $('body').addClass('mobile')
   if ( window.iecheck() ) $('body').addClass('ie')
-  if ( window.mobilecheck() && window.iecheck() ) window.location.replace('http://browsehappy.com/?locale=' + lang);
+  // if ( window.mobilecheck() && window.iecheck() ) window.location.replace('http://browsehappy.com/?locale=' + lang);
 
   // Global values
   win_width  = $(window).width();
