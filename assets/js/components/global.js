@@ -1,8 +1,7 @@
 $(document).ready(function() {
 
-  var msie = window.navigator.userAgent.indexOf("MSIE ");
-  if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) $('body').addClass('ie')
-
+  // Detect IE
+  if ( window.navigator.userAgent.indexOf("MSIE ") > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) $('body').addClass('ie')
 
   // Global values
   win_width  = $(window).width();
@@ -10,7 +9,6 @@ $(document).ready(function() {
   lang = $('body').data('lang');
   page_url = window.location.href;
   domain = page_url.split("/");
-  ieMobile = ( !! window.ActiveXObject && +( /IEMobile\/(\d+\.?(\d+)?)/.exec( navigator.userAgent )[1] ) ) || NaN;
 
   $(window).on('load', function () {
 
