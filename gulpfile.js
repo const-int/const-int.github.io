@@ -49,7 +49,7 @@ gulp.task('js-concat', function(){
     'assets/js/sections/section-blog.js'
   ])
   .pipe(concat('app.min.js'))
-  .pipe(uglify())
+  // .pipe(uglify())
   .pipe(notify('JS concated!'))
   .pipe(gulp.dest('assets/js/'))
   .on('error', swallowError);
