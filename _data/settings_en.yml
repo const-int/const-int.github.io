@@ -13,8 +13,8 @@ menu:
 - {name: Blog, hash: '#blog' }
 - {name: About Me, hash: '#about' }
 - {name: Portfolio, hash: '#portfolio' }
-- {name: Contact, hash: '#contact' }
 - {name: Experience, hash: '#experience' }
+- {name: Contact, hash: '#contact' }
 
 #-------------------------------
 # SEO Section

@@ -12,8 +12,8 @@ menu:
 - {name: Блог, hash: '#blog' }
 - {name: Обо мне, hash: '#about' }
 - {name: Портфолио, hash: '#portfolio' }
+- {name: Мои навыки, hash: '#experience' }
 - {name: Контакты, hash: '#contact' }
-- {name: Опыт, hash: '#experience' }
 
 #-------------------------------
 # SEO Section

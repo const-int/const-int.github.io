@@ -111,18 +111,19 @@ $(document).ready(function() {
               });;
        }
 
-       if ( nav_index == 3 && !$('.section-contact').hasClass('viewed') ) {
-           var cantact = $('.section-contact');
-           cantact.addClass('viewed');
-           cantact.find('.poster').css('background-image', 'url(/assets/img/posters/contact.jpg)');
-        }
-
-      if ( nav_index == 4 && !$('.exp-animation').hasClass('viewed') ) {
+      if ( nav_index == 3 && !$('.exp-animation').hasClass('viewed') ) {
           $('.exp-animation')
             .addClass('viewed')
             .find('.wrap').load( '../assets/exp/exp_html.html');
           $('.section-expirience .poster.exp').css('background-image', 'url(/assets/img/posters/skillset.jpg)');
       }
+
+      if ( nav_index == 4 && !$('.section-contact').hasClass('viewed') ) {
+          var cantact = $('.section-contact');
+          cantact.addClass('viewed');
+          cantact.find('.poster').css('background-image', 'url(/assets/img/posters/contact.jpg)');
+      }
+
   }
 
 });
