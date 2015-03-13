@@ -222,7 +222,6 @@
           @media (max-width: 380px)
             display: none
 
-
       .post-content
 
         .title, .date
@@ -231,8 +230,16 @@
         #poster-holder
           display: none
 
-        p
+        p, ul
           padding: 0 0 30px 0 !important
+          list-style: disc
+          list-style-position: inside
+
+        li
+          padding-left: 1.5em
+
+        a
+          @extend .intext-link
 
         strong
           font-family: $bold
@@ -242,7 +249,7 @@
 
         img
           max-width: 100%
-          margin: 30px 0 30px 0 !important
+          margin: 0 !important
           display: block
           margin: auto
           border-radius: 3px
@@ -309,9 +316,10 @@
 
 
     .tri
-      color: rgba(#fff, .75)
+      color: rgba(#fff, .6)
       cursor: pointer
       +position(relative, null null null -10px)
+      +transition(color .2s ease)
 
       +at-small-screen
         +position(relative, null null null -5px)
@@ -324,6 +332,12 @@
       text-overflow: ellipsis
       position: relative
       cursor: pointer
+      +transition(border .2s ease)
+
+
+      +at-large-screen
+        border-bottom: 2px solid rgba(#fff, .6)
+        padding-bottom: 15px
 
     .hsh
       @media (max-width: 550px)
@@ -333,6 +347,9 @@
     &:hover
       .tri
         color: #fff
+      .tit
+        +at-large-screen
+          border-bottom: 2px solid white
       svg
         fill: #fff !important
 

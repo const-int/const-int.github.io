@@ -115,6 +115,9 @@ aside.sidebar
         text-decoration: none
         +transition(all .2s)
 
+        &[href='#blog']
+          display: none
+
         &:first-child:before, &:after
           content: ''
           +position(absolute, null null 0 0)
@@ -142,13 +145,13 @@ aside.sidebar
             border-left: 0
 
           &[href="#about"]
-            +position(absolute, 0 null null 0)
-          &[href="#blog"]
             +position(absolute, 0 null null 33.3333%)
+          &[href="#contacts"]
+            +position(absolute, 0 null null 0)
           &[href="#portfolio"]
             +position(absolute, 0 null null 66.6666%)
 
-          &[href="#experience"], &[href="#contact"]
+          &[href="#experience"]
             display: none
 
         &.large-hidden

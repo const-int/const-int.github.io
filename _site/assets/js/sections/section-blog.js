@@ -85,6 +85,9 @@ $(document).ready(function() {
         // Load content
         $('.post-content').load(newUrl, function(){
 
+            $(this).find('a').each(function(index, el)  {
+                $(el).attr('target', '_blank');
+            });
             post_poster.css('background-image', 'url(../../blog-posters/'+ newPoster +')');
         });
     });
