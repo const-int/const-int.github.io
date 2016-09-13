@@ -112,7 +112,6 @@ exps:
 
 contacts:
 - {name: 'linkedin', link: 'http://ru.linkedin.com/pub/konstantin-naumov/a1/847/b33/' }
-- {name: 'github', link: 'http://twitter.com/Const_Naumov' }
-- {name: 'twitter', link: 'http://github.com/const-int' }
+- {name: 'github', link: 'http://github.com/const-int' }
+- {name: 'twitter', link: 'https://twitter.com/c0nst_in' }
 - {name: 'email', link: 'mailto:const.int.naumov@gmail.com' }
-
